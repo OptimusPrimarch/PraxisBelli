@@ -2,7 +2,7 @@
 
 A combined-arms tabletop miniatures wargame — d10 roll-over engine, alternating activation, Platoon-based list building. Built to run parallel to grimdark-adjacent settings (own arcanepunk fiction, deliberately 40k-shaped silhouettes) without requiring anyone to own a specific manufacturer's models: the **proxy contract** is a binding design rule that an existing collection should always be playable as-is, and a new collector should never be steered toward one company.
 
-This repo is the **NewRecruit / BattleScribe data** for building army lists — the game system definition and faction catalogues. It is not the rulebook. The full ruleset, points formula, and design rationale live in a separate working reference; this repo is specifically the machine-readable roster data that reference gets transcribed into.
+This repo holds both the **NewRecruit / BattleScribe data** for building army lists and the **design toolchain** that prices and generates it: the game system definition, faction catalogues, the points formula as executable code, a generator that turns a faction spec into a priced `.cat`, and the working rules/lore reference.
 
 ## Status
 
@@ -16,8 +16,14 @@ This repo is the **NewRecruit / BattleScribe data** for building army lists — 
 | `Imperial Regiments.cat` | The most developed faction — massed conscript infantry backed by flexible armor. Full roster: Command, Line, Recon, Shock, Support, and Armor units. |
 | `Imperial Saints.cat` | Stub. Faction shared rule only (`Blessed by Devotion`); no units yet. |
 | `Imperial Oathkeepers.cat` | Stub. Catalogue shell only; no content yet. |
+| `design-bible.md` | The full ruleset and its rationale — every mechanic, why it's shaped that way, and what's still open. |
+| `reference.html` | The same content as `design-bible.md`, laid out as a single-page reference. Also published as a Claude Artifact; keep both in sync when either changes. |
+| `faction-identity.md` | Faction and setting design — the Sworn Empire cosmology, per-faction mechanical identity, naming conventions, roadmap. |
+| `points.py` | The points formula as runnable code. `python points.py` costs a built-in reference roster; import `cost_unit`/`weapon_cost`/`model_cost` to price anything else. |
+| `build_cat.py` | Reads a faction JSON (see `factions/`), prices every unit via `points.py`, and writes a valid `.cat` straight into this folder. Resolves category/rule/profile IDs by name from `PraxisBelli.gst` at build time and derives entry IDs from the unit name, so rebuilds don't churn the file. |
+| `factions/*.json` | Compact faction definitions (shared weapon library + unit list) — edit stats here, never points; points are always regenerated. |
 
-This folder **is** the live data directory NewRecruit reads from — there's no build or deploy step. Editing a file here and reloading NewRecruit is the whole workflow.
+This folder **is** the live data directory NewRecruit reads from — there's no build or deploy step for the `.cat`/`.gst` files themselves. Editing one and reloading NewRecruit is the whole workflow. Regenerating a faction from its JSON is `python build_cat.py factions/<name>.json`.
 
 ## The setting, in one paragraph
 
@@ -32,5 +38,6 @@ Two deliberately contrasting themes: **vehicles get predator nicknames** (what t
 
 ## Working with this repo
 
-- Points values are formula-derived, not hand-tuned — see the companion design reference for the actual formula (`points.py` in the main project workspace) if you're pricing something new by hand in the meantime.
+- Points values are formula-derived, not hand-tuned. If you're pricing something new, use `points.py` rather than picking a number by feel — and if you change a constant in it, re-check the anchor (a 10-model Rifle Squad with rifles and bayonets should land on 100 points) before trusting anything else it outputs.
 - The sibling folder `Praxis Belli` (with a space, if you have it checked out elsewhere) is an **older, superseded game system** — do not merge content from it into this one; the two use different game system IDs.
+- `design-bible.md`/`reference.html` and `faction-identity.md` are living documents — update them in the same commit as the mechanic or decision they describe, not after the fact.
