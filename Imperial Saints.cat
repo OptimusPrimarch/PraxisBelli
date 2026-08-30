@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalogue library="false" id="436e-9e82-635c-8b72" name="Imperial Saints" gameSystemId="sys-cd5a-2de6-f8aa-24ee" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <sharedRules>
+    <rule name="Blessed by Devotion" id="33e3-3e30-8208-b5c4" hidden="false">
+      <description>Once per game, this unit can reroll any roll and must use the new result.</description>
+    </rule>
+  </sharedRules>
+  <forceEntries>
+    <forceEntry name="Standard Force" id="d3fa-0ed7-929e-0632" hidden="false">
+      <categoryLinks>
+        <categoryLink name="Aerial" hidden="false" id="b290-ed7d-c19a-3898" targetId="c4e5-9b9b-cb06-7d59"/>
+        <categoryLink name="Armor" hidden="false" id="761c-1df6-b071-25c7" targetId="7681-e699-f10a-e57b"/>
+        <categoryLink name="Command" hidden="false" id="df9c-f4af-adad-3d15" targetId="c892-1e80-87b3-2ee2"/>
+        <categoryLink name="Line" hidden="false" id="2270-7484-887f-8681" targetId="9bdf-0174-74ef-f0af"/>
+        <categoryLink name="Recon" hidden="false" id="f20f-c156-9cc2-6f74" targetId="e06d-3eb6-2edc-cee7"/>
+        <categoryLink name="Shock" hidden="false" id="2029-7eba-a49b-7eb5" targetId="49f8-be80-6328-d7dc"/>
+        <categoryLink name="Support" hidden="false" id="9435-e311-bb39-6ec7" targetId="aa80-441a-6103-d793"/>
+      </categoryLinks>
+    </forceEntry>
+  </forceEntries>
+</catalogue>
