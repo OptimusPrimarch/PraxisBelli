@@ -276,6 +276,27 @@ This also produced a new **general** hull rule (not Dragoon-specific — lives o
 
 Command Points were floated as a natural extension of the fire-or-deliver choice ("ripe territory for later") and explicitly rejected once reminded that §8 already states "No resource economy. Confirmed, not deferred." If a spendable-resource want resurfaces, extend Platoon Abilities rather than inventing a parallel system.
 
+#### Marten — packages
+
+**One shared stat profile (Spd8/Met4/Eva5/Arm6/Tuf9), one locked category (SUPPORT), NewRecruit-side built as one entry with mutually-exclusive package options** — not a flexible chassis that becomes different things, a fixed-role vehicle whose *loadout* varies. This is Marten's whole design lesson: "one single profile, many packages" was almost adopted as license for the packages to change what category the vehicle counts as, which would have quietly undone the Fisher/Sable/Tayra decision (distinct named vehicles sharing a stat line, not a turret you swap) from earlier in the same conversation. Caught before it was built, not after — worth remembering as a recurring failure mode: a good idea from three exchanges ago can get contradicted by a new good idea now, if nobody's checking them against each other.
+
+Every package below is real-world sourced, on purpose — not because history needs citing for its own sake, but because "this is a real vehicle variant, not an invented one" is doing genuine design work: it's a forcing function against a package feeling like padding.
+
+| Package | What changes | Real-world anchor |
+|---|---|---|
+| **Protection** | Applique armor + Smoke Dischargers, bundled; forces **Closed-topped** | M113 ACAV up-armor kits; smoke dischargers are standard on nearly every modern IFV/MBT. The closed-topped trade is the honest cost — cargo is safer but can't fight until it disembarks. |
+| **Terrain** (mobility fork 1) | Tracks + all-terrain kit, ignores `Difficult` terrain | Recovery/all-terrain kit real armored vehicles carry for self-extraction. |
+| **Speed** (mobility fork 2) | Speed increase, paired with **Critical Weakspot** (see glossary) | Extended external fuel tanks — real (Soviet BTR series carried external fuel drums) and a real liability: exposed fuel doesn't make a vehicle easier to *hit*, it makes a solid hit worse. Shermans were nicknamed "Ronson" for exactly this failure mode. Considered and dropped: a bundled free pre-game "scout move." Thematically a stretch (scout moves usually signal reconnaissance, not raw engine power) and it would have stacked two guaranteed benefits against one probabilistic downside — simplified to just the Speed bump. |
+| **Assault** | Fewer seats, two extra pintle-mounted weapons | Vietnam-era "gun trucks," M3 half-tracks running multiple gun positions historically. |
+| **Command** *(name TBD — probably shouldn't ride under "Marten" with a suffix)* | Most seats gone; gains **COMMAND** category and command abilities. Exists only as this build — not a flexible option on the SUPPORT-locked base entry. | M577 Command Post Carrier — a genuinely distinct, separately-designated vehicle built on the M113 chassis, not an M113 with a switch flipped. Same pattern as Fisher: a second permanently-locked entry sharing the hull, not an exception to the lock. |
+| **Ambulance** | All seats gone; gains **Combat Medic** (see glossary) | M113 Ambulance / M577 medical variant. |
+| **Forward Observer** | All seats gone; gains **Spotter** (granted directly as a unit rule, independent of CATEGORY — stays SUPPORT, never becomes RECON) + a light AT option (Hunter's lighter ATGM tier, reused rather than re-statted) | The US M901 "Improved TOW Vehicle" is exactly this combination already — a TOW launcher bolted onto an M113. Not an invented pairing. Also the correct doctrinal distinction: a forward observer's job is calling fire, not scouting, which is why granting Spotter without RECON category is accurate rather than a workaround. |
+| **Anti-Aerial** | Quad-MG mount, `Anti-Aerial` applied to whatever gun it carries | The M16 MGMC — the WWII quad-.50 halftrack, later infamous as an anti-infantry "meat chopper" once crews found out what four .50s do to a platoon in the open. Costs nothing new to build: `Anti-Aerial` already exists in the `.gst`'s Anti-[Keyword] set, unused until now because nothing Aerial has been built yet. |
+| **Dozer Blade** | Terrain-clearing while moving, no dedicated action | Real combat-engineer attachment (M9 ACE, tank dozers). Deliberately kept distinct from Sapper's `Breach` rather than redundant with it: Breach is a *deliberate, prepared* demolition (walk up, plant the charge); a dozer blade is *incidental* clearing as part of a normal move. Same narrative space, different verbs. |
+| **Terror Broadcaster** *(reworked from an earlier "PsyOps" idea)* | Grants **Terrifying** directly — reuses the existing Monster-signature trigger rather than inventing a new one | US PsyOps HMMWVs are real. A Monster scares you biologically; this scares you electronically — same check either way. |
+
+**Open before this is fully locked:** exact numbers throughout (Critical Weakspot's discount %, Speed's bump, seat/weapon counts on Assault, all of it) — this pass settled *shape*, not digits. The Command variant also still needs an actual name rather than "Marten with a job title."
+
 ### Imperial Forgesworn — *overmatch*
 
 **Staple: the walker.** A construct that is simultaneously their armor and their fire support.

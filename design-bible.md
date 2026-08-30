@@ -548,7 +548,14 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 
 **Cost-modifying traits**
 - **Conscript** — this unit costs **25% less**. It may never re-roll a die for any reason, and may not take the Rally action. *Conscripts get raw numbers and none of the benefits of training: `Entrenched`'s Mettle re-roll and `Massed Ranks`' to-hit re-roll both go dead, and once suppressed they can only clear markers one at a time by passing checks they are bad at.*
+- **Critical Weakspot** — a discount, not a weapon surcharge, since it modifies what the *model* costs rather than what a weapon does. When a Damage check against this model is rolled as an unmodified 10, the attacking weapon's Damage is doubled instead of applied normally. A rare, high-drama vulnerability rather than a steady tax — priced like `Conscript`, as a modifier on the unit total, not folded into the weapon-trait tiers. *(First application: the Marten's extended-fuel-tank package — exposed fuel is a real historical liability, not just flavor text.)*
 - **Fixed** — this weapon cannot be removed, swapped, or exchanged for an upgrade. Used for equipment that comes as part of another weapon, such as a Bayonet on a Rifle.
+
+**Medical support**
+- **Combat Medic** — two linked effects on the same unit, one passive and one action-based:
+  - *Passive:* while a friendly Infantry or Cavalry unit is within 6" of this model, a model in that unit that would be removed as a casualty instead makes a Mettle check. On a pass, it is not removed and is instead treated as having 1 wound remaining.
+  - *Active:* as an action, this model may restore 1d5 lost wounds to models in one friendly Infantry or Cavalry unit within 6" — the same recovery rate `Regeneration` already uses, delivered externally rather than by the model's own biology.
+  - Deliberately scoped to Infantry/Cavalry only. A Mettle check makes sense for something with a will to keep fighting to check against; a vehicle's failure modes don't work that way. Vehicle repair is a different mechanic for a different unit, not yet designed.
 
 **Durability & morale**
 - **Regeneration** — at the end of every round, regain 1d5 lost wounds.
