@@ -1,0 +1,1440 @@
+<title>Praxis Belli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    --ground:      #E9EAE5;
+    --panel:       #F3F4F0;
+    --panel-2:     #DEE0D9;
+    --ink:         #1B1E20;
+    --ink-soft:    #4A5054;
+    --ink-faint:   #767C7E;
+    --rule:        #C3C7BF;
+    --rule-soft:   #D6D9D2;
+    --brass:       #8A6520;
+    --brass-soft:  #A9863D;
+    --wax:         #8C2F2A;
+    --oath:        #2F5B62;
+    --shadow:      rgba(27,30,32,.09);
+
+    --f-display: "Bitter", Georgia, "Times New Roman", serif;
+    --f-body:    "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --f-data:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+
+    --measure: 68ch;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:     #15181A;
+      --panel:      #1D2124;
+      --panel-2:    #262B2E;
+      --ink:        #E3E5E0;
+      --ink-soft:   #A9AFB1;
+      --ink-faint:  #7C8386;
+      --rule:       #333A3E;
+      --rule-soft:  #272D30;
+      --brass:      #C9A25A;
+      --brass-soft: #8A6F3C;
+      --wax:        #CE6660;
+      --oath:       #6FA6AE;
+      --shadow:     rgba(0,0,0,.4);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground:     #15181A;
+    --panel:      #1D2124;
+    --panel-2:    #262B2E;
+    --ink:        #E3E5E0;
+    --ink-soft:   #A9AFB1;
+    --ink-faint:  #7C8386;
+    --rule:       #333A3E;
+    --rule-soft:  #272D30;
+    --brass:      #C9A25A;
+    --brass-soft: #8A6F3C;
+    --wax:        #CE6660;
+    --oath:       #6FA6AE;
+    --shadow:     rgba(0,0,0,.4);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    display: grid;
+    grid-template-columns: 232px minmax(0, 1fr);
+    gap: 56px;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px 120px;
+  }
+
+  /* ---------------- masthead ---------------- */
+
+  .masthead {
+    grid-column: 1 / -1;
+    border-bottom: 2px solid var(--ink);
+    padding: 56px 0 20px;
+    margin-bottom: 8px;
+  }
+  .eyebrow {
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 14px;
+  }
+  .masthead h1 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 6vw, 4.1rem);
+    line-height: .98;
+    letter-spacing: -.018em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .standfirst {
+    max-width: var(--measure);
+    color: var(--ink-soft);
+    font-size: 1.06rem;
+    margin: 0 0 22px;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+    font-family: var(--f-data);
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+  .meta b { color: var(--ink); font-weight: 500; }
+
+  /* ---------------- nav ---------------- */
+
+  nav {
+    position: sticky;
+    top: 24px;
+    align-self: start;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    padding-top: 40px;
+    font-size: 13.5px;
+  }
+  nav h2 {
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 12px;
+    font-weight: 500;
+  }
+  nav ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1px; }
+  nav a {
+    display: flex;
+    gap: 10px;
+    padding: 4px 8px 4px 0;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    padding-left: 10px;
+  }
+  nav a:hover { color: var(--ink); border-left-color: var(--brass); background: var(--rule-soft); }
+  nav a:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+  nav .n { font-family: var(--f-data); font-size: 11px; color: var(--ink-faint); padding-top: 2px; }
+
+  /* ---------------- sections ---------------- */
+
+  main { padding-top: 40px; min-width: 0; }
+
+  section { margin-bottom: 68px; scroll-margin-top: 24px; }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-bottom: 26px;
+  }
+  .sec-head .n {
+    font-family: var(--f-data);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--brass);
+    letter-spacing: .06em;
+  }
+  .sec-head h2 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 1.72rem;
+    letter-spacing: -.012em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: 1.14rem;
+    margin: 34px 0 12px;
+    text-wrap: balance;
+  }
+  h4 {
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin: 26px 0 10px;
+  }
+
+  p, ul, ol { max-width: var(--measure); }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 0 0 16px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  li::marker { color: var(--ink-faint); }
+
+  strong { font-weight: 600; }
+  em { font-style: italic; color: var(--ink-soft); }
+
+  code, .mono { font-family: var(--f-data); font-size: .88em; }
+  code {
+    background: var(--panel-2);
+    padding: 1px 5px;
+    border-radius: 2px;
+    color: var(--ink);
+  }
+
+  /* ---------------- rule box ---------------- */
+
+  .rule-box {
+    background: var(--panel);
+    border-left: 3px solid var(--oath);
+    padding: 16px 20px;
+    margin: 0 0 20px;
+    max-width: var(--measure);
+  }
+  .rule-box p:last-child { margin-bottom: 0; }
+  .rule-box.brass { border-left-color: var(--brass); }
+  .rule-box.wax   { border-left-color: var(--wax); }
+
+  .formula {
+    font-family: var(--f-data);
+    font-size: .92rem;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 14px 18px;
+    margin: 0 0 20px;
+    overflow-x: auto;
+    white-space: pre;
+    color: var(--ink);
+  }
+
+  .note {
+    font-size: .92rem;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 12px;
+    max-width: var(--measure);
+  }
+
+  /* ---------------- tables ---------------- */
+
+  .tw { overflow-x: auto; margin: 0 0 22px; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+  }
+  th {
+    text-align: left;
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink-faint);
+    border-bottom: 1px solid var(--ink);
+    padding: 0 14px 7px 0;
+    white-space: nowrap;
+  }
+  td {
+    padding: 8px 14px 8px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  td.num, th.num { text-align: right; padding-right: 20px; font-family: var(--f-data); }
+  td.k { font-weight: 600; white-space: nowrap; }
+  .anchor-row td { background: var(--panel); font-weight: 600; }
+
+  /* ---------------- stat card ---------------- */
+
+  .cards { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 16px 18px 14px;
+  }
+  .card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 3px; }
+  .card-top h3 { margin: 0; font-size: 1.04rem; font-weight: 700; }
+  .pts { font-family: var(--f-data); font-weight: 600; font-size: 1.02rem; color: var(--brass); white-space: nowrap; }
+  .card-tags {
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 12px;
+  }
+  .statline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-bottom: 12px;
+  }
+  .stat { background: var(--panel); padding: 6px 4px; text-align: center; }
+  .stat .lbl {
+    font-family: var(--f-data);
+    font-size: 9px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: block;
+  }
+  .stat .val { font-family: var(--f-data); font-size: 1.06rem; font-weight: 600; }
+  .card ul { margin: 0; padding-left: 16px; font-size: 13.4px; }
+  .card .wpn {
+    font-family: var(--f-data);
+    font-size: 12px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 8px;
+    margin-bottom: 8px;
+  }
+  .card .wpn div { margin-bottom: 3px; }
+  .card .wpn b { color: var(--ink); font-weight: 500; }
+
+  /* ---------------- misc ---------------- */
+
+  .pill {
+    display: inline-block;
+    font-family: var(--f-data);
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border: 1px solid var(--rule);
+    color: var(--ink-faint);
+    margin-right: 4px;
+  }
+  .pill.open { border-color: var(--wax); color: var(--wax); }
+
+  dl { max-width: var(--measure); margin: 0 0 18px; }
+  dt { font-weight: 600; margin-top: 14px; }
+  dt:first-child { margin-top: 0; }
+  dd { margin: 3px 0 0; color: var(--ink-soft); }
+
+  hr { border: none; border-top: 1px solid var(--rule); margin: 34px 0; }
+
+  footer {
+    grid-column: 1 / -1;
+    border-top: 2px solid var(--ink);
+    padding-top: 16px;
+    font-family: var(--f-data);
+    font-size: 11.5px;
+    color: var(--ink-faint);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  @media (max-width: 900px) {
+    .wrap { grid-template-columns: 1fr; gap: 0; padding: 0 20px 80px; }
+    nav {
+      position: static;
+      max-height: none;
+      padding: 24px 0 0;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 20px;
+    }
+    nav ol { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; }
+    main { padding-top: 32px; }
+    .statline { grid-template-columns: repeat(5, 1fr); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">Combined Arms · d10 · Working Reference</p>
+    <h1>Praxis Belli</h1>
+    <p class="standfirst">
+      Every mechanic, stat line, and trait decided so far, in one place — written to be
+      transcribed into BattleScribe rather than read cover to cover. Where a decision has a
+      reason worth keeping, the reason is recorded with it.
+    </p>
+    <p class="meta">
+      <span><b>Version</b> 0.4</span>
+      <span><b>Anchor</b> Rifle Squad = 100 pts</span>
+      <span><b>Standard game</b> 1000 pts / 2 Platoons</span>
+      <span><b>Dice</b> d10, roll-over throughout</span>
+    </p>
+  </header>
+
+  <nav aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#p0"><span class="n">00</span><span>Principle Zero</span></a></li>
+      <li><a href="#engine"><span class="n">01</span><span>The Dice Engine</span></a></li>
+      <li><a href="#activation"><span class="n">02</span><span>Activation &amp; Actions</span></a></li>
+      <li><a href="#movement"><span class="n">03</span><span>Movement</span></a></li>
+      <li><a href="#melee"><span class="n">04</span><span>Melee</span></a></li>
+      <li><a href="#morale"><span class="n">05</span><span>Morale</span></a></li>
+      <li><a href="#terrain"><span class="n">06</span><span>Terrain</span></a></li>
+      <li><a href="#axes"><span class="n">07</span><span>Type &amp; Category</span></a></li>
+      <li><a href="#platoons"><span class="n">08</span><span>Platoons</span></a></li>
+      <li><a href="#missions"><span class="n">09</span><span>Combined Arms</span></a></li>
+      <li><a href="#transports"><span class="n">10</span><span>Transports</span></a></li>
+      <li><a href="#points"><span class="n">11</span><span>Points Formula</span></a></li>
+      <li><a href="#traits"><span class="n">12</span><span>Trait Glossary</span></a></li>
+      <li><a href="#roster"><span class="n">13</span><span>Roster</span></a></li>
+      <li><a href="#factions"><span class="n">14</span><span>Faction Identity</span></a></li>
+      <li><a href="#open"><span class="n">15</span><span>Open Threads</span></a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <!-- ===================== 0 ===================== -->
+    <section id="p0">
+      <div class="sec-head"><span class="n">00</span><h2>Principle Zero</h2></div>
+
+      <div class="rule-box brass">
+        <p><strong>This game is balanced around a regular rifleman squad. Not around elites.</strong></p>
+        <p>Ten bodies, Toughness 1, Armor 4, Evasion 6, Speed 5, Mettle 4, 100 points. That is the
+        reference unit, the formula's calibration anchor, and the mental model for army size — a
+        1000-point list is <em>about ten rifle squads' worth of stuff</em>.</p>
+      </div>
+
+      <p>Three anti-spiral rules follow:</p>
+      <ol>
+        <li><strong>Every mechanic is judged by what it does to a rifle squad.</strong> If a rule is
+        neutral or confusing for line infantry and only makes sense for a five-model elite squad, it
+        is the wrong rule.</li>
+        <li><strong>When an elite unit needs a new subsystem to function, the elite is wrong — not
+        the game.</strong> Elites get better stats and better weapons, both of which the points
+        formula already prices. They do not get compensation mechanics.</li>
+        <li><strong>New systems must justify themselves for the common case.</strong> A rule
+        introduced to solve an elite faction's problem must also earn its place in a mirror match of
+        line infantry.</li>
+      </ol>
+
+      <p class="note">This guards against a failure mode that already occurred once on this project:
+      designing around one faction's problems produced three new subsystems in a single sitting.
+      Each was defensible alone; the accumulation was not.</p>
+
+      <h3>Design lineage</h3>
+      <dl>
+        <dt>Marcher: EAW</dt>
+        <dd>Platoon list-building, transports and embarkation, attacker-rolled Evasion/Armor, Armor beyond 10.</dd>
+        <dt>Ravaged Star</dt>
+        <dd>The d10 roll-over engine, 1-always-fails / 10-always-succeeds, the Damage stat, "Shaken".</dd>
+        <dt>Warmachine MkIV</dt>
+        <dd>Vehicle facings and weapon arcs, model-count transports, gunboat doctrine.</dd>
+      </dl>
+
+      <h3>The proxy contract</h3>
+      <p>Binding on all content: anyone with an existing collection should be able to sit down and
+      play, and anyone starting fresh should never be steered toward one manufacturer.</p>
+      <div class="tw"><table>
+        <tr><td class="k">Unit sizes are 5, 8, 10, or 16</td><td>The near-universal box counts across every major range.</td></tr>
+        <tr><td class="k">No base-size requirements, ever</td><td>True line of sight already governs targeting. Measure model to model.</td></tr>
+        <tr><td class="k">Archetype names only</td><td>"Line Infantry," never a proper noun that fits one company's fiction.</td></tr>
+        <tr><td class="k">Weapons named by function</td><td>"Heavy Machine Gun," not a setting-specific brand name.</td></tr>
+        <tr><td class="k">Buildable silhouettes</td><td>If a faction needs a model shape nobody manufactures, it is a bad faction.</td></tr>
+      </table></div>
+    </section>
+
+    <!-- ===================== 1 ===================== -->
+    <section id="engine">
+      <div class="sec-head"><span class="n">01</span><h2>The Dice Engine</h2></div>
+
+      <div class="rule-box">
+        <p><strong>Every check in the game is roll-over on a d10: meet or exceed the target number
+        to succeed.</strong> There is no roll-under anywhere.</p>
+        <p>An unmodified <strong>1 always fails</strong>. An unmodified <strong>10 always
+        succeeds</strong>, except against Armor above 10 (below).</p>
+      </div>
+
+      <h3>The attack sequence</h3>
+      <p>Attacks resolve in two stages, and <strong>the attacker rolls both</strong>.</p>
+      <ol>
+        <li><strong>To-hit</strong> — roll a d10 per attack die against the target's
+        <strong>Evasion</strong>. Total dice = the weapon's Attacks × models firing it.</li>
+        <li><strong>Damage check</strong> — each hit rolls again against the target's
+        <strong>Armor</strong>, after <strong>AP</strong> is subtracted. Each success inflicts the
+        weapon's <strong>Damage</strong> in wounds against the target's <strong>Toughness</strong>.</li>
+      </ol>
+      <p>Higher Evasion is harder to hit; higher Armor is harder to damage. There is no attacker-side
+      accuracy stat — to-hit difficulty is entirely defender-side, and attacker differentiation comes
+      from traits, re-rolls, and Anti-[Keyword] weapons.</p>
+
+      <h3>Armor above 10</h3>
+      <div class="rule-box">
+        <p>Armor is <strong>not capped at 10</strong>. When a target's Armor after AP exceeds 10, an
+        unmodified 10 no longer succeeds automatically — it buys a <strong>second roll</strong>
+        against <code>Armor − 10</code>, cascading again if that also exceeds 10.</p>
+      </div>
+      <p>A hull at Armor 17 struck by an AP 0 weapon needs a 10, then a 7+: a <strong>4%
+      chance</strong>. Vanishingly unlikely, never impossible, and the curve continues smoothly
+      instead of hitting a wall. This makes <strong>AP the only real answer to heavy armor</strong> —
+      that same hull struck at AP 6 rolls against an effective 11, more than twice as likely to wound.</p>
+
+      <h3>The AP scale</h3>
+      <p>AP is calibrated against real anti-armor performance, so weapon design has an intuitive reference.</p>
+      <div class="tw"><table>
+        <tr><th class="num">AP</th><th>Reference</th><th class="num">AP</th><th>Reference</th></tr>
+        <tr><td class="num">0</td><td>Modern assault rifle</td><td class="num">5</td><td>76 mm</td></tr>
+        <tr><td class="num">1</td><td>Magnum rifle cartridge</td><td class="num">6</td><td>88 mm</td></tr>
+        <tr><td class="num">2</td><td>20 mm autocannon</td><td class="num">7</td><td>Modern 120 mm sabot</td></tr>
+        <tr><td class="num">3</td><td>WWII 37 mm</td><td class="num">8</td><td>Railgun</td></tr>
+        <tr><td class="num">4</td><td>57 mm</td><td class="num">—</td><td>—</td></tr>
+      </table></div>
+      <p><strong>Most infantry weapons sit at AP 0.</strong> Penetration is bought through heavy
+      weapon teams and vehicles, not carried by line infantry — a large part of why combined arms is
+      mandatory rather than merely encouraged.</p>
+
+      <h3>Range bands</h3>
+      <p>Range is a single Short value on the profile. <strong>Medium</strong> = 2× that distance at
+      +1 to the target's Evasion. <strong>Long</strong> = 3× at +3. <code>Accurate</code> ignores all
+      range penalties.</p>
+    </section>
+
+    <!-- ===================== 2 ===================== -->
+    <section id="activation">
+      <div class="sec-head"><span class="n">02</span><h2>Activation &amp; Actions</h2></div>
+
+      <p>Alternating activation, unit by unit. The round ends once every unit has activated.</p>
+      <p><strong>2 actions per activation</strong>, taken in any order, each used once per
+      activation. There is no general reaction economy; triggered abilities are written per-unit as
+      named exceptions.</p>
+
+      <h4>Actions</h4>
+      <div class="tw"><table>
+        <tr><td class="k">Move</td><td>Move the leader model by its Speed, then re-form (§03).</td></tr>
+        <tr><td class="k">Shoot</td><td>Attack with a ranged weapon.</td></tr>
+        <tr><td class="k">Fight</td><td>Attack with a melee weapon, or unarmed (§04).</td></tr>
+        <tr><td class="k">Rally</td><td>Remove <em>all</em> suppression markers from this unit.</td></tr>
+        <tr><td class="k">Claim</td><td>Take an objective. LINE units do this for free.</td></tr>
+      </table></div>
+
+      <h3>Pass Tokens</h3>
+      <div class="rule-box">
+        <p>Only the player with <strong>fewer units</strong> receives them, equal to the delta
+        between the two unit counts. No other source of passes.</p>
+        <p><strong>Spending a Pass Token lets one friendly unit that has not yet activated make a
+        free half-Move.</strong> That unit is not considered activated and may still act normally
+        later in the round.</p>
+      </div>
+      <p class="note">An outnumbered army's real deficit is not tempo — pass tokens already keep the
+      round even in count — it is <strong>board coverage</strong>. Six units cannot be in as many
+      places as twelve, and since only infantry can claim objectives, being outnumbered means being
+      out-positioned. Repositioning is the exact compensation the deficit calls for. A Pass Token
+      buys movement and nothing else; it is deliberately not a resource economy.</p>
+    </section>
+
+    <!-- ===================== 3 ===================== -->
+    <section id="movement">
+      <div class="sec-head"><span class="n">03</span><h2>Movement &amp; Formation</h2></div>
+      <p>No coherency stat. Move the leader model by its <strong>Speed</strong>, then place the rest
+      of the unit within 2" of the leader, or within 2" of two models that are each within 2" of the
+      leader. Formation re-forms every time the unit moves.</p>
+      <p><strong>Engagement range</strong> is 1" baseline, extendable by weapon or trait.</p>
+      <p><strong>True line of sight</strong> throughout — base size implies a volume.</p>
+    </section>
+
+    <!-- ===================== 4 ===================== -->
+    <section id="melee">
+      <div class="sec-head"><span class="n">04</span><h2>Melee</h2></div>
+
+      <p><strong>Fire into melee</strong> is allowed. A missed shot against an engaged target instead
+      hits an ally in that fight — the opponent chooses which model eats the miss.</p>
+      <p><strong>Fire out of melee</strong> is not allowed, except <code>Pistol</code>, which may
+      make a ranged attack while its bearer is engaged, but only against an enemy unit it is engaged
+      with.</p>
+
+      <h3>Fists</h3>
+      <div class="rule-box">
+        <p><strong>Every model carries this weapon profile</strong> whether or not it also has a
+        melee weapon — written up as a real profile rather than an abstract rule, so anything
+        referencing "a melee weapon" resolves without a special case.</p>
+        <p><code>Fists · Melee · A1 · AP0 · D1 · Fixed, Unarmed</code><br>
+        <strong>Unarmed</strong> — this weapon's target has its Evasion and Armor each increased by
+        1 for that attack.</p>
+      </div>
+      <p>Nothing is ever helpless in melee — it is simply bad at it. Against a baseline target Fists
+      are about <strong>69%</strong> as effective as a Bayonet, so a real melee weapon is a genuine
+      upgrade rather than the difference between fighting and not.</p>
+      <p class="note"><strong>Pricing consequence:</strong> because every model has Fists, it is
+      <strong>free</strong>, by the same logic that makes TYPE and CATEGORY bundles free. Real melee
+      weapons are priced at their <em>margin over Fists</em>, not their absolute value.</p>
+    </section>
+
+    <!-- ===================== 5 ===================== -->
+    <section id="morale">
+      <div class="sec-head"><span class="n">05</span><h2>Morale</h2></div>
+
+      <h3>The Mettle check</h3>
+      <div class="formula">Roll d10 + Mettle.  Pass if the total ≥ 10 + suppression markers held.</div>
+      <p>Higher Mettle is better, like every other stat on the card. A unit with Mettle 4 holding two
+      markers needs an 8+.</p>
+      <ul>
+        <li><strong>Pass</strong> — remove <strong>one</strong> suppression marker.</li>
+        <li><strong>Fail</strong> — step <strong>up</strong> one level on the track.</li>
+      </ul>
+      <p><strong>Check timing:</strong> at the start of a unit's activation if it holds any markers,
+      or immediately when an effect forces one.</p>
+
+      <h3>Suppression markers</h3>
+      <p><strong>Markers persist until removed.</strong> They do not clear at end of round.</p>
+      <div class="tw"><table>
+        <tr><th>Method</th><th>Removes</th></tr>
+        <tr><td class="k">Passing a Mettle check</td><td>1 marker</td></tr>
+        <tr><td class="k">The Rally action</td><td><em>All</em> markers on this unit</td></tr>
+        <tr><td class="k">Specific effects (Hold Fast)</td><td>As written</td></tr>
+      </table></div>
+
+      <h3>Recovery</h3>
+      <div class="rule-box wax">
+        <p>A unit steps <strong>down</strong> one level at the end of its activation
+        <strong>only if it holds no suppression markers.</strong></p>
+      </div>
+      <p>This single clause is what makes the morale system function. With automatic recovery, a unit
+      checked at the start of its activation, went Shaken, acted, and recovered at the end of that
+      same activation — but Shaken's penalties only bite <em>when being attacked</em>, during the
+      opponent's activations. The defensive half of the penalty could essentially never apply, and
+      Frozen was unreachable. The whole track was ornamental.</p>
+      <p>What it creates instead is a genuine decision every activation:</p>
+      <ul>
+        <li><strong>Rally</strong> — spend half your activation clearing markers, recover at end of turn.</li>
+        <li><strong>Don't</strong> — take both actions, keep the markers, stay Shaken through the
+        opponent's turn at −1 Evasion / −1 Armor, and check again next activation at the same
+        penalty. Fail twice and you are Frozen.</li>
+      </ul>
+      <p class="note"><strong>The real price of suppression is actions, not damage</strong> — which
+      is also what justifies <code>Suppressing</code> costing points.</p>
+
+      <h3>The track</h3>
+      <div class="tw"><table>
+        <tr><th>Level</th><th>Effect</th></tr>
+        <tr><td class="k">Determined</td><td>Baseline.</td></tr>
+        <tr><td class="k">Shaken</td><td>−1 Evasion, −1 Armor, −1 Mettle. The whole card degrades uniformly.</td></tr>
+        <tr><td class="k">Frozen</td><td>Shaken's penalties, <strong>and no Move actions.</strong> Can still Shoot and Fight.</td></tr>
+        <tr><td class="k">Routing</td><td>Must spend its entire activation moving toward the nearest board edge. Reaching it removes the unit from play.</td></tr>
+      </table></div>
+      <p><strong>Vehicles</strong> run the same four steps but end in <strong>Destroyed</strong>
+      rather than Routing.</p>
+    </section>
+
+    <!-- ===================== 6 ===================== -->
+    <section id="terrain">
+      <div class="sec-head"><span class="n">06</span><h2>Terrain</h2></div>
+      <p>Terrain is a set of <strong>composable tags</strong>. Any piece can carry any combination;
+      the fictional name is flavour. Agree the tags on each piece before deployment.</p>
+      <div class="tw"><table>
+        <tr><th>Tag</th><th>Effect</th></tr>
+        <tr><td class="k">Obscuring</td><td>+1 Evasion against attacks targeting units benefiting from it.</td></tr>
+        <tr><td class="k">Cover</td><td>+1 Armor.</td></tr>
+        <tr><td class="k">Difficult</td><td>Costs double movement.</td></tr>
+        <tr><td class="k">Blocking</td><td>Fully blocks line of sight through it.</td></tr>
+        <tr><td class="k">Dangerous</td><td>Each model entering or moving through rolls d10; <strong>4+ passes</strong>. Each failure inflicts 1 wound.</td></tr>
+        <tr><td class="k">Impassable</td><td>Ground units cannot move through at all.</td></tr>
+      </table></div>
+      <p>A ruin is <code>Obscuring + Cover + Difficult + Blocking</code>. A sandbag line is
+      <code>Obscuring + Cover</code>. A minefield is <code>Dangerous</code>.</p>
+      <p>Blast, Engulf, and template weapons ignore cover entirely — their targets cannot benefit from it.</p>
+    </section>
+
+    <!-- ===================== 7 ===================== -->
+    <section id="axes">
+      <div class="sec-head"><span class="n">07</span><h2>Type &amp; Category</h2></div>
+
+      <p>Every unit carries two independent labels, and <strong>both carry rules</strong>.</p>
+      <ul>
+        <li><strong>TYPE</strong> — what the unit <em>is</em>. Six: Infantry, Cavalry, Vehicle,
+        Monster, Aerial, Towable.</li>
+        <li><strong>CATEGORY</strong> — its battlefield role and Platoon slot. Six: ARMOR, COMMAND,
+        LINE, RECON, SHOCK, SUPPORT.</li>
+      </ul>
+      <p>The two are fully orthogonal. A COMMAND unit can be any TYPE. There is no separate "Hero"
+      role — leadership is expressed through the COMMAND category.</p>
+
+      <h3>Category rules</h3>
+      <div class="tw"><table>
+        <tr><th>Category</th><th>Grants</th></tr>
+        <tr><td class="k">ARMOR</td><td><strong>Bulwark</strong> — reduce all incoming damage by 1, minimum 1. <strong>Hardpoints</strong> — ignore the Heavy trait.</td></tr>
+        <tr><td class="k">COMMAND</td><td><strong>Leadership Aura</strong> — units within 12" may use this model's Mettle instead of their own.</td></tr>
+        <tr><td class="k">LINE</td><td><strong>Boots on the Ground</strong> — claims objectives without spending an action.</td></tr>
+        <tr><td class="k">RECON</td><td><strong>Spotter</strong> — satisfies Indirect and Guided; ignores smoke. <strong>Camouflaged</strong> — +1 Evasion in cover. <strong>All-Terrain</strong>.</td></tr>
+        <tr><td class="k">SHOCK</td><td><strong>Brutal Assault</strong> — re-roll hit results of 1 when fighting, or shooting within half range.</td></tr>
+        <tr><td class="k">SUPPORT</td><td><strong>Where We're Needed</strong> — every 2" travelled costs 1" of Speed while in its own deployment zone.</td></tr>
+      </table></div>
+
+      <h3>Type rules</h3>
+      <div class="tw"><table>
+        <tr><th>Type</th><th>Grants</th></tr>
+        <tr><td class="k">Infantry</td><td><strong>Entrenched</strong> — in cover, +1 Armor <em>and</em> re-roll failed Mettle checks.</td></tr>
+        <tr><td class="k">Cavalry</td><td><strong>Run Them Through</strong> — weapons gain +1 AP and Suppressing while charging. <strong>All-Terrain</strong>.</td></tr>
+        <tr><td class="k">Vehicle</td><td><strong>Armored Front</strong> — 90° facings; attacks against the front are at −1 AP, against the rear +1 AP. <strong>Hardpoints</strong>.</td></tr>
+        <tr><td class="k">Monster</td><td><strong>Terrifying</strong> — units ending their activation engaged with this one must make a Mettle check.</td></tr>
+        <tr><td class="k">Aerial</td><td><strong>Flying</strong> — ignores models and terrain when moving. <strong>Soaring Above</strong> — on activation, immediately move half Speed then continue; may leave and redeploy from its own zone; only chargeable by Flying.</td></tr>
+        <tr><td class="k">Towable</td><td><strong>Trailor</strong> — may hitch to a friendly Vehicle within 3" for an action. <strong>Emplaced Weapon</strong> — must deploy before shooting; immobile while emplaced.</td></tr>
+      </table></div>
+      <p class="note"><code>Impact(X)</code> and <code>Fear</code> from earlier drafts are gone,
+      replaced by Run Them Through and Terrifying respectively.</p>
+    </section>
+
+    <!-- ===================== 8 ===================== -->
+    <section id="platoons">
+      <div class="sec-head"><span class="n">08</span><h2>Platoons</h2></div>
+      <p>Platoon slots are defined directly by CATEGORY. <strong>Every faction can reach every
+      category</strong> — emphasis is about how much, never whether, because a hard zero would break
+      the proxy contract.</p>
+      <div class="tw"><table>
+        <tr><th>Faction</th><th class="num">CMD</th><th class="num">LINE</th><th class="num">RECON</th><th class="num">SHOCK</th><th class="num">ARMOR</th><th class="num">SUP</th></tr>
+        <tr><td class="k">Vanguard (generic)</td><td class="num">1</td><td class="num">2–4</td><td class="num">0–2</td><td class="num">0–2</td><td class="num">0–2</td><td class="num">0–2</td></tr>
+        <tr><td class="k">Regiments</td><td class="num">1</td><td class="num">2–5</td><td class="num">0–2</td><td class="num">0–1</td><td class="num">0–3</td><td class="num">0–3</td></tr>
+        <tr><td class="k">Forgesworn</td><td class="num">1</td><td class="num">1–3</td><td class="num">0–2</td><td class="num">0–1</td><td class="num">0–3</td><td class="num">0–4</td></tr>
+        <tr><td class="k">Oathkeepers</td><td class="num">1</td><td class="num">1–4</td><td class="num">0–1</td><td class="num">0–3</td><td class="num">0–1</td><td class="num">0–1</td></tr>
+        <tr><td class="k">Saints</td><td class="num">1–2</td><td class="num">2–4</td><td class="num">0–1</td><td class="num">0–2</td><td class="num">0–1</td><td class="num">0–2</td></tr>
+        <tr><td class="k">Oathbreakers</td><td class="num">1</td><td class="num">1–3</td><td class="num">0–1</td><td class="num">0–4</td><td class="num">0–2</td><td class="num">0–1</td></tr>
+      </table></div>
+      <p><strong>Army scaling:</strong> 1 Platoon per 500 points, minimum 1 per 1000. Activation
+      count is simply unit count. <strong>No resource economy</strong> — confirmed, not deferred.</p>
+
+      <h3>Platoon Abilities</h3>
+      <p>One per Platoon, activated once per game, lasting the rest of that round.</p>
+      <div class="tw"><table>
+        <tr><td class="k">Hold Fast <span class="pill">Line</span></td><td>For the rest of the round, suppression markers do not worsen Mettle checks for units in this Platoon.</td></tr>
+        <tr><td class="k">Break the Line <span class="pill">Shock</span></td><td>For the rest of the round, units resolve Run Them Through at +2 AP instead of +1.</td></tr>
+        <tr><td class="k">Fast as the Wind <span class="pill">Recon</span></td><td>For the rest of the round, units each gain one free Move action.</td></tr>
+        <tr><td class="k">Fix Bayonets <span class="pill">Regiments</span></td><td>For the rest of the round, LINE units ignore the Frozen state.</td></tr>
+        <tr><td class="k">Hold the Oath <span class="pill">Oathkeepers</span></td><td>Units cannot be moved or placed by enemy effects, and ignore Suppressing.</td></tr>
+        <tr><td class="k">Act of Faith <span class="pill">Saints</span></td><td>Units automatically pass every Mettle check, but each that does takes 1 wound at end of round.</td></tr>
+        <tr><td class="k">Sealed Orders <span class="pill">Forgesworn</span></td><td>Units may not be targeted by enemy Command abilities and ignore Terrifying.</td></tr>
+        <tr><td class="k">Break the Chains <span class="pill">Oathbreakers</span></td><td>Units gain +2 Speed and may charge after Running, but automatically fail their next Mettle check.</td></tr>
+      </table></div>
+      <p class="note"><span class="pill open">Open</span> ARMOR and SUPPORT generic Platoon
+      Abilities are still undesigned.</p>
+    </section>
+
+    <!-- ===================== 9 ===================== -->
+    <section id="missions">
+      <div class="sec-head"><span class="n">09</span><h2>Missions &amp; Combined Arms</h2></div>
+      <p>Combined arms is a <strong>primary design goal</strong>, not a theme. Category caps shape
+      what a list contains; the three rules below make a mono-arm list <em>lose</em>.</p>
+
+      <h3>1 · Objectives need boots</h3>
+      <div class="tw"><table>
+        <tr><th>Type</th><th>Objectives</th></tr>
+        <tr><td class="k">Infantry, Cavalry, Towable</td><td>May <strong>claim</strong>. Costs an action — except LINE units, which claim for free.</td></tr>
+        <tr><td class="k">Vehicle, Monster, Aerial</td><td>May <strong>contest</strong> only. They deny an objective but can never score it.</td></tr>
+      </table></div>
+      <p>A tank can park on a marker and stop you scoring it forever; it can never score it itself.
+      <strong>Every army therefore needs infantry regardless of doctrine.</strong></p>
+
+      <h3>2 · Terrain density is a rule, not a suggestion</h3>
+      <p>A standard 4'×4' board carries <strong>at least 8 terrain pieces</strong>, of which
+      <strong>3 or more</strong> carry Difficult or Impassable, and <strong>4 or more</strong> carry
+      Blocking. A board failing this is not a legal board — sparse terrain silently converts the game
+      into a shooting contest.</p>
+
+      <h3>3 · Anti-armor must actually kill armor</h3>
+      <p>Dedicated anti-armor weapons need <code>Damage ≥ 6</code> against Toughness 10 chassis.
+      Massed armor should be a <strong>trap</strong>, punished by a comparatively cheap specialist.</p>
+
+      <h3>The intended shape</h3>
+      <div class="tw"><table>
+        <tr><td class="k">Infantry</td><td>Takes and holds ground. Only it scores.</td></tr>
+        <tr><td class="k">Armor</td><td>Breaks through and denies, but cannot hold.</td></tr>
+        <tr><td class="k">Artillery</td><td>Kills at range, blind without RECON, helpless up close.</td></tr>
+        <tr><td class="k">Recon</td><td>Sees for the artillery and cannot fight.</td></tr>
+        <tr><td class="k">Aerial</td><td>Strikes anywhere and holds nothing.</td></tr>
+      </table></div>
+    </section>
+
+    <!-- ===================== 10 ===================== -->
+    <section id="transports">
+      <div class="sec-head"><span class="n">10</span><h2>Transports</h2></div>
+      <p><strong>Transport(X)</strong> where X is a <strong>model</strong> capacity, not a unit
+      count. Eligible cargo is Infantry and Cavalry.</p>
+      <p>Embarking and disembarking are both part of a Move action, costing half the unit's Speed
+      (round up). While embarked a unit does not claim or contest objectives, and all measurement is
+      taken from the Transport.</p>
+
+      <h3>Dedicated Transports</h3>
+      <div class="rule-box brass">
+        <p>A Transport attached to one specific unit at list building <strong>takes the CATEGORY of
+        the unit it carries</strong> and consumes no additional slot. It must deploy carrying that
+        unit, and still counts as its own activation.</p>
+      </div>
+      <p>Category inheritance is what keeps this honest. A slot-free transport with no category would
+      be a free unit with no downside; instead it is a fully exposed member of the formation it
+      serves. <strong>Choosing what a vehicle carries chooses what it is vulnerable to</strong> — a
+      gunboat full of LINE infantry is hunted by <code>Anti-Line</code>, while a pure tank in the
+      ARMOR slot is hunted by <code>Anti-Armor</code>.</p>
+
+      <h3>Hull classes</h3>
+      <p>Capacity and firepower compete for the same hull. Which class a faction favours <em>is</em>
+      its armor doctrine.</p>
+      <div class="tw"><table>
+        <tr><th>Class</th><th class="num">Capacity</th><th>Armament</th><th>Role</th></tr>
+        <tr><td class="k">Bus</td><td class="num">12–14</td><td>Token — one light weapon</td><td>Moves mass cheaply. Delivers and leaves.</td></tr>
+        <tr><td class="k">Gunboat</td><td class="num">6–8</td><td>A main gun plus secondaries</td><td>Fights <em>and</em> carries. Stays and contributes.</td></tr>
+        <tr><td class="k">Assault Transport</td><td class="num">5–6</td><td>Heavy, short-ranged</td><td>Survives the approach and disgorges into melee.</td></tr>
+      </table></div>
+      <p>A faction whose transports fight does not need many pure tanks — its armor doctrine arrives
+      in the transport slot instead of the ARMOR slot. That is how a faction capped at ARMOR 0–1
+      still fields serious vehicle firepower, and it couples the arms physically.</p>
+
+      <div class="rule-box">
+        <p><strong>Fire or deliver — the IFV/APC split.</strong> A Transport with <strong>token</strong>
+        armament (Bus) must choose between firing its weapon and ordering a disembark in the same
+        activation — the gun isn't worth much, so its real job that turn is one or the other. A
+        Transport with <strong>real</strong> armament (Gunboat, Assault Transport) may do both — the
+        gun is good enough to be doing real work regardless of what its cargo is doing. This is a
+        property of the hull, not of what it's carrying: any unit riding a Gunboat gets the benefit,
+        not only Dragoons (below).</p>
+      </div>
+
+      <h3>Open- and Closed-topped</h3>
+      <p><strong>Open-topped</strong> cargo may still act, measuring from the Transport, but is
+      independently targetable using its own Evasion and Armor and counts as in Cover.
+      <strong>Closed-topped</strong> cargo cannot act or be targeted.</p>
+
+      <h3>Bailout</h3>
+      <p>When a Transport is removed from play, every embarked model takes a Mettle check; each
+      failure inflicts 1 wound. Survivors are placed within 3" of the wreck. If the Transport was
+      Aerial and the cargo is not, the cargo is destroyed outright.</p>
+    </section>
+
+    <!-- ===================== 11 ===================== -->
+    <section id="points">
+      <div class="sec-head"><span class="n">11</span><h2>Points Formula</h2></div>
+
+      <h3>Step 1 · Model cost</h3>
+      <div class="formula">Model Cost = 6.20 × Toughness × E × A × S × M</div>
+      <div class="tw"><table>
+        <tr><th class="num">Evasion</th><th class="num">E</th><th class="num">Armor</th><th class="num">A</th></tr>
+        <tr><td class="num">3</td><td class="num">0.63</td><td class="num">3</td><td class="num">0.89</td></tr>
+        <tr><td class="num">4</td><td class="num">0.71</td><td class="num">4</td><td class="num">1.00</td></tr>
+        <tr><td class="num">5</td><td class="num">0.83</td><td class="num">5</td><td class="num">1.14</td></tr>
+        <tr><td class="num">6</td><td class="num">1.00</td><td class="num">6</td><td class="num">1.33</td></tr>
+        <tr><td class="num">7</td><td class="num">1.25</td><td class="num">7</td><td class="num">1.60</td></tr>
+        <tr><td class="num">8</td><td class="num">1.67</td><td class="num">8</td><td class="num">2.00</td></tr>
+        <tr><td class="num">9</td><td class="num">2.50</td><td class="num">9</td><td class="num">2.67</td></tr>
+        <tr><td class="num">—</td><td class="num">—</td><td class="num">10</td><td class="num">4.00</td></tr>
+        <tr><td class="num">—</td><td class="num">—</td><td class="num">11+</td><td class="num">8.00+</td></tr>
+      </table></div>
+      <ul>
+        <li><strong>E</strong> is <code>1 ÷ P(hit)</code>, normalised so Evasion 6 = 1.00.</li>
+        <li><strong>A</strong> is <code>1 ÷ P(damage)</code> vs a reference AP 1 attack, normalised so Armor 4 = 1.00.</li>
+        <li><strong>S</strong> (Speed) = <code>1 + (Speed − 5) × 0.06</code></li>
+        <li><strong>M</strong> (Mettle) = <code>1 + (Mettle − 4) × 0.06</code></li>
+      </ul>
+      <div class="rule-box brass">
+        <p><strong>Why the terms multiply rather than add.</strong> Being good at <em>everything</em>
+        has to cost superlinearly, or elite units are undercosted by construction. An Oathkeeper
+        pays not for durability <em>plus</em> mobility but durability <em>×</em> mobility — 3.8× a
+        Guardsman per model, before weapons. Most units cannot afford to be fast <em>and</em> armored
+        <em>and</em> tough, and that is the intended pressure: <strong>for an elite unit, the cost is
+        the downside.</strong></p>
+      </div>
+
+      <h3>Step 2 · Weapon cost</h3>
+      <p>Weapons are priced against <strong>two reference targets</strong>, because a single one
+      badly misprices anti-tank guns.</p>
+      <div class="formula">Soft target — EVA 6 / ARM 4     Hard target — EVA 5 / ARM 8
+
+Soft  = Attacks × 0.5 × P_soft × min(Damage, 2)
+Hard  = Attacks × 0.6 × P_hard × Damage
+Value = (Soft + Hard) ÷ 2
+
+Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
+      <ul>
+        <li><code>min(Damage, 2)</code> is an <strong>overkill cap</strong> — a Damage 10 shell is no
+        better than a Damage 2 one against a Toughness 1 rifleman. Without it, every anti-tank weapon
+        prices as though it were also the best anti-infantry weapon in the game.</li>
+        <li>The final term is the <strong>penetration × volume premium</strong>. A weapon that is
+        both piercing and high-volume is the strongest thing on the table.</li>
+        <li><strong>Melee weapons</strong> subtract the value of an equivalent unarmed attack, since
+        that baseline is free (§04).</li>
+      </ul>
+      <p><strong>Range multiplier R</strong> = <code>0.6 + Range ÷ 30</code>, with melee at 0.85.</p>
+
+      <h3>Weapon traits</h3>
+      <p>Every trait is multiplicative — value scales with what the weapon already does, so cost
+      should too. Rather than individually arguing ~15 trait values, they're grouped into
+      <strong>two bonus tiers and two restriction tiers</strong>, each one fixed multiplier.
+      Bonus tier: does the trait change the <em>shape</em> of the attack (major), or just improve
+      the odds on an otherwise-normal shot (minor)? Restriction tier: does it narrow <em>what</em>
+      can be targeted (minor), or <em>when</em> the unit can act at all (major) — <code>Heavy</code>
+      sits alone in the major tier, since "can't move and shoot" is a different category of cost
+      than "can only shoot in one direction."</p>
+      <div class="tw"><table>
+        <tr><th>Tier</th><th class="num">×</th><th>Traits</th></tr>
+        <tr><td class="k">Major bonus</td><td class="num">1.30</td><td>Linked-Weapon, Blast (L), Engulf (L), Guided, Indirect</td></tr>
+        <tr><td class="k">Minor bonus</td><td class="num">1.10</td><td>Accurate, Blast (S), Engulf (S), Suppressing, Turret, Pistol</td></tr>
+        <tr><td class="k">Minor restriction</td><td class="num">0.90</td><td>Coaxial, Frontal/Rear/Side Arc</td></tr>
+        <tr><td class="k">Major restriction</td><td class="num">0.75</td><td>Heavy</td></tr>
+        <tr><td class="k">Anti-[Keyword] <em>(each, stacks)</em></td><td class="num">1.20</td><td>—</td></tr>
+      </table></div>
+
+      <div class="rule-box brass">
+        <p><strong>Multiple traits compound, they don't add.</strong> A weapon with traits A and B
+        costs <code>base × A × B</code>, not <code>base × (1 + (A−1) + (B−1))</code>. Deliberate,
+        documented here because the two diverge fast: 2 major bonuses stacked is a 5.6% gap between
+        compounding and adding, 3 is 15.6%, a hypothetical 5-trait weapon is 48.5%. At the trait
+        counts actually on the roster (2–3) the gap barely registers — it only bites on a weapon
+        someone loads up with everything.</p>
+        <p>Compounding is <em>derived</em>, not merely chosen, for model stats — durability really is
+        <code>Toughness ÷ (P_hit × P_dmg)</code>, a genuine multiplicative relationship. Weapon
+        traits have no such derivation; the tier multipliers are hand-picked either way. So this is a
+        free design choice, made for consistency with that same instinct: the weapon tiers are
+        already about specialization (Obliterator, Automatic, and Special are deliberately
+        single-purpose, not swiss-army guns), and compounding actively discourages stacking many
+        bonus traits onto one weapon — reinforcing that theme rather than fighting it.</p>
+      </div>
+
+      <h3>Step 3 · Unit size scaling</h3>
+      <div class="formula">Size Factor = (N ÷ 10) ^ −0.15        [unit cost scales as N^0.85]</div>
+      <div class="tw"><table>
+        <tr><th class="num">Models</th><th class="num">1</th><th class="num">2</th><th class="num">3</th><th class="num">5</th><th class="num">8</th><th class="num">10</th><th class="num">16</th><th class="num">20</th></tr>
+        <tr><td class="k">Factor</td><td class="num">1.41</td><td class="num">1.27</td><td class="num">1.20</td><td class="num">1.11</td><td class="num">1.03</td><td class="num">1.00</td><td class="num">0.93</td><td class="num">0.90</td></tr>
+      </table></div>
+      <p>In alternating activation the scarce resource is the <strong>activation, not the
+      model</strong>. Sixteen bodies delivering one activation are worth less per model than five
+      delivering one. Overkill waste and coherency drag push the same way.</p>
+      <p class="note">Degradation is <em>not</em> the justification, despite being the intuitive one.
+      Average output over a unit's lifetime is <code>(N+1)/2N</code>, which collapses immediately and
+      then flattens — 55% at ten models, 53% at sixteen. It cannot explain a discount between those
+      two sizes.</p>
+
+      <h3>Step 4 · Faction signature-trait multipliers</h3>
+      <p>One per faction, applied to the whole unit total (see §14). Individually hand-priced rather
+      than tiered — there are only five of them in the whole game, so there's little pressure to
+      systematize the way the 15 weapon traits needed to be.</p>
+      <div class="tw"><table>
+        <tr><th>Trait</th><th class="num">×</th><th>Note</th></tr>
+        <tr><td class="k">Conscript</td><td class="num">0.75</td><td>Cost-reducing; see glossary</td></tr>
+        <tr><td class="k">Massed Ranks</td><td class="num">1.06</td><td>Regiments, min 8 models</td></tr>
+        <tr><td class="k">Hymnal</td><td class="num">1.08</td><td>Saints</td></tr>
+        <tr><td class="k">Bound Spirit</td><td class="num">1.10</td><td>Forgesworn</td></tr>
+        <tr><td class="k">Blood Debt</td><td class="num">1.12</td><td>Oathbreakers</td></tr>
+        <tr><td class="k">Oathbound</td><td class="num">1.15</td><td>Oathkeepers</td></tr>
+      </table></div>
+
+      <h3>Step 5 · Special/named unit abilities — flat, not multiplicative</h3>
+      <p>Priority Orders, Leadership Abilities, Triggered effects. These get a <strong>flat point
+      cost</strong>, on principle: a weapon trait multiplies because it modifies a base the weapon
+      already has, and a stat multiplies because durability is a genuine multiplicative relationship.
+      A standalone ability like "ignore Shaken entirely" doesn't modify either kind of base — it's a
+      capability, not a modifier — and its value has essentially nothing to do with how many guns the
+      unit is carrying. Charging a % of the unit's grand total would make the same ability cost more
+      on a unit that spent its points on weapons than one that spent them on chassis, which has
+      nothing to do with what the ability does.</p>
+      <div class="tw"><table>
+        <tr><th>Tier</th><th class="num">Cost</th><th>Use for</th></tr>
+        <tr><td class="k">Major</td><td class="num">15</td><td>Ignoring a whole state (Shaken, Suppressing), a strong once-per-game reroll, a wide-reaching aura</td></tr>
+        <tr><td class="k">Minor</td><td class="num">5</td><td>A narrow or conditional edge — situational, small in scope</td></tr>
+      </table></div>
+      <p>3× ratio, matching the bonus-trait tier gap (1.10 vs 1.30). These sit <strong>outside the
+      size-scaling curve</strong> — they usually attach to one model (a leader's Priority Order), not
+      the whole squad, so they shouldn't get cheaper just because the squad is large.</p>
+
+      <p>Other surcharges: <strong>Transport(X)</strong> = <code>X × 0.439</code>.</p>
+      <p class="note"><span class="pill open">Weakest layer</span> Every trait multiplier and ability
+      tier is a hand-assigned guess. Everything above them in the formula derives from probability.
+      This is where balance will break first.</p>
+
+      <h3>The currency scale</h3>
+      <div class="rule-box">
+        <p><code>BASE_MODEL</code> and <code>BASE_WEAPON</code> move <strong>together</strong>.
+        Multiplying both by the same factor rescales every cost proportionally and changes no
+        relative balance whatsoever — it is a pure unit conversion. They are calibrated so the anchor
+        Rifle Squad lands on exactly <strong>100 points</strong>.</p>
+      </div>
+    </section>
+
+    <!-- ===================== 12 ===================== -->
+    <section id="traits">
+      <div class="sec-head"><span class="n">12</span><h2>Trait Glossary</h2></div>
+
+      <h4>Targeting &amp; templates</h4>
+      <dl>
+        <dt>Blast (S/L)</dt><dd>May target a point instead of a model, centring a circular template. On a miss, scatter the point of impact 1d5" (S) or 1d10" (L) in the direction rolled. Targets cannot benefit from cover.</dd>
+        <dt>Engulf (S/L)</dt><dd>Uses a small or large teardrop template; targets cannot benefit from cover.</dd>
+        <dt>Indirect</dt><dd>May target an enemy without line of sight, provided an allied unit with Spotter has line of sight to that target.</dd>
+        <dt>Guided</dt><dd>If the target is visible to an allied RECON unit, decrease the target's Evasion by 3, disregarding all other modifiers.</dd>
+        <dt>Accurate</dt><dd>Ignore all range penalties.</dd>
+      </dl>
+
+      <h4>Firing restrictions</h4>
+      <dl>
+        <dt>Heavy</dt><dd>Cannot attack in the same activation its unit moved; if it attacks first, it cannot then move.</dd>
+        <dt>Hardpoints</dt><dd>Ignore the Heavy trait.</dd>
+        <dt>Pistol</dt><dd>May make a ranged attack while engaged, but only at an enemy unit it is engaged with.</dd>
+        <dt>Turret</dt><dd>May fire from any facing.</dd>
+        <dt>Frontal / Rear / Side Arc</dt><dd>May only target models in that facing.</dd>
+        <dt>Coaxial</dt><dd>Must target the same target as the weapon named in the annotation.</dd>
+        <dt>Linked-Weapon</dt><dd>Re-roll all misses.</dd>
+        <dt>Fixed</dt><dd>Cannot be removed, swapped, or exchanged for an upgrade. Used for equipment that comes as part of another weapon, such as a Bayonet on a Rifle.</dd>
+      </dl>
+
+      <h4>Damage &amp; suppression</h4>
+      <dl>
+        <dt>Suppressing</dt><dd>Targets gain a suppression marker regardless of the attack's outcome.</dd>
+        <dt>Anti-[Keyword]</dt><dd>Against a target with the matching keyword, each successful damage roll counts as <strong>two hits</strong> instead of one. Because hits are allocated individually, the extra hits may spill onto other models in the unit. Defined for every TYPE and CATEGORY.</dd>
+        <dt>Bulwark</dt><dd>Reduce incoming damage by 1, to a minimum of 1.</dd>
+      </dl>
+
+      <h4>Durability &amp; morale</h4>
+      <dl>
+        <dt>Regeneration</dt><dd>At the end of every round, regain 1d5 lost wounds.</dd>
+        <dt>Fearless</dt><dd>Ignores suppression markers on Mettle checks, and ignores the negative effects of deteriorating morale unless Routing.</dd>
+        <dt>Entrenched</dt><dd>While in cover, +1 Armor and re-roll failed Mettle checks.</dd>
+        <dt>Camouflaged</dt><dd>+1 Evasion while in cover.</dd>
+        <dt>All-Terrain</dt><dd>Ignores difficult terrain penalties.</dd>
+      </dl>
+
+      <h4>Cost-modifying</h4>
+      <dl>
+        <dt>Conscript <span class="pill">×0.75</span></dt>
+        <dd>This unit costs 25% less. It may <strong>never re-roll a die for any reason</strong>, and
+        may not take the Rally action. Conscripts get raw numbers and none of the benefits of
+        training: Entrenched's Mettle re-roll and Massed Ranks' to-hit re-roll both go dead, and once
+        suppressed they can only clear markers one at a time by passing checks they are bad at.</dd>
+      </dl>
+    </section>
+
+    <!-- ===================== 13 ===================== -->
+    <section id="roster">
+      <div class="sec-head"><span class="n">13</span><h2>Roster — Imperial Regiments</h2></div>
+      <p>Stat order is <span class="mono">Speed · Mettle · Evasion · Armor · Toughness</span>.
+      All costs are formula-derived; edit stats, never costs.</p>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-top"><h3>Rifle Squad</h3><span class="pts">100</span></div>
+          <p class="card-tags">Line · Infantry · 10 models · ANCHOR</p>
+          <div class="statline">
+            <div class="stat"><span class="lbl">Spd</span><span class="val">5"</span></div>
+            <div class="stat"><span class="lbl">Met</span><span class="val">4</span></div>
+            <div class="stat"><span class="lbl">Eva</span><span class="val">6</span></div>
+            <div class="stat"><span class="lbl">Arm</span><span class="val">4</span></div>
+            <div class="stat"><span class="lbl">Tuf</span><span class="val">1</span></div>
+          </div>
+          <div class="wpn">
+            <div><b>Rifle</b> · 18" · A1 · AP0 · D1</div>
+            <div><b>Bayonet</b> · Melee · A1 · AP0 · D1 · Fixed</div>
+          </div>
+          <ul><li>Entrenched</li><li>Boots on the Ground</li><li>Massed Ranks</li></ul>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>Conscript Mob</h3><span class="pts">78</span></div>
+          <p class="card-tags">Line · Infantry · 16 models</p>
+          <div class="statline">
+            <div class="stat"><span class="lbl">Spd</span><span class="val">5"</span></div>
+            <div class="stat"><span class="lbl">Met</span><span class="val">2</span></div>
+            <div class="stat"><span class="lbl">Eva</span><span class="val">6</span></div>
+            <div class="stat"><span class="lbl">Arm</span><span class="val">3</span></div>
+            <div class="stat"><span class="lbl">Tuf</span><span class="val">1</span></div>
+          </div>
+          <div class="wpn">
+            <div><b>Autogun</b> · 10" · A1 · AP0 · D1</div>
+            <div><em>No melee weapon — fights with Fists</em></div>
+          </div>
+          <ul><li>Entrenched</li><li>Boots on the Ground</li><li><strong>Conscript</strong></li></ul>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>Veteran Squad</h3><span class="pts">111</span></div>
+          <p class="card-tags">Line · Infantry · 8 models</p>
+          <div class="statline">
+            <div class="stat"><span class="lbl">Spd</span><span class="val">5"</span></div>
+            <div class="stat"><span class="lbl">Met</span><span class="val">5</span></div>
+            <div class="stat"><span class="lbl">Eva</span><span class="val">6</span></div>
+            <div class="stat"><span class="lbl">Arm</span><span class="val">5</span></div>
+            <div class="stat"><span class="lbl">Tuf</span><span class="val">1</span></div>
+          </div>
+          <div class="wpn">
+            <div><b>Rifle</b> ×6 · <b>Bayonet</b> ×6</div>
+            <div><b>Plasma Rifle</b> ×1 · 18" · A1 · AP3 · D2</div>
+            <div><b>Light MG</b> ×1 · 18" · A4 · AP0 · D1</div>
+          </div>
+          <ul><li>Entrenched</li><li>Boots on the Ground</li><li>Massed Ranks</li></ul>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>Storm Squad</h3><span class="pts">143</span></div>
+          <p class="card-tags">Shock · Infantry · 8 models</p>
+          <div class="statline">
+            <div class="stat"><span class="lbl">Spd</span><span class="val">6"</span></div>
+            <div class="stat"><span class="lbl">Met</span><span class="val">5</span></div>
+            <div class="stat"><span class="lbl">Eva</span><span class="val">7</span></div>
+            <div class="stat"><span class="lbl">Arm</span><span class="val">5</span></div>
+            <div class="stat"><span class="lbl">Tuf</span><span class="val">1</span></div>
+          </div>
+          <div class="wpn">
+            <div><b>Submachine Gun</b> ×6 · 8" · A3 · AP0 · D1</div>
+            <div><b>Flamethrower</b> ×1 · 8" · A1 · AP0 · D1 · Engulf (S)</div>
+            <div><b>Combat Axe</b> ×8 · Melee · A1 · AP0 · D2</div>
+          </div>
+          <ul><li>Brutal Assault</li><li>Massed Ranks</li></ul>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>Scout Element</h3><span class="pts">76</span></div>
+          <p class="card-tags">Recon · Infantry · 5 models</p>
+          <div class="statline">
+            <div class="stat"><span class="lbl">Spd</span><span class="val">6"</span></div>
+            <div class="stat"><span class="lbl">Met</span><span class="val">4</span></div>
+            <div class="stat"><span class="lbl">Eva</span><span class="val">7</span></div>
+            <div class="stat"><span class="lbl">Arm</span><span class="val">4</span></div>
+            <div class="stat"><span class="lbl">Tuf</span><span class="val">1</span></div>
+          </div>
+          <div class="wpn">
+            <div><b>Scout Autogun</b> · 18" · A2 · AP0 · D1</div>
+            <div><b>Combat Knife</b> · Melee · A1 · AP0 · D1</div>
+          </div>
+          <ul><li>Spotter</li><li>Camouflaged</li><li>All-Terrain</li></ul>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>Regimental Officer</h3><span class="pts">58</span></div>
+          <p class="card-tags">Command · Infantry · 1 model</p>
+          <div class="statline">
+            <div class="stat"><span class="lbl">Spd</span><span class="val">5"</span></div>
+            <div class="stat"><span class="lbl">Met</span><span class="val">6</span></div>
+            <div class="stat"><span class="lbl">Eva</span><span class="val">6</span></div>
+            <div class="stat"><span class="lbl">Arm</span><span class="val">4</span></div>
+            <div class="stat"><span class="lbl">Tuf</span><span class="val">3</span></div>
+          </div>
+          <div class="wpn">
+            <div><b>Sidearm</b> · 8" · A2 · AP0 · D1 · Pistol</div>
+            <div><b>Power Maul</b> · Melee · A2 · AP1 · D2</div>
+          </div>
+          <ul><li>Leadership Aura</li><li>One Priority Order (major, +15)</li></ul>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>Heavy Weapons Team</h3><span class="pts">77</span></div>
+          <p class="card-tags">Support · Infantry · 1 model</p>
+          <div class="statline">
+            <div class="stat"><span class="lbl">Spd</span><span class="val">5"</span></div>
+            <div class="stat"><span class="lbl">Met</span><span class="val">4</span></div>
+            <div class="stat"><span class="lbl">Eva</span><span class="val">6</span></div>
+            <div class="stat"><span class="lbl">Arm</span><span class="val">4</span></div>
+            <div class="stat"><span class="lbl">Tuf</span><span class="val">3</span></div>
+          </div>
+          <div class="wpn">
+            <div><b>Heavy MG</b> · 24" · A4 · AP2 · D2</div>
+            <div>Anti-Infantry, Heavy, Suppressing</div>
+          </div>
+          <ul><li>Where We're Needed</li><li>Emplaced Weapon</li></ul>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>Field Gun Battery</h3><span class="pts">62</span></div>
+          <p class="card-tags">Support · Towable · 1 model</p>
+          <div class="statline">
+            <div class="stat"><span class="lbl">Spd</span><span class="val">4"</span></div>
+            <div class="stat"><span class="lbl">Met</span><span class="val">4</span></div>
+            <div class="stat"><span class="lbl">Eva</span><span class="val">5</span></div>
+            <div class="stat"><span class="lbl">Arm</span><span class="val">4</span></div>
+            <div class="stat"><span class="lbl">Tuf</span><span class="val">4</span></div>
+          </div>
+          <div class="wpn">
+            <div><b>Field Howitzer</b> · 36" · A1 · AP3 · D4</div>
+            <div>Blast (L), Heavy, Indirect</div>
+          </div>
+          <ul><li>Trailor</li><li>Emplaced Weapon</li></ul>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>Armored Personnel Carrier</h3><span class="pts">120</span></div>
+          <p class="card-tags">Support · Vehicle · Bus · Transport (14)</p>
+          <div class="statline">
+            <div class="stat"><span class="lbl">Spd</span><span class="val">8"</span></div>
+            <div class="stat"><span class="lbl">Met</span><span class="val">4</span></div>
+            <div class="stat"><span class="lbl">Eva</span><span class="val">5</span></div>
+            <div class="stat"><span class="lbl">Arm</span><span class="val">6</span></div>
+            <div class="stat"><span class="lbl">Tuf</span><span class="val">8</span></div>
+          </div>
+          <div class="wpn">
+            <div><b>Light MG</b> · 18" · A4 · AP0 · D1</div>
+            <div>Anti-Infantry, Suppressing</div>
+          </div>
+          <ul><li>Armored Front</li><li>Hardpoints</li><li>Open-Topped</li></ul>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>Tank Destroyer</h3><span class="pts">176</span></div>
+          <p class="card-tags">Armor · Vehicle · 1 model</p>
+          <div class="statline">
+            <div class="stat"><span class="lbl">Spd</span><span class="val">7"</span></div>
+            <div class="stat"><span class="lbl">Met</span><span class="val">5</span></div>
+            <div class="stat"><span class="lbl">Eva</span><span class="val">4</span></div>
+            <div class="stat"><span class="lbl">Arm</span><span class="val">8</span></div>
+            <div class="stat"><span class="lbl">Tuf</span><span class="val">9</span></div>
+          </div>
+          <div class="wpn">
+            <div><b>Laser Cannon</b> · 30" · A1 · AP6 · D6</div>
+            <div>Anti-Armor, Anti-Vehicle, Heavy</div>
+          </div>
+          <ul><li>Bulwark</li><li>Hardpoints</li><li>Armored Front</li></ul>
+        </div>
+
+        <div class="card">
+          <div class="card-top"><h3>Armored Fighting Vehicle</h3><span class="pts">239</span></div>
+          <p class="card-tags">Armor · Vehicle · 1 model</p>
+          <div class="statline">
+            <div class="stat"><span class="lbl">Spd</span><span class="val">8"</span></div>
+            <div class="stat"><span class="lbl">Met</span><span class="val">5</span></div>
+            <div class="stat"><span class="lbl">Eva</span><span class="val">4</span></div>
+            <div class="stat"><span class="lbl">Arm</span><span class="val">7</span></div>
+            <div class="stat"><span class="lbl">Tuf</span><span class="val">10</span></div>
+          </div>
+          <div class="wpn">
+            <div><b>Main Cannon</b> · 30" · A2 · AP5 · D7 · Turret</div>
+            <div><b>Medium MG</b> · 20" · A4 · AP1 · D1</div>
+          </div>
+          <ul><li>Bulwark</li><li>Hardpoints</li><li>Armored Front</li></ul>
+        </div>
+
+      </div>
+
+      <h3>Weapon library</h3>
+      <div class="tw"><table>
+        <tr><th>Weapon</th><th class="num">Rng</th><th class="num">A</th><th class="num">AP</th><th class="num">D</th><th>Traits</th></tr>
+        <tr><td class="k">Autogun</td><td class="num">10"</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
+        <tr><td class="k">Carbine</td><td class="num">12"</td><td class="num">2</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
+        <tr><td class="k">Rifle</td><td class="num">18"</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
+        <tr><td class="k">Scout Autogun</td><td class="num">18"</td><td class="num">2</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
+        <tr><td class="k">Marksman Rifle</td><td class="num">24"</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td>Accurate</td></tr>
+        <tr><td class="k">Submachine Gun</td><td class="num">8"</td><td class="num">3</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
+        <tr><td class="k">Sidearm</td><td class="num">8"</td><td class="num">2</td><td class="num">0</td><td class="num">1</td><td>Pistol</td></tr>
+        <tr><td class="k">Bayonet</td><td class="num">M</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>Fixed</td></tr>
+        <tr><td class="k">Combat Knife</td><td class="num">M</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
+        <tr><td class="k">Combat Axe</td><td class="num">M</td><td class="num">1</td><td class="num">0</td><td class="num">2</td><td>—</td></tr>
+        <tr><td class="k">Power Maul</td><td class="num">M</td><td class="num">2</td><td class="num">1</td><td class="num">2</td><td>—</td></tr>
+        <tr><td class="k">Flamethrower</td><td class="num">8"</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>Engulf (S)</td></tr>
+        <tr><td class="k">Grenade Launcher</td><td class="num">18"</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>Blast (S), Indirect</td></tr>
+        <tr><td class="k">Plasma Rifle</td><td class="num">18"</td><td class="num">1</td><td class="num">3</td><td class="num">2</td><td>—</td></tr>
+        <tr><td class="k">Light Machine Gun</td><td class="num">18"</td><td class="num">4</td><td class="num">0</td><td class="num">1</td><td>Anti-Infantry, Suppressing</td></tr>
+        <tr><td class="k">Medium Machine Gun</td><td class="num">20"</td><td class="num">4</td><td class="num">1</td><td class="num">1</td><td>Anti-Infantry, Heavy, Suppressing</td></tr>
+        <tr><td class="k">Heavy Machine Gun</td><td class="num">24"</td><td class="num">4</td><td class="num">2</td><td class="num">2</td><td>Anti-Infantry, Heavy, Suppressing</td></tr>
+        <tr><td class="k">Light Autocannon</td><td class="num">24"</td><td class="num">3</td><td class="num">3</td><td class="num">2</td><td>Heavy, Suppressing</td></tr>
+        <tr><td class="k">Field Howitzer</td><td class="num">36"</td><td class="num">1</td><td class="num">3</td><td class="num">4</td><td>Blast (L), Heavy, Indirect</td></tr>
+        <tr><td class="k">Missile Launcher</td><td class="num">30"</td><td class="num">1</td><td class="num">4</td><td class="num">5</td><td>Anti-Vehicle, Blast (S), Guided, Heavy, Indirect</td></tr>
+        <tr><td class="k">Main Cannon</td><td class="num">30"</td><td class="num">2</td><td class="num">5</td><td class="num">7</td><td>Turret</td></tr>
+        <tr><td class="k">Laser Cannon</td><td class="num">30"</td><td class="num">1</td><td class="num">6</td><td class="num">6</td><td>Anti-Armor, Anti-Vehicle, Heavy</td></tr>
+      </table></div>
+
+      <h3>Squad options</h3>
+      <p class="note"><span class="pill open">Not yet built</span> Specified but not implemented in
+      the generator — enter manually.</p>
+      <div class="tw"><table>
+        <tr><td class="k">Promote NCO</td><td>One trooper becomes an NCO; the unit gains +1 Mettle. ~5 pts. Universal across factions, but faction-priced.</td></tr>
+        <tr><td class="k">Special weapons</td><td>Up to 2 troopers swap Rifle for Flamethrower, Grenade Launcher, or Plasma Rifle.</td></tr>
+        <tr><td class="k">Embedded Heavy Weapons Team</td><td>Attaches and re-categorises as LINE, so it does not consume a SUPPORT slot.</td></tr>
+        <tr><td class="k">Dedicated Transport</td><td>An APC, inheriting LINE category.</td></tr>
+      </table></div>
+    </section>
+
+    <!-- ===================== 14 ===================== -->
+    <section id="factions">
+      <div class="sec-head"><span class="n">14</span><h2>Faction Identity</h2></div>
+
+      <div class="rule-box brass">
+        <p><strong>One signature trait per faction.</strong> Everything else — weapon list,
+        equipment, category caps, doctrine — exists to reinforce that single idea.</p>
+        <p>The formula prices stats from real probability curves, so <strong>stat divergence is
+        nearly free</strong>. Traits are hand-priced guesses. Be generous with stats, stingy with
+        traits.</p>
+      </div>
+
+      <h3>Unit naming — Imperial Regiments</h3>
+      <p>Two separate naming conventions, deliberately contrasting: <strong>machines get predator
+      nicknames</strong> (what the factory built), <strong>soldiers get martial titles</strong>
+      (what the person earned or was assigned).</p>
+
+      <div class="tw"><table>
+        <tr><th>Vehicle (Mustelidae)</th><th>Weight class</th><th>Role</th></tr>
+        <tr><td class="k">Stoat</td><td>Light</td><td>Scout Bus (Transport 10)</td></tr>
+        <tr><td class="k">Weasel</td><td>Light</td><td>Recon Car (no transport)</td></tr>
+        <tr><td class="k">Mink</td><td>Light</td><td>Light Gunboat (2× autogun, Transport 4)</td></tr>
+        <tr><td class="k">Marten</td><td>Medium</td><td>Bus (Transport 14)</td></tr>
+        <tr><td class="k">Sable</td><td>Medium</td><td>Gunboat (autocannon, Transport 6)</td></tr>
+        <tr><td class="k">Fisher</td><td>Medium</td><td>Tank Destroyer turret (Main Cannon)</td></tr>
+        <tr><td class="k">Tayra</td><td>Medium</td><td>Self-Propelled Gun (Howitzer)</td></tr>
+        <tr><td class="k">Wolverine</td><td>Apex — bespoke, not a family</td><td>Laser Cannon specialist</td></tr>
+        <tr><td class="k"><em>Badger, Otter</em></td><td>Reserved</td><td><em>Badger for a future Sapper engineering vehicle (badgers dig); Otter for a future amphibious variant</em></td></tr>
+      </table></div>
+
+      <div class="tw"><table>
+        <tr><th>Infantry title</th><th>Unit</th></tr>
+        <tr><td class="k">Levy</td><td>Conscript Mob — pulls directly from the Levy Oath tier, not just flavor text</td></tr>
+        <tr><td class="k">Fusilier</td><td>Rifle Squad</td></tr>
+        <tr><td class="k">Grenadier</td><td>Veteran Squad</td></tr>
+        <tr><td class="k">Vanguard</td><td>Storm Squad</td></tr>
+        <tr><td class="k">Ranger</td><td>Scout Element</td></tr>
+        <tr><td class="k">Ballistier <span class="pill open">Provisional</span></td><td>Heavy Weapons Team — flexible loadout (MG/autocannon/recoilless); fallback name "Weapons Squad" if this doesn't stick</td></tr>
+        <tr><td class="k">Sapper</td><td>Combat engineer — <span class="pill open">Undesigned</span> terrain-clearing/breaching unit, answers §09's terrain-density rule</td></tr>
+        <tr><td class="k">Hunter</td><td>Man-portable ATGM team — <span class="pill open">Undesigned</span>, reusable weapon (not one-shot), ~12.4 pts as a squad upgrade at A1/AP5/D4/18"</td></tr>
+        <tr><td class="k">Dragoon</td><td>Mechanized infantry, the thesis-statement unit for INF+vehicle synergy — see <strong>Rapid Deployment</strong> below</td></tr>
+      </table></div>
+
+      <h3>Dragoon — Rapid Deployment</h3>
+      <p>Historical dragoons were named for the firearm they carried, not the horse — the horse was
+      only ever the delivery system. That's the whole identity: a unit defined by its gun, whose
+      mobility exists to get that gun into position faster than the enemy can react, not to win a
+      melee. Modern shoot-and-scoot doctrine (originally a self-propelled artillery term) adds the
+      other half — the actual resource being spent every activation is <strong>exposure time</strong>,
+      not toughness or numbers.</p>
+
+      <div class="rule-box brass">
+        <p><strong>Rapid Deployment</strong> — When the friendly Transport carrying this unit
+        activates, it may order this unit to disembark as part of that activation, subject to the
+        hull's fire-or-deliver restriction above. This unit disembarks immediately, at no cost to its
+        own Move stat and without spending either of its own actions. When this unit is later
+        activated, both of its actions are available as normal.</p>
+        <p>This unit may embark in or disembark from <strong>any</strong> friendly Transport, not a
+        specific chassis — the mechanized identity isn't tied to one hull.</p>
+        <p>This unit may never be equipped with a weapon that has the <strong>Heavy</strong> trait.
+        Hitting hard and fast is the whole point; a weapon that can't fire in the same activation it
+        moved is the opposite of that.</p>
+      </div>
+
+      <p class="note">Deliberately <strong>not</strong> gated behind a Mettle check or a resource
+      cost. The balance is structural, not probabilistic: the unit is rented from the Transport, not
+      owned outright, and the player is paying for two units — the Dragoons and whatever's carrying
+      them — to get one effect. Kill the Transport and Rapid Deployment is gone for the rest of the
+      game, no dice roll required to make that sting.</p>
+
+      <p><strong>The premise:</strong> magic in this world is <em>sworn</em>, not cast. An oath kept
+      channels power; an oath broken inverts into something worse. The <strong>Sworn Empire</strong>
+      is not a state that uses oath-magic — it <em>is</em> the oath-network, and citizenship is a
+      contract position. "Chaos" is the breaking of the <strong>First Binding</strong> that holds the
+      plane itself, which collapses every scale of oathbreaking into one act: a deserter and a daemon
+      are the same event at different magnitudes.</p>
+
+      <div class="tw"><table>
+        <tr><th>Faction</th><th>Oath tier</th><th>Signature trait</th><th>Character</th></tr>
+        <tr>
+          <td class="k">Imperial Regiments</td><td>Levy Oath</td>
+          <td><strong>Massed Ranks</strong> — at 8+ models, re-roll to-hit 1s and +1 Mettle</td>
+          <td><em>Coordination.</em> The complete classical army, and the teaching faction.</td>
+        </tr>
+        <tr>
+          <td class="k">Imperial Forgesworn</td><td>Binding Oath</td>
+          <td><strong>Bound Spirit</strong> — no Mettle stat; auto-passes checks and ignores suppression, but cannot benefit from Leadership Aura</td>
+          <td><em>Overmatch.</em> Out-ranges everyone; slow, and cannot hold what it kills.</td>
+        </tr>
+        <tr>
+          <td class="k">Imperial Saints</td><td>Choral Oath</td>
+          <td><strong>Hymnal</strong> — +1 Mettle while within 6" of another friendly Hymnal unit</td>
+          <td><em>Convergence.</em> The faction that physically clusters.</td>
+        </tr>
+        <tr>
+          <td class="k">Imperial Oathkeepers</td><td>Deep Oath</td>
+          <td><strong>Oathbound</strong> — while unwounded, attacks against it are at −1 AP; auto-passes its first check; removed from play rather than Routing</td>
+          <td><em>Compression.</em> Infantry doing three jobs, at the cost of few activations.</td>
+        </tr>
+        <tr>
+          <td class="k">Oathbreaker Legions</td><td>Deep Oath, inverted</td>
+          <td><strong>Blood Debt</strong> — +1 AP per wound suffered this round, to +3</td>
+          <td><em>Tempo.</em> Collapses the game before your arms can cooperate.</td>
+        </tr>
+      </table></div>
+
+      <h3>Armor doctrine by hull class</h3>
+      <div class="tw"><table>
+        <tr><td class="k">Regiments</td><td><strong>Bus</strong> — armor and transport stay separate things.</td></tr>
+        <tr><td class="k">Forgesworn</td><td><strong>Gunboat</strong>, rarely — constructs mostly walk.</td></tr>
+        <tr><td class="k">Oathkeepers</td><td><strong>Gunboat</strong> — a low ARMOR cap does not make them armor-poor, it makes their armor <em>carry infantry</em>.</td></tr>
+        <tr><td class="k">Saints</td><td><strong>Assault Transport</strong> — their question is "can I close?"</td></tr>
+        <tr><td class="k">Oathbreakers</td><td><strong>Assault Transport</strong> — same answer, worse patience.</td></tr>
+      </table></div>
+
+      <h3>Xenos — outside the network</h3>
+      <p>The Oath is a <em>human</em> technology. Each xenos faction is defined by how it fails to fit
+      the network, which makes each an attack on a different part of the rulebook. All are stubs.</p>
+      <div class="tw"><table>
+        <tr><th>Faction</th><th>Relationship</th><th>Mechanical hook</th></tr>
+        <tr><td class="k">The Unspoken</td><td>Cannot swear — no voice, no self.</td><td><strong>No Mettle stat at all.</strong> Immune to suppression and the whole morale track.</td></tr>
+        <tr><td class="k">The Interred</td><td>An oath that outlived its purpose.</td><td>Slow, immensely tough, and <strong>returns</strong> — the contract is not finished.</td></tr>
+        <tr><td class="k">The Thornbound</td><td>Loophole masters; every oath has an escape clause.</td><td>Fast, fragile, conditional. Rules that trigger on <em>breaking</em> an agreement.</td></tr>
+        <tr><td class="k">Scrapjaw Hordes</td><td>The oath is a joke.</td><td>Cheap and numerous, and <strong>never Rout</strong> — nothing in them to break.</td></tr>
+      </table></div>
+    </section>
+
+    <!-- ===================== 15 ===================== -->
+    <section id="open">
+      <div class="sec-head"><span class="n">15</span><h2>Open Threads</h2></div>
+      <ol>
+        <li><strong>The four trait-tier multipliers are still guesses.</strong> Simplified from ~15
+        individually-argued values down to one number per tier (major/minor bonus, major/minor
+        restriction), but every other number in the formula derives from probability and these still
+        don't. First thing playtesting should attack.</li>
+        <li><strong>ARMOR and SUPPORT generic Platoon Abilities</strong> are undesigned.</li>
+        <li><strong>The AFV at 239</strong> is 2.4 rifle squads — 24% of a 1000-point list. If
+        centrepieces feel over-taxed, soften the size exponent from 0.85 toward 0.90.</li>
+        <li><strong>Squad upgrade options</strong> are specified but not generated — NCO, special
+        weapons, embedded HWT, dedicated transport.</li>
+        <li><strong>Dice volume at the top end</strong> is untested. Two rolls per attack is fine at
+        rifle scale; an Attacks 4 weapon across several models will find the ceiling.</li>
+        <li><strong>Alpha strike.</strong> A Damage 7–10 gun against Toughness 10 deletes the most
+        expensive unit class in one hit.</li>
+        <li><strong>Facings have no general section.</strong> Armored Front and the arc traits imply
+        one; none is written.</li>
+        <li><strong>No mission or scenario</strong> exists against the current rules.</li>
+        <li><strong>Conscripts have no melee weapon at all</strong> — a good differentiator that
+        arrived by accident. Worth keeping on purpose.</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>Praxis Belli · working reference v0.4</span>
+    <span>Anchor: Rifle Squad = 100 pts</span>
+  </footer>
+
+</div>

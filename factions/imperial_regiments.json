@@ -1,0 +1,140 @@
+{
+  "faction": "Imperial Regiments",
+  "_note": "Massed conscript infantry backed by armor. Cheap bodies, poor Mettle, wins by weight of numbers and heavy weapons. Points are formula-derived; edit stats, not costs.",
+
+  "faction_trait": {
+    "name": "Massed Ranks",
+    "multiplier": 1.06,
+    "min_size": 8,
+    "text": "While this unit contains 8 or more models, it re-rolls to-hit results of 1 and gains +1 Mettle."
+  },
+
+  "weapons": {
+    "Rifle":              { "range": 18, "attacks": 1, "ap": 0, "damage": 1, "traits": [] },
+    "Carbine":            { "range": 12, "attacks": 2, "ap": 0, "damage": 1, "traits": [] },
+    "Autogun":            { "range": 10, "attacks": 1, "ap": 0, "damage": 1, "traits": [] },
+    "Submachine Gun":     { "range": 8,  "attacks": 3, "ap": 0, "damage": 1, "traits": [] },
+    "Sidearm":            { "range": 8,  "attacks": 2, "ap": 0, "damage": 1, "traits": ["Pistol"] },
+    "Bayonet":            { "range": "M","attacks": 1, "ap": 0, "damage": 1, "traits": ["Fixed"] },
+    "Combat Knife":       { "range": "M","attacks": 1, "ap": 0, "damage": 1, "traits": [] },
+    "Combat Axe":         { "range": "M","attacks": 1, "ap": 0, "damage": 2, "traits": [] },
+    "Power Maul":         { "range": "M","attacks": 2, "ap": 1, "damage": 2, "traits": [] },
+    "Flamethrower":       { "range": 8,  "attacks": 1, "ap": 0, "damage": 1, "traits": ["Engulf (S)"] },
+    "Grenade Launcher":   { "range": 18, "attacks": 1, "ap": 0, "damage": 1, "traits": ["Blast (S)", "Indirect"] },
+    "Marksman Rifle":     { "range": 24, "attacks": 1, "ap": 1, "damage": 1, "traits": ["Accurate"] },
+    "Plasma Rifle":       { "range": 18, "attacks": 1, "ap": 3, "damage": 2, "traits": [] },
+    "Light Machine Gun":  { "range": 18, "attacks": 4, "ap": 0, "damage": 1, "traits": ["Anti-Infantry", "Suppressing"] },
+    "Medium Machine Gun": { "range": 20, "attacks": 4, "ap": 1, "damage": 1, "traits": ["Anti-Infantry", "Heavy", "Suppressing"] },
+    "Heavy Machine Gun":  { "range": 24, "attacks": 4, "ap": 2, "damage": 2, "traits": ["Anti-Infantry", "Heavy", "Suppressing"] },
+    "Light Autocannon":   { "range": 24, "attacks": 3, "ap": 3, "damage": 2, "traits": ["Heavy", "Suppressing"] },
+    "Missile Launcher":   { "range": 30, "attacks": 1, "ap": 4, "damage": 5, "traits": ["Anti-Vehicle", "Blast (S)", "Guided", "Heavy", "Indirect"] },
+    "Laser Cannon":       { "range": 30, "attacks": 1, "ap": 6, "damage": 6, "traits": ["Anti-Armor", "Anti-Vehicle", "Heavy"] },
+    "Main Cannon":        { "range": 30, "attacks": 2, "ap": 5, "damage": 7, "traits": ["Turret"] },
+    "Field Howitzer":     { "range": 36, "attacks": 1, "ap": 3, "damage": 4, "traits": ["Blast (L)", "Heavy", "Indirect"] },
+    "Scout Autogun":      { "range": 18, "attacks": 2, "ap": 0, "damage": 1, "traits": [] }
+  },
+
+  "units": [
+    {
+      "name": "Regimental Officer",
+      "category": "Command", "type": "Infantry", "size": 1,
+      "profile": { "speed": 5, "mettle": 6, "evasion": 6, "armor": 4, "toughness": 3 },
+      "weapons": [ { "name": "Sidearm" }, { "name": "Power Maul" } ],
+      "rules": ["Leadership Aura"],
+      "extras": [ { "name": "Priority Order", "tier": "major" } ]
+    },
+    {
+      "name": "Rifle Squad",
+      "category": "Line", "type": "Infantry", "size": 10,
+      "profile": { "speed": 5, "mettle": 4, "evasion": 6, "armor": 4, "toughness": 1 },
+      "weapons": [
+        { "name": "Rifle", "count": 10 },
+        { "name": "Bayonet", "count": 10 }
+      ],
+      "rules": ["Entrenched", "Boots on the Ground"]
+    },
+    {
+      "name": "Veteran Squad",
+      "category": "Line", "type": "Infantry", "size": 8,
+      "profile": { "speed": 5, "mettle": 5, "evasion": 6, "armor": 5, "toughness": 1 },
+      "weapons": [
+        { "name": "Rifle", "count": 6 },
+        { "name": "Bayonet", "count": 6 },
+        { "name": "Plasma Rifle", "count": 1 },
+        { "name": "Light Machine Gun", "count": 1 }
+      ],
+      "rules": ["Entrenched", "Boots on the Ground"]
+    },
+    {
+      "name": "Conscript Mob",
+      "category": "Line", "type": "Infantry", "size": 16,
+      "profile": { "speed": 5, "mettle": 2, "evasion": 6, "armor": 3, "toughness": 1 },
+      "weapons": [ { "name": "Autogun", "count": 16 } ],
+      "rules": ["Entrenched", "Boots on the Ground"],
+      "modifiers": [
+        { "name": "Conscript", "multiplier": 0.75,
+          "text": "This unit may never re-roll a die for any reason, and may not take the Rally action." }
+      ]
+    },
+    {
+      "name": "Storm Squad",
+      "category": "Shock", "type": "Infantry", "size": 8,
+      "profile": { "speed": 6, "mettle": 5, "evasion": 7, "armor": 5, "toughness": 1 },
+      "weapons": [
+        { "name": "Submachine Gun", "count": 6 },
+        { "name": "Flamethrower", "count": 1 },
+        { "name": "Combat Axe", "count": 8 }
+      ],
+      "rules": ["Brutal Assault"]
+    },
+    {
+      "name": "Scout Element",
+      "category": "Recon", "type": "Infantry", "size": 5,
+      "profile": { "speed": 6, "mettle": 4, "evasion": 7, "armor": 4, "toughness": 1 },
+      "weapons": [
+        { "name": "Scout Autogun", "count": 5 },
+        { "name": "Combat Knife", "count": 5 }
+      ],
+      "rules": ["Spotter", "Camouflaged", "All-Terrain"]
+    },
+    {
+      "name": "Heavy Weapons Team",
+      "category": "Support", "type": "Infantry", "size": 1,
+      "profile": { "speed": 5, "mettle": 4, "evasion": 6, "armor": 4, "toughness": 3 },
+      "weapons": [ { "name": "Heavy Machine Gun" } ],
+      "rules": ["Where We're Needed", "Emplaced Weapon"]
+    },
+    {
+      "name": "Field Gun Battery",
+      "category": "Support", "type": "Towable", "size": 1,
+      "profile": { "speed": 4, "mettle": 4, "evasion": 5, "armor": 4, "toughness": 4 },
+      "weapons": [ { "name": "Field Howitzer" } ],
+      "rules": ["Trailor", "Emplaced Weapon"]
+    },
+    {
+      "name": "Armored Personnel Carrier",
+      "category": "Support", "type": "Vehicle", "size": 1,
+      "profile": { "speed": 8, "mettle": 4, "evasion": 5, "armor": 6, "toughness": 8 },
+      "weapons": [ { "name": "Light Machine Gun" } ],
+      "transport": 14,
+      "rules": ["Armored Front", "Hardpoints", "Open-Topped"]
+    },
+    {
+      "name": "Armored Fighting Vehicle",
+      "category": "Armor", "type": "Vehicle", "size": 1,
+      "profile": { "speed": 8, "mettle": 5, "evasion": 4, "armor": 7, "toughness": 10 },
+      "weapons": [
+        { "name": "Main Cannon" },
+        { "name": "Medium Machine Gun" }
+      ],
+      "rules": ["Bulwark", "Hardpoints", "Armored Front"]
+    },
+    {
+      "name": "Tank Destroyer",
+      "category": "Armor", "type": "Vehicle", "size": 1,
+      "profile": { "speed": 7, "mettle": 5, "evasion": 4, "armor": 8, "toughness": 9 },
+      "weapons": [ { "name": "Laser Cannon" } ],
+      "rules": ["Bulwark", "Hardpoints", "Armored Front"]
+    }
+  ]
+}
