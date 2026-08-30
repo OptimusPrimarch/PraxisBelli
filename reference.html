@@ -395,7 +395,9 @@
     <p class="standfirst">
       Every mechanic, stat line, and trait decided so far, in one place — written to be
       transcribed into BattleScribe rather than read cover to cover. Where a decision has a
-      reason worth keeping, the reason is recorded with it.
+      reason worth keeping, the reason is recorded with it. While actively revising stats
+      together, this document leads; otherwise <b>NewRecruit is the default source of truth</b> —
+      surface it as a conflict if the two disagree, don't silently overwrite either one.
     </p>
     <p class="meta">
       <span><b>Version</b> 0.4</span>
@@ -907,7 +909,7 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       than "can only shoot in one direction."</p>
       <div class="tw"><table>
         <tr><th>Tier</th><th class="num">×</th><th>Traits</th></tr>
-        <tr><td class="k">Major bonus</td><td class="num">1.30</td><td>Linked-Weapon, Blast (L), Engulf (L), Guided, Indirect</td></tr>
+        <tr><td class="k">Major bonus</td><td class="num">1.30</td><td>Linked-Weapon, Blast (L), Engulf (L), Guided, Indirect, Overcharge</td></tr>
         <tr><td class="k">Minor bonus</td><td class="num">1.10</td><td>Accurate, Blast (S), Engulf (S), Suppressing, Turret, Pistol</td></tr>
         <tr><td class="k">Minor restriction</td><td class="num">0.90</td><td>Coaxial, Frontal/Rear/Side Arc</td></tr>
         <tr><td class="k">Major restriction</td><td class="num">0.75</td><td>Heavy</td></tr>
@@ -1001,6 +1003,7 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <dt>Indirect</dt><dd>May target an enemy without line of sight, provided an allied unit with Spotter has line of sight to that target.</dd>
         <dt>Guided</dt><dd>If the target is visible to an allied RECON unit, decrease the target's Evasion by 3, disregarding all other modifiers.</dd>
         <dt>Accurate</dt><dd>Ignore all range penalties.</dd>
+        <dt>Optics <span class="pill open">Stub</span></dt><dd>"Helps land hits" — mechanism not yet written. Currently costs nothing in the points formula; do not treat a weapon carrying it as finalized.</dd>
       </dl>
 
       <h4>Firing restrictions</h4>
@@ -1018,6 +1021,7 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       <h4>Damage &amp; suppression</h4>
       <dl>
         <dt>Suppressing</dt><dd>Targets gain a suppression marker regardless of the attack's outcome.</dd>
+        <dt>Overcharge</dt><dd>This weapon may fire in Overcharged mode: its AP and Damage are each increased by 2 for that attack. For each unmodified roll of 1 made for this weapon's attack, the bearer suffers a Damage 1 hit that cannot be saved against, in addition to any other effect of that roll.</dd>
         <dt>Anti-[Keyword]</dt><dd>Against a target with the matching keyword, each successful damage roll counts as <strong>two hits</strong> instead of one. Because hits are allocated individually, the extra hits may spill onto other models in the unit. Defined for every TYPE and CATEGORY.</dd>
         <dt>Bulwark</dt><dd>Reduce incoming damage by 1, to a minimum of 1.</dd>
       </dl>
@@ -1067,7 +1071,7 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         </div>
 
         <div class="card">
-          <div class="card-top"><h3>Conscript Mob</h3><span class="pts">78</span></div>
+          <div class="card-top"><h3>Conscript Mob</h3><span class="pts">80</span></div>
           <p class="card-tags">Line · Infantry · 16 models</p>
           <div class="statline">
             <div class="stat"><span class="lbl">Spd</span><span class="val">5"</span></div>
@@ -1077,14 +1081,14 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
             <div class="stat"><span class="lbl">Tuf</span><span class="val">1</span></div>
           </div>
           <div class="wpn">
-            <div><b>Autogun</b> · 10" · A1 · AP0 · D1</div>
-            <div><em>No melee weapon — fights with Fists</em></div>
+            <div><b>Surplus Rifle</b> · 12" · A1 · AP0 · D1</div>
+            <div><em>Carbine range, Rifle stats — old stock, not a worse gun. No melee weapon — fights with Fists</em></div>
           </div>
           <ul><li>Entrenched</li><li>Boots on the Ground</li><li><strong>Conscript</strong></li></ul>
         </div>
 
         <div class="card">
-          <div class="card-top"><h3>Veteran Squad</h3><span class="pts">111</span></div>
+          <div class="card-top"><h3>Veteran Squad</h3><span class="pts">112</span></div>
           <p class="card-tags">Line · Infantry · 8 models</p>
           <div class="statline">
             <div class="stat"><span class="lbl">Spd</span><span class="val">5"</span></div>
@@ -1095,14 +1099,14 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
           </div>
           <div class="wpn">
             <div><b>Rifle</b> ×6 · <b>Bayonet</b> ×6</div>
-            <div><b>Plasma Rifle</b> ×1 · 18" · A1 · AP3 · D2</div>
+            <div><b>Plasma Rifle</b> ×1 · 18" · A1 · AP4 · D2 · Overcharge</div>
             <div><b>Light MG</b> ×1 · 18" · A4 · AP0 · D1</div>
           </div>
           <ul><li>Entrenched</li><li>Boots on the Ground</li><li>Massed Ranks</li></ul>
         </div>
 
         <div class="card">
-          <div class="card-top"><h3>Storm Squad</h3><span class="pts">143</span></div>
+          <div class="card-top"><h3>Storm Squad</h3><span class="pts">141</span></div>
           <p class="card-tags">Shock · Infantry · 8 models</p>
           <div class="statline">
             <div class="stat"><span class="lbl">Spd</span><span class="val">6"</span></div>
@@ -1113,14 +1117,14 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
           </div>
           <div class="wpn">
             <div><b>Submachine Gun</b> ×6 · 8" · A3 · AP0 · D1</div>
-            <div><b>Flamethrower</b> ×1 · 8" · A1 · AP0 · D1 · Engulf (S)</div>
+            <div><b>Flamethrower</b> ×1 · 8" · A1 · AP0 · D1 · Engulf (S), Anti-Infantry</div>
             <div><b>Combat Axe</b> ×8 · Melee · A1 · AP0 · D2</div>
           </div>
           <ul><li>Brutal Assault</li><li>Massed Ranks</li></ul>
         </div>
 
         <div class="card">
-          <div class="card-top"><h3>Scout Element</h3><span class="pts">76</span></div>
+          <div class="card-top"><h3>Scout Element</h3><span class="pts">67</span></div>
           <p class="card-tags">Recon · Infantry · 5 models</p>
           <div class="statline">
             <div class="stat"><span class="lbl">Spd</span><span class="val">6"</span></div>
@@ -1130,7 +1134,7 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
             <div class="stat"><span class="lbl">Tuf</span><span class="val">1</span></div>
           </div>
           <div class="wpn">
-            <div><b>Scout Autogun</b> · 18" · A2 · AP0 · D1</div>
+            <div><b>Scout Rifle</b> · 24" · A1 · AP0 · D1 · Accurate</div>
             <div><b>Combat Knife</b> · Melee · A1 · AP0 · D1</div>
           </div>
           <ul><li>Spotter</li><li>Camouflaged</li><li>All-Terrain</li></ul>
@@ -1154,7 +1158,7 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         </div>
 
         <div class="card">
-          <div class="card-top"><h3>Heavy Weapons Team</h3><span class="pts">77</span></div>
+          <div class="card-top"><h3>Heavy Weapons Team</h3><span class="pts">78</span></div>
           <p class="card-tags">Support · Infantry · 1 model</p>
           <div class="statline">
             <div class="stat"><span class="lbl">Spd</span><span class="val">5"</span></div>
@@ -1171,7 +1175,7 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         </div>
 
         <div class="card">
-          <div class="card-top"><h3>Field Gun Battery</h3><span class="pts">62</span></div>
+          <div class="card-top"><h3>Field Gun Battery</h3><span class="pts">57</span></div>
           <p class="card-tags">Support · Towable · 1 model</p>
           <div class="statline">
             <div class="stat"><span class="lbl">Spd</span><span class="val">4"</span></div>
@@ -1188,7 +1192,7 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         </div>
 
         <div class="card">
-          <div class="card-top"><h3>Armored Personnel Carrier</h3><span class="pts">120</span></div>
+          <div class="card-top"><h3>Armored Personnel Carrier</h3><span class="pts">117</span></div>
           <p class="card-tags">Support · Vehicle · Bus · Transport (14)</p>
           <div class="statline">
             <div class="stat"><span class="lbl">Spd</span><span class="val">8"</span></div>
@@ -1222,7 +1226,7 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         </div>
 
         <div class="card">
-          <div class="card-top"><h3>Armored Fighting Vehicle</h3><span class="pts">239</span></div>
+          <div class="card-top"><h3>Armored Fighting Vehicle</h3><span class="pts">241</span></div>
           <p class="card-tags">Armor · Vehicle · 1 model</p>
           <div class="statline">
             <div class="stat"><span class="lbl">Spd</span><span class="val">8"</span></div>
@@ -1241,31 +1245,55 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       </div>
 
       <h3>Weapon library</h3>
+      <p>Organized by what carries the weapon, not what it's for — see §07 discussion. Tier 1 is
+      man-portable; Tier 2 needs a small crew or is a vehicle's secondary mount; Tier 3 needs a hull
+      or a towed carriage.</p>
+
+      <h4>Tier 1 — Infantry</h4>
       <div class="tw"><table>
         <tr><th>Weapon</th><th class="num">Rng</th><th class="num">A</th><th class="num">AP</th><th class="num">D</th><th>Traits</th></tr>
         <tr><td class="k">Autogun</td><td class="num">10"</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
+        <tr><td class="k">Surplus Rifle</td><td class="num">12"</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>— <span class="pill">Levy</span></td></tr>
         <tr><td class="k">Carbine</td><td class="num">12"</td><td class="num">2</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
         <tr><td class="k">Rifle</td><td class="num">18"</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
-        <tr><td class="k">Scout Autogun</td><td class="num">18"</td><td class="num">2</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
-        <tr><td class="k">Marksman Rifle</td><td class="num">24"</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td>Accurate</td></tr>
+        <tr><td class="k">Scout Rifle</td><td class="num">24"</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>Accurate <span class="pill">Ranger</span></td></tr>
+        <tr><td class="k">Marksman Rifle</td><td class="num">24"</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td>Accurate, Optics <span class="pill open">Optics stub</span></td></tr>
         <tr><td class="k">Submachine Gun</td><td class="num">8"</td><td class="num">3</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
         <tr><td class="k">Sidearm</td><td class="num">8"</td><td class="num">2</td><td class="num">0</td><td class="num">1</td><td>Pistol</td></tr>
         <tr><td class="k">Bayonet</td><td class="num">M</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>Fixed</td></tr>
         <tr><td class="k">Combat Knife</td><td class="num">M</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
         <tr><td class="k">Combat Axe</td><td class="num">M</td><td class="num">1</td><td class="num">0</td><td class="num">2</td><td>—</td></tr>
         <tr><td class="k">Power Maul</td><td class="num">M</td><td class="num">2</td><td class="num">1</td><td class="num">2</td><td>—</td></tr>
-        <tr><td class="k">Flamethrower</td><td class="num">8"</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>Engulf (S)</td></tr>
+        <tr><td class="k">Flamethrower</td><td class="num">8"</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>Engulf (S), Anti-Infantry</td></tr>
         <tr><td class="k">Grenade Launcher</td><td class="num">18"</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td>Blast (S), Indirect</td></tr>
-        <tr><td class="k">Plasma Rifle</td><td class="num">18"</td><td class="num">1</td><td class="num">3</td><td class="num">2</td><td>—</td></tr>
+        <tr><td class="k">Plasma Rifle</td><td class="num">18"</td><td class="num">1</td><td class="num">4</td><td class="num">2</td><td>Overcharge</td></tr>
+        <tr><td class="k">ATGM</td><td class="num">18"</td><td class="num">1</td><td class="num">5</td><td class="num">4</td><td>Anti-Vehicle, Heavy <span class="pill">Hunter, light tier</span></td></tr>
+      </table></div>
+
+      <h4>Tier 2 — Crew-served</h4>
+      <div class="tw"><table>
+        <tr><th>Weapon</th><th class="num">Rng</th><th class="num">A</th><th class="num">AP</th><th class="num">D</th><th>Traits</th></tr>
         <tr><td class="k">Light Machine Gun</td><td class="num">18"</td><td class="num">4</td><td class="num">0</td><td class="num">1</td><td>Anti-Infantry, Suppressing</td></tr>
         <tr><td class="k">Medium Machine Gun</td><td class="num">20"</td><td class="num">4</td><td class="num">1</td><td class="num">1</td><td>Anti-Infantry, Heavy, Suppressing</td></tr>
         <tr><td class="k">Heavy Machine Gun</td><td class="num">24"</td><td class="num">4</td><td class="num">2</td><td class="num">2</td><td>Anti-Infantry, Heavy, Suppressing</td></tr>
         <tr><td class="k">Light Autocannon</td><td class="num">24"</td><td class="num">3</td><td class="num">3</td><td class="num">2</td><td>Heavy, Suppressing</td></tr>
+        <tr><td class="k">Recoilless Rifle</td><td class="num">20"</td><td class="num">1</td><td class="num">4</td><td class="num">3</td><td>Anti-Vehicle, Heavy <span class="pill">Ballistier, light AT</span></td></tr>
+        <tr><td class="k">Mortar</td><td class="num">24"</td><td class="num">1</td><td class="num">1</td><td class="num">2</td><td>Blast (S), Heavy, Indirect</td></tr>
+        <tr><td class="k">Missile Launcher</td><td class="num">30"</td><td class="num">1</td><td class="num">4</td><td class="num">5</td><td>Anti-Vehicle, Blast (S), Guided, Heavy, Indirect <span class="pill">Ballistier, flexible</span></td></tr>
+        <tr><td class="k">Heavy ATGM</td><td class="num">24"</td><td class="num">1</td><td class="num">7</td><td class="num">7</td><td>Anti-Armor, Anti-Vehicle, Heavy <span class="pill">Hunter, dedicated tier</span></td></tr>
+      </table></div>
+
+      <h4>Tier 3 — Vehicular / Towable</h4>
+      <div class="tw"><table>
+        <tr><th>Weapon</th><th class="num">Rng</th><th class="num">A</th><th class="num">AP</th><th class="num">D</th><th>Traits</th></tr>
         <tr><td class="k">Field Howitzer</td><td class="num">36"</td><td class="num">1</td><td class="num">3</td><td class="num">4</td><td>Blast (L), Heavy, Indirect</td></tr>
-        <tr><td class="k">Missile Launcher</td><td class="num">30"</td><td class="num">1</td><td class="num">4</td><td class="num">5</td><td>Anti-Vehicle, Blast (S), Guided, Heavy, Indirect</td></tr>
         <tr><td class="k">Main Cannon</td><td class="num">30"</td><td class="num">2</td><td class="num">5</td><td class="num">7</td><td>Turret</td></tr>
         <tr><td class="k">Laser Cannon</td><td class="num">30"</td><td class="num">1</td><td class="num">6</td><td class="num">6</td><td>Anti-Armor, Anti-Vehicle, Heavy</td></tr>
+        <tr><td class="k">Heavy Autocannon</td><td class="num">30"</td><td class="num">3</td><td class="num">5</td><td class="num">4</td><td>Heavy, Suppressing</td></tr>
+        <tr><td class="k">MLRS</td><td class="num">36"</td><td class="num">4</td><td class="num">2</td><td class="num">3</td><td>Blast (L), Heavy, Indirect</td></tr>
       </table></div>
+      <p class="note">Hunter and Sapper (and their weapon assignments beyond the ATGM/Heavy ATGM
+      tier above) don't have full unit entries yet — see §15.</p>
 
       <h3>Squad options</h3>
       <p class="note"><span class="pill open">Not yet built</span> Specified but not implemented in
@@ -1408,13 +1436,26 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
     <!-- ===================== 15 ===================== -->
     <section id="open">
       <div class="sec-head"><span class="n">15</span><h2>Open Threads</h2></div>
+      <p class="note">Genuinely open as of the last working session — most of the original v0.3 list
+      (Mettle direction, who rolls damage, the AP scale, Transport/Indirect/Smoke rule text) has since
+      been resolved and dropped from this list.</p>
       <ol>
-        <li><strong>The four trait-tier multipliers are still guesses.</strong> Simplified from ~15
-        individually-argued values down to one number per tier (major/minor bonus, major/minor
-        restriction), but every other number in the formula derives from probability and these still
-        don't. First thing playtesting should attack.</li>
-        <li><strong>ARMOR and SUPPORT generic Platoon Abilities</strong> are undesigned.</li>
-        <li><strong>The AFV at 239</strong> is 2.4 rifle squads — 24% of a 1000-point list. If
+        <li><strong>Trait-tier and ability-tier multipliers are still guesses.</strong> The four
+        weapon-trait tiers, the five faction signature-trait multipliers, and the two ability tiers
+        are all hand-picked. Everything else in the formula derives from probability. First thing
+        playtesting should attack.</li>
+        <li><strong>Sapper, Hunter, and Dragoon have no stat lines.</strong> Sapper is additionally
+        missing its actual terrain-clearing rule (<code>Breach</code>, conceptually settled, not yet
+        written up formally) — the one piece that answers this document's own §09 terrain-density
+        requirement.</li>
+        <li><strong><code>Optics</code> (Marksman Rifle) is a rules stub</strong> — "helps land hits,"
+        no mechanism defined, priced at 0 until it is.</li>
+        <li><strong>ARMOR and SUPPORT generic Platoon Abilities</strong> are undesigned (the five
+        faction-specific doctrines exist; the three generic Vanguard-Platoon abilities from §08 are
+        Line/Shock/Recon only).</li>
+        <li><strong>Platoon slot constraints aren't encoded in the <code>.gst</code></strong> — the
+        proposed spread in §08 is documented but not enforced by the force entry itself.</li>
+        <li><strong>The AFV at 241</strong> is 2.4 rifle squads — 24% of a 1000-point list. If
         centrepieces feel over-taxed, soften the size exponent from 0.85 toward 0.90.</li>
         <li><strong>Squad upgrade options</strong> are specified but not generated — NCO, special
         weapons, embedded HWT, dedicated transport.</li>
@@ -1427,6 +1468,9 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <li><strong>No mission or scenario</strong> exists against the current rules.</li>
         <li><strong>Conscripts have no melee weapon at all</strong> — a good differentiator that
         arrived by accident. Worth keeping on purpose.</li>
+        <li><strong>The toolchain is duplicated</strong> across the <code>Praxis Belli</code> project
+        workspace and the <code>PraxisBelli</code> git repo (copied, not moved) — a real drift risk
+        until one is picked as canonical.</li>
       </ol>
     </section>
 

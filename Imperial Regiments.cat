@@ -39,7 +39,7 @@
         <infoLink name="Leadership Aura" id="6e42-4034-2e24-6e2f" hidden="false" type="rule" targetId="92ca-3761-4367-8623" />
       </infoLinks>
       <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="53" />
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="58" />
       </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Rifle Squad" hidden="false" id="9981-4c19-4505-858b">
@@ -121,9 +121,9 @@
           <characteristics>
             <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18"</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
-            <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">3</characteristic>
+            <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">4</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">2</characteristic>
-            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1" />
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Overcharge</characteristic>
           </characteristics>
         </profile>
         <profile name="Light Machine Gun" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="6923-6a5d-3b0f-c2e6">
@@ -141,7 +141,7 @@
         <infoLink name="Boots on the Ground" id="a103-8abb-653f-b07d" hidden="false" type="rule" targetId="7b4f-5341-0942-c2f6" />
       </infoLinks>
       <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="111" />
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="112" />
       </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Conscript Mob" hidden="false" id="5cb4-18b5-9b83-763e">
@@ -159,9 +159,9 @@
             <characteristic name="Toughness" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
           </characteristics>
         </profile>
-        <profile name="Autogun" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="67f9-f834-ced5-e0c2">
+        <profile name="Surplus Rifle" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="9fbf-1aac-b915-ec4f">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">10"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">12"</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
@@ -174,7 +174,7 @@
         <infoLink name="Boots on the Ground" id="bd60-b7f4-9781-3d02" hidden="false" type="rule" targetId="7b4f-5341-0942-c2f6" />
       </infoLinks>
       <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="78" />
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="80" />
       </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Storm Squad" hidden="false" id="3676-2868-bc19-6424">
@@ -207,7 +207,7 @@
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
-            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Engulf (S)</characteristic>
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Engulf (S), Anti-Infantry</characteristic>
           </characteristics>
         </profile>
         <profile name="Combat Axe" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="6dc5-a4cf-f313-df40">
@@ -224,7 +224,7 @@
         <infoLink name="Brutal Assault" id="6834-6895-2584-9b0b" hidden="false" type="rule" targetId="e53b-b8b7-2e89-6d6f" />
       </infoLinks>
       <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="143" />
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="141" />
       </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Scout Element" hidden="false" id="87ba-3b0a-5d86-be0d">
@@ -242,13 +242,13 @@
             <characteristic name="Toughness" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
           </characteristics>
         </profile>
-        <profile name="Scout Autogun" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="f233-e0cc-b14b-88f4">
+        <profile name="Scout Rifle" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="64f0-2750-a5a7-79d7">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18"</characteristic>
-            <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">2</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">24"</characteristic>
+            <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
-            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1" />
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Accurate</characteristic>
           </characteristics>
         </profile>
         <profile name="Combat Knife" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="4593-7332-44a0-a593">
@@ -267,7 +267,7 @@
         <infoLink name="All-Terrain" id="f88c-27e7-b534-135d" hidden="false" type="rule" targetId="28c6-c562-0bd6-a469" />
       </infoLinks>
       <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="76" />
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="67" />
       </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Heavy Weapons Team" hidden="false" id="d095-b590-4eb9-6005">
@@ -300,7 +300,7 @@
         <infoLink name="Emplaced Weapon" id="8da8-4d44-331b-893d" hidden="false" type="rule" targetId="053e-0e77-d08d-080a" />
       </infoLinks>
       <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="77" />
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="78" />
       </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Field Gun Battery" hidden="false" id="01c7-1452-7e63-e1f3">
@@ -333,7 +333,7 @@
         <infoLink name="Emplaced Weapon" id="8005-943a-6968-0a1e" hidden="false" type="rule" targetId="053e-0e77-d08d-080a" />
       </infoLinks>
       <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="62" />
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="57" />
       </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Armored Personnel Carrier" hidden="false" id="a4c0-8aa1-81db-165f">
@@ -367,7 +367,7 @@
         <infoLink name="Open-Topped" id="aaee-b83d-3386-3f70" hidden="false" type="rule" targetId="0a1c-77b5-4e23-9d80" />
       </infoLinks>
       <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="120" />
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="117" />
       </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Armored Fighting Vehicle" hidden="false" id="c4bd-8310-6fc6-9c4e">
@@ -410,7 +410,7 @@
         <infoLink name="Armored Front" id="6704-1963-3b2c-866a" hidden="false" type="rule" targetId="670f-bca7-b3e7-f8b2" />
       </infoLinks>
       <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="239" />
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="241" />
       </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Tank Destroyer" hidden="false" id="8cfa-5b7d-140d-c6bc">

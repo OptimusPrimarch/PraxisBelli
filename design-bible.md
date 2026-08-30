@@ -1,8 +1,8 @@
 # Praxis Belli — Design Bible
 
-**Status:** v0.3 — reconciled against the NewRecruit data files, which are now the source of truth for stats, traits, and points.
+**Status:** v0.4 — mechanics and formula are authored here (and in `reference.html`, its formatted twin).
 
-**Source of truth:** `C:\Users\darry\Documents\NewRecruit\data\PraxisBelli\` — `PraxisBelli.gst` (game system: categories, stat types, shared rules) and `Imperial Regiments.cat` (units, weapons, points). The older `Documents\NewRecruit\data\Praxis Belli\` folder (with a space) is superseded; it holds an earlier `Praxis Belli.gst` plus Oathbreaker Legions / Oathkeeper Cohorts catalogues.
+**Source of truth — two modes, not one:** while actively building or revising stats and profiles together, this document and `points.py`/`factions/*.json` lead — that's what a design session *is*. Outside of that, **NewRecruit is the default source of truth**: `PraxisBelli.gst` and the `.cat` files in `C:\Users\darry\Documents\NewRecruit\data\PraxisBelli\` reflect whatever was last hand-edited there directly, which may not match what's written here. When the two disagree, that's a conflict to surface and resolve, not something to silently overwrite in either direction. The older `Documents\NewRecruit\data\Praxis Belli\` folder (with a space) is superseded regardless of either mode; it holds an earlier `Praxis Belli.gst` plus Oathbreaker Legions / Oathkeeper Cohorts catalogues on a different game system ID.
 
 **Design lineage:** *Marcher: EAW* (Platoon frame, Transports, attacker-rolled Evasion/Armor), *Ravaged Star* (d10 roll-over engine, 1-fails/10-succeeds, the Damage stat, "Shaken"), and *Warmachine MkIV* (facings and arcs, model-count transports).
 
@@ -201,7 +201,7 @@ Every unit carries two labels, and **both carry rules.**
 - **TYPE** — what the unit *is*. Six: **Infantry, Cavalry, Vehicle, Monster, Aerial, Towable**.
 - **CATEGORY** — its battlefield role, and the Platoon slot it fills. Six: **ARMOR, COMMAND, LINE, RECON, SHOCK, SUPPORT**.
 
-In the data every unit takes one CATEGORY as primary and one TYPE as secondary — e.g. the APC is `Support` (primary) + `Vehicle`; the AFV is `Armor` + `Vehicle`; the Infantry Commander is `Command` + `Infantry`.
+In the data every unit takes one CATEGORY as primary and one TYPE as secondary — e.g. the APC is `Support` (primary) + `Vehicle`; the AFV is `Armor` + `Vehicle`; the Regimental Officer is `Command` + `Infantry`.
 
 ### CATEGORY rules
 
@@ -254,7 +254,7 @@ Named Platoons shift the spread toward an anchor category in exchange for a once
 
 The data implements embedding directly. A **Rifle Squad** may take:
 
-- **Embedded Leader** — one Infantry Commander, which then counts as LINE rather than COMMAND.
+- **Embedded Leader** — one Regimental Officer (or any COMMAND-category leader unit), which then counts as LINE rather than COMMAND.
 - **Embedded Heavy Weapon Team** — one Heavy Weapons Team, which is stripped of SUPPORT and re-categorized as LINE.
 
 Embedding therefore **changes the host's CATEGORY** to match the squad, so an embedded model doesn't consume its own slot.
@@ -348,8 +348,6 @@ The tension stays honest because a gunboat is priced as a tank *plus* capacity, 
 
 **Bailout:** when a Transport is removed from play, every embarked model takes a Mettle check; each failure inflicts 1 wound. Survivors are placed within 3" of the wreck. If the Transport was Aerial and the cargo isn't, the cargo is destroyed outright.
 
-> The `Transport (X)` rules in the `.gst` currently have **no description text** — the mechanics above are from design discussion and need writing into the data.
-
 ## 11. Points
 
 > The values in the NewRecruit data are **placeholders** from learning the platform and are not authoritative. The formula below is the reference; a calculator implementing it lives at `points.py`.
@@ -429,7 +427,7 @@ Rather than individually arguing ~15 trait values — exactly the kind of subjec
 
 | Tier | × | Traits |
 |---|---|---|
-| Major bonus | **1.30** | Linked-Weapon, Blast (L), Engulf (L), Guided, Indirect |
+| Major bonus | **1.30** | Linked-Weapon, Blast (L), Engulf (L), Guided, Indirect, Overcharge |
 | Minor bonus | **1.10** | Accurate, Blast (S), Engulf (S), Suppressing, Turret, Pistol |
 | Minor restriction | **0.90** | Coaxial, Frontal / Rear / Side Arc |
 | Major restriction | **0.75** | Heavy |
@@ -487,21 +485,23 @@ A 1000-point list is therefore *ten rifle squads' worth of stuff*, which is the 
 
 | Unit | Models | Total | Per model |
 |---|---|---|---|
-| Conscript Mob | 16 | 78 | 4.9 |
+| Conscript Mob | 16 | 80 | 5.0 |
 | **Rifle Squad** | 10 | **100** | 10.0 |
-| Veteran Squad | 8 | 111 | 13.9 |
-| Storm Squad | 8 | 143 | 17.9 |
-| Scout Element | 5 | 76 | 15.2 |
-| Regimental Officer | 1 | 53 | — |
-| Heavy Weapons Team | 1 | 77 | — |
-| Field Gun Battery | 1 | 62 | — |
-| Armored Personnel Carrier | 1 | 120 | — |
+| Veteran Squad | 8 | 112 | 14.0 |
+| Storm Squad | 8 | 141 | 17.6 |
+| Scout Element | 5 | 67 | 13.4 |
+| Regimental Officer | 1 | 58 | — |
+| Heavy Weapons Team | 1 | 78 | — |
+| Field Gun Battery | 1 | 57 | — |
+| Armored Personnel Carrier | 1 | 117 | — |
 | Tank Destroyer | 1 | 176 | — |
-| Armored Fighting Vehicle | 1 | 239 | — |
+| Armored Fighting Vehicle | 1 | 241 | — |
 
-Chaff → line → veteran reads **4.9 → 10.0 → 13.9** per model. The Conscript Mob fields 16 bodies for less than the anchor's cost, which is exactly what chaff should do.
+Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscript Mob fields 16 bodies for less than the anchor's cost, which is exactly what chaff should do.
 
-> **Open:** the AFV at 239 is 2.4 rifle squads — 24% of a 1000-point list. That follows from the single-model premium stacking on an already-expensive chassis. The ratio is in line with comparable games, but if centrepieces feel over-taxed, soften `SIZE_EXPONENT` from 0.85 toward 0.90.
+> **Open:** the AFV at 241 is 2.4 rifle squads — 24% of a 1000-point list. That follows from the single-model premium stacking on an already-expensive chassis. The ratio is in line with comparable games, but if centrepieces feel over-taxed, soften `SIZE_EXPONENT` from 0.85 toward 0.90.
+>
+> These numbers move whenever the weapon library or a unit's loadout changes — re-run `python build_cat.py factions/imperial_regiments.json` rather than trusting this table blind.
 
 ---
 
@@ -512,7 +512,7 @@ Chaff → line → veteran reads **4.9 → 10.0 → 13.9** per model. The Conscr
 `Speed | Mettle | Evasion | Armor | Toughness`
 
 - **Speed** — inches of movement.
-- **Mettle** — morale. *(Direction unresolved — see Section 5.)*
+- **Mettle** — morale. Additive, higher-is-better (see §5).
 - **Evasion** — attackers roll ≥ this to hit. Higher is better for you.
 - **Armor** — attackers roll ≥ this (after AP) to damage. Higher is better for you.
 - **Toughness** — the wound pool. Replaces the old "Wounds" stat.
@@ -526,9 +526,10 @@ Chaff → line → veteran reads **4.9 → 10.0 → 13.9** per model. The Conscr
 **Targeting & templates**
 - **Blast (S/L)** — may target a point instead of a model, centring a circular template. On a miss, scatter the point of impact 1d5" (S) or 1d10" (L) in the direction rolled. Targets cannot benefit from cover.
 - **Engulf (S/L)** — uses a small or large teardrop template; targets cannot benefit from cover.
-- **Indirect** — requires a Spotter *(no rule text in the data yet)*.
+- **Indirect** — may target an enemy without line of sight, provided an allied unit with Spotter has line of sight to that target.
 - **Guided** — if the target is visible to an allied RECON unit, decrease the target's Evasion by 3, disregarding all other modifiers.
 - **Accurate** — ignore all range penalties.
+- **Optics** *(rules stub)* — "helps land hits"; mechanism not yet written. Costs nothing in the points formula until it is. Do not treat a weapon carrying it as finalized.
 
 **Firing restrictions**
 - **Heavy** — cannot attack in the same activation its unit moved; if it attacks first, it cannot then move.
@@ -541,7 +542,8 @@ Chaff → line → veteran reads **4.9 → 10.0 → 13.9** per model. The Conscr
 
 **Damage & suppression**
 - **Suppressing** — targets gain a suppression marker regardless of the attack's outcome.
-- **Anti-[Keyword]** — against a target with the matching keyword, each failed save counts double, as though two saves had been failed. *(Wording depends on the unresolved roller question in Section 3.)* Defined for: Aerial, Armor, Cavalry, Command, Infantry, Line, Monster, Recon, Shock, Support, Towable, Vehicle.
+- **Overcharge** — this weapon may fire in Overcharged mode: its AP and Damage are each increased by 2 for that attack. For each unmodified roll of 1 made for this weapon's attack, the bearer suffers a Damage 1 hit that cannot be saved against, in addition to any other effect of that roll.
+- **Anti-[Keyword]** — against a target with the matching keyword, each successful damage roll counts as two hits instead of one; because hits are allocated individually, the excess may spill onto other models in the unit. Defined for: Aerial, Armor, Cavalry, Command, Infantry, Line, Monster, Recon, Shock, Support, Towable, Vehicle.
 - **Bulwark** — reduce incoming damage by 1, to a minimum of 1.
 
 **Cost-modifying traits**
@@ -559,102 +561,30 @@ Chaff → line → veteran reads **4.9 → 10.0 → 13.9** per model. The Conscr
 
 ## Roster — Imperial Regiments
 
-### Infantry Commander — COMMAND / Infantry — 35 pts
+**The canonical roster lives in `factions/imperial_regiments.json`** (source) and `reference.html` §13 (formatted, with full stat cards and the weapon library table) — not here. Duplicating full stat blocks in a third place is exactly the kind of drift this note exists to prevent: an earlier version of this section listed units and weapons (Infantry Commander, Fusion Blaster, Ripsaw Sword) that no longer exist anywhere else in the project. Regenerate the `.cat` from the JSON with `python build_cat.py factions/imperial_regiments.json`.
 
-`Speed 5 | Mettle 4+ | Evasion 6+ | Armor 4+ | Toughness 4`
+Current roster, for orientation: **Levy** (chaff), **Fusilier** (anchor), **Grenadier** (veteran), **Vanguard** (shock), **Ranger** (recon), **Ballistier** (flexible heavy weapons, provisional name), **Officer** (command) are fully built. **Sapper**, **Hunter**, and **Dragoon** have locked identities and (Dragoon's case) a fully-designed signature rule, but no stat lines yet — see `faction-identity.md` and the naming table in `reference.html` §14.
 
-Takes exactly one ranged and one melee weapon, plus up to one Leadership Ability and one Priority Order.
+### Weapon tiers
 
-- **Ranged (pick 1):** Submachine Gun (10), Rifle (5), Carbine (5), Pistol (0)
-- **Melee (pick 1):** Combat Knife (0)
-- **Leadership Ability (max 1):**
-  - *Lead From the Front* (5) — this model and its unit ignore the Shaken state.
-  - *Protected by Fate* (5) — if this model is the sole survivor of a unit it's embedded in, its Evasion becomes 9.
-  - *Exemplar* (15) — gains Fearless.
-- **Priority Order (max 1):**
-  - *Hold the Line!* (10) — allied units in cover gain +2 Armor while within 12".
-  - *Take that Hill!* (10) — allied units activating within 12" ignore difficult terrain.
-  - *To the Last Man!* (10) — allied units within 12" roll a d10 for each wound taken; on an 8+ it is ignored.
-  - *Bleed Them Dry!* (10) — allied units within 12" gain +1 AP when attacking.
+Three tiers by what carries the weapon, not by what it's for — see `reference.html` §13 for the full current library:
 
-### Rifle Squad — LINE / Infantry — 100 pts
-
-`Speed 5 | Mettle 5 | Evasion 6 | Armor 4 | Toughness 1`
-
-10 Riflemen, each armed with Rifles or Carbines. Up to 2 Special Weapons may be taken, each replacing one Rifleman.
-
-- **Special Weapons (max 2):** Flamethrower (5), Fusion Blaster (10), Grenade Launcher (10), Plasma Rifle (10)
-- **Embedded Leader (max 1):** an Infantry Commander, re-categorized as LINE.
-- **Embedded Heavy Weapon Team (max 1):** a Heavy Weapons Team, re-categorized as LINE.
-
-### Heavy Weapons Team — SUPPORT / Infantry — 50 pts
-
-`Speed 5 | Mettle 5 | Evasion 6 | Armor 4 | Toughness 3`
-
-Takes exactly one heavy weapon: Heavy Machine Gun (0), Light Autocannon (15), Missile Launcher (20), Laser Cannon (30).
-
-### Armored Personnel Carrier — SUPPORT / Vehicle — 75 pts
-
-`Speed 8 | Mettle 5 | Evasion 5 | Armor 6 | Toughness 8` — **Transport (14)**
-
-Optional pintle weapon (max 1), which gains Turret: Light MG (5), Medium MG (15), Heavy MG (25).
-
-### Armored Fighting Vehicle — ARMOR / Vehicle — *base cost unset*
-
-`Speed 8 | Mettle 6 | Evasion 4 | Armor 7 | Toughness 10`
-
-- **Main Gun (max 1):**
-  - *Light Cannon* (30) — gains Turret, plus a Coaxial Medium Machine Gun.
-  - *Twin Light Autocannons* (20) — gains Turret and Linked-Weapon.
-  - *Medium Autocannon* (25) — gains Turret, plus a Coaxial Medium Machine Gun.
-- Optional pintle weapon, as the APC.
-
-### Weapon profiles
-
-| Weapon | Range | ATK | AP | DMG | Traits |
-|---|---|---|---|---|---|
-| Rifle | 18" | 1 | 1 | 1 | — |
-| Carbine | 12" | 2 | 0 | 1 | — |
-| Submachine Gun | 8" | 3 | 0 | 1 | — |
-| Pistol | 8" | 2 | 0 | 1 | — |
-| Combat Knife | Melee | 1 | 1 | 1 | — |
-| Combat Axe | Melee | 1 | 0 | 2 | — |
-| Ripsaw Sword | Melee | 3 | 1 | 1 | — |
-| Energy Sword | Melee | 2 | 2 | 2 | — |
-| Energy Gauntlet | Melee | 1 | 4 | 2 | — |
-| Flamethrower | Teardrop (S) | 1 | 1 | 1 | — |
-| Grenade Launcher | 18" | 1 | 1 | 1 | Blast (S), Indirect |
-| Plasma Rifle | 18" | 1 | 4 | 2 | — |
-| Fusion Blaster | 6" | 1 | 8 | 5 | Anti-Armor |
-| Light Machine Gun | 18" | 4 | 1 | 1 | Anti-Infantry, Suppressing |
-| Medium Machine Gun | 20" | 4 | 2 | 1 | Anti-Infantry, Heavy, Suppressing |
-| Heavy Machine Gun | 24" | 4 | 3 | 2 | Anti-Infantry, Heavy, Suppressing |
-| Light Autocannon | 24" | 3 | 4 | 2 | Heavy, Suppressing |
-| Medium Autocannon | 24" | 3 | 5 | 3 | Heavy, Suppressing |
-| Heavy Autocannon | 30" | 3 | 5 | 4 | Heavy, Suppressing |
-| Missile Launcher | 30" | 1 | 5 | 5 | Anti-Monster, Anti-Vehicle, Blast (S), Guided, Heavy, Indirect |
-| Laser Cannon | 30" | 1 | 7 | 3 | Anti-Armor, Anti-Vehicle, Heavy |
-| Light Cannon | 24" | 2 | 5 | 4 | Heavy |
-| Main Cannon | 30" | 2 | 6 | 7 | — |
-| Heavy Cannon | 36" | 1 | 8 | 10 | — |
-
-### Faction rule — Imperial Saints
-
-- **Blessed by Devotion** — once per game, this unit may reroll any roll and must use the new result.
+- **Tier 1 — Infantry**: man-portable, one operator (Rifle, Carbine, Sidearm, Marksman Rifle, ATGM, etc.)
+- **Tier 2 — Crew-served**: a small team, or a vehicle's secondary/hull mount (MGs, Autocannons, Mortar, Missile Launcher/Heavy ATGM)
+- **Tier 3 — Vehicular/Towable**: needs a hull or a carriage (Main Cannon, Field Howitzer, MLRS)
 
 ---
 
 ## Open Threads
 
-1. **Mettle direction** — threshold (as in the data) or additive (design intent)? Touches every unit card. *Highest priority.*
-2. **Who rolls the damage check** — the Anti-[Keyword] rules text says the defender rolls saves; design intent says the attacker rolls both. Rules text needs rewording either way.
-3. **Platoon slot constraints** — not encoded in the data; the Vanguard Formation force entry has no min/max.
-4. **ARMOR and SUPPORT Platoon Abilities** — undesigned.
-5. **Transport(X) rules text** — the four Transport rules in the `.gst` have empty descriptions.
-6. **AFV base cost** — unset in the data.
-7. **`Indirect` has no rule text** — referenced by Grenade Launcher and Missile Launcher, and by Spotter, but never defined.
-8. **Smoke** — referenced by Spotter ("ignores the effects of smoke") but no smoke rules exist yet.
-9. **Damage vs. Toughness scaling** — Heavy Cannon does 10 damage; the AFV has Toughness 10. A single successful damage roll one-shots the toughest unit in the game. Worth checking at the table.
-10. **Two data folders** — `Praxis Belli\` (with space) holds Oathbreaker Legions and Oathkeeper Cohorts catalogues on an older game system. Merge into `PraxisBelli\` or delete.
-11. **Mission design** — no scenarios written against the current rules.
-12. **Facings** — Armored Front and the arc traits introduce facing rules, but there's no general facing/LOS section written.
+Genuinely open as of the last working session — most of the original v0.3 list (Mettle direction, who rolls damage, the AP scale, Transport/Indirect/Smoke rule text, the superseded data folder) has since been resolved and removed from this list.
+
+1. **Trait-tier and ability-tier multipliers are still guesses** — the four weapon-trait tier values, the five faction signature-trait multipliers, and the two ability tiers are all hand-picked. Everything else in the points formula derives from probability. First thing playtesting should attack.
+2. **Sapper, Hunter, and Dragoon have no stat lines.** Sapper is additionally missing its actual terrain-clearing rule (`Breach`, conceptually settled, not yet written up formally) — the one piece that answers this document's own §9 terrain-density requirement.
+3. **`Optics` (Marksman Rifle) is a rules stub** — "helps land hits," no mechanism defined, priced at 0 until it is.
+4. **ARMOR and SUPPORT generic Platoon Abilities** are undesigned (the five faction-specific doctrines exist; the three generic Vanguard-Platoon abilities from §8 are Line/Shock/Recon only).
+5. **Platoon slot constraints aren't encoded in the `.gst`** — the proposed spread in §8 is documented but not enforced by the force entry itself.
+6. **The AFV's cost is 2.4 rifle squads.** If centrepieces feel over-taxed, soften `SIZE_EXPONENT` from 0.85 toward 0.90 in `points.py`.
+7. **No mission or scenario** has been written against the current rules.
+8. **No general facing/LOS section** — `Armored Front` and the arc traits imply one exists, but it isn't written.
+9. **The toolchain is duplicated** across the `Praxis Belli` project workspace and the `PraxisBelli` git repo (copied, not moved) — a real drift risk until one is picked as canonical.

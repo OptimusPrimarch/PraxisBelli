@@ -146,7 +146,7 @@ This is a live risk on this project, not a hypothetical: designing around Oathke
 
 - **Signature trait — Massed Ranks:** while this unit contains 8 or more models, it re-rolls to-hit results of 1 and gains +1 Mettle. Strength is literally in numbers, and it drains away as they die.
 - **Stat shape:** Mettle 2–4, Armor 3–5, Toughness 1 throughout. Cheapest per model, largest units in the game.
-- **Reinforcing tools:** the **Autogun** (deliberately terrible, makes hordes affordable), **Barrage** artillery (fires without line of sight or a Spotter at +2 Evasion), and Suppressing machine guns. Volume over quality at every tier.
+- **Reinforcing tools:** the **Surplus Rifle** (Levy's issue — carbine range, rifle stats otherwise, deliberately unremarkable rather than deliberately terrible), Suppressing machine guns, and now a full Mortar/MLRS indirect-fire tier. Volume over quality at every tier. *(A "Barrage" artillery trait — fire without LOS or a Spotter — was floated here early on but never actually built; `Indirect` still requires a Spotter for everyone, Regiments included.)*
 - **Doctrine — *Fix Bayonets*:** for the rest of the round, LINE units in this Platoon ignore the Frozen state.
 
 ### Imperial Forgesworn — *the bound engine*
@@ -234,6 +234,48 @@ Oathkeepers are the clearest case: a low ARMOR cap does not make them armor-poor
 
 The complete classical army, and therefore **the teaching faction**: infantry hold, armor breaks through, artillery kills, recon sees for it. Every arm is individually mediocre and the whole is devastating. A Regiments player learns the game's dependencies because none of their units can cover for a missing one.
 
+### Imperial Regiments — unit roster, naming, and the Wehrmacht-as-template lens
+
+The rest of this document was written before the Regiments roster got built out in detail. That work used a specific lens worth recording here, not just in the roster tables elsewhere: **real-world Wehrmacht force structure as a template for role specialization and chassis reuse — explicitly not for ideology, and not for exact unit names.** The two things worth borrowing were the organizational logic (infantry role specialization like Pioniere/Jäger, and building several vehicles off one proven chassis) and nothing else.
+
+**Naming runs on two deliberately contrasting themes** — machines get predator nicknames (what the factory built), soldiers get martial titles (what the person earned or was assigned):
+
+- **Vehicle chassis — Mustelidae** (the weasel family), chosen over Canidae (wolf/fox/jackal/coyote are all real, currently-fielded vehicle names already — picking them would read as "didn't check") and over Bears (only ~8 species, no size gradient — every bear reads "big and tough," which can't differentiate a light scout chassis from a heavy gun chassis by name alone). Mustelids uniquely offer both: a genuine size gradient (the smallest carnivore in the world up to something that fights bears) and an almost entirely unclaimed naming pool. Vehicles are named individually per unit sharing a chassis stat line (the StuG/Hetzer/Marder precedent — distinct proper names, not a swap-a-turret mechanic), not as "Model + suffix."
+  - **Light chassis** (Spd9/Met4/Eva6/Arm5/Tuf6): **Stoat** (scout bus), **Weasel** (recon car), **Mink** (light gunboat)
+  - **Medium chassis** (Spd8/Met4/Eva5/Arm6/Tuf9): **Marten** (bus), **Sable** (gunboat), **Fisher** (tank-gun turret), **Tayra** (self-propelled gun)
+  - **Wolverine** — the bespoke Laser Cannon specialist, deliberately *not* part of either family (apex, solitary — "we built exactly one of these")
+  - Reserved, not yet spent: **Badger** (dig behavior — earmarked for a future Sapper engineering vehicle), **Otter** (earmarked for a future amphibious variant)
+- **Infantry — martial titles**, not another animal family. Explored and rejected as full alternate themes: birds/raptors (individual fits were strong — Caracara for "generalist/flexible" was excellent — but mixing one animal name into an otherwise all-martial-vocabulary roster read as the odd one out), industrial tools, weather, insect castes, geology (reserved for Forgesworn instead — don't spend materials imagery on Regiments).
+
+| Title | Unit | Notes |
+|---|---|---|
+| **Levy** | Conscript Mob | Pulled directly from the fictional Levy Oath tier (see above) — not just flavor, the same word doing double duty |
+| **Fusilier** | Rifle Squad | The anchor |
+| **Grenadier** | Veteran Squad | Historically *was* the elite/veteran designation in most 18th–19th century armies |
+| **Vanguard** | Storm Squad | — |
+| **Ranger** | Scout Element | — |
+| **Ballistier** *(provisional)* | Heavy Weapons Team | From *ballista* + the Fusilier/Grenadier "-ier" pattern; the etymology itself carries the "flexible loadout" idea, since a ballista was historically a category of siege engine, not one weapon. Rejected first: Gunner (flat), Bombardier/Cannoneer (both skew artillery-specific), Weaponeer ("okay, don't love it"), Matross ("too vague"). User: "I'll probably change it later," fallback is the plain "Weapons Squad." |
+| **Sapper** | *(unit not yet built)* | Combat engineer — real job is "punches through whatever's stopping everyone else" (Bangalore torpedoes, breach charges), which happens to be the one thing §9's terrain-density rule doesn't have an answer for. Signature idea, not yet formal rules text: **Breach** — spend an action to permanently strip one tag (Blocking/Difficult/Dangerous) from a terrain feature being touched. |
+| **Hunter** | *(unit not yet built)* | Dedicated tank-hunter — real ATGM/Panzerjäger doctrine lives and dies by getting the first shot from an unexpected position. Weapon tier: **ATGM** (Tier 1, light/mobile, AP5/D4) and **Heavy ATGM** (Tier 2, dedicated, AP7/D7) — Hunter doesn't take Missile Launcher away from Ballistier, it just fields something that beats it specifically on armor. |
+| **Dragoon** | *(unit not yet built, but its rule is fully designed)* | Mechanized infantry — the thesis-statement unit for "Regiments = the INF+vehicle synergy faction." See **Rapid Deployment** below. |
+
+#### Weapon tiers
+
+Reorganized by what carries the weapon, not what it's for — see `reference.html` §13 for the full current library. **Tier 1 Infantry** (man-portable), **Tier 2 Crew-served** (small team, or a vehicle's secondary/hull mount), **Tier 3 Vehicular/Towable** (needs a hull or a carriage). This is also where **Mortar**, **MLRS**, **Heavy Autocannon**, and **Recoilless Rifle** got added — the tier framing surfaced that mortars and MLRS were genuine gaps, not just missing flavor.
+
+#### Dragoon — Rapid Deployment
+
+The unit that actually proves "INF+vehicle synergy" rather than just asserting it. Two iterations, the first one rejected for a reason worth remembering:
+
+1. **Rejected: free/guaranteed re-embark after shooting.** Broken because the game has no reaction economy — a unit that shoots and hides entirely within its own activation is *never* exposed to return fire, which is strictly stronger than anything else gets to be.
+2. **Kept: free *dismount* instead.** When the Transport carrying this unit activates, it may order the unit to disembark as part of that activation — no cost to the Transport's actions, no cost to the Dragoons' Move stat or either of their own two actions. When the Dragoons later take their own activation, both actions are fully theirs. This fixes the exposure problem structurally: the moment they act, they're an ordinary target until they spend a full activation getting back to safety.
+
+Balance is deliberately **structural, not probabilistic** — no Mettle check, no dice. The tax is that the ability requires a *live* Transport (kill it, Rapid Deployment is gone for the rest of the game) and that the player is paying for two units to get one effect. Hard restrictions: works with **any** friendly Transport, not a specific chassis; **no Heavy-trait weapons** (directly contradicts "hit hard and fast").
+
+This also produced a new **general** hull rule (not Dragoon-specific — lives on the hull, so any unit riding one benefits): a Transport with **token** armament (Bus) must choose between firing and ordering a disembark in the same activation; a Transport with **real** armament (Gunboat, Assault Transport) may do both — the real-world IFV/APC distinction (a Bradley fights while delivering troops, an M113 doesn't) mapped exactly onto the Bus/Gunboat split that already existed, so it needed no new concept.
+
+Command Points were floated as a natural extension of the fire-or-deliver choice ("ripe territory for later") and explicitly rejected once reminded that §8 already states "No resource economy. Confirmed, not deferred." If a spendable-resource want resurfaces, extend Platoon Abilities rather than inventing a parallel system.
+
 ### Imperial Forgesworn — *overmatch*
 
 **Staple: the walker.** A construct that is simultaneously their armor and their fire support.
@@ -282,7 +324,7 @@ The current formula prices weapons accurately but the roster doesn't yet make th
 |---|---|---|---|
 | **Sidearm** | A2, AP0, D1, 8" | Exists to be usable while engaged | Pistol |
 | **Standard** | A1, AP1, D1, 18" | The baseline every line unit carries | Rifle |
-| **Chaff** | A1, AP0, D1, 10" | Deliberately bad; makes hordes affordable | Autogun |
+| **Chaff** | A1, AP0, D1, 10–12" | Unremarkable rather than deliberately bad; makes hordes affordable | Autogun, Surplus Rifle |
 | **Automatic** | A4, AP1–3, D1–2, 18–24" | Volume + Suppressing. Anti-infantry | Machine guns |
 | **Special** | A1, AP4+, D2, 18" | Squad-portable answer to armor | Plasma Rifle |
 | **Obliterator** | A1, AP7+, **D6+**, 30"+ | One shot, one kill. Must threaten Toughness 10 | Laser Cannon |
@@ -327,7 +369,7 @@ Ordered by what unblocks the most downstream work.
 2. **Oathkeepers/Oathbreakers as one order split in two** — good design economy, or does it make Oathbreakers feel derivative rather than their own faction?
 3. **Toughness 2 on elite infantry.** The single biggest lever for making Oathkeepers feel unlike Regiments. Doubles effective durability before Armor applies — needs checking against the points curve before it's baked in.
 4. Should **Category access limits** be hard caps, or soft (costed) restrictions?
-5. `Conscript` giving a flat −20% is the only trait that touches points directly. Clean lever, or a precedent worth avoiding?
+5. ~~`Conscript` giving a flat −20% is the only trait that touches points directly.~~ **Resolved and superseded.** `Conscript` is −25%, not −20%, and it's no longer the only points-touching trait — there's now a full system of it (weapon-trait tiers, faction signature-trait multipliers, and flat ability tiers; see design-bible.md §11 steps 3 and 5).
 6. **Do the Forgesworn have their own agenda?** A Mechanicus-equivalent that is merely loyal is wasted. They hold the only oaths sworn to *things*, and they run the logistics that cross unbound space — which makes them either the Empire's foundation or its greatest heresy, and they'd know which.
 7. **Is the Empire's central binding the same oath as the First Binding?** If yes, the Empire is literally the institution holding reality together, and every atrocity is arguably justified. If no, the Empire is a smaller thing wearing the authority of a larger one. This is the single biggest lever on the setting's tone.
 8. **Can a broken oath be repaired, or only replaced?** Decides whether redemption exists as a story. Also decides whether an Oathbreaker Legion can ever become Oathkeepers again — a campaign hook either way.

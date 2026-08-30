@@ -9,28 +9,55 @@
     "text": "While this unit contains 8 or more models, it re-rolls to-hit results of 1 and gains +1 Mettle."
   },
 
+  "_weapon_tiers": "Tier 1 Infantry (man-portable) / Tier 2 Crew-served (team or vehicle secondary mount) / Tier 3 Vehicular-Towable (needs a hull or carriage). See design-bible.md and reference.html for the full breakdown and reasoning.",
+
   "weapons": {
+    "_comment_tier1": "-- Tier 1: Infantry --",
     "Rifle":              { "range": 18, "attacks": 1, "ap": 0, "damage": 1, "traits": [] },
     "Carbine":            { "range": 12, "attacks": 2, "ap": 0, "damage": 1, "traits": [] },
+    "Surplus Rifle":      { "range": 12, "attacks": 1, "ap": 0, "damage": 1, "traits": [],
+                             "_note": "Levy issue: carbine range, rifle stats otherwise -- old stock, not a worse gun" },
     "Autogun":            { "range": 10, "attacks": 1, "ap": 0, "damage": 1, "traits": [] },
+    "Scout Rifle":        { "range": 24, "attacks": 1, "ap": 0, "damage": 1, "traits": ["Accurate"],
+                             "_note": "Ranger issue, replaces Scout Autogun. Not a full sniper's weapon, just longer legs than a standard Rifle." },
     "Submachine Gun":     { "range": 8,  "attacks": 3, "ap": 0, "damage": 1, "traits": [] },
     "Sidearm":            { "range": 8,  "attacks": 2, "ap": 0, "damage": 1, "traits": ["Pistol"] },
     "Bayonet":            { "range": "M","attacks": 1, "ap": 0, "damage": 1, "traits": ["Fixed"] },
     "Combat Knife":       { "range": "M","attacks": 1, "ap": 0, "damage": 1, "traits": [] },
     "Combat Axe":         { "range": "M","attacks": 1, "ap": 0, "damage": 2, "traits": [] },
     "Power Maul":         { "range": "M","attacks": 2, "ap": 1, "damage": 2, "traits": [] },
-    "Flamethrower":       { "range": 8,  "attacks": 1, "ap": 0, "damage": 1, "traits": ["Engulf (S)"] },
+    "Flamethrower":       { "range": 8,  "attacks": 1, "ap": 0, "damage": 1, "traits": ["Engulf (S)", "Anti-Infantry"] },
     "Grenade Launcher":   { "range": 18, "attacks": 1, "ap": 0, "damage": 1, "traits": ["Blast (S)", "Indirect"] },
-    "Marksman Rifle":     { "range": 24, "attacks": 1, "ap": 1, "damage": 1, "traits": ["Accurate"] },
-    "Plasma Rifle":       { "range": 18, "attacks": 1, "ap": 3, "damage": 2, "traits": [] },
+    "Marksman Rifle":     { "range": 24, "attacks": 1, "ap": 1, "damage": 1, "traits": ["Accurate", "Optics"],
+                             "_note": "OPTICS is a rules stub -- 'helps land hits,' mechanism not yet written. Priced at 0 until it is; do not treat this weapon's cost as final." },
+    "Plasma Rifle":       { "range": 18, "attacks": 1, "ap": 4, "damage": 2, "traits": ["Overcharge"] },
+    "ATGM":               { "range": 18, "attacks": 1, "ap": 5, "damage": 4, "traits": ["Anti-Vehicle", "Heavy"],
+                             "_note": "Hunter's light/mobile AT tier." },
+
+    "_comment_tier2": "-- Tier 2: Crew-served (team-operated, or a vehicle's secondary/hull mount) --",
     "Light Machine Gun":  { "range": 18, "attacks": 4, "ap": 0, "damage": 1, "traits": ["Anti-Infantry", "Suppressing"] },
     "Medium Machine Gun": { "range": 20, "attacks": 4, "ap": 1, "damage": 1, "traits": ["Anti-Infantry", "Heavy", "Suppressing"] },
     "Heavy Machine Gun":  { "range": 24, "attacks": 4, "ap": 2, "damage": 2, "traits": ["Anti-Infantry", "Heavy", "Suppressing"] },
     "Light Autocannon":   { "range": 24, "attacks": 3, "ap": 3, "damage": 2, "traits": ["Heavy", "Suppressing"] },
-    "Missile Launcher":   { "range": 30, "attacks": 1, "ap": 4, "damage": 5, "traits": ["Anti-Vehicle", "Blast (S)", "Guided", "Heavy", "Indirect"] },
+    "Recoilless Rifle":   { "range": 20, "attacks": 1, "ap": 4, "damage": 3, "traits": ["Anti-Vehicle", "Heavy"],
+                             "_note": "Ballistier's light AT dip." },
+    "Missile Launcher":   { "range": 30, "attacks": 1, "ap": 4, "damage": 5, "traits": ["Anti-Vehicle", "Blast (S)", "Guided", "Heavy", "Indirect"],
+                             "_note": "Ballistier keeps this -- flexible generalist, not the sharpest AT punch in the faction." },
+    "Heavy ATGM":         { "range": 24, "attacks": 1, "ap": 7, "damage": 7, "traits": ["Anti-Armor", "Anti-Vehicle", "Heavy"],
+                             "_note": "Hunter's dedicated tier -- outclasses Ballistier's Missile Launcher specifically against armor (AP7/D7 vs AP4/D5), no Blast/Guided/Indirect flexibility. Does one job better than anything else in the faction." },
+    "Mortar":             { "range": 24, "attacks": 1, "ap": 1, "damage": 2, "traits": ["Blast (S)", "Heavy", "Indirect"],
+                             "_note": "Infantry-portable indirect fire, distinct from the towed Field Howitzer: shorter range and smaller punch, but no Towable slot needed." },
+
+    "_comment_tier3": "-- Tier 3: Vehicular / Towable (needs a hull or a carriage) --",
     "Laser Cannon":       { "range": 30, "attacks": 1, "ap": 6, "damage": 6, "traits": ["Anti-Armor", "Anti-Vehicle", "Heavy"] },
     "Main Cannon":        { "range": 30, "attacks": 2, "ap": 5, "damage": 7, "traits": ["Turret"] },
     "Field Howitzer":     { "range": 36, "attacks": 1, "ap": 3, "damage": 4, "traits": ["Blast (L)", "Heavy", "Indirect"] },
+    "Heavy Autocannon":   { "range": 30, "attacks": 3, "ap": 5, "damage": 4, "traits": ["Heavy", "Suppressing"],
+                             "_note": "Vehicle-turret scale-up of Light Autocannon." },
+    "MLRS":               { "range": 36, "attacks": 4, "ap": 2, "damage": 3, "traits": ["Blast (L)", "Heavy", "Indirect"],
+                             "_note": "Area saturation, not precision -- answers a dug-in infantry blob, not a tank." },
+
+    "_comment_legacy": "-- kept in the library but no longer assigned to any built unit --",
     "Scout Autogun":      { "range": 18, "attacks": 2, "ap": 0, "damage": 1, "traits": [] }
   },
 
@@ -69,7 +96,7 @@
       "name": "Conscript Mob",
       "category": "Line", "type": "Infantry", "size": 16,
       "profile": { "speed": 5, "mettle": 2, "evasion": 6, "armor": 3, "toughness": 1 },
-      "weapons": [ { "name": "Autogun", "count": 16 } ],
+      "weapons": [ { "name": "Surplus Rifle", "count": 16 } ],
       "rules": ["Entrenched", "Boots on the Ground"],
       "modifiers": [
         { "name": "Conscript", "multiplier": 0.75,
@@ -92,7 +119,7 @@
       "category": "Recon", "type": "Infantry", "size": 5,
       "profile": { "speed": 6, "mettle": 4, "evasion": 7, "armor": 4, "toughness": 1 },
       "weapons": [
-        { "name": "Scout Autogun", "count": 5 },
+        { "name": "Scout Rifle", "count": 5 },
         { "name": "Combat Knife", "count": 5 }
       ],
       "rules": ["Spotter", "Camouflaged", "All-Terrain"]

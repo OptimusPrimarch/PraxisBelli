@@ -62,7 +62,9 @@ RESTRICTION_MINOR = 0.90
 RESTRICTION_MAJOR = 0.75
 
 MINOR_TRAITS = {"accurate", "blast (s)", "engulf (s)", "suppressing", "turret", "pistol"}
-MAJOR_TRAITS = {"linked-weapon", "blast (l)", "engulf (l)", "guided", "indirect"}
+MAJOR_TRAITS = {"linked-weapon", "blast (l)", "engulf (l)", "guided", "indirect", "overcharge"}
+# "optics" is deliberately absent -- a rules stub with no defined effect yet
+# costs nothing until the rule (and therefore its tier) actually exists.
 MINOR_RESTRICTIONS = {"coaxial", "frontal arc", "rear arc", "side arc"}
 MAJOR_RESTRICTIONS = {"heavy"}
 

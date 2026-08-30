@@ -108,6 +108,12 @@
     <rule name="Accurate" id="a3c9-2224-49f9-297a" hidden="false">
       <description>When shooting with this weapon, ignore all range penalties.</description>
     </rule>
+    <rule name="Optics" id="6f1d-8a3e-2c5b-9d4f" hidden="false">
+      <description>Rules stub -- effect not yet defined. This weapon's bearer is meant to gain a bonus to landing hits from its optics, but the mechanism has not been written. Do not treat any weapon carrying this trait as finalized.</description>
+    </rule>
+    <rule name="Overcharge" id="7e2c-9b4a-3f6d-8c1a" hidden="false">
+      <description>This weapon may fire in Overcharged mode: its AP and Damage are each increased by 2 for that attack. For each unmodified roll of 1 made for this weapon's attack, the bearer suffers a Damage 1 hit that cannot be saved against, in addition to any other effect of that roll.</description>
+    </rule>
     <rule name="Pistol" id="2ec2-2bea-ba0c-98d2" hidden="false">
       <description>This weapon can be used to make a ranged attack while the bearer is engaged, but it must target an enemy unit it&apos;s engaged with.</description>
     </rule>
