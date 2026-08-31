@@ -403,6 +403,35 @@ Not a flat statistical tax (an earlier draft considered a flat Evasion penalty f
 
 **Open before this is locked:** all numbers, throughout, same as every vehicle before it — Tayra's exact stat line (including how much lighter its Armor runs), every new weapon's Range/Attacks/AP/Damage, Camo Netting's and Fire Control Link's precise shape. This closes out shape-level design on all four Medium Chassis vehicles: Marten, Sable, Fisher, Tayra.
 
+#### Light Chassis — Stoat, Weasel, Mink
+
+The second and final vehicle family, all three sharing the flat **Spd9/Met4/Eva6/Arm5/Tuf6** line with **no deviations** — a deliberate contrast with the Medium family, where two of four vehicles (Fisher, Tayra) broke from the shared profile to fit their job. Light Chassis differentiates entirely through *role and loadout*: **it trades armor for speed and visibility, full stop, no exceptions** — the identity has to survive the upgrade menu, so every package below is kept small on purpose rather than letting a "light" vehicle quietly become a cut-price Medium one.
+
+**Category split:** Stoat and Weasel sit in **RECON** — a scout car and the transport built to deliver RECON-flavored specialists are both doing the same job. **Mink is the family's outlier**, the same structural beat as Fisher flipping to ARMOR among the Medium chassis: it drops into **SUPPORT** instead. Mink's design lesson, stated explicitly by the user and worth preserving verbatim: *it doesn't get worse stats for its firepower, it gets narrower ones* — "it loses the benefits of recon... it's just a very cheap gun buggy comparative to the higher weight class." No dip, no compensation math — the cost is that it no longer does RECON's job at all, not that it does its own job worse.
+
+**Standalone options, shared across all three vehicles:**
+
+| Package | What changes | Real-world anchor |
+|---|---|---|
+| **Bolt-on Armor** | Flat **Armor +1** | Improvised sandbag/plate armor on soft-skin vehicles. Kept deliberately small — Light Chassis' whole identity is thin skin, so the upgrade menu isn't allowed to erase that the way a bigger bump would. |
+| **Extra Fuel Tanks** | Speed increase, paired with **Critical Weakspot** (see glossary) | Direct reuse of Marten's Speed package — same real liability (exposed external fuel), same honest cost, no need to invent a second version of the same trade-off. |
+| **Camo Netting** | **+1 Evasion** while stationary and in cover | Direct reuse of Tayra's package — a light vehicle that stops moving to hide benefits exactly the same way a gun line does. |
+| **Smoke Grenades** | As an action, this unit pops smoke: until the start of its next activation, it counts as benefiting from `Cover` | The cheap cousin of Sable/Fisher's Reactive Smoke Launcher Arrays — costs the unit's own activation instead of triggering for free, which is the honest price for not needing "a full launcher system." |
+
+**Stoat — packages.** Real anchors: M3A1 Scout Car, the Universal/Bren Gun Carrier, a modern GMV/Desert Patrol Vehicle — thin-skinned platforms that exist to move a small number of people quickly, not to fight. **Transport 6** (five models plus a leader) — deliberately far below Marten's 14, because this isn't a mass-delivery Bus, it's an infiltration platform: the vehicle that gets a Hunter ATGM team or a Sapper squad into position quietly, not the one that delivers a Dragoon squad's worth of rifles into a firefight. **No weapon by default.** One optional weapon slot, pick one: LMG / MMG / Flamethrower — independent of the hull choice below, on purpose, to keep the vehicle's two decisions (can it fight a little, can it protect its cargo) from tangling into each other. **Open-topped by default, Closed-topped as an upgrade** — the mirror image of Marten's "always closed, no exceptions": a real scout car doesn't bother with a roof, and armoring the cab is the retrofit, not the baseline.
+
+**Weasel — packages.** Real anchors: Ferret Scout Car, Fennek's sensor-recon variant, Coyote Reconnaissance Vehicle, BRDM-2, the Stryker family's M1127 RV. **No transport at all** — nothing rides in a pure recon car. One weapon slot, pick one: LMG / MMG / ATGM. Signature mechanic is **`Scout Move`** (see glossary) — the vehicle's actual differentiator, the same way Bombardment differentiates Tayra: Weasel doesn't need a stat break, because "gets to position before anyone else" is a timing advantage no stat line can express on its own.
+
+**Mink — packages.** Real anchors: Panhard AML-90/-60, the Cadillac Gage Commando (V-100/V-150) gun variants, Eland Mk7 — with a rougher gun-truck/technical texture available at the top of the menu. **No transport.** **Default loadout is a combined turret**, same main+coax idiom as Fisher: **ATGM (main) + MMG (coax)**.
+
+| Option | What it is | Notes |
+|---|---|---|
+| Main gun *(pick one, replaces ATGM)* | Autocannon, or Twin Miniguns | MMG coax stays independent of this choice either way. |
+| Coax *(pick one, replaces MMG)* | Flamethrower | Independent of the main gun choice, same pattern as the option above. |
+| **Gang Mount** *(replaces the whole turret — no coax)* | Quad Plasma Rifles, Quad Fusion Rifles, or a massed shoulder-fired-missile cluster | Reuses existing infantry weapon profiles at higher Attacks rather than inventing new vehicle-scale guns — a Quad Plasma Rifle mount is literally the Plasma Rifle profile at 4× Attacks, priced through the same weapon formula already in `points.py`. The gun-truck/technical read: whatever's on hand, bolted on in numbers, no coax because every mount on the vehicle is already the "main gun." |
+
+**Open before this is locked:** all numbers throughout — the shared Light Chassis stat line was fixed at design-pass time (Spd9/Met4/Eva6/Arm5/Tuf6, per the naming pass), but every weapon's Range/Attacks/AP/Damage, Bolt-on Armor's exact bump, and Gang Mount's Attacks-per-tube are still unset. This closes out shape-level design on both vehicle families — Stoat, Weasel, and Mink complete the full Mustelidae roster alongside Marten, Sable, Fisher, and Tayra, with only Wolverine (the bespoke apex specialist) left outside either family by design.
+
 ### Imperial Forgesworn — *overmatch*
 
 **Staple: the walker.** A construct that is simultaneously their armor and their fire support.

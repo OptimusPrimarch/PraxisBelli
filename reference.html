@@ -1047,6 +1047,11 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <dt>All-Terrain</dt><dd>Ignores difficult terrain penalties.</dd>
       </dl>
 
+      <h4>Movement</h4>
+      <dl>
+        <dt>Scout Move</dt><dd>After deployment, before the first activation of the game, this unit may make a free move up to its Speed. First application: the Weasel — the one vehicle in the roster whose entire job is getting somewhere before the shooting starts.</dd>
+      </dl>
+
       <h4>Cost-modifying</h4>
       <dl>
         <dt>Conscript <span class="pill">×0.75</span></dt>
@@ -1354,9 +1359,9 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
 
       <div class="tw"><table>
         <tr><th>Vehicle (Mustelidae)</th><th>Weight class</th><th>Role</th></tr>
-        <tr><td class="k">Stoat</td><td>Light</td><td>Scout Bus (Transport 10)</td></tr>
+        <tr><td class="k">Stoat</td><td>Light</td><td>Infiltration Bus (Transport 6)</td></tr>
         <tr><td class="k">Weasel</td><td>Light</td><td>Recon Car (no transport)</td></tr>
-        <tr><td class="k">Mink</td><td>Light</td><td>Light Gunboat (2× autogun, Transport 4)</td></tr>
+        <tr><td class="k">Mink</td><td>Light</td><td>Light Gun Buggy (ATGM+MMG turret, no transport)</td></tr>
         <tr><td class="k">Marten</td><td>Medium</td><td>Bus (Transport 14)</td></tr>
         <tr><td class="k">Sable</td><td>Medium</td><td>Gunboat (autocannon, Transport 6)</td></tr>
         <tr><td class="k">Fisher</td><td>Medium</td><td>Tank Destroyer turret (Main Cannon)</td></tr>
@@ -1509,6 +1514,58 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       (Field Gun ladder, Missile Battery, Mortars, SAM System), Camo Netting's exact figure, Fire
       Control Link and Radio/Officer Orders' mechanisms — none of it priced yet. This closes out
       shape-level design on all four Medium Chassis vehicles: Marten, Sable, Fisher, Tayra.</p>
+
+      <h3>Light Chassis — Stoat, Weasel, Mink</h3>
+      <p>The second and final vehicle family, all three sharing the flat <strong>Spd9/Met4/Eva6/Arm5/
+      Tuf6</strong> line with <strong>no deviations</strong> — unlike Medium, where Fisher and Tayra
+      both broke from the shared profile. Light Chassis differentiates entirely through role and
+      loadout: it trades armor for speed and visibility, full stop. <strong>Category split:</strong>
+      Stoat and Weasel sit in RECON; <strong>Mink is the family's outlier</strong> (SUPPORT) — the
+      same structural beat as Fisher flipping to ARMOR among the Medium chassis. Mink's cost is
+      narrower capability, not worse stats: it loses RECON's job entirely rather than doing it badly.</p>
+
+      <h4>Standalone options — shared across all three vehicles</h4>
+      <div class="tw"><table>
+        <tr><th>Package</th><th>What it is</th><th>Real-world anchor</th></tr>
+        <tr><td class="k">Bolt-on Armor</td><td>Flat Armor+1 — kept small on purpose</td><td>Improvised sandbag/plate armor on soft-skin vehicles</td></tr>
+        <tr><td class="k">Extra Fuel Tanks</td><td>Speed increase + <strong>Critical Weakspot</strong> (see glossary)</td><td>Direct reuse of Marten's Speed package</td></tr>
+        <tr><td class="k">Camo Netting</td><td>+1 Evasion while stationary and in cover</td><td>Direct reuse of Tayra's package</td></tr>
+        <tr><td class="k">Smoke Grenades <span class="pill">new</span></td><td>Action: gains <code>Cover</code> until the start of its next activation</td><td>Cheap cousin of Reactive Smoke Launcher Arrays — costs an action instead of triggering free</td></tr>
+      </table></div>
+
+      <h4>Stoat — infiltration bus</h4>
+      <p><strong>Transport 6</strong> (5 models + leader) — far below Marten's 14 on purpose: this
+      delivers a Hunter or Sapper team quietly, it doesn't move a rifle squad into a firefight.
+      <strong>No weapon by default</strong>; one optional slot, pick one: LMG / MMG / Flamethrower,
+      independent of the hull choice. <strong>Open-topped by default, Closed-topped as an
+      upgrade</strong> — the mirror of Marten's "always closed."</p>
+      <p class="note">Real-world anchor: M3A1 Scout Car, Universal/Bren Gun Carrier, a modern GMV/
+      Desert Patrol Vehicle.</p>
+
+      <h4>Weasel — recon car</h4>
+      <p><strong>No transport.</strong> One weapon slot, pick one: LMG / MMG / ATGM. Signature
+      mechanic: <strong>Scout Move</strong> (see glossary, §12) — the vehicle's actual differentiator,
+      the same role Bombardment plays for Tayra.</p>
+      <p class="note">Real-world anchor: Ferret Scout Car, Fennek's sensor-recon variant, Coyote
+      Reconnaissance Vehicle, BRDM-2, the Stryker family's M1127 RV.</p>
+
+      <h4>Mink — light gun buggy</h4>
+      <p><strong>No transport.</strong> Default loadout is a combined turret, same main+coax idiom as
+      Fisher: <strong>ATGM (main) + MMG (coax)</strong>.</p>
+      <div class="tw"><table>
+        <tr><th>Option</th><th>What it is</th><th>Notes</th></tr>
+        <tr><td class="k">Main gun <span class="pill">pick one, replaces ATGM</span></td><td>Autocannon, or Twin Miniguns</td><td>MMG coax stays independent either way</td></tr>
+        <tr><td class="k">Coax <span class="pill">pick one, replaces MMG</span></td><td>Flamethrower</td><td>Independent of the main gun choice</td></tr>
+        <tr><td class="k">Gang Mount <span class="pill">replaces whole turret, no coax</span></td><td>Quad Plasma Rifles, Quad Fusion Rifles, or a massed shoulder-fired-missile cluster</td><td>Reuses existing infantry weapon profiles at higher Attacks — a Quad Plasma Rifle mount is the Plasma Rifle profile at 4× Attacks, priced through the standard weapon formula</td></tr>
+      </table></div>
+      <p class="note">Real-world anchor: Panhard AML-90/-60, Cadillac Gage Commando (V-100/V-150)
+      gun variants, Eland Mk7 — Gang Mount leans into a rougher gun-truck/technical texture on top.</p>
+
+      <p class="note"><span class="pill open">Shape locked, numbers not</span> every weapon's Range/
+      Attacks/AP/Damage, Bolt-on Armor's exact bump, Gang Mount's Attacks-per-tube — none of it priced
+      yet. This closes out shape-level design on both vehicle families: Stoat, Weasel, and Mink
+      complete the Mustelidae roster alongside Marten, Sable, Fisher, and Tayra, with only Wolverine
+      left outside either family by design.</p>
 
       <div class="tw"><table>
         <tr><th>Infantry title</th><th>Unit</th></tr>

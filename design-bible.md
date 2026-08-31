@@ -567,6 +567,9 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 - **Camouflaged** — +1 Evasion while in cover.
 - **All-Terrain** — ignores difficult terrain penalties.
 
+**Movement**
+- **Scout Move** — after deployment, before the first activation of the game, this unit may make a free move up to its Speed. *(First application: the Weasel — the one vehicle in the roster whose entire job is getting somewhere before the shooting starts.)*
+
 ---
 
 ## Roster — Imperial Regiments
