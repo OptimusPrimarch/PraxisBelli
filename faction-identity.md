@@ -324,6 +324,48 @@ Marten's synthesis was "real transport, many roles." Sable's was different on pu
 
 **Open before this is locked:** all numbers — Firepower's per-rung Evasion cost, Light Cannon's rebuild, Traversing's exact discount, Suppression's final Attacks count, everything on the standalone options.
 
+#### Fisher — packages
+
+Fisher is the family's outlier by design — the only one that flips CATEGORY (to ARMOR), and the only one built named for a specific piece of real animal behavior: fishers are one of the only predators that successfully hunts porcupines, the mustelid built to go after heavily-defended prey despite the risk. Everything below is in service of that one fact.
+
+**Stat profile diverges from the rest of the family, deliberately.** Marten/Sable/Tayra share one literal profile block; Fisher does not — it's noticeably **slower than Sable**. "Shared chassis family" now means shared lineage and weight class, not byte-identical numbers, and Fisher was always the vehicle most likely to break that pattern first, being the only one with a genuinely different job.
+
+**Default loadout is three separate weapons, not two** — the classic bow-gunner layout: **Main Cannon** (Turret) + a **Coaxial MMG** paired with it + a fully separate **hull MMG locked to Frontal Arc**. Three guns, three different restrictions, more internal texture than any other vehicle in the family has at baseline.
+
+**Sponsons — mirrored pair, Side-Arc-locked, independent of the Main Gun choice (pick one, applies to both sides):** HMG, AGL (Automatic Grenade Launcher — a real distinct weapon class from the single-shot Grenade Launcher, more Attacks, direct-fire), Laser Cannon, Heavy Fusion Blaster, Heavy Flamethrower, Plasma Cannon. Real precedent for "fixed main gun, sponsons intact" isn't invented: the Shadowsword/Stormsword pattern super-heavies run exactly this combination.
+
+**Hull weapon swap** (replaces the default Frontal MMG, its own slot): MMG (default) / Flamethrower / **Fusion Blaster** — a new, lighter-tier weapon distinct from the sponson-grade Heavy Fusion Blaster, same base→Heavy escalation idiom already running through Light/Medium/Heavy MG and Light/Heavy Autocannon.
+
+**Cupola mount and Ablative Plating, both reused directly from Sable** — MMG/HMG/ATGM for the cupola, Ablative Plating unchanged. **Smoke Dischargers** added as a standalone too, the one clear gap Sable had that Fisher didn't yet.
+
+**Main Gun swap menu (replaces the default Main Cannon, pick one):**
+
+| Option | Role | Shape |
+|---|---|---|
+| Main Cannon *(default)* | Generalist | Already built |
+| Penetrator Cannon | Dedicated tank-hunter | Very high AP, single-target, no Blast |
+| Siege Cannon | Close-range demolition | Short range, `Blast (L)`, **`Indirect`** |
+| Storm Cannon | Anti-infantry saturation | High Attacks, lower AP |
+| Heavy Plasma Cannon | High-risk/high-reward | Overcharge-flavored, main-gun scale |
+| Twin Autocannon | Rate-of-fire generalist | Higher volume, less punch per hit than base |
+
+Siege Cannon's `Indirect` isn't a stray bonus — it's the shared trait of an entire lineage (see Turretless below), and it means even Fisher's best anti-fortification option depends on a Spotter. The most self-sufficient specialist in the roster still needs the pack for its best trick.
+
+**Turretless — the extreme-commitment package, and the one that finally makes the vehicle's own name mean something mechanically.** Main gun loses `Turret`, gains `Frontal Arc`. Sponsons, if taken, **keep their normal Side Arc unchanged** — only the main gun commits to one facing, not the whole hull. Cupola stays fully independent. Grants an Evasion increase (a lower silhouette without a rotating turret box is a real, not invented, advantage — the actual historical case for casemate vehicles like the StuG). Also unlocks exclusive access to **one** of two ceiling-tier gun families, not available on any turreted build:
+
+*Tank-hunter reason to go turretless — the Heavy Penetrator Cannon family:*
+
+| Variant | Identity | Shape |
+|---|---|---|
+| Heavy Penetrator Cannon *(kinetic, base)* | The reliable one | Highest AP/Damage of the four, no strings attached |
+| — (Plasma) | The risky one | Carries `Overcharge` — a ceiling that can exceed the kinetic version if you're willing to gamble |
+| — (Fusion) | The point-blank one | Shortest range by far, highest raw AP of the four — the range restriction *is* the cost |
+| — (Beam) | The patient one | Longest range, carries `Accurate` — never has to close the distance, trades some raw punch for it |
+
+*Assault-gun reason to go turretless — Demolition Cannon:* `Blast (L)`, short range, high Damage, and **`Indirect`** (shared family trait with Siege Cannon — the StuG/Vindicator lineage, not the tank-hunter one). Deliberately built with no exotic traits (no Overcharge, no Accurate, no multi-variant family) — it lands naturally cheaper in the formula the same way the real StuG was genuinely cheaper to produce than a turreted tank, without needing an artificial discount bolted on. Confirmed as one real historical precedent (Shadowsword/Stormsword) validating "fixed gun, sponsons intact" earlier in this same design pass.
+
+**Open before this is locked:** all numbers, throughout — Fisher's full stat line (including exactly how much slower than Sable), every new weapon's Range/Attacks/AP/Damage, Turretless's Evasion gain, and Demolition Cannon's exact profile. This pass settled shape only, same as Marten and Sable before it.
+
 ### Imperial Forgesworn — *overmatch*
 
 **Staple: the walker.** A construct that is simultaneously their armor and their fire support.
