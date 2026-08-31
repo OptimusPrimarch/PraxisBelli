@@ -297,6 +297,33 @@ Every package below is real-world sourced, on purpose — not because history ne
 
 **Open before this is fully locked:** exact numbers throughout (Critical Weakspot's discount %, Speed's bump, seat/weapon counts on Assault, all of it) — this pass settled *shape*, not digits. The Command variant also still needs an actual name rather than "Marten with a job title."
 
+#### Sable — packages
+
+Marten's synthesis was "real transport, many roles." Sable's was different on purpose: **a specific blend of Bradley (weapon class), Stryker (modularity as doctrine, moderate baseline armor answered by add-on kit), and 40k Razorback (a fixed, honest capacity-for-firepower ratio that never reaches zero)** — not a Bradley clone, three different real vehicles each contributing the one thing they do best.
+
+**The identity rule that came out of it, worth stating on its own:** Sable never zeroes out its transport bay, no matter which packages it carries. Marten has full-specialist packages that go all the way to zero seats (Command, Ambulance, Forward Observer); Sable doesn't get that mode at all. Whatever you build, there's still a squad-sized hole in the back. That's the one sentence that keeps Sable from becoming "Marten but angrier" no matter how far its gun options escalate.
+
+**Locomotion — built as Marten's mirror image, on purpose.** Marten defaults wheeled and earns Tracks as an upgrade; Sable defaults **Tracked** and earns Wheels as an upgrade. Same shared stat profile, opposite defaults — this produced a genuinely useful general rule rather than a one-off: **Tracked and Hover locomotion grant `All-Terrain` inherently**, which also retroactively simplified Marten's own Terrain package (it no longer needs a bespoke "ignores Difficult terrain" clause — "gain Tracks" already implies it). Sable's Wheels package is the clean inverse: lose the inherent `All-Terrain`, gain flat Speed.
+
+**Always Closed-topped, full stop** — not a package choice. No real IFV has an open crew compartment; Sable doesn't get to pretend otherwise the way Marten's base config can.
+
+**The weapon-slot choice (pick one — these two compete with each other, nothing else does):**
+
+| Option | What it is | Real-world anchor |
+|---|---|---|
+| **Firepower ladder** | Base: Light Autocannon (already built). Firepower I: Heavy Autocannon (already built). Firepower II: Twin Light Autocannons (existing concept, Linked-Weapon). Firepower III, the absolute ceiling: **Light Cannon** (Stryker MGS-flavored, needs rebuilding against current numbers) + **`Traversing`** (see glossary) + an Evasion decrease — the two stack deliberately, since this rung is explicitly "pushing the hull's capabilities." Cost lever across the whole ladder is **Evasion, not Speed** — a bigger turret is a silhouette-and-traverse problem, not primarily a weight problem, and Marten already owns the weight-based lever. | Bradley's 25mm / Puma's 30mm / CV90's 40mm real-world caliber spread; Stryker MGS for the 105mm-flavored ceiling |
+| **Suppression** | Twin linked MMG-caliber Gatling guns (`Suppressing` + `Linked-Weapon` both, deliberately — "that's the whole reason to bring double miniguns"), replacing **both** the main gun and coax slot as one combined system. Stays on the standard turret — doesn't touch the Firepower ladder or its Evasion cost at all, since the cost here is pure capability, not a stat trade. The one package that trades away Sable's whole "does both jobs" identity on purpose, which is worth having exactly once on the menu. | Not a single named vehicle the way most of these are — a logical extrapolation from the parts already in the toolbox, not an invented combination |
+
+**Coax ladder, riding along with Firepower:** MMG (base) → HMG (Firepower I+) → Medium Gatling Gun (Firepower II+, "light minigun" caliber — the heavier Gatling calibers are reserved for future frames elsewhere in the army, not this chassis).
+
+**Cupola/pintle mount — a real, separate slot, not folded into the main/coax choice (pick one):** MMG, HMG, or an ATGM system. This is the more precisely-Bradley framing than an earlier "standalone ATGM" draft — a real Bradley's TOW launcher sits in exactly this kind of separate pop-up mount, distinct from the 25mm in the main turret, not bolted onto the same system.
+
+**Standalone, independent of everything else, stackable with each other:** **Ablative Plating** (see glossary) and **Reactive Smoke Launcher Arrays** (auto-triggering, echoing how real modern IFVs pair smoke dischargers with laser-warning receivers rather than firing them manually). Neither competes with the other or with anything above.
+
+**`Hardpoints` note:** every vehicle in the game already ignores `Heavy` via its TYPE (design-bible.md §07) — the Gatling family's inherited Heavy trait from its MMG lineage was never actually a problem on a vehicle mount, just worth being aware the infrastructure was already there before treating it as a new question.
+
+**Open before this is locked:** all numbers — Firepower's per-rung Evasion cost, Light Cannon's rebuild, Traversing's exact discount, Suppression's final Attacks count, everything on the standalone options.
+
 ### Imperial Forgesworn — *overmatch*
 
 **Staple: the walker.** A construct that is simultaneously their armor and their fire support.

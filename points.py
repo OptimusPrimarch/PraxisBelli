@@ -65,8 +65,14 @@ MINOR_TRAITS = {"accurate", "blast (s)", "engulf (s)", "suppressing", "turret", 
 MAJOR_TRAITS = {"linked-weapon", "blast (l)", "engulf (l)", "guided", "indirect", "overcharge"}
 # "optics" is deliberately absent -- a rules stub with no defined effect yet
 # costs nothing until the rule (and therefore its tier) actually exists.
-MINOR_RESTRICTIONS = {"coaxial", "frontal arc", "rear arc", "side arc"}
-MAJOR_RESTRICTIONS = {"heavy"}
+
+# Frontal/Rear/Side Arc moved from minor to major once Traversing existed as a
+# real point of comparison: a PERMANENTLY fixed arc never reaches the rest of
+# the board, while Traversing eventually reaches all of it, just slowly.
+# Pricing them the same was only ever an artifact of Arc being the sole data
+# point -- wrong the moment there was something worse to compare it to.
+MINOR_RESTRICTIONS = {"coaxial", "traversing"}
+MAJOR_RESTRICTIONS = {"heavy", "frontal arc", "rear arc", "side arc"}
 
 MULT_TRAITS = {
     **{t: TRAIT_MINOR for t in MINOR_TRAITS},

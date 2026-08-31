@@ -911,8 +911,8 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <tr><th>Tier</th><th class="num">×</th><th>Traits</th></tr>
         <tr><td class="k">Major bonus</td><td class="num">1.30</td><td>Linked-Weapon, Blast (L), Engulf (L), Guided, Indirect, Overcharge</td></tr>
         <tr><td class="k">Minor bonus</td><td class="num">1.10</td><td>Accurate, Blast (S), Engulf (S), Suppressing, Turret, Pistol</td></tr>
-        <tr><td class="k">Minor restriction</td><td class="num">0.90</td><td>Coaxial, Frontal/Rear/Side Arc</td></tr>
-        <tr><td class="k">Major restriction</td><td class="num">0.75</td><td>Heavy</td></tr>
+        <tr><td class="k">Minor restriction</td><td class="num">0.90</td><td>Coaxial, Traversing</td></tr>
+        <tr><td class="k">Major restriction</td><td class="num">0.75</td><td>Heavy, Frontal/Rear/Side Arc</td></tr>
         <tr><td class="k">Anti-[Keyword] <em>(each, stacks)</em></td><td class="num">1.20</td><td>—</td></tr>
       </table></div>
 
@@ -1012,7 +1012,13 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <dt>Hardpoints</dt><dd>Ignore the Heavy trait.</dd>
         <dt>Pistol</dt><dd>May make a ranged attack while engaged, but only at an enemy unit it is engaged with.</dd>
         <dt>Turret</dt><dd>May fire from any facing.</dd>
-        <dt>Frontal / Rear / Side Arc</dt><dd>May only target models in that facing.</dd>
+        <dt>Frontal / Rear / Side Arc</dt><dd>May only target models in that facing, permanently.</dd>
+        <dt>Traversing</dt><dd>This weapon tracks its own facing, starting aligned with the hull's.
+        At the start of this unit's activation, its facing may be rotated up to 90° before firing —
+        it may only target models within its current facing. Unlike a fixed Arc it eventually reaches
+        anywhere, just slowly: a target 180° away costs a full activation of pure rotation before the
+        gun can fire on it, during which the vehicle is genuinely exposed on that flank. First
+        application: the Sable's Light Cannon package.</dd>
         <dt>Coaxial</dt><dd>Must target the same target as the weapon named in the annotation.</dd>
         <dt>Linked-Weapon</dt><dd>Re-roll all misses.</dd>
         <dt>Fixed</dt><dd>Cannot be removed, swapped, or exchanged for an upgrade. Used for equipment that comes as part of another weapon, such as a Bayonet on a Rifle.</dd>
@@ -1024,6 +1030,11 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <dt>Overcharge</dt><dd>This weapon may fire in Overcharged mode: its AP and Damage are each increased by 2 for that attack. For each unmodified roll of 1 made for this weapon's attack, the bearer suffers a Damage 1 hit that cannot be saved against, in addition to any other effect of that roll.</dd>
         <dt>Anti-[Keyword]</dt><dd>Against a target with the matching keyword, each successful damage roll counts as <strong>two hits</strong> instead of one. Because hits are allocated individually, the extra hits may spill onto other models in the unit. Defined for every TYPE and CATEGORY.</dd>
         <dt>Bulwark</dt><dd>Reduce incoming damage by 1, to a minimum of 1.</dd>
+        <dt>Ablative Plating</dt><dd>While this model would take doubled damage from a hit with
+        Anti-Vehicle or Anti-Armor, it instead takes that damage normally. Narrower than a flat Armor
+        increase on purpose — it specifically answers weapons built to kill vehicles, not everything.
+        Industrial materials science, not warded plate: the sci-fi register stays technological since
+        Regiments (the faction using it first) have no oath-access at all.</dd>
       </dl>
 
       <h4>Durability &amp; morale</h4>
@@ -1372,8 +1383,36 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <tr><td class="k">Terror Broadcaster</td><td>Grants Terrifying directly</td><td>Real PsyOps HMMWVs; reuses the existing Monster trigger rather than inventing a new one</td></tr>
       </table></div>
       <p class="note"><span class="pill open">Shape locked, numbers not</span> Critical Weakspot's
-      discount %, the Speed bump, seat/weapon counts — none of it is priced yet. Sable, Fisher, and
-      Tayra haven't had this pass done at all.</p>
+      discount %, the Speed bump, seat/weapon counts — none of it is priced yet.</p>
+
+      <h3>Sable — packages</h3>
+      <p>Synthesis of three real vehicles, each contributing one thing: <strong>Bradley</strong>
+      (weapon class — a real autocannon plus a genuine ATGM, not an MG with delusions),
+      <strong>Stryker</strong> (modularity as doctrine, moderate baseline armor answered by add-on
+      kit rather than starting heavy), <strong>40k Razorback</strong> (a fixed capacity-for-firepower
+      ratio that never reaches zero). Built as Marten's mirror image: same shared stat profile,
+      opposite locomotion default — Marten is wheeled with Tracks as an upgrade, Sable is
+      <strong>Tracked</strong> with Wheels as the upgrade. <strong>Tracked and Hover locomotion grant
+      <code>All-Terrain</code> inherently</strong> — a general rule this pass produced, not a
+      Sable-specific one. <strong>Never zeroes its transport bay</strong>, unlike Marten's
+      full-specialist packages — whatever you build, there's still a squad-sized hole in the back.
+      <strong>Always Closed-topped</strong>, no exceptions — no real IFV has an open compartment.</p>
+
+      <div class="tw"><table>
+        <tr><th>Option</th><th>What it is</th><th>Real-world anchor</th></tr>
+        <tr><td class="k">Wheels</td><td>Converts to Wheeled: lose inherent All-Terrain, gain flat Speed</td><td>Real wheeled-vs-tracked IFV tradeoff</td></tr>
+        <tr><td class="k">Firepower ladder <span class="pill">weapon slot, pick one w/ Suppression</span></td><td>Base Light Autocannon → Heavy Autocannon → Twin Light Autocannons → <strong>Light Cannon</strong> (ceiling: + <code>Traversing</code> + Evasion decrease, stacked deliberately). Cost lever is Evasion, not Speed — Marten already owns the weight-based lever, a bigger turret is a silhouette/traverse problem instead.</td><td>Bradley 25mm / Puma 30mm / CV90 40mm spread; Stryker MGS for the ceiling</td></tr>
+        <tr><td class="k">Suppression <span class="pill">weapon slot</span></td><td>Twin linked MMG-caliber Gatling guns (Suppressing + Linked-Weapon both), replacing main gun AND coax as one system. Standard turret — no Evasion cost, the cost is pure capability. The one package that trades away "does both jobs" on purpose.</td><td>Logical extrapolation, not a named vehicle</td></tr>
+        <tr><td class="k">Coax ladder</td><td>MMG → HMG → Medium Gatling Gun, tied to Firepower's tiers</td><td>—</td></tr>
+        <tr><td class="k">Cupola mount <span class="pill">pick one</span></td><td>MMG, HMG, or an ATGM system — a separate slot from the main/coax choice</td><td>Bradley's TOW sits in exactly this kind of separate pop-up mount</td></tr>
+        <tr><td class="k">Ablative Plating <span class="pill">standalone</span></td><td>See trait glossary — blunts Anti-Vehicle/Anti-Armor specifically</td><td>—</td></tr>
+        <tr><td class="k">Reactive Smoke Launchers <span class="pill">standalone</span></td><td>Auto-triggering, doesn't compete with Ablative or anything else</td><td>Real IFVs pair smoke dischargers with laser-warning receivers</td></tr>
+      </table></div>
+      <p class="note">Every vehicle already ignores <code>Heavy</code> via its TYPE (§07's
+      <code>Hardpoints</code>) — the Gatling family's inherited Heavy was never actually a problem on
+      a vehicle mount. <span class="pill open">Shape locked, numbers not</span> Firepower's per-rung
+      Evasion cost, Light Cannon's rebuild, Traversing's discount, Suppression's Attacks count — none
+      of it priced yet. Fisher and Tayra haven't had this pass done at all.</p>
 
       <div class="tw"><table>
         <tr><th>Infantry title</th><th>Unit</th></tr>

@@ -423,14 +423,14 @@ Every trait is multiplicative — a trait's value scales with how much the weapo
 Rather than individually arguing ~15 trait values — exactly the kind of subjective, hard-to-defend pricing this system otherwise avoids — traits are grouped into **two bonus tiers and two restriction tiers**, each one fixed multiplier. Retuning the whole system is changing four numbers, not fifteen.
 
 **Bonus tier** — does the trait change the *shape* of the attack (major), or just improve the odds on an otherwise-normal shot (minor)?
-**Restriction tier** — does it narrow *what* can be targeted (minor), or *when* the unit can act at all (major)? `Heavy` sits alone in the major tier, since "can't move and shoot" is a different category of cost than "can only shoot in one direction."
+**Restriction tier** — does it narrow *what* can be targeted (minor), or *when* the unit can act at all, or *how completely*, (major)? `Frontal/Rear/Side Arc` moved to major once `Traversing` existed as a real comparison: a **permanently** fixed arc never reaches the rest of the board, while `Traversing` eventually reaches all of it, just slowly — pricing them the same was only ever an artifact of Arc being the sole data point.
 
 | Tier | × | Traits |
 |---|---|---|
 | Major bonus | **1.30** | Linked-Weapon, Blast (L), Engulf (L), Guided, Indirect, Overcharge |
 | Minor bonus | **1.10** | Accurate, Blast (S), Engulf (S), Suppressing, Turret, Pistol |
-| Minor restriction | **0.90** | Coaxial, Frontal / Rear / Side Arc |
-| Major restriction | **0.75** | Heavy |
+| Minor restriction | **0.90** | Coaxial, Traversing |
+| Major restriction | **0.75** | Heavy, Frontal / Rear / Side Arc |
 | Anti-[Keyword] *(each, stacks)* | **1.20** | — |
 
 **Multiple traits compound, they do not add.** A weapon with traits `A` and `B` costs `base × A × B`, not `base × (1 + (A−1) + (B−1))`. This is a deliberate choice, made explicit here because it isn't the only reasonable one and the two diverge fast: two Major bonuses stacked is a 5.6% gap between compounding and adding; three is 15.6%; a hypothetical five-trait weapon is 48.5%. At the trait counts currently on the roster (2–3), the two are nearly identical — the gap only bites on a weapon someone loads up with everything.
@@ -536,7 +536,8 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 - **Hardpoints** — ignore the Heavy trait.
 - **Pistol** — may make a ranged attack while engaged, but only at an enemy unit it is engaged with.
 - **Turret** — may fire from any facing.
-- **Frontal / Rear / Side Arc** — may only target models in that facing.
+- **Frontal / Rear / Side Arc** — may only target models in that facing, permanently.
+- **Traversing** — this weapon tracks its own facing, starting aligned with the hull's. At the start of this unit's activation, its facing may be rotated up to 90° before firing. It may only target models within its current facing. Unlike a fixed Arc, it eventually reaches anywhere — a target 180° away costs a full activation of pure rotation before the gun can fire on it at all, during which the vehicle is genuinely exposed on that flank. *(First application: the Sable's Light Cannon package — the turret ring can take the gun, but swinging it is slow.)*
 - **Coaxial** — must target the same target as the weapon named in the annotation.
 - **Linked-Weapon** — reroll all misses.
 
@@ -545,6 +546,7 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 - **Overcharge** — this weapon may fire in Overcharged mode: its AP and Damage are each increased by 2 for that attack. For each unmodified roll of 1 made for this weapon's attack, the bearer suffers a Damage 1 hit that cannot be saved against, in addition to any other effect of that roll.
 - **Anti-[Keyword]** — against a target with the matching keyword, each successful damage roll counts as two hits instead of one; because hits are allocated individually, the excess may spill onto other models in the unit. Defined for: Aerial, Armor, Cavalry, Command, Infantry, Line, Monster, Recon, Shock, Support, Towable, Vehicle.
 - **Bulwark** — reduce incoming damage by 1, to a minimum of 1.
+- **Ablative Plating** — while this model would take doubled damage from a hit with the `Anti-Vehicle` or `Anti-Armor` trait, it instead takes that damage normally. Narrower than a flat Armor increase on purpose: it specifically answers weapons built to kill vehicles, rather than making the model tougher against everything. Industrial materials science, not warded plate — the sci-fi register stays technological rather than borrowing anything from the Oath, since the faction using it first (Regiments) has no oath-access at all. *(First application: the Sable's standalone Ablative Plating option.)*
 
 **Cost-modifying traits**
 - **Conscript** — this unit costs **25% less**. It may never re-roll a die for any reason, and may not take the Rally action. *Conscripts get raw numbers and none of the benefits of training: `Entrenched`'s Mettle re-roll and `Massed Ranks`' to-hit re-roll both go dead, and once suppressed they can only clear markers one at a time by passing checks they are bad at.*
