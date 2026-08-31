@@ -1366,8 +1366,9 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <tr><td class="k">Sable</td><td>Medium</td><td>Gunboat (autocannon, Transport 6)</td></tr>
         <tr><td class="k">Fisher</td><td>Medium</td><td>Tank Destroyer turret (Main Cannon)</td></tr>
         <tr><td class="k">Tayra</td><td>Medium</td><td>Self-Propelled Gun (Howitzer)</td></tr>
-        <tr><td class="k">Wolverine</td><td>Apex — bespoke, not a family</td><td>Laser Cannon specialist</td></tr>
-        <tr><td class="k"><em>Badger, Otter</em></td><td>Reserved</td><td><em>Badger for a future Sapper engineering vehicle (badgers dig); Otter for a future amphibious variant</em></td></tr>
+        <tr><td class="k">Wolverine</td><td>Heavy</td><td>Heavy tank / tank destroyer / IFV — always turreted</td></tr>
+        <tr><td class="k">Badger</td><td>Heavy</td><td>Wolverine's chassis twin — casemate SPG/tank hunter, armored bus, and more — never turreted</td></tr>
+        <tr><td class="k"><em>Otter</em></td><td>Reserved</td><td><em>Earmarked for a future amphibious variant</em></td></tr>
       </table></div>
 
       <h3>Marten — packages</h3>
@@ -1564,8 +1565,67 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       <p class="note"><span class="pill open">Shape locked, numbers not</span> every weapon's Range/
       Attacks/AP/Damage, Bolt-on Armor's exact bump, Gang Mount's Attacks-per-tube — none of it priced
       yet. This closes out shape-level design on both vehicle families: Stoat, Weasel, and Mink
-      complete the Mustelidae roster alongside Marten, Sable, Fisher, and Tayra, with only Wolverine
-      left outside either family by design.</p>
+      complete the Mustelidae roster alongside Marten, Sable, Fisher, and Tayra. Only the Heavy
+      Chassis pair remained after this pass — see below.</p>
+
+      <h3>Heavy Chassis — Wolverine, Badger</h3>
+      <p>The heaviest weight class, built as a two-vehicle twin pair from one defining rule rather
+      than a broader family: <strong>Wolverine always has a turreted main gun, Badger never
+      does.</strong> Regiments-specific. <strong>Stat line not yet set</strong> — Wolverine was
+      originally excluded from the shared-profile system entirely ("apex, solitary"), so there's no
+      inherited baseline; a rough Light→Medium progression continuation lands near Spd7/Met4/Eva4/
+      Arm7/Tuf12, but a steeper Armor/Toughness jump is probably right for the heaviest thing in the
+      game and nothing here is locked.</p>
+      <p>Real-world throughline: Tiger and Jagdtiger split across the twins rather than landing on
+      one vehicle — Tiger's turreted-heavy-tank identity is Wolverine's, Jagdtiger's turretless
+      casemate silhouette is Badger's, and Jagdtiger's actual signature (biggest gun that fits)
+      survives as Wolverine's own weapon instead of costing it the turret. Rogal Dorn-style "gun
+      barge" excess (an internal design touchstone, not an in-game name) shapes Wolverine's default
+      loadout — armed heavily out of the box, unlike Fisher's leaner default.</p>
+
+      <h4>Wolverine — packages</h4>
+      <div class="tw"><table>
+        <tr><th>Slot</th><th>What it is</th><th>Notes</th></tr>
+        <tr><td class="k">Turret <span class="pill">always present</span></td><td>Main Cannon <em>(default)</em> / Heavy Laser Annihilator <em>(upgrade)</em></td><td>Inherent <code>Traversing</code> from ring size, not a paid option. Annihilator carries <code>Accurate</code>, hardest single-target hit in the roster.</td></tr>
+        <tr><td class="k">Hull <span class="pill">Frontal Arc / Fixed</span></td><td>Fisher's Main Gun menu, reused unmodified</td><td>Main Cannon / Penetrator Cannon / Siege Cannon / Storm Cannon / Heavy Plasma Cannon / Twin Autocannon — the "compatible base," no escalation</td></tr>
+        <tr><td class="k">Sponsons <span class="pill">standard by default</span></td><td>Mirrored pick-one, Fisher's six options</td><td>Not a paid upgrade, unlike Fisher — the Rogal Dorn "bristling by default" read</td></tr>
+        <tr><td class="k">Coax, Cupola, Ablative Plating, Smoke</td><td>Reused directly from Fisher/Sable</td><td>Unmodified on the baseline build</td></tr>
+      </table></div>
+      <p class="note"><strong>No Turretless package</strong> — deliberately dropped from "same
+      packages as Fisher." Badger now permanently occupies that space, so Wolverine doesn't need its
+      own version and the turret rule stays airtight.</p>
+
+      <h4>Wolverine — IFV variant</h4>
+      <p>Namer/Achzarit register: a heavy hull that still fights while carrying a squad, not a
+      downgraded fighting vehicle. Gives up the hull gun and sponsons for the troop compartment, but
+      <strong>keeps the turret ring</strong> — the ladder inside it changes instead of disappearing:
+      <strong>Twin Main Cannon / Twin Penetrator Cannon / Twin Siege Cannon / Twin Storm Cannon /
+      Twin Heavy Plasma Cannon</strong> — Fisher's own stats, unescalated, with <code>Linked-Weapon</code>
+      added. No Annihilator access. <span class="pill open">Undecided</span> default gun: Twin Heavy
+      Autocannon or Quad Autocannon, genuinely unresolved. Coax expanded for this variant only:
+      MMG → HMG → Medium Gatling Gun → <strong>Heavy Gatling Gun</strong> (.50-cal-class minigun) /
+      <strong>Autocannon</strong>, parallel top options — the Autocannon coax lets it threaten light
+      vehicles without the main gun, the same double-duty a Bradley's 25mm plays.</p>
+
+      <h4>Badger — packages</h4>
+      <div class="tw"><table>
+        <tr><th>Slot</th><th>What it is</th><th>Notes</th></tr>
+        <tr><td class="k">Turret</td><td>Never present</td><td>The twin-defining rule, permanently</td></tr>
+        <tr><td class="k">Hull <span class="pill">Frontal Arc / Fixed</span></td><td>Wolverine's hull menu <strong>plus</strong> Fisher's Turretless-exclusive family (Heavy Penetrator Cannon ×4, Demolition Cannon) <strong>plus</strong> Tayra's Field Gun/Mortar lineage</td><td>Badger lives permanently where Fisher's Turretless package only visits, so it gets full access. Tayra-lineage folding-in is a design extrapolation, not yet confirmed.</td></tr>
+        <tr><td class="k">Cupola</td><td>MMG / HMG / ATGM, same as Sable/Fisher</td><td>Kept</td></tr>
+        <tr><td class="k">Sponsons <span class="pill">upgrade, not default</span></td><td>Same six options as Wolverine</td><td>Badger stays leaner unless bought into</td></tr>
+      </table></div>
+      <p class="note">Other named roles, identity locked but not yet package-designed (same status as
+      Sapper/Hunter): <strong>Armored Bus</strong> (Kangaroo APC register — a de-turreted tank hull
+      run as a pure troop carrier), <strong>Combat Engineer</strong> (AVRE/Terrier/M728 CEV — the
+      payoff on Badger's own "dig behavior" naming rationale), <strong>Recovery Vehicle</strong>
+      (Bergepanzer/M88 Hercules register).</p>
+
+      <p class="note"><span class="pill open">Shape locked, numbers not</span> — and less locked than
+      most vehicles before it: the Heavy Chassis stat line (nothing set, not even provisionally),
+      every weapon's Range/Attacks/AP/Damage, the Twin Heavy Autocannon vs. Quad Autocannon call,
+      whether Badger's hull menu really should include the full Tayra SPG lineage, and full
+      package-level design for Badger's Armored Bus, Combat Engineer, and Recovery Vehicle roles.</p>
 
       <div class="tw"><table>
         <tr><th>Infantry title</th><th>Unit</th></tr>
