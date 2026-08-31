@@ -366,6 +366,43 @@ Siege Cannon's `Indirect` isn't a stray bonus — it's the shared trait of an en
 
 **Open before this is locked:** all numbers, throughout — Fisher's full stat line (including exactly how much slower than Sable), every new weapon's Range/Attacks/AP/Damage, Turretless's Evasion gain, and Demolition Cannon's exact profile. This pass settled shape only, same as Marten and Sable before it.
 
+#### Tayra — packages
+
+The fourth and final Medium Chassis vehicle, and the one built around a real tension rather than a real object the way the other three were. Synthesis: **M109 Paladin / PzH 2000 / Archer** (modern self-propelled artillery doctrine — turreted, moderate armor, built to move and shoot rather than duel anything) plus the **Basilisk/Wyvern split** (precision long-range piece vs. shorter-ranged saturation piece, reskinned into this game's own vocabulary). The mustelid grounding holds too: tayras are wide-ranging diurnal hunters that cover far more ground than the rest of this family — the natural fit for the one vehicle that reaches targets nothing else on the chassis can even see.
+
+**A second deliberate deviation from the shared Medium Chassis profile — Tayra runs lighter Armor by default**, representing an exposed crew and loading mechanism rather than a fully enclosed fighting compartment. Fisher broke the "identical shared profile" premise first (Speed); Tayra breaks it a second way (Armor). "Shared chassis family" now firmly means shared lineage and weight class across all four vehicles, not identical numbers — worth remembering if a future package ever wants to push a fifth vehicle the same direction.
+
+**Signature mechanic — `Bombardment`**, the first trait in the game that makes a vehicle deviate from the blanket "every Vehicle ignores Heavy" rule on purpose. Tayra **drops baseline `Hardpoints` entirely**, replaced by:
+
+> **`Bombardment`** — This unit ignores the `Heavy` trait on its weapons. However, if it moved this activation, its ranged attacks made this activation lose `Indirect` — they must have line of sight to their target, and may not target a model visible only to an allied unit with `Spotter`.
+
+Not a flat statistical tax (an earlier draft considered a flat Evasion penalty for firing after moving) but a *qualitative* one: sometimes moving costs nothing (the target was visible anyway), sometimes it costs the entire shot (the target was only visible to a Spotter, and now Tayra genuinely cannot hit it). That produces a real play pattern rather than a math adjustment: **Tayra wants to find a position, use a Spotter to reach what it can't see, and hold there — but has a genuine fallback, not a dead turn, if it has to relocate under pressure.**
+
+**Main gun (pick one) — seven real options, not reskins of each other:**
+
+| Option | Shape | Source |
+|---|---|---|
+| Light Field Gun *(default)* | Small-bore, general-purpose | New |
+| Medium Field Gun | Larger bore | New |
+| Heavy Field Gun | Tayra's own ceiling — distinct from Field Gun Battery's Field Howitzer, which stays the *even bigger* towed piece | New |
+| Missile Battery | `Anti-Vehicle`, `Guided`, `Indirect`, multiple ready tubes (higher Attacks than a single launcher) | New — keeps Missile Launcher's precision DNA rather than reusing it outright; a single-shot launcher doesn't justify a dedicated vehicle the way a real multi-tube carrier (the M901 "Improved TOW Vehicle") does |
+| Light Mortar | `Blast (S)`, `Indirect` | Free reuse — the Mortar already built for the general library |
+| Heavy Mortar | `Blast (L)`, higher Damage | New, same base→Heavy idiom as everything else in this vehicle family |
+| SAM System | `Anti-Aerial` + `Guided` | New — the second real use of the `Anti-Aerial` keyword (first: Marten's incidental quad-MG), and a genuinely different flavor: Marten answers aircraft by accident with volume fire, Tayra answers them on purpose with a dedicated guided weapon |
+
+*(Field Gun using the existing Light/Medium/Heavy tiering, rather than a one-off name, was a deliberate choice — it solves "small default, room to escalate" and stays legible to anyone who's already learned the MG/Autocannon tiers, instead of teaching a third naming convention.)*
+
+**Secondary weapon — Frontal-Arc-locked, pick one: LMG / MMG / HMG. No sponsons, no full Cupola menu.** Deliberately the thinnest combat menu in the family — real SPGs carry minimal self-defense armament because they're not built to be found in a direct fight. **Tayra isn't trying to compete on flexibility the way Fisher and Sable do; it's trying to stay out of the fight it isn't suited for.** That's a third real differentiator for the vehicle, alongside Sable's "never zeroes its capacity" and Fisher's "the only one that flips category."
+
+**Standalone options:**
+- **Protection package** — restores the Armor that's reduced by default, representing actual armor plating added to what's normally an exposed compartment.
+- **Camo Netting** — **+1 Evasion** while benefiting from `Obscuring` terrain and stationary (confirmed direction — an earlier draft phrase risked reading as the opposite, worth flagging since it's the same kind of ambiguity that hit `Traversing` earlier in this design pass). Stacks with `Obscuring`'s own +1, meaning a Tayra that commits to holding a good position is rewarded twice — reinforcing `Bombardment`'s "prefer to stay put" identity rather than sitting next to it as an unrelated bonus.
+- **Fire Control Link** — grants `Accurate`. Considered and set aside: buffing guided munitions specifically, since `Guided` already owns the "make guided weapons hit better" job (−3 Evasion when a RECON unit has eyes on target) and a second accuracy bonus stacked on the same weapons risked redundancy. `Accurate` benefits all seven main-gun options equally instead, keeping the standalone options build-agnostic rather than pushing players toward one "correct" pairing.
+
+**Flagged, not designed — Radio / Officer Orders.** The faction is meant to lean on officer-issued orders as a real mechanic beyond what currently exists (Regimental Officer's Leadership Aura + one Priority Order). A vehicle-mounted Radio package that grants access to that system is a reasonable future hook, but the Orders system itself doesn't exist yet in enough detail to design the hook properly — this needs its own dedicated pass, not a bolt-on here.
+
+**Open before this is locked:** all numbers, throughout, same as every vehicle before it — Tayra's exact stat line (including how much lighter its Armor runs), every new weapon's Range/Attacks/AP/Damage, Camo Netting's and Fire Control Link's precise shape. This closes out shape-level design on all four Medium Chassis vehicles: Marten, Sable, Fisher, Tayra.
+
 ### Imperial Forgesworn — *overmatch*
 
 **Staple: the walker.** A construct that is simultaneously their armor and their fire support.

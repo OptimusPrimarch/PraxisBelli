@@ -534,6 +534,7 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 **Firing restrictions**
 - **Heavy** — cannot attack in the same activation its unit moved; if it attacks first, it cannot then move.
 - **Hardpoints** — ignore the Heavy trait.
+- **Bombardment** — this unit ignores the Heavy trait on its weapons. However, if it moved this activation, its ranged attacks made this activation lose Indirect — they must have line of sight to their target, and may not target a model visible only to an allied unit with Spotter. The first trait in the game that makes a unit deviate from the blanket "every Vehicle ignores Heavy via Hardpoints" rule on purpose — a unit with `Bombardment` does not also have `Hardpoints`. Deliberately a qualitative cost rather than a statistical one (an earlier draft considered a flat Evasion penalty for firing after moving): sometimes moving costs nothing, since the target was visible anyway; sometimes it costs the entire shot. *(First application: the Tayra, a self-propelled mortar/gun carriage — a properly sighted-in crew hits what it aims at, a crew that just displaced hasn't caught its breath yet.)*
 - **Pistol** — may make a ranged attack while engaged, but only at an enemy unit it is engaged with.
 - **Turret** — may fire from any facing.
 - **Frontal / Rear / Side Arc** — may only target models in that facing, permanently.

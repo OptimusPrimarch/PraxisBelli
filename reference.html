@@ -1010,6 +1010,7 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       <dl>
         <dt>Heavy</dt><dd>Cannot attack in the same activation its unit moved; if it attacks first, it cannot then move.</dd>
         <dt>Hardpoints</dt><dd>Ignore the Heavy trait.</dd>
+        <dt>Bombardment</dt><dd>Ignore the Heavy trait. However, if this unit moved this activation, its ranged attacks made this activation lose Indirect — they must have line of sight to their target, and may not target a model visible only to an allied unit with Spotter. A unit with Bombardment does not also have Hardpoints; it trades the blanket "every vehicle ignores Heavy" default for a qualitative cost instead of a statistical one — sometimes moving costs nothing (the target was visible anyway), sometimes it costs the entire shot. First application: the Tayra, a self-propelled mortar/gun carriage.</dd>
         <dt>Pistol</dt><dd>May make a ranged attack while engaged, but only at an enemy unit it is engaged with.</dd>
         <dt>Turret</dt><dd>May fire from any facing.</dd>
         <dt>Frontal / Rear / Side Arc</dt><dd>May only target models in that facing, permanently.</dd>
@@ -1461,6 +1462,53 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       <p class="note"><span class="pill open">Shape locked, numbers not</span> Fisher's full stat
       line (including exactly how much slower than Sable), every new weapon's Range/Attacks/AP/
       Damage, Turretless's Evasion gain, Demolition Cannon's exact profile — none of it priced yet.</p>
+
+      <h3>Tayra — packages</h3>
+      <p>The family's indirect-fire specialist — self-propelled artillery, synthesized from M109
+      Paladin/PzH2000/Archer (the chassis-and-turret lineage) with a Basilisk/Wyvern split baked into
+      the gun menu (precision Field Guns vs. saturation Mortars). Closes out the Medium Chassis
+      family alongside Marten, Sable, and Fisher. <strong>The family's second stat-profile
+      deviation</strong> — lower Armor by default, representing a lightly protected, open hull built
+      around the gun rather than the crew; "shared chassis" continues to mean shared lineage, not
+      identical numbers. <strong>Drops Hardpoints entirely</strong> in favor of
+      <code>Bombardment</code> (see trait glossary, §12) — it can shoot-and-scoot, but only by giving
+      up Indirect for that activation; hold still, and it fires blind off a Spotter's eyes instead.</p>
+      <p><strong>Default loadout is a single main gun</strong>, no coax, no hull weapon — the
+      thinnest default silhouette in the family on purpose, all identity concentrated in the one
+      system.</p>
+      <h4>Main Gun menu (pick one)</h4>
+      <div class="tw"><table>
+        <tr><th>Option</th><th>Role</th><th>Shape</th></tr>
+        <tr><td class="k">Light Field Gun <em>(default)</em></td><td>Small-bore generalist</td><td>Cheapest entry, direct or indirect</td></tr>
+        <tr><td class="k">Medium Field Gun</td><td>Standard-bore generalist</td><td>Mid AP/Damage step up</td></tr>
+        <tr><td class="k">Heavy Field Gun</td><td>Large-bore generalist</td><td>Highest AP/Damage of the Field Gun line</td></tr>
+        <tr><td class="k">Missile Battery <span class="pill">new weapon</span></td><td>Precision saturation</td><td>Missile Launcher's guided-precision DNA, but multi-shot — a reusable Javelin-carrier's worth of Attacks, not a one-shot system</td></tr>
+        <tr><td class="k">Light Mortar</td><td>Saturation, cheap</td><td>Blast, lower AP than the Field Gun line</td></tr>
+        <tr><td class="k">Heavy Mortar</td><td>Saturation, expensive</td><td>Blast (L), the Wyvern-lineage ceiling</td></tr>
+        <tr><td class="k">SAM System</td><td>Dedicated anti-aerial</td><td>Likely <strong>Anti-Aerial</strong>, undesigned in detail — the family's first answer to the Aerial TYPE</td></tr>
+      </table></div>
+      <p class="note">Field Guns and Missile Battery lean precision (direct-fire capable, Guided on
+      the Battery); Mortars lean saturation (Blast-templated, Indirect-native) — the Basilisk/Wyvern
+      split preserved as two distinct reasons to field a Tayra rather than one gun with reskins.</p>
+
+      <h4>Secondary weapon <span class="pill">Frontal Arc only</span></h4>
+      <p>LMG / MMG / HMG, pick one — no cupola, no sponsons, the family's thinnest combat menu on
+      purpose. A gun carriage's crew-served self-defense weapon, not a fighting vehicle's, and it
+      only ever faces the direction the gun itself is pointed.</p>
+
+      <h4>Standalone options</h4>
+      <div class="tw"><table>
+        <tr><th>Option</th><th>What it is</th><th>Real-world anchor</th></tr>
+        <tr><td class="k">Protection package</td><td>Reused from Marten/Sable/Fisher's Protection identity — Applique armor + smoke, forces closed</td><td>—</td></tr>
+        <tr><td class="k">Camo Netting</td><td>+1 Evasion while stationary and in cover — a static gun line's actual defense</td><td>Real SP artillery relies on concealment, not armor, at rest</td></tr>
+        <tr><td class="k">Fire Control Link <span class="pill open">Undesigned</span></td><td>Likely grants Accurate, or buffs Guided munitions specifically — direction chosen, exact mechanism not yet</td><td>—</td></tr>
+        <tr><td class="k">Radio / Officer Orders <span class="pill open">Flagged, not designed</span></td><td>Vehicles receiving Officer Orders — ties into the faction's signature officer-order mechanic, not yet scoped</td><td>—</td></tr>
+      </table></div>
+      <p class="note"><span class="pill open">Shape locked, numbers not</span> Tayra's full stat
+      line (including exactly how much lower Armor sits), every new weapon's Range/Attacks/AP/Damage
+      (Field Gun ladder, Missile Battery, Mortars, SAM System), Camo Netting's exact figure, Fire
+      Control Link and Radio/Officer Orders' mechanisms — none of it priced yet. This closes out
+      shape-level design on all four Medium Chassis vehicles: Marten, Sable, Fisher, Tayra.</p>
 
       <div class="tw"><table>
         <tr><th>Infantry title</th><th>Unit</th></tr>
