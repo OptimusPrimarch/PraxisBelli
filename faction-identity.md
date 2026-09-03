@@ -163,8 +163,8 @@ This is a live risk on this project, not a hypothetical: designing around Oathke
 > **The decision:** *which unit eats the hit?* Oathbound only holds while unwounded, so the first casualty on any squad is a real loss of capability.
 
 - **Signature trait — Oathbound:** while this unit has suffered no wounds, attacks against it are made at −1 AP. It automatically passes its first Mettle check each game. It has `Courage` and `Fearless` — together they replace what a single monolithic "old Fearless" used to try to do, but as two separately reusable pieces rather than one bundled trait exclusive to this faction. If it would ever Rout, it is removed from play instead — an Oathkeeper does not flee.
-- **Stat shape:** Armor 7–8, Mettle 6–7, **Toughness 2**, units of 5. Most expensive per model in the game.
-- **Reinforcing tools:** genuinely better guns — A2/AP2 where Regiments carry A1/AP1 — plus power weapons at squad level. They must out-shoot per model to justify half the model count.
+- **Stat shape:** Toughness 2 (3 for Heavies) as the faction-wide baseline, Mettle 6–7, units of 5. Most expensive per model in the game. Armor is now a three-rung ladder rather than one flat range — see the full roster section below for the current numbers; this line intentionally no longer quotes them so it can't go stale again the way "Armor 7–8" already did once.
+- **Reinforcing tools:** genuinely better guns — HAMR Rifle runs A2/AP1/D2 where Regiments' Rifle carries A1/AP0/D1 — plus power weapons at squad level. They must out-shoot per model to justify half the model count.
 - **Doctrine — *Hold the Oath*:** for the rest of the round, units in this Platoon cannot be moved or placed by enemy effects, and ignore Suppressing.
 
 ### Imperial Saints — *the choir*
@@ -463,6 +463,46 @@ The third and heaviest weight class, and the only one built as a **two-vehicle t
 - **Other named roles, identity locked but not yet package-designed** (same status as Sapper/Hunter elsewhere in the roster): **Armored Bus** (Kangaroo APC register — a real WWII precedent for exactly this concept, a de-turreted tank hull run as a pure troop carrier, trading the hull gun for capacity the same way Marten's specialist packages trade weapons for seats), **Combat Engineer** (AVRE/Terrier/M728 CEV — dozer blade and breaching gear, the payoff on Badger's own "dig behavior" naming rationale from before this pass broadened the vehicle into a full twin), **Recovery Vehicle** (Bergepanzer/M88 Hercules register — flagged again as "a fun package to include later," so worth prioritizing whenever Badger's remaining roles get their own package pass).
 
 **Open before this is locked:** exact Toughness (14 or 15); every weapon's Range/Attacks/AP/Damage; the Twin Heavy Autocannon vs. Quad Autocannon call on the IFV's default gun; whether Badger's hull menu really should include the full Tayra SPG lineage or whether that's a separate package; and full package-level design (not just named identity) for Badger's Armored Bus, Combat Engineer, and Recovery Vehicle roles.
+
+### Imperial Oathkeepers — unit roster, naming, and the modern-Marine-roster lens
+
+First real unit-level work on this faction beyond its early signature-trait/category-cap identity (see "the unbroken line" above). Same lens discipline as Regiments' Wehrmacht framing: **a modern (Primaris-era) Space Marine roster's *structure* as a template — light/baseline/heavy infantry tiers, squad role specialization — explicitly not for iconography, exact unit names, or wargear proper nouns.** Faction identity, stated plainly: stalwart defenders of humanity's last bastion, supersoldiers, professionals, and experts, armed with the most brutal man-portable weaponry humanity has ever fielded.
+
+**`HAMR`** replaces Bolt/Bolter as the small-arms naming convention — HAMR Rifle / HAMR Carbine / HAMR Pistol. Reads as "hammer" said aloud, on purpose. Full backronym intentionally deferred, not yet locked.
+
+**Three armor-class tiers, the faction's own version of the vehicle Chassis concept applied to infantry.** Toughness 2 and `Oathbound` are the shared faction-wide baseline; Armor and Evasion are the differentiating levers, trading 1:1 against each other above the Scout/Fusilier-parity floor:
+
+| Tier | Real-world anchor | Armor | Evasion | Toughness | Notes |
+|---|---|---|---|---|---|
+| **Scouts/Reivers-equivalent** | Scout/Reiver-pattern light kit — lighter gear, not yet cleared for full plate | 4 | 6 | 2 | Same raw durability floor as a Fusilier — every bit of their edge comes from the trait stack (`Oathbound`, HAMR-tier gear), not from being harder to hit or wound. Not yet a formally built unit. |
+| **Intercessors-equivalent (Oathkeeper Squad)** | Standard Power Armor-pattern baseline | 6 | 4 | 2 | The LINE staple — see full structure below. |
+| **Heavies/Terminators-equivalent** | Gravis/Terminator-pattern heavy plate | 7 | 3 | **3** | First unit to break the faction's flat Toughness-2 baseline, the same way Fisher/Tayra broke Medium Chassis's shared line. Carries `Indomitable` (see glossary) as baseline. Not yet a formally built unit. |
+
+*(A 1-Armor bump on top of Regiments' Rifle Squad baseline, per weight class, was the starting framing; the actual numbers above are what that produced once Scouts got pulled back down to Fusilier parity for durability contrast and Heavies got pushed up for a genuine top-tier feel — the ladder isn't perfectly linear on purpose.)*
+
+**Oathkeeper Squad — full structure.** 5-model base, scales to 10 (doubling, per the standard 5/8/10/16 box-count rule): **1 NCO + 3 baseline troopers (HAMR Rifle + Combat Knife) + 1 special-weapon slot**, and the special-weapon slot repeats every 5 models rather than the NCO doubling — a 10-model squad is 1 NCO + 7 baseline + 2 special weapons.
+
+- **HAMR Rifle**: A2 / AP1 / D2, same range band as a plain Rifle. Not just a better Rifle — it doesn't reach Special-tier AP, but it matches Special-tier Damage while carrying double the Attacks of anything else in that bracket, a genuine volume-and-damage hybrid rather than a penetration weapon. Represents the "explosive core" identity without needing to be an anti-armor tool.
+- **Combat Knife** (every baseline trooper): a flat Bayonet upgrade, AP1.
+- **Special-weapon slot** (5th and 10th models): swaps HAMR Rifle for Fusion Blaster, Plasma Rifle, or Flamethrower — all already-built Regiments weapons, reused directly at the right scale, no new design needed.
+- **NCO promotion**: finally implements the long-pending, never-before-used "Promote NCO" mechanic (+1 Mettle unit-wide) that's been on the books since the very first points-formula pass — paid for and kept, stacking underneath the gear below rather than being replaced by it. Gains a melee weapon (see table) and may optionally swap HAMR Rifle for a specialty pistol (see table).
+
+**NCO melee weapons — all 2 Attacks, differentiated by AP/Damage/traits along their 40k-equivalent lines rather than by attack count:**
+
+| Weapon | Default? | Shape | 40k-equivalent register |
+|---|---|---|---|
+| **Ripsaw Sword** | Yes | AP1, 2A | Fast, reliable — a revived name; this exact name was flagged and retired as a stale v0.3 relic during an earlier doc-review pass, now given a real home instead of staying dead flavor text |
+| **Plasma Sword** | Swap | Leans precision — highest AP of the four | The clean-cutting energy-blade read |
+| **Meteor Fist** | Swap | Leans raw Damage over penetration | The "doesn't need to be precise, just heavy" read |
+| **Meteor Hammer** | Swap | Ceiling on both AP and Damage, possibly `Suppressing` | The concussive, biggest-of-the-four read |
+
+*(Shape only — none of these four are numerically final beyond Ripsaw Sword's confirmed AP1/2A.)*
+
+**NCO specialty pistol menu** (optional swap for HAMR Rifle): Plasma, Fusion, Flamethrower, Gravity, Beam. Plasma, Fusion, and Beam all extend weapon-type DNA that already exists elsewhere in the roster at pistol scale — no new invention needed beyond the scale-down. **Gravity is new**, and deliberately not named for its own flavor: it's the debut carrier for `Crushing` (see glossary) — extra Damage against heavier (higher-Toughness) targets, a trait built to be reused on future non-gravity-themed weapons rather than staying a one-off skin.
+
+**`Oathmaster` (COMMAND)** — name locked, nothing else designed yet. The natural home for an Iron Halo-equivalent `Shrug (X)` wargear option once this unit gets a real pass, since real Iron Halos are specifically command-tier wargear in the source material — not designed now, just flagged as the obvious next thread.
+
+**Open before any of this is locked:** every exact number beyond what's stated above (HAMR Rifle's range if it should differ from a plain Rifle, all three melee-swap weapons' AP/Damage, `Crushing`'s and the Gravity Pistol's full profile); Scouts/Reivers and Heavies/Terminators are armor-class identities, not yet built units; Oathmaster has a name and nothing else; and the roster still needs whatever units answer RECON, SHOCK, SUPPORT, and ARMOR for this faction beyond the LINE/COMMAND work done here.
 
 ### Imperial Forgesworn — *overmatch*
 

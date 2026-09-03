@@ -1036,6 +1036,15 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         increase on purpose — it specifically answers weapons built to kill vehicles, not everything.
         Industrial materials science, not warded plate: the sci-fi register stays technological since
         Regiments (the faction using it first) have no oath-access at all.</dd>
+        <dt>Indomitable</dt><dd>Reduce the AP of incoming attacks by 1, minimum 0. Doesn't stop a
+        dedicated anti-armor weapon from doing its job, but blunts anything that wasn't built to
+        punch through this armor specifically. Not named <code>Bulwark</code> — that name is already
+        in use for Damage reduction, a real naming collision caught before it shipped. First
+        application: Oathkeepers' Heavies/Terminator-equivalent tier.</dd>
+        <dt>Crushing</dt><dd>This weapon's Damage is increased by 1 against a target with Toughness
+        5+, and by 2 against Toughness 10+. Named for what it does, not for any one weapon's flavor,
+        so it can be reused without being a reskin. The 10+ threshold lines up with the
+        Armor-above-10 cascade on purpose. First application: an Oathkeeper NCO sidearm.</dd>
       </dl>
 
       <h4>Durability &amp; morale</h4>
@@ -1046,6 +1055,13 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <dt>Entrenched</dt><dd>While in cover, +1 Armor and gains <code>Courage</code>.</dd>
         <dt>Camouflaged</dt><dd>+1 Evasion while in cover.</dd>
         <dt>All-Terrain</dt><dd>Ignores difficult terrain penalties.</dd>
+        <dt>Shrug (X)</dt><dd>For every wound this model would suffer, roll a d10 and ignore that
+        wound on X or better (universal floor/ceiling applies: unmodified 1 always fails, unmodified
+        10 always succeeds). The system's invulnerable-save equivalent — deliberately rare by design,
+        reserved for specific named wargear rather than a unit-wide rule, so it stays an event rather
+        than a roll made on every hit across the whole army. First intended use: a Storm
+        Shield-equivalent Oathkeeper wargear option, possibly an Iron Halo-equivalent for Oathmaster
+        — neither built yet.</dd>
       </dl>
 
       <h4>Movement</h4>
@@ -1724,6 +1740,60 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <tr><td class="k">Saints</td><td><strong>Assault Transport</strong> — their question is "can I close?"</td></tr>
         <tr><td class="k">Oathbreakers</td><td><strong>Assault Transport</strong> — same answer, worse patience.</td></tr>
       </table></div>
+
+      <h3>Imperial Oathkeepers — unit roster, naming, and the modern-Marine-roster lens</h3>
+      <p>First real unit-level work on this faction beyond the earlier signature-trait/category-cap
+      identity above. Same lens discipline as Regiments' Wehrmacht framing: a modern (Primaris-era)
+      Space Marine roster's <em>structure</em> as template — light/baseline/heavy infantry tiers,
+      squad role specialization — explicitly not for iconography, exact names, or wargear proper
+      nouns. Identity: stalwart defenders of humanity's last bastion, supersoldiers, professionals,
+      experts, armed with the most brutal man-portable weaponry humanity has ever fielded.
+      <strong>HAMR</strong> replaces Bolt/Bolter as the small-arms convention — HAMR Rifle/Carbine/
+      Pistol, reads as "hammer" said aloud; full backronym deliberately deferred.</p>
+
+      <h4>Three armor-class tiers — infantry's own version of vehicle Chassis</h4>
+      <p>Toughness 2 and <code>Oathbound</code> are the shared faction-wide baseline; Armor and
+      Evasion are the differentiating levers, trading 1:1 above the Scout/Fusilier-parity floor.</p>
+      <div class="tw"><table>
+        <tr><th>Tier</th><th>Anchor</th><th>Arm</th><th>Eva</th><th>Tuf</th><th>Notes</th></tr>
+        <tr><td class="k">Scouts/Reivers-equiv.</td><td>Light kit, not yet cleared for full plate</td><td>4</td><td>6</td><td>2</td><td>Same durability floor as Fusilier — edge comes entirely from the trait stack. Not yet a built unit.</td></tr>
+        <tr><td class="k">Intercessors-equiv. <span class="pill">Oathkeeper Squad</span></td><td>Standard Power Armor baseline</td><td>6</td><td>4</td><td>2</td><td>The LINE staple — full structure below.</td></tr>
+        <tr><td class="k">Heavies/Terminators-equiv.</td><td>Gravis/Terminator-pattern plate</td><td>7</td><td>3</td><td><strong>3</strong></td><td>First unit to break the flat Toughness-2 baseline. Carries <code>Indomitable</code>. Not yet a built unit.</td></tr>
+      </table></div>
+
+      <h4>Oathkeeper Squad — full structure</h4>
+      <p>5-model base, scales to 10 (doubling, per the standard box-count rule): <strong>1 NCO + 3
+      baseline troopers (HAMR Rifle + Combat Knife) + 1 special-weapon slot</strong> — the
+      special-weapon slot repeats every 5 models rather than the NCO doubling, so a 10-model squad
+      is 1 NCO + 7 baseline + 2 special weapons.</p>
+      <div class="tw"><table>
+        <tr><th>Element</th><th>Shape</th></tr>
+        <tr><td class="k">HAMR Rifle</td><td>A2 / AP1 / D2, same range as a plain Rifle. Not a better Rifle — doesn't reach Special-tier AP but matches Special-tier Damage at double the Attacks of anything else in that bracket. A volume-and-damage hybrid, not a penetration weapon.</td></tr>
+        <tr><td class="k">Combat Knife</td><td>Flat Bayonet upgrade, AP1. Every baseline trooper's default.</td></tr>
+        <tr><td class="k">Special-weapon slot <span class="pill">5th, 10th model</span></td><td>Swaps HAMR Rifle for Fusion Blaster, Plasma Rifle, or Flamethrower — all already-built Regiments weapons, reused directly.</td></tr>
+        <tr><td class="k">NCO promotion</td><td>Finally implements the long-pending "Promote NCO" mechanic (+1 Mettle unit-wide, on the books since the first points-formula pass, never used until now) — paid for and kept, stacking underneath the gear below. Gains a melee weapon and may swap HAMR Rifle for a specialty pistol.</td></tr>
+      </table></div>
+
+      <h4>NCO melee weapons — all 2 Attacks, differentiated by AP/Damage/traits, not attack count</h4>
+      <div class="tw"><table>
+        <tr><th>Weapon</th><th>Default?</th><th>Shape</th><th>40k-equivalent register</th></tr>
+        <tr><td class="k">Ripsaw Sword</td><td>Yes</td><td>AP1, 2A</td><td>Fast, reliable — a revived name, flagged/retired as a stale relic in an earlier doc-review pass, now given a real home</td></tr>
+        <tr><td class="k">Plasma Sword</td><td>Swap</td><td>Leans precision — highest AP of the four</td><td>The clean-cutting energy blade</td></tr>
+        <tr><td class="k">Meteor Fist</td><td>Swap</td><td>Leans raw Damage over penetration</td><td>The "doesn't need precision, just heavy" read</td></tr>
+        <tr><td class="k">Meteor Hammer</td><td>Swap</td><td>Ceiling on both AP and Damage, possibly <code>Suppressing</code></td><td>The biggest-of-the-four, concussive read</td></tr>
+      </table></div>
+      <p class="note">Shape only — none of these four are numerically final beyond Ripsaw Sword's
+      confirmed AP1/2A. NCO specialty pistol menu (optional HAMR Rifle swap): Plasma, Fusion,
+      Flamethrower, Gravity, Beam. Plasma/Fusion/Beam extend weapon-type DNA that already exists
+      elsewhere at pistol scale. Gravity is new — the debut carrier for <code>Crushing</code> (§12),
+      deliberately not named for its own flavor so the trait stays reusable elsewhere.</p>
+
+      <p class="note"><strong>Oathmaster (COMMAND)</strong> — name locked, nothing else designed.
+      The natural home for an Iron Halo-equivalent <code>Shrug (X)</code> wargear option once this
+      unit gets a real pass. <span class="pill open">Shape locked, numbers not</span> everywhere else
+      in this section — Scouts/Reivers and Heavies/Terminators are armor-class identities, not yet
+      built units; the roster still needs whatever answers RECON, SHOCK, SUPPORT, and ARMOR for this
+      faction beyond the LINE/COMMAND work done here.</p>
 
       <h3>Xenos — outside the network</h3>
       <p>The Oath is a <em>human</em> technology. Each xenos faction is defined by how it fails to fit
