@@ -1064,10 +1064,27 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         — neither built yet.</dd>
       </dl>
 
-      <h4>Movement</h4>
+      <h4>Deployment (X)</h4>
+      <p class="note">A notation family for special deployment-phase rules, parallel to
+      <code>Anti-[Keyword]</code> and <code>Blast (S/L)</code> — the bracket names which deployment
+      method, and each variant resolves in a fixed order during the deployment phase itself, before
+      the first activation of the game. Renamed from the original standalone <code>Scout Move</code>
+      once a second variant needed a shared convention.</p>
       <dl>
-        <dt>Scout Move</dt><dd>After deployment, before the first activation of the game, this unit may make a free move up to its Speed. First application: the Weasel — the one vehicle in the roster whose entire job is getting somewhere before the shooting starts.</dd>
+        <dt>Deployment (Scout)</dt><dd>After normal deployment, this unit may make a free move up to
+        its Speed. Resolves first, before any other Deployment(X) variant. First application: the
+        Weasel.</dd>
+        <dt>Deployment (Infiltrate)</dt><dd>This unit does not deploy normally. After every
+        Deployment (Scout) move has resolved, place it anywhere on the battlefield more than 9" from
+        any enemy model. Resolves after Scout on purpose — sees where the board ends up before
+        committing. Unlike a traditional deep strike, this never waits for a later turn; it's a later
+        step of the same deployment phase. First application: Oathreapers. <span class="pill open">Distance shape-proposed, not locked</span></dd>
       </dl>
+      <p class="note"><span class="pill open">Reserved, not yet spent</span>
+      <code>Deployment (Airborne)</code>, <code>Deployment (Burrowing)</code> — mechanisms not yet
+      designed. <code>Deployment (Targeted)</code> is the deliberate catch-all for any
+      teleportation-style arrival — one shared mechanic regardless of which faction's fiction
+      explains it, rather than a new bracket variant per flavor.</p>
 
       <h4>Cost-modifying</h4>
       <dl>
@@ -1562,8 +1579,9 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
 
       <h4>Weasel — recon car</h4>
       <p><strong>No transport.</strong> One weapon slot, pick one: LMG / MMG / ATGM. Signature
-      mechanic: <strong>Scout Move</strong> (see glossary, §12) — the vehicle's actual differentiator,
-      the same role Bombardment plays for Tayra.</p>
+      mechanic: <strong>Deployment (Scout)</strong> (see glossary, §12; renamed from standalone
+      Scout Move) — the vehicle's actual differentiator, the same role Bombardment plays for
+      Tayra.</p>
       <p class="note">Real-world anchor: Ferret Scout Car, Fennek's sensor-recon variant, Coyote
       Reconnaissance Vehicle, BRDM-2, the Stryker family's M1127 RV.</p>
 
@@ -1751,14 +1769,21 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       <strong>HAMR</strong> replaces Bolt/Bolter as the small-arms convention — HAMR Rifle/Carbine/
       Pistol, reads as "hammer" said aloud; full backronym deliberately deferred.</p>
 
-      <h4>Three armor-class tiers — infantry's own version of vehicle Chassis</h4>
+      <h4>Armor-class tiers — infantry's own version of vehicle Chassis</h4>
       <p>Toughness 2 and <code>Oathbound</code> are the shared faction-wide baseline; Armor and
-      Evasion are the differentiating levers, trading 1:1 above the Scout/Fusilier-parity floor.</p>
+      Evasion are the differentiating levers, trading 1:1 above the Scout/Fusilier-parity floor.
+      <strong>Naming: most units carry the <code>Oath-</code> prefix; <code>Errant</code> is the
+      deliberate exception</strong> — a scout not named for the oath reads as genuinely apart from
+      the main formation, true to what a scout actually does. Reivers and Infiltrators/Incursors are
+      both genuinely Phobos-pattern armor in the source material — the classic Scout is not, which
+      is why Errant stays unbumped while Oathwarden and Oathreapers both sit one step up.</p>
       <div class="tw"><table>
-        <tr><th>Tier</th><th>Anchor</th><th>Arm</th><th>Eva</th><th>Tuf</th><th>Notes</th></tr>
-        <tr><td class="k">Scouts/Reivers-equiv.</td><td>Light kit, not yet cleared for full plate</td><td>4</td><td>6</td><td>2</td><td>Same durability floor as Fusilier — edge comes entirely from the trait stack. Not yet a built unit.</td></tr>
-        <tr><td class="k">Intercessors-equiv. <span class="pill">Oathkeeper Squad</span></td><td>Standard Power Armor baseline</td><td>6</td><td>4</td><td>2</td><td>The LINE staple — full structure below.</td></tr>
-        <tr><td class="k">Heavies/Terminators-equiv.</td><td>Gravis/Terminator-pattern plate</td><td>7</td><td>3</td><td><strong>3</strong></td><td>First unit to break the flat Toughness-2 baseline. Carries <code>Indomitable</code>. Not yet a built unit.</td></tr>
+        <tr><th>Unit</th><th>Category</th><th>Anchor</th><th>Arm</th><th>Eva</th><th>Tuf</th><th>Notes</th></tr>
+        <tr><td class="k">Errant Squad</td><td>RECON</td><td>Classic (non-Phobos) Scout Armour</td><td>4</td><td>6</td><td>2</td><td>Same durability floor as Fusilier — edge comes entirely from the trait stack. <code>Deployment (Scout)</code>. Not yet built.</td></tr>
+        <tr><td class="k">Oathkeeper Squad</td><td>LINE</td><td>Standard Power Armor baseline</td><td>6</td><td>4</td><td>2</td><td>The LINE staple/anchor — full structure below.</td></tr>
+        <tr><td class="k">Oathwarden Squad</td><td>LINE</td><td>Phobos-pattern (Infiltrator/Incursor)</td><td>5</td><td>5</td><td>2</td><td>Second LINE unit, ground-control identity. <code>Deployment (Scout)</code>. Not yet built.</td></tr>
+        <tr><td class="k">Oathreapers</td><td>SHOCK</td><td>Phobos-pattern (Reiver)</td><td>5</td><td>5</td><td>2</td><td>See full writeup below.</td></tr>
+        <tr><td class="k">Heavies/Terminators-equiv.</td><td>ARMOR <span class="pill open">tentative</span></td><td>Gravis/Terminator-pattern plate</td><td>7</td><td>3</td><td><strong>3</strong></td><td>Breaks the flat Toughness-2 baseline. Carries <code>Indomitable</code>. No name locked, not yet built.</td></tr>
       </table></div>
 
       <h4>Oathkeeper Squad — full structure</h4>
@@ -1788,12 +1813,28 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       elsewhere at pistol scale. Gravity is new — the debut carrier for <code>Crushing</code> (§12),
       deliberately not named for its own flavor so the trait stays reusable elsewhere.</p>
 
+      <h4>Oathreapers — full writeup</h4>
+      <p>The Reiver-equivalent, SHOCK-category, and the faction's terror specialist. Real Reivers
+      lead with a combat blade rather than a rifle, favor an aggressive close-in insertion over a
+      firefight, and carry an actual fear effect in the source material — all three translate
+      directly rather than needing invention.</p>
+      <div class="tw"><table>
+        <tr><th>Element</th><th>Shape</th></tr>
+        <tr><td class="k">Signature — <code>Terrifying</code></td><td>Units that end their activation engaged with this one are forced to make a Mettle check. <strong>First infantry unit in the roster to carry it</strong> — until now Monster-TYPE baseline or Marten's Vehicle-scale Terror Broadcaster only. Fits because it's melee-triggered, matching a knife-first unit.</td></tr>
+        <tr><td class="k">Default loadout</td><td>HAMR Carbine + Combat Knife</td></tr>
+        <tr><td class="k">Swap options</td><td>HAMR Pistol (ranged) + <strong>Reaper Knives</strong> (melee) — Reaper Knives share Ripsaw Sword's exact profile (AP1, 2A), a free reskin exclusive to this unit, not a costed upgrade. Gives a genuine duelist configuration without a new weapon profile.</td></tr>
+        <tr><td class="k">Grenade upgrade <span class="pill open">shape only</span></td><td>Forces a Mettle check on the target — distinct from <code>Suppressing</code> (adds a marker, doesn't force a check) and <code>Terrifying</code> (melee-triggered, not thrown). Not yet named or numerically defined.</td></tr>
+        <tr><td class="k">Deployment — <code>Deployment (Infiltrate)</code></td><td>Arrives after every <code>Deployment (Scout)</code> move resolves, placed &gt;9" from any enemy model. Distance is shape-proposed, not locked. Not a mid-game reserves mechanic — resolves within the deployment phase, just in a later step, so it sees where the board ends up before committing.</td></tr>
+      </table></div>
+
       <p class="note"><strong>Oathmaster (COMMAND)</strong> — name locked, nothing else designed.
       The natural home for an Iron Halo-equivalent <code>Shrug (X)</code> wargear option once this
       unit gets a real pass. <span class="pill open">Shape locked, numbers not</span> everywhere else
-      in this section — Scouts/Reivers and Heavies/Terminators are armor-class identities, not yet
-      built units; the roster still needs whatever answers RECON, SHOCK, SUPPORT, and ARMOR for this
-      faction beyond the LINE/COMMAND work done here.</p>
+      in this section — Errant, Oathwarden, and Heavies/Terminators are armor-class identities, not
+      yet built units (Heavies/Terminators has no name locked either); Oathreapers' grenade and
+      Deployment (Infiltrate)'s exact distance are proposals, not final; the roster still needs
+      whatever answers SUPPORT and ARMOR for this faction beyond the LINE/COMMAND/RECON/SHOCK work
+      done here.</p>
 
       <h3>Xenos — outside the network</h3>
       <p>The Oath is a <em>human</em> technology. Each xenos faction is defined by how it fails to fit

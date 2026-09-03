@@ -571,8 +571,14 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 - **All-Terrain** — ignores difficult terrain penalties.
 - **Shrug (X)** — for every wound this model would suffer, roll a d10 and ignore that wound on an X or better (the universal floor/ceiling applies: an unmodified 1 always fails, an unmodified 10 always succeeds). The system's version of an invulnerable save — deliberately rare by design intent, reserved for specific named wargear rather than a unit-wide rule, so it stays a genuine event rather than a roll made on every single hit across the whole army. *(First intended application: a Storm Shield-equivalent Oathkeeper wargear option, possibly also an Iron Halo-equivalent for Oathmaster — neither built yet.)*
 
-**Movement**
-- **Scout Move** — after deployment, before the first activation of the game, this unit may make a free move up to its Speed. *(First application: the Weasel — the one vehicle in the roster whose entire job is getting somewhere before the shooting starts.)*
+**Deployment (X)**
+
+A notation family for special deployment-phase rules, parallel to `Anti-[Keyword]` and `Blast (S/L)` — the bracket names *which* deployment method, and each variant resolves in a fixed order during the deployment phase itself, before the first activation of the game. Renamed from the original standalone `Scout Move` once a second variant (`Infiltrate`) needed a shared naming convention.
+
+- **Deployment (Scout)** — after normal deployment, this unit may make a free move up to its Speed. Resolves first, before any other Deployment(X) variant. *(First application: the Weasel.)*
+- **Deployment (Infiltrate)** — this unit does not deploy in the normal sequence. After every `Deployment (Scout)` move has resolved, place this unit anywhere on the battlefield more than 9" from any enemy model. Resolves after Scout on purpose — an Infiltrate unit gets to see where the board actually ends up before committing to a spot, unlike a traditional mid-game deep strike, this never waits for a later turn; it's a later *step* of the same deployment phase, not a separate arrival mechanic. *(First application: Oathreapers. Distance shape-proposed, not locked.)*
+
+**Reserved, not yet spent:** `Deployment (Airborne)`, `Deployment (Burrowing)` — distinct fictional arrival flavors, mechanisms not yet designed. `Deployment (Targeted)` is reserved as the deliberate catch-all for any teleportation-style arrival — one shared mechanic for "appears at a chosen point," regardless of which faction's fiction (warp, teleporter, etc.) explains it, rather than a new bracket variant per flavor.
 
 ---
 
