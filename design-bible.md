@@ -173,7 +173,7 @@ That is what suppressing fire is *supposed* to mean: it costs the target tempo, 
 
 **Vehicles** run the same four steps but end in **Destroyed** rather than Routing.
 
-**Fearless** ignores suppression markers on Mettle checks and ignores the negative effects of deteriorating morale unless Routing.
+**Courage** re-rolls failed Mettle checks. **Fearless** ignores suppression markers on Mettle checks — the two are deliberately separate, reusable pieces rather than one bundled trait.
 
 ## 6. Cover & Terrain — Composable Tags
 
@@ -218,7 +218,7 @@ In the data every unit takes one CATEGORY as primary and one TYPE as secondary �
 
 | Type | Grants |
 |---|---|
-| **Infantry** | **Entrenched** — while in cover, +1 Armor *and* reroll failed Mettle checks. |
+| **Infantry** | **Entrenched** — while in cover, +1 Armor *and* gains `Courage`. |
 | **Cavalry** | **Run Them Through** — this unit's weapons gain +1 AP and Suppressing while charging. <br> **All-Terrain** |
 | **Vehicle** | **Armored Front** — uses 90° facings. Attacks against the front are made at −1 AP; against the rear, +1 AP. <br> **Hardpoints** |
 | **Monster** | **Terrifying** — units that end their activation engaged with this one are forced to make a Mettle check. |
@@ -562,8 +562,9 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 
 **Durability & morale**
 - **Regeneration** — at the end of every round, regain 1d5 lost wounds.
-- **Fearless** — ignores suppression markers on Mettle checks, and ignores the negative effects of deteriorating morale unless Routing.
-- **Entrenched** — while in cover, +1 Armor and reroll failed Mettle checks.
+- **Courage** — re-roll failed Mettle checks. *(Split out from the old Fearless, which used to bundle this with ignoring suppression markers — the two are more useful as separate, independently reusable pieces than as one combined trait.)*
+- **Fearless** — ignores suppression markers on Mettle checks (the check is made as if the unit held none). No longer bundles Courage's re-roll — see above.
+- **Entrenched** — while in cover, +1 Armor and gains `Courage`.
 - **Camouflaged** — +1 Evasion while in cover.
 - **All-Terrain** — ignores difficult terrain penalties.
 

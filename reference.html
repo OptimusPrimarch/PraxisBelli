@@ -709,7 +709,7 @@
       <h3>Type rules</h3>
       <div class="tw"><table>
         <tr><th>Type</th><th>Grants</th></tr>
-        <tr><td class="k">Infantry</td><td><strong>Entrenched</strong> — in cover, +1 Armor <em>and</em> re-roll failed Mettle checks.</td></tr>
+        <tr><td class="k">Infantry</td><td><strong>Entrenched</strong> — in cover, +1 Armor <em>and</em> gains <code>Courage</code>.</td></tr>
         <tr><td class="k">Cavalry</td><td><strong>Run Them Through</strong> — weapons gain +1 AP and Suppressing while charging. <strong>All-Terrain</strong>.</td></tr>
         <tr><td class="k">Vehicle</td><td><strong>Armored Front</strong> — 90° facings; attacks against the front are at −1 AP, against the rear +1 AP. <strong>Hardpoints</strong>.</td></tr>
         <tr><td class="k">Monster</td><td><strong>Terrifying</strong> — units ending their activation engaged with this one must make a Mettle check.</td></tr>
@@ -1041,8 +1041,9 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       <h4>Durability &amp; morale</h4>
       <dl>
         <dt>Regeneration</dt><dd>At the end of every round, regain 1d5 lost wounds.</dd>
-        <dt>Fearless</dt><dd>Ignores suppression markers on Mettle checks, and ignores the negative effects of deteriorating morale unless Routing.</dd>
-        <dt>Entrenched</dt><dd>While in cover, +1 Armor and re-roll failed Mettle checks.</dd>
+        <dt>Courage</dt><dd>Re-roll failed Mettle checks. Split out from the old Fearless, which used to bundle this with ignoring suppression markers — more useful as two separately reusable pieces.</dd>
+        <dt>Fearless</dt><dd>Ignores suppression markers on Mettle checks (the check is made as if the unit held none). No longer bundles Courage's re-roll.</dd>
+        <dt>Entrenched</dt><dd>While in cover, +1 Armor and gains <code>Courage</code>.</dd>
         <dt>Camouflaged</dt><dd>+1 Evasion while in cover.</dd>
         <dt>All-Terrain</dt><dd>Ignores difficult terrain penalties.</dd>
       </dl>
@@ -1705,7 +1706,7 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         </tr>
         <tr>
           <td class="k">Imperial Oathkeepers</td><td>Deep Oath</td>
-          <td><strong>Oathbound</strong> — while unwounded, attacks against it are at −1 AP; auto-passes its first check; removed from play rather than Routing</td>
+          <td><strong>Oathbound</strong> — while unwounded, attacks against it are at −1 AP; auto-passes its first check; has <code>Courage</code> and <code>Fearless</code>; removed from play rather than Routing</td>
           <td><em>Compression.</em> Infantry doing three jobs, at the cost of few activations.</td>
         </tr>
         <tr>

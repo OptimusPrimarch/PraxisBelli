@@ -162,7 +162,7 @@ This is a live risk on this project, not a hypothetical: designing around Oathke
 
 > **The decision:** *which unit eats the hit?* Oathbound only holds while unwounded, so the first casualty on any squad is a real loss of capability.
 
-- **Signature trait — Oathbound:** while this unit has suffered no wounds, attacks against it are made at −1 AP. It automatically passes its first Mettle check each game. If it would ever Rout, it is removed from play instead — an Oathkeeper does not flee.
+- **Signature trait — Oathbound:** while this unit has suffered no wounds, attacks against it are made at −1 AP. It automatically passes its first Mettle check each game. It has `Courage` and `Fearless` — together they replace what a single monolithic "old Fearless" used to try to do, but as two separately reusable pieces rather than one bundled trait exclusive to this faction. If it would ever Rout, it is removed from play instead — an Oathkeeper does not flee.
 - **Stat shape:** Armor 7–8, Mettle 6–7, **Toughness 2**, units of 5. Most expensive per model in the game.
 - **Reinforcing tools:** genuinely better guns — A2/AP2 where Regiments carry A1/AP1 — plus power weapons at squad level. They must out-shoot per model to justify half the model count.
 - **Doctrine — *Hold the Oath*:** for the rest of the round, units in this Platoon cannot be moved or placed by enemy effects, and ignore Suppressing.
