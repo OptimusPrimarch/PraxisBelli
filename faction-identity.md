@@ -582,7 +582,7 @@ The current formula prices weapons accurately but the roster doesn't yet make th
 | **Obliterator** | A1, AP7+, **D6+**, 30"+ | One shot, one kill. Must threaten Toughness 10 | Laser Cannon |
 | **Ordnance** | A1–2, AP4–6, D4–7, 30"+, Blast | Area denial, indirect | Main Cannon, Howitzer |
 
-**The obliterator rule of thumb:** a dedicated anti-armor weapon needs `Damage ≥ 6` to be worth its slot, because the heaviest chassis sit at Toughness 10. At D3 it is not an anti-tank gun, it is a rifle with good AP — which is exactly why the Laser Cannon mispriced at 17 points before its Damage was raised.
+**The obliterator rule of thumb:** a dedicated anti-armor weapon needs `Damage ≥ 6` to be worth its slot against a mid-weight target — but the actual ceiling moved once Heavy Chassis was built: Wolverine/Badger run Toughness 14–15, not the Toughness 10 this rule of thumb originally assumed. At D3 a weapon is not an anti-tank gun, it is a rifle with good AP — which is exactly why the Laser Cannon mispriced at 17 points before its Damage was raised. `Crushing` (see the trait glossary) is the roster's first weapon-trait answer to this higher ceiling specifically, rather than just raising every anti-armor weapon's flat Damage.
 
 ---
 

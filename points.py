@@ -63,8 +63,11 @@ RESTRICTION_MAJOR = 0.75
 
 MINOR_TRAITS = {"accurate", "blast (s)", "engulf (s)", "suppressing", "turret", "pistol"}
 MAJOR_TRAITS = {"linked-weapon", "blast (l)", "engulf (l)", "guided", "indirect", "overcharge"}
-# "optics" is deliberately absent -- a rules stub with no defined effect yet
-# costs nothing until the rule (and therefore its tier) actually exists.
+# "optics" now has a real mechanism (design-bible.md's glossary: ignores Evasion
+# bonuses from Obscured/Obscuring terrain) but is still deliberately absent here --
+# it costs nothing until a tier is actually assigned, which hasn't happened yet.
+# "crushing", "shotgun", and "meltdown" (Oathkeeper-arc traits) are unpriced for
+# the same reason: shape locked, tiers not.
 
 # Frontal/Rear/Side Arc moved from minor to major once Traversing existed as a
 # real point of comparison: a PERMANENTLY fixed arc never reaches the rest of

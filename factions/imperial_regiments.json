@@ -29,7 +29,7 @@
     "Flamethrower":       { "range": 8,  "attacks": 1, "ap": 0, "damage": 1, "traits": ["Engulf (S)", "Anti-Infantry"] },
     "Grenade Launcher":   { "range": 18, "attacks": 1, "ap": 0, "damage": 1, "traits": ["Blast (S)", "Indirect"] },
     "Marksman Rifle":     { "range": 24, "attacks": 1, "ap": 1, "damage": 1, "traits": ["Accurate", "Optics"],
-                             "_note": "OPTICS is a rules stub -- 'helps land hits,' mechanism not yet written. Priced at 0 until it is; do not treat this weapon's cost as final." },
+                             "_note": "OPTICS now has a real mechanism (design-bible.md glossary: ignores Evasion bonuses from Obscured/Obscuring terrain) but still has no pricing tier assigned in points.py. Priced at 0 until it does; do not treat this weapon's cost as final." },
     "Plasma Rifle":       { "range": 18, "attacks": 1, "ap": 4, "damage": 2, "traits": ["Overcharge"] },
     "ATGM":               { "range": 18, "attacks": 1, "ap": 5, "damage": 4, "traits": ["Anti-Vehicle", "Heavy"],
                              "_note": "Hunter's light/mobile AT tier." },
