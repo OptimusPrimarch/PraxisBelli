@@ -1003,7 +1003,11 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <dt>Indirect</dt><dd>May target an enemy without line of sight, provided an allied unit with Spotter has line of sight to that target.</dd>
         <dt>Guided</dt><dd>If the target is visible to an allied RECON unit, decrease the target's Evasion by 3, disregarding all other modifiers.</dd>
         <dt>Accurate</dt><dd>Ignore all range penalties.</dd>
-        <dt>Optics <span class="pill open">Stub</span></dt><dd>"Helps land hits" — mechanism not yet written. Currently costs nothing in the points formula; do not treat a weapon carrying it as finalized.</dd>
+        <dt>Optics</dt><dd>The target cannot gain Evasion bonuses from being Obscured or in
+        Obscuring terrain. Cuts through concealment rather than boosting raw accuracy — a different
+        job than <code>Accurate</code>, which answers range, not cover. No longer a stub, but still
+        needs a pricing tier assigned (currently costs nothing, which is now wrong). First
+        application: Oathwarden Squad's Carbine/Optics configuration.</dd>
       </dl>
 
       <h4>Firing restrictions</h4>
@@ -1098,6 +1102,13 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       designed. <code>Deployment (Targeted)</code> is the deliberate catch-all for any
       teleportation-style arrival — one shared mechanic regardless of which faction's fiction
       explains it, rather than a new bracket variant per flavor.</p>
+      <dl>
+        <dt>Picket</dt><dd>Once this unit has deployed, enemy units cannot be deployed or
+        redeployed within 8" of it — covers both normal deployment and any Deployment (X) arrival.
+        The system's first defensive answer to the Deployment (X) family itself, not just another
+        way to arrive. First application: Oathwarden Squad. <code>Ward</code> was considered and set
+        aside — kept in reserve for a future rule interesting enough to earn it.</dd>
+      </dl>
 
       <h4>Cost-modifying</h4>
       <dl>
@@ -1835,10 +1846,23 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       <div class="tw"><table>
         <tr><th>Element</th><th>Shape</th></tr>
         <tr><td class="k">Default — Suppressed HAMR Carbine</td><td>Identical to a plain HAMR Carbine, 1 Attack instead of the Carbine's base value. A suppressor changes how the weapon is used (controlled single shots, not volume), so trading Attacks for the name is a real mechanical translation.</td></tr>
-        <tr><td class="k">Swap — Sniper pattern</td><td>The actual signature Scout option. Flagged as the natural home to finally define <code>Optics</code> (currently a priced-at-0 stub) — not resolved yet.</td></tr>
+        <tr><td class="k">Swap — Sniper pattern</td><td>The actual signature Scout option. Carries <code>Optics</code> (§12) — a reusable trait, defined via Oathwarden Squad, applying identically here.</td></tr>
         <tr><td class="k">Swap — Oathkeeper Scattergun</td><td>Short 9" / max 18", AP0, A2, D3, carries <code>Shotgun</code> (§12) — the Oathkeeper-exclusive, higher-Damage variant of the generic Scattergun (D2).</td></tr>
         <tr><td class="k">Heavy-weapon slot</td><td>Missile Launcher (reused) or <strong>HAMR MG</strong> (new, shape only)</td></tr>
         <tr><td class="k">NCO</td><td>Same paid Mettle-bump promotion as Oathkeeper Squad's NCO, but melee options limited to Combat Knife or Ripsaw Sword only — no Plasma Sword/Meteor Fist/Meteor Hammer access, reinforcing "less kitted than the line squads."</td></tr>
+      </table></div>
+
+      <h4>Oathwarden Squad — full writeup</h4>
+      <p>The Infiltrator/Incursor-equivalent, second LINE unit alongside Oathkeeper Squad. Real
+      Infiltrators are a denial/control unit — an aura that stops the enemy arriving nearby, built
+      to hold forward ground; Incursors lean toward a straightforward gunline role. Infiltrators'
+      identity anchors the signature here — more distinctive, and gives Oathwarden a real reason to
+      exist alongside Oathkeeper Squad despite sharing a category.</p>
+      <div class="tw"><table>
+        <tr><th>Element</th><th>Shape</th></tr>
+        <tr><td class="k">Signature — <code>Picket</code></td><td>Once deployed, enemy units cannot be deployed or redeployed within 8" of it — covers normal deployment and any Deployment (X) arrival. The system's first defensive answer to its own Deployment (X) family.</td></tr>
+        <tr><td class="k">Configuration <span class="pill">pick one, whole unit</span></td><td>HAMR Carbine + <code>Optics</code> (cuts through Obscured/Obscuring-terrain Evasion bonuses) <em>or</em> HAMR Carbine + Paired Combat Blades (Combat Knife's AP1 profile + <code>Linked-Weapon</code>, deliberately modest, not a melee-specialist loadout)</td></tr>
+        <tr><td class="k">Helix Adept <span class="pill">10-model size only</span></td><td>One trooper grants <code>Combat Medic</code> (§12) wholesale — a real 40k term, no new mechanism needed. Works cleanly embedded in its own squad, not just externally like Marten's Ambulance.</td></tr>
       </table></div>
 
       <h4>Oathreapers — full writeup</h4>
@@ -1858,10 +1882,10 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       <p class="note"><strong>Oathmaster (COMMAND)</strong> — name locked, nothing else designed.
       The natural home for an Iron Halo-equivalent <code>Shrug (X)</code> wargear option once this
       unit gets a real pass. <span class="pill open">Shape locked, numbers not</span> everywhere else
-      in this section — Oathwarden and Heavies/Terminators still have no package writeup at all
-      (Heavies/Terminators has no name locked either; Errant now has a full writeup, above);
-      Oathreapers' grenade, Deployment (Infiltrate)'s exact distance, and <code>Optics</code>'s
-      mechanism are all still open; the roster still needs whatever answers SUPPORT and ARMOR for
+      in this section — Heavies/Terminators still has no package writeup and no name locked (Errant
+      and Oathwarden now both have full writeups, above); Oathreapers' grenade,
+      Deployment (Infiltrate)'s exact distance, and <code>Optics</code>'s pricing tier are all still
+      open; the roster still needs whatever answers SUPPORT and ARMOR for
       this faction beyond the LINE/COMMAND/RECON/SHOCK work
       done here.</p>
 
@@ -1892,8 +1916,9 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         missing its actual terrain-clearing rule (<code>Breach</code>, conceptually settled, not yet
         written up formally) — the one piece that answers this document's own §09 terrain-density
         requirement.</li>
-        <li><strong><code>Optics</code> (Marksman Rifle) is a rules stub</strong> — "helps land hits,"
-        no mechanism defined, priced at 0 until it is.</li>
+        <li><strong><code>Optics</code> now has a real mechanism</strong> (ignores Evasion bonuses
+        from Obscured/Obscuring terrain) but still needs a pricing tier assigned in points.py —
+        currently costs nothing, which is now wrong rather than a placeholder.</li>
         <li><strong>ARMOR and SUPPORT generic Platoon Abilities</strong> are undesigned (the five
         faction-specific doctrines exist; the three generic Vanguard-Platoon abilities from §08 are
         Line/Shock/Recon only).</li>

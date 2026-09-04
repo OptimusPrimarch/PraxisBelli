@@ -529,7 +529,7 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 - **Indirect** — may target an enemy without line of sight, provided an allied unit with Spotter has line of sight to that target.
 - **Guided** — if the target is visible to an allied RECON unit, decrease the target's Evasion by 3, disregarding all other modifiers.
 - **Accurate** — ignore all range penalties.
-- **Optics** *(rules stub)* — "helps land hits"; mechanism not yet written. Costs nothing in the points formula until it is. Do not treat a weapon carrying it as finalized.
+- **Optics** — the target cannot gain Evasion bonuses from being Obscured or in Obscuring terrain. Cuts through concealment rather than boosting raw accuracy — deliberately a different job than `Accurate` (which answers range, not cover). No longer a stub; needs a pricing tier assigned (currently costs nothing in the points formula, which is now wrong). *(First application: Oathwarden Squad's Carbine/Optics configuration.)*
 
 **Firing restrictions**
 - **Heavy** — cannot attack in the same activation its unit moved; if it attacks first, it cannot then move.
@@ -582,6 +582,8 @@ A notation family for special deployment-phase rules, parallel to `Anti-[Keyword
 
 **Reserved, not yet spent:** `Deployment (Airborne)`, `Deployment (Burrowing)` — distinct fictional arrival flavors, mechanisms not yet designed. `Deployment (Targeted)` is reserved as the deliberate catch-all for any teleportation-style arrival — one shared mechanic for "appears at a chosen point," regardless of which faction's fiction (warp, teleporter, etc.) explains it, rather than a new bracket variant per flavor.
 
+- **Picket** — once this unit has deployed, enemy units cannot be deployed or redeployed within 8" of it — covers both normal deployment and any `Deployment (X)` arrival. The system's first defensive answer to the Deployment (X) family itself, not just another way to arrive. *(First application: Oathwarden Squad. `Ward` was considered and set aside — kept in reserve for a future rule interesting enough to earn it.)*
+
 ---
 
 ## Roster — Imperial Regiments
@@ -606,7 +608,7 @@ Genuinely open as of the last working session — most of the original v0.3 list
 
 1. **Trait-tier and ability-tier multipliers are still guesses** — the four weapon-trait tier values, the five faction signature-trait multipliers, and the two ability tiers are all hand-picked. Everything else in the points formula derives from probability. First thing playtesting should attack.
 2. **Sapper, Hunter, and Dragoon have no stat lines.** Sapper is additionally missing its actual terrain-clearing rule (`Breach`, conceptually settled, not yet written up formally) — the one piece that answers this document's own §9 terrain-density requirement.
-3. **`Optics` (Marksman Rifle) is a rules stub** — "helps land hits," no mechanism defined, priced at 0 until it is.
+3. **`Optics` now has a real mechanism** (ignores Evasion bonuses from Obscured/Obscuring terrain) but still needs a pricing tier assigned in points.py — currently costs nothing, which is now wrong rather than a placeholder.
 4. **ARMOR and SUPPORT generic Platoon Abilities** are undesigned (the five faction-specific doctrines exist; the three generic Vanguard-Platoon abilities from §8 are Line/Shock/Recon only).
 5. **Platoon slot constraints aren't encoded in the `.gst`** — the proposed spread in §8 is documented but not enforced by the force entry itself.
 6. **The AFV's cost is 2.4 rifle squads.** If centrepieces feel over-taxed, soften `SIZE_EXPONENT` from 0.85 toward 0.90 in `points.py`.
