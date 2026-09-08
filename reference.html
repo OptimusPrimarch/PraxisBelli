@@ -716,8 +716,16 @@
         <tr><td class="k">Aerial</td><td><strong>Flying</strong> — ignores models and terrain when moving. <strong>Soaring Above</strong> — on activation, immediately move half Speed then continue; may leave and redeploy from its own zone; only chargeable by Flying.</td></tr>
         <tr><td class="k">Towable</td><td><strong>Trailor</strong> — may hitch to a friendly Vehicle within 3" for an action. <strong>Emplaced Weapon</strong> — must deploy before shooting; immobile while emplaced.</td></tr>
       </table></div>
-      <p class="note"><code>Impact(X)</code> and <code>Fear</code> from earlier drafts are gone,
-      replaced by Run Them Through and Terrifying respectively.</p>
+      <p class="note"><code>Flying</code> is written as its own standalone entry (§12) rather than
+      an Aerial-exclusive bundle item — Aerial grants it alongside <code>Soaring Above</code>, but
+      anything can be granted <code>Flying</code> on its own (see <code>Jump Jets</code>).
+      <code>Soaring Above</code> is what actually distinguishes a true aircraft from anything else
+      that merely ignores terrain.</p>
+      <p class="note"><strong><code>Impact(X)</code> is back</strong>, in a genuinely new shape —
+      not a restoration of whatever the old v0.3 draft meant by it (see §12). <code>Fear</code> is
+      still gone, replaced by Terrifying. Cavalry's baseline charge bonus stays Run Them Through —
+      Impact (X) is a separate, optional trait some Cavalry (and Infantry, and vehicles/monsters via
+      Crushing Impact) carry on top of it, not a TYPE-wide replacement.</p>
     </section>
 
     <!-- ===================== 8 ===================== -->
@@ -1062,6 +1070,29 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         weapon in the roster (Fusion Blaster, Heavy Fusion Blaster, any future Fusion Pistol), not
         just new ones. Name is a deliberate near-homophone for Melta, the tech Fusion weapons evoke
         in this setting — same trick as HAMR/hammer.</dd>
+        <dt>Impact (X)</dt><dd>On a successful charge, roll X dice per charging model against the
+        target unit's Armor, AP0, Damage 1 each. Not an attack and doesn't use any weapon — resolves
+        in total isolation, unaffected by weapon traits, Anti-[Keyword], or anything else that
+        modifies an attack, since it represents the sheer physical weight of the charge alone.
+        Most effective against light/unarmored targets by design (AP0 never threatens real armor).
+        A genuine revival of the cut v0.3 Impact(X), but a new shape, not a restoration. Guideline
+        rather than a hard TYPE lock: Infantry and Cavalry are the register this belongs to. X is
+        driven by the individual model's own weight/violence of impact, not the unit's size.</dd>
+        <dt>Crushing Impact (X)</dt><dd>The Vehicle/Monster register of Impact (X), same structure
+        and same isolation from weapons/traits. Stubbed at AP3/Damage 2 pending a real application —
+        enough to threaten light armor or anything under Toughness 3, not enough to meaningfully
+        touch another vehicle.</dd>
+      </dl>
+
+      <h4>Movement</h4>
+      <dl>
+        <dt>Flying</dt><dd>Ignores models and terrain while moving. Standalone entry rather than an
+        Aerial-TYPE exclusive — anything can be granted it. Aerial TYPE grants it alongside
+        <code>Soaring Above</code>, which is what actually distinguishes a real aircraft from
+        anything else that merely ignores terrain.</dd>
+        <dt>Jump Jets</dt><dd>Grants <code>Flying</code>, and grants <code>Impact (X)</code> on a
+        successful charge. First application: Inceptors baseline; a Tacticus-pattern Assault Squad
+        as an optional upgrade, at a lower X than Inceptors carry by default.</dd>
       </dl>
 
       <h4>Durability &amp; morale</h4>
@@ -1879,15 +1910,36 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <tr><td class="k">Deployment — <code>Deployment (Infiltrate)</code></td><td>Arrives after every <code>Deployment (Scout)</code> move resolves, placed &gt;9" from any enemy model. Distance is shape-proposed, not locked. Not a mid-game reserves mechanic — resolves within the deployment phase, just in a later step, so it sees where the board ends up before committing.</td></tr>
       </table></div>
 
-      <p class="note"><strong>Oathmaster (COMMAND)</strong> — name locked, nothing else designed.
-      The natural home for an Iron Halo-equivalent <code>Shrug (X)</code> wargear option once this
-      unit gets a real pass. <span class="pill open">Shape locked, numbers not</span> everywhere else
-      in this section — Heavies/Terminators still has no package writeup and no name locked (Errant
-      and Oathwarden now both have full writeups, above); Oathreapers' grenade,
-      Deployment (Infiltrate)'s exact distance, and <code>Optics</code>'s pricing tier are all still
-      open; the roster still needs whatever answers SUPPORT and ARMOR for
-      this faction beyond the LINE/COMMAND/RECON/SHOCK work
-      done here.</p>
+      <h4>Heavies — two sub-families, identity locked, package menus not yet written</h4>
+      <p>"Heavies" splits into a <strong>Terminator family</strong> and a <strong>Gravis
+      family</strong>, both sharing Arm7/Eva3/Tuf3/<code>Indomitable</code> but differentiated by
+      survivability texture rather than a stat bump — real Terminator Armor is fictionally the
+      toughest personal armor in the setting, honored here without needing heavier stats.</p>
+      <div class="tw"><table>
+        <tr><th>Unit</th><th>Category</th><th>Notes</th></tr>
+        <tr><td class="k">Assault Terminators</td><td>SHOCK</td><td>Melee-focused; the Storm-Shield-equivalent <code>Shrug</code> carrier. <code>Impact (1)</code>.</td></tr>
+        <tr><td class="k">Terminator Squad</td><td>LINE</td><td>Ranged, far more elite than a typical LINE unit — no new keyword for that, cost and stats already carry it. Storm Bolter-equivalent + Assault Cannon/Cyclone Missile Launcher-style heavy swap.</td></tr>
+        <tr><td class="k">Aggressors</td><td>SHOCK</td><td>Integrated twin close-range weapon system, slow, point-blank gunline-brawler.</td></tr>
+        <tr><td class="k">Inceptors</td><td>SHOCK</td><td>Ranged, no strong melee — earns SHOCK through drop-assault tempo. Baseline <code>Jump Jets</code>, <code>Impact (3)</code> — highest in the family, tracking impact violence (orbital drop) over raw armor weight.</td></tr>
+        <tr><td class="k">Gravis Intercessors</td><td>LINE default</td><td>Heavy HAMR Rifle. Swap to HAMR MG or Multi-melta-equivalent (<code>Meltdown</code>) shifts it to SUPPORT — a deliberate divergence from the vehicle no-category-shift rule (Marten's lesson); infantry works differently here on purpose.</td></tr>
+        <tr><td class="k">Gravis Devastators</td><td>SUPPORT</td><td>Matches Regiments' Heavy Weapons Team. Distinct reason to exist alongside Intercessors' SUPPORT swap not yet resolved — likely scale (several heavy weapons per squad vs. one configuration). Exact weapon options left to the user's own research.</td></tr>
+        <tr><td class="k">Tacticus Assault Squad</td><td>SHOCK</td><td>New unit, standard-tier armor (Oathkeeper Squad's class, not Gravis/Terminator). Optional <code>Jump Jets</code> upgrade, <code>Impact (1)</code> — the mechanic's second carrier.</td></tr>
+      </table></div>
+      <p class="note">Terminator-exclusive: baseline <code>Shrug</code> (improved by the Storm-Shield
+      wargear, lower X better) and <strong><code>Warded Plate</code></strong> (name provisional):
+      <em>"while this model would take doubled damage from a hit with the Anti-Infantry trait, it
+      instead takes that damage normally."</em> Direct payoff of a line already in Ablative Plating's
+      own definition — "not warded plate... since Regiments has no oath-access at all" — Oathkeepers'
+      Deep Oath is exactly the access that line was leaving room for. Gravis units get neither.</p>
+
+      <p class="note"><strong>Oathmaster (COMMAND)</strong> — deliberately saved for last, so it can
+      be designed to represent whichever unit it might attach to rather than being locked in
+      isolation first. Name locked, nothing else designed. <span class="pill open">Shape locked,
+      numbers not</span> everywhere else in this section — none of the six Heavies-family units or
+      Tacticus Assault Squad have a full package-menu writeup yet, only identity/category/signature
+      mechanics; Oathreapers' grenade, Deployment (Infiltrate)'s exact distance, Optics's pricing
+      tier, Crushing Impact's stubbed AP3/D2, and Warded Plate's final name are all still open; the
+      roster still needs whatever fills the remaining SUPPORT/ARMOR gaps for this faction.</p>
 
       <h3>Xenos — outside the network</h3>
       <p>The Oath is a <em>human</em> technology. Each xenos faction is defined by how it fails to fit
