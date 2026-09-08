@@ -186,9 +186,12 @@ Terrain is a set of tags; any piece can carry any combination. The fictional nam
 | **Difficult** | Costs double movement. |
 | **Blocking** | Fully blocks line of sight through it. |
 | **Dangerous** | Each model entering or moving through rolls d10; **4+ passes.** Each failure inflicts 1 wound. |
-| **Impassable** | Ground units cannot move through at all. |
+| **Impassable** | No unit may move through it, full stop — a solid obstruction (a mountain, a building) that `Flying` and Grav Engines don't help with either. |
+| **Void** | Ground-based movement cannot cross it at all. Units with `Flying` or the Grav Engines locomotion upgrade cross freely — a chasm or open water has no surface to drive on, but nothing stopping something that isn't touching the ground. |
 
-A ruin is `Obscuring + Cover + Difficult + Blocking`. A sandbag line is `Obscuring + Cover`. A minefield is `Dangerous`.
+A ruin is `Obscuring + Cover + Difficult + Blocking`. A sandbag line is `Obscuring + Cover`. A minefield is `Dangerous`. A chasm or river is `Void`; a mountain or a building's footprint is `Impassable`.
+
+**`Impassable` used to read "ground units cannot move through," which already implicitly let Flying units cross — that behavior is now split explicitly into two tags instead of one ambiguous one.** Introduced alongside Oathkeepers' Grav Engines locomotion upgrade, which needed a real distinction between "no surface to drive on" and "solid rock in the way" to make hovering over difficult terrain mean something coherent.
 
 Blast, Engulf, and template weapons ignore cover entirely — their targets cannot benefit from it.
 
@@ -286,7 +289,7 @@ A tank can park on a marker and stop you scoring it forever; it can never score 
 
 A standard 4'×4' board carries **at least 8 terrain pieces**, of which:
 
-- **3 or more** carry `Difficult` or `Impassable` — ground armor cannot cross freely
+- **3 or more** carry `Difficult`, `Impassable`, or `Void` — ground armor cannot cross freely
 - **4 or more** carry `Blocking` — firing lanes are earned, not given
 
 A board failing this is not a legal board. Sparse terrain silently converts the game into a shooting contest, which is the failure mode that kills combined arms.

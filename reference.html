@@ -674,10 +674,17 @@
         <tr><td class="k">Difficult</td><td>Costs double movement.</td></tr>
         <tr><td class="k">Blocking</td><td>Fully blocks line of sight through it.</td></tr>
         <tr><td class="k">Dangerous</td><td>Each model entering or moving through rolls d10; <strong>4+ passes</strong>. Each failure inflicts 1 wound.</td></tr>
-        <tr><td class="k">Impassable</td><td>Ground units cannot move through at all.</td></tr>
+        <tr><td class="k">Impassable</td><td>No unit may move through it, full stop — a solid obstruction (a mountain, a building) that <code>Flying</code> and Grav Engines don't help with either.</td></tr>
+        <tr><td class="k">Void</td><td>Ground-based movement cannot cross it at all. Units with <code>Flying</code> or the Grav Engines locomotion upgrade cross freely — a chasm or open water has no surface to drive on, but nothing stopping something that isn't touching the ground.</td></tr>
       </table></div>
       <p>A ruin is <code>Obscuring + Cover + Difficult + Blocking</code>. A sandbag line is
-      <code>Obscuring + Cover</code>. A minefield is <code>Dangerous</code>.</p>
+      <code>Obscuring + Cover</code>. A minefield is <code>Dangerous</code>. A chasm or river is
+      <code>Void</code>; a mountain or a building's footprint is <code>Impassable</code>.</p>
+      <p class="note"><code>Impassable</code> used to read "ground units cannot move through," which
+      already implicitly let Flying units cross — that behavior is now split explicitly into two
+      tags instead of one ambiguous one. Introduced alongside Oathkeepers' Grav Engines locomotion
+      upgrade, which needed a real distinction between "no surface to drive on" and "solid rock in
+      the way" to make hovering over difficult terrain mean something coherent.</p>
       <p>Blast, Engulf, and template weapons ignore cover entirely — their targets cannot benefit from it.</p>
     </section>
 
@@ -779,7 +786,7 @@
 
       <h3>2 · Terrain density is a rule, not a suggestion</h3>
       <p>A standard 4'×4' board carries <strong>at least 8 terrain pieces</strong>, of which
-      <strong>3 or more</strong> carry Difficult or Impassable, and <strong>4 or more</strong> carry
+      <strong>3 or more</strong> carry Difficult, Impassable, or Void, and <strong>4 or more</strong> carry
       Blocking. A board failing this is not a legal board — sparse terrain silently converts the game
       into a shooting contest.</p>
 
@@ -1933,20 +1940,39 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       own definition — "not warded plate... since Regiments has no oath-access at all" — Oathkeepers'
       Deep Oath is exactly the access that line was leaving room for. Gravis units get neither.</p>
 
-      <p class="note"><strong>Full Oathkeepers roster as of this naming pass</strong> — COMMAND:
-      Oathmaster (deferred). LINE: Oathkeeper Squad, Oathwarden Squad, Oathkeeper Paragons. SUPPORT:
-      Oathguard. RECON: Errant Squad. SHOCK: Oathreapers, Oathkeeper Paladins, Oathcrusher Squad,
-      Oathkeeper Assault Squad. <strong>ARMOR is still empty</strong> — the one real coverage gap
-      left.</p>
+      <h4>ARMOR — Destrier, Charger, and Bastion</h4>
+      <p>Oathkeeper vehicles get their own naming axis — an equestrian/fortification register
+      instead of the Oath-prefixed infantry convention, the same deliberate contrast Regiments draws
+      between Mustelidae vehicle names and martial-title infantry. <strong>Brand new chassis</strong>,
+      not a reuse of the Regiments-specific Wolverine/Badger infrastructure. Governing philosophy,
+      mirroring the infantry's own hardening relative to Regiments: <strong>no light tanks</strong> —
+      one body per chassis, package variety instead of a weight-class ladder.</p>
+      <div class="tw"><table>
+        <tr><th>Chassis</th><th>Real-world anchor</th><th>Identity</th></tr>
+        <tr><td class="k">Destrier</td><td>Rhino/Predator (same hull in the source material)</td><td>Bus-hull transport default, real capacity, token defensive weapon. Modular by lineage, not by accident.</td></tr>
+        <tr><td class="k">Charger</td><td>Predator, off the Destrier hull</td><td>Turreted tank sibling — same equestrian register (bred to charge the line vs. Destrier's general war-horse framing), same lineage, different job. Mirrors Fisher diverging from Marten/Sable.</td></tr>
+        <tr><td class="k">Bastion</td><td>Land Raider/Repulsor (unified via the locomotion package)</td><td>The flagship — "a seriously dominant presence when brought to the table." Real turret firepower and real transport capacity simultaneously; built to carry the Terminator family (Oathkeeper Paladins/Paragons).</td></tr>
+      </table></div>
+      <p class="note"><strong>Locomotion, shared by both chassis:</strong> Tracks (default) grants
+      <code>All-Terrain</code> per the existing rule. <strong>Grav Engines</strong> (upgrade): flat
+      Speed increase, keeps <code>All-Terrain</code>, and additionally ignores <code>Void</code>
+      terrain (§06) — a hovering vehicle crosses a chasm a tracked All-Terrain vehicle still can't,
+      a real capability gap rather than a reskinned Speed bump.</p>
+
+      <p class="note"><strong>Full Oathkeepers roster as of this pass</strong> — COMMAND: Oathmaster
+      (deferred). LINE: Oathkeeper Squad, Oathwarden Squad, Oathkeeper Paragons. SUPPORT: Oathguard.
+      RECON: Errant Squad. SHOCK: Oathreapers, Oathkeeper Paladins, Oathcrusher Squad, Oathkeeper
+      Assault Squad. ARMOR: Destrier, Charger, Bastion. <strong>Every category now has at least one
+      entry.</strong></p>
 
       <p class="note"><strong>Oathmaster (COMMAND)</strong> — deliberately saved for last, so it can
       be designed to represent whichever unit it might attach to rather than being locked in
       isolation first. Name locked, nothing else designed. <span class="pill open">Shape locked,
-      numbers not</span> everywhere else in this section — none of the five now-named units above
-      have a full package-menu writeup yet, only identity/category/signature mechanics; Oathreapers'
-      grenade, Deployment (Infiltrate)'s exact distance, Optics's pricing tier, Crushing Impact's
-      stubbed AP3/D2, and Warded Plate's final name are all still open; the roster still needs
-      whatever fills the ARMOR gap for this faction.</p>
+      numbers not</span> everywhere else in this section — none of the five now-named infantry units
+      have a full package-menu writeup yet, only identity/category/signature mechanics; Destrier/
+      Charger/Bastion have identity and locomotion locked but no weapon menus or stat lines yet;
+      Oathreapers' grenade, Deployment (Infiltrate)'s exact distance, Optics's pricing tier, Crushing
+      Impact's stubbed AP3/D2, and Warded Plate's final name are all still open.</p>
 
       <h3>Xenos — outside the network</h3>
       <p>The Oath is a <em>human</em> technology. Each xenos faction is defined by how it fails to fit
