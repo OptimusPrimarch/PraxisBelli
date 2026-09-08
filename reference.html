@@ -1088,7 +1088,13 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <dt>Crushing Impact (X)</dt><dd>The Vehicle/Monster register of Impact (X), same structure
         and same isolation from weapons/traits. Stubbed at AP3/Damage 2 pending a real application —
         enough to threaten light armor or anything under Toughness 3, not enough to meaningfully
-        touch another vehicle.</dd>
+        touch another vehicle. First real application: Bastion — whether Vehicles get a standard
+        melee profile at all (the way Infantry has universal Fists) or some rely on Crushing Impact
+        alone is a genuinely open question, not yet decided.</dd>
+        <dt>Consumable (X)</dt><dd>This weapon may only be used X times over the course of the game;
+        once exhausted, it cannot fire again. Parallel notation to Anti-[Keyword], Deployment (X),
+        and Impact (X) — a general-purpose way to describe limited-ammunition or one-shot weapons.
+        First application: Bastion's Hunter-Killer Missile, Consumable (1).</dd>
       </dl>
 
       <h4>Movement</h4>
@@ -1967,6 +1973,26 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       package to get there the way Wolverine does with Bolt-on Armor. Cost will be extreme,
       deliberately — durability's multiplicative relationship means a vehicle this easy to hit has to
       buy its entire survivability through Armor and Toughness alone.</p>
+
+      <p class="note"><strong>Weapon system checked against real Rhino/Land Raider/Repulsor/Repulsor
+      Executioner datasheets</strong> (Wahapedia, 10th edition) as a proportion baseline, not a target
+      to match exactly. Real data: Rhino T9/Sv3+/W10/transport 12; Land Raider T12/Sv2+/W16/transport
+      12 (Terminators cost 2 slots each); Repulsor T12/Sv3+/W16/transport 14 (heavier armament, worse
+      save, more capacity than Land Raider); Repulsor Executioner transport drops to 7 — roughly
+      halved, not to zero.</p>
+      <div class="tw"><table>
+        <tr><th>Configuration</th><th>Loadout</th><th>Notes</th></tr>
+        <tr><td class="k">Standard <span class="pill">Land Raider register</span></td><td>Twin Laser Cannons (Side, Linked) + Twin HAMR MGs (Frontal, Linked)</td><td>Covers both real twin-lascannon and twin-heavy-bolter options at once. Full transport. Real armament — fires and delivers in the same activation.</td></tr>
+        <tr><td class="k">Turret — Anti-armor <span class="pill">Repulsor register</span></td><td>Replaces both standard guns; full <code>Turret</code> (no Traversing); <code>Accurate</code> + <code>Anti-Armor</code></td><td>Las-talon register — precision, dedicated tank-hunting. Transport roughly halved, matching the real Executioner's 14→7 ratio.</td></tr>
+        <tr><td class="k">Turret — Anti-infantry <span class="pill">Repulsor register</span></td><td>Same turret slot; high Attacks, likely <code>Suppressing</code></td><td>Heavy onslaught gatling cannon register — volume saturation instead of precision.</td></tr>
+        <tr><td class="k">Hunter-Killer Missile <span class="pill">standalone, either configuration</span></td><td><code>Consumable (1)</code> (see glossary)</td><td>New reusable notation for limited-use weapons, parallel to Anti-[Keyword]/Deployment (X)/Impact (X).</td></tr>
+      </table></div>
+      <p class="note">The real Repulsor's third weapon (defensive array) folds into the already-
+      existing Twin HAMR MGs rather than being invented separately. <code>Crushing Impact</code>
+      stands in for the real "armoured hull" melee attack rather than a standard melee profile —
+      whether Vehicles get a universal melee option the way Infantry has free Fists, or some rely on
+      Crushing Impact alone, is genuinely undecided; Bastion just uses Crushing Impact for now.</p>
+
       <p class="note"><strong>Locomotion, shared by both chassis:</strong> Tracks (default) grants
       <code>All-Terrain</code> per the existing rule. <strong>Grav Engines</strong> (upgrade): flat
       Speed increase, keeps <code>All-Terrain</code>, and additionally ignores <code>Void</code>
@@ -1983,10 +2009,12 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       be designed to represent whichever unit it might attach to rather than being locked in
       isolation first. Name locked, nothing else designed. <span class="pill open">Shape locked,
       numbers not</span> everywhere else in this section — none of the five now-named infantry units
-      have a full package-menu writeup yet, only identity/category/signature mechanics; Destrier/
-      Charger/Bastion have identity and locomotion locked but no weapon menus or stat lines yet;
-      Oathreapers' grenade, Deployment (Infiltrate)'s exact distance, Optics's pricing tier, Crushing
-      Impact's stubbed AP3/D2, and Warded Plate's final name are all still open.</p>
+      have a full package-menu writeup yet, only identity/category/signature mechanics; Bastion's
+      exact turret-gun AP/Damage/Attacks and Hunter-Killer Missile's own stats are unset even though
+      the shape is locked; Destrier and Charger have identity and locomotion locked but no weapon
+      menus of their own yet; whether Vehicles get a universal melee profile is undecided;
+      Oathreapers' grenade, Deployment (Infiltrate)'s exact distance, Optics's pricing tier, and
+      Warded Plate's final name are all still open.</p>
 
       <h3>Xenos — outside the network</h3>
       <p>The Oath is a <em>human</em> technology. Each xenos faction is defined by how it fails to fit
