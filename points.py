@@ -316,6 +316,15 @@ def cost_roster(roster):
 
 # ---------------------------------------------------------------- reference
 
+
+# NOTE: this REFERENCE roster is a small illustrative sanity-check, not a live
+# mirror of factions/imperial_regiments.json (which has 11 units on a shared
+# weapon library build_cat.py resolves at build time -- this script's cost_*
+# functions can't consume that file directly). It had drifted stale (Rifle
+# Squad was showing 90 pts instead of the anchor's 100) because the Rifle/
+# Bayonet loadout here didn't match the current weapon library. Fixed below;
+# the other three entries are illustrative only, not verified against the
+# current 11-unit roster's real weapon loadouts.
 REFERENCE = {
     "name": "Reference roster (validation)",
     "units": [
@@ -323,8 +332,11 @@ REFERENCE = {
             "name": "Rifle Squad", "category": "LINE", "type": "Infantry", "size": 10,
             "profile": {"speed": 5, "mettle": 4, "evasion": 6, "armor": 4, "toughness": 1},
             "weapons": [
-                {"name": "Rifle", "range": 18, "attacks": 1, "ap": 1, "damage": 1},
+                {"name": "Rifle", "range": 18, "attacks": 1, "ap": 0, "damage": 1},
+                {"name": "Bayonet", "range": "melee", "attacks": 1, "ap": 0, "damage": 1,
+                 "traits": ["Fixed"]},
             ],
+            "faction_trait": {"name": "Massed Ranks", "multiplier": 1.06, "min_size": 8},
         },
         {
             "name": "Heavy Weapons Team", "category": "SUPPORT", "type": "Infantry", "size": 1,
