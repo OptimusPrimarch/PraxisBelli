@@ -1,72 +1,97 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="2e87-1726-060e-cbac" name="Imperial Regiments" gameSystemId="sys-cd5a-2de6-f8aa-24ee" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue">
-  <selectionEntries>
-    <selectionEntry type="unit" import="true" name="Regimental Officer" hidden="false" id="78e4-43ad-1ce3-2960">
+<catalogue name="Imperial Regiments" id="2e87-1726-060e-cbac" battleScribeVersion="2.03" gameSystemId="sys-cd5a-2de6-f8aa-24ee" gameSystemRevision="1" library="false" revision="1" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <forceEntries>
+    <forceEntry name="Vanguard Formation" id="1183-7edb-4b50-5bdf" hidden="false">
       <categoryLinks>
-        <categoryLink name="Command" hidden="false" id="3c4b-beab-ef3e-03ab" targetId="c892-1e80-87b3-2ee2" primary="true" />
-        <categoryLink name="Infantry" hidden="false" id="2802-e5f7-3f9a-f9f4" targetId="0855-9c5c-35f4-04c1" primary="false" />
+        <categoryLink name="Aerial" id="7063-3b75-abaf-05ba" hidden="false" targetId="c4e5-9b9b-cb06-7d59"/>
+        <categoryLink name="Armor" id="14ca-a30e-a70a-a7c4" hidden="false" targetId="7681-e699-f10a-e57b"/>
+        <categoryLink name="Cavalry" id="b189-e58c-ae9f-c661" hidden="false" targetId="2ab8-78f7-b507-dd19"/>
+        <categoryLink name="Command" id="e3b2-8c76-37b1-5462" hidden="false" targetId="c892-1e80-87b3-2ee2"/>
+        <categoryLink name="Infantry" id="446f-7687-53bd-36db" hidden="false" targetId="0855-9c5c-35f4-04c1"/>
+        <categoryLink name="Line" id="55a9-4e74-0c33-932a" hidden="false" targetId="9bdf-0174-74ef-f0af"/>
+        <categoryLink name="Monster" id="e77d-c806-f21b-2639" hidden="false" targetId="18b8-e55b-7c93-8700"/>
+        <categoryLink name="Recon" id="015e-418b-271a-56dc" hidden="false" targetId="e06d-3eb6-2edc-cee7"/>
+        <categoryLink name="Shock" id="a8bb-4dbc-ea4c-3716" hidden="false" targetId="49f8-be80-6328-d7dc"/>
+        <categoryLink name="Support" id="299a-699f-406a-dc8f" hidden="false" targetId="aa80-441a-6103-d793"/>
+        <categoryLink name="Towable" id="12b6-2a8f-57a6-ffd4" hidden="false" targetId="ee57-adfd-29c9-10b9"/>
+        <categoryLink name="Vehicle" id="ced5-e026-1dad-6479" hidden="false" targetId="4e41-bd1a-1e9f-f591"/>
       </categoryLinks>
+    </forceEntry>
+  </forceEntries>
+  <selectionEntries>
+    <selectionEntry name="Regimental Officer" id="78e4-43ad-1ce3-2960" hidden="false" import="true" type="unit">
+      <categoryLinks>
+        <categoryLink name="Command" id="3c4b-beab-ef3e-03ab" hidden="false" primary="true" targetId="c892-1e80-87b3-2ee2"/>
+        <categoryLink name="Infantry" id="2802-e5f7-3f9a-f9f4" hidden="false" primary="false" targetId="0855-9c5c-35f4-04c1"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="58"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Leadership Aura" id="6e42-4034-2e24-6e2f" hidden="false" targetId="92ca-3761-4367-8623" type="rule"/>
+      </infoLinks>
       <profiles>
-        <profile name="Regimental Officer" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile" hidden="false" id="34f2-2333-ffab-e495">
+        <profile name="Regimental Officer" id="34f2-2333-ffab-e495" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
           <characteristics>
-            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">5"</characteristic>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">5&quot;</characteristic>
             <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">6</characteristic>
             <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">6</characteristic>
             <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">4</characteristic>
-            <characteristic name="Toughness" typeId="4a8a-2752-aa8a-d5e3">3</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">3</characteristic>
           </characteristics>
         </profile>
-        <profile name="Sidearm" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="a5d8-c8a5-6951-dcd2">
+        <profile name="Sidearm" id="a5d8-c8a5-6951-dcd2" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">8"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">8&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">2</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
             <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Pistol</characteristic>
           </characteristics>
         </profile>
-        <profile name="Power Maul" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="4bf4-bfa6-7af5-b734">
+        <profile name="Power Maul" id="4bf4-bfa6-7af5-b734" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
             <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">2</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">1</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">2</characteristic>
-            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1" />
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1"/>
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink name="Leadership Aura" id="6e42-4034-2e24-6e2f" hidden="false" type="rule" targetId="92ca-3761-4367-8623" />
-      </infoLinks>
-      <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="58" />
-      </costs>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Rifle Squad" hidden="false" id="9981-4c19-4505-858b">
+    <selectionEntry name="Rifle Squad" id="9981-4c19-4505-858b" hidden="false" import="true" type="unit">
       <categoryLinks>
-        <categoryLink name="Line" hidden="false" id="154f-4791-bad8-7437" targetId="9bdf-0174-74ef-f0af" primary="true" />
-        <categoryLink name="Infantry" hidden="false" id="e336-90ae-88a4-30b9" targetId="0855-9c5c-35f4-04c1" primary="false" />
+        <categoryLink name="Line" id="154f-4791-bad8-7437" hidden="false" primary="true" targetId="9bdf-0174-74ef-f0af"/>
+        <categoryLink name="Infantry" id="e336-90ae-88a4-30b9" hidden="false" primary="false" targetId="0855-9c5c-35f4-04c1"/>
       </categoryLinks>
+      <costs>
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="100"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Entrenched" id="733d-0810-c90c-ac8a" hidden="false" targetId="9f10-8dad-4a5b-71f4" type="rule"/>
+        <infoLink name="Boots on the Ground" id="bc4f-0d36-4230-7bc4" hidden="false" targetId="7b4f-5341-0942-c2f6" type="rule"/>
+      </infoLinks>
       <profiles>
-        <profile name="Rifle Squad" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile" hidden="false" id="9fe7-2540-971f-a2c7">
+        <profile name="Rifle Squad" id="9fe7-2540-971f-a2c7" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
           <characteristics>
-            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">5"</characteristic>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">5&quot;</characteristic>
             <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">4</characteristic>
             <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">6</characteristic>
             <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">4</characteristic>
-            <characteristic name="Toughness" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
           </characteristics>
         </profile>
-        <profile name="Rifle" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="1f87-890d-e4c8-74a7">
+        <profile name="Rifle" id="1f87-890d-e4c8-74a7" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
-            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1" />
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1"/>
           </characteristics>
         </profile>
-        <profile name="Bayonet" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="4910-c17d-f310-f6ea">
+        <profile name="Bayonet" id="4910-c17d-f310-f6ea" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
             <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
@@ -76,39 +101,39 @@
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink name="Entrenched" id="733d-0810-c90c-ac8a" hidden="false" type="rule" targetId="9f10-8dad-4a5b-71f4" />
-        <infoLink name="Boots on the Ground" id="bc4f-0d36-4230-7bc4" hidden="false" type="rule" targetId="7b4f-5341-0942-c2f6" />
-      </infoLinks>
-      <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="100" />
-      </costs>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Veteran Squad" hidden="false" id="03d2-fb6c-50a1-1d7c">
+    <selectionEntry name="Veteran Squad" id="03d2-fb6c-50a1-1d7c" hidden="false" import="true" type="unit">
       <categoryLinks>
-        <categoryLink name="Line" hidden="false" id="b0c5-f989-5950-0c4d" targetId="9bdf-0174-74ef-f0af" primary="true" />
-        <categoryLink name="Infantry" hidden="false" id="3feb-9662-e3d6-ded0" targetId="0855-9c5c-35f4-04c1" primary="false" />
+        <categoryLink name="Line" id="b0c5-f989-5950-0c4d" hidden="false" primary="true" targetId="9bdf-0174-74ef-f0af"/>
+        <categoryLink name="Infantry" id="3feb-9662-e3d6-ded0" hidden="false" primary="false" targetId="0855-9c5c-35f4-04c1"/>
       </categoryLinks>
+      <costs>
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="112"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Entrenched" id="f499-7234-8297-7681" hidden="false" targetId="9f10-8dad-4a5b-71f4" type="rule"/>
+        <infoLink name="Boots on the Ground" id="a103-8abb-653f-b07d" hidden="false" targetId="7b4f-5341-0942-c2f6" type="rule"/>
+      </infoLinks>
       <profiles>
-        <profile name="Veteran Squad" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile" hidden="false" id="ba4e-37e6-c9c5-6f2e">
+        <profile name="Veteran Squad" id="ba4e-37e6-c9c5-6f2e" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
           <characteristics>
-            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">5"</characteristic>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">5&quot;</characteristic>
             <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">5</characteristic>
             <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">6</characteristic>
             <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">5</characteristic>
-            <characteristic name="Toughness" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
           </characteristics>
         </profile>
-        <profile name="Rifle" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="d8fa-b9ba-b58c-a721">
+        <profile name="Rifle" id="d8fa-b9ba-b58c-a721" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
-            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1" />
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1"/>
           </characteristics>
         </profile>
-        <profile name="Bayonet" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="15b9-bc19-5de9-4a9e">
+        <profile name="Bayonet" id="15b9-bc19-5de9-4a9e" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
             <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
@@ -117,18 +142,18 @@
             <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Fixed</characteristic>
           </characteristics>
         </profile>
-        <profile name="Plasma Rifle" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="bc6c-823d-21ba-9e4b">
+        <profile name="Plasma Rifle" id="bc6c-823d-21ba-9e4b" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">4</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">2</characteristic>
             <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Overcharge</characteristic>
           </characteristics>
         </profile>
-        <profile name="Light Machine Gun" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="6923-6a5d-3b0f-c2e6">
+        <profile name="Light Machine Gun" id="6923-6a5d-3b0f-c2e6" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">4</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
@@ -136,158 +161,158 @@
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink name="Entrenched" id="f499-7234-8297-7681" hidden="false" type="rule" targetId="9f10-8dad-4a5b-71f4" />
-        <infoLink name="Boots on the Ground" id="a103-8abb-653f-b07d" hidden="false" type="rule" targetId="7b4f-5341-0942-c2f6" />
-      </infoLinks>
-      <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="112" />
-      </costs>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Conscript Mob" hidden="false" id="5cb4-18b5-9b83-763e">
+    <selectionEntry name="Conscript Mob" id="5cb4-18b5-9b83-763e" hidden="false" import="true" type="unit">
       <categoryLinks>
-        <categoryLink name="Line" hidden="false" id="cada-a413-015c-a9a5" targetId="9bdf-0174-74ef-f0af" primary="true" />
-        <categoryLink name="Infantry" hidden="false" id="70db-983b-a360-93b9" targetId="0855-9c5c-35f4-04c1" primary="false" />
+        <categoryLink name="Line" id="cada-a413-015c-a9a5" hidden="false" primary="true" targetId="9bdf-0174-74ef-f0af"/>
+        <categoryLink name="Infantry" id="70db-983b-a360-93b9" hidden="false" primary="false" targetId="0855-9c5c-35f4-04c1"/>
       </categoryLinks>
+      <costs>
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="80"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Entrenched" id="0fdf-48f6-3481-b7c9" hidden="false" targetId="9f10-8dad-4a5b-71f4" type="rule"/>
+        <infoLink name="Boots on the Ground" id="bd60-b7f4-9781-3d02" hidden="false" targetId="7b4f-5341-0942-c2f6" type="rule"/>
+      </infoLinks>
       <profiles>
-        <profile name="Conscript Mob" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile" hidden="false" id="47a3-c711-7d62-35f3">
+        <profile name="Conscript Mob" id="47a3-c711-7d62-35f3" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
           <characteristics>
-            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">5"</characteristic>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">5&quot;</characteristic>
             <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">2</characteristic>
             <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">6</characteristic>
             <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">3</characteristic>
-            <characteristic name="Toughness" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
           </characteristics>
         </profile>
-        <profile name="Surplus Rifle" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="9fbf-1aac-b915-ec4f">
+        <profile name="Surplus Rifle" id="9fbf-1aac-b915-ec4f" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">12"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">12&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
-            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1" />
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1"/>
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink name="Entrenched" id="0fdf-48f6-3481-b7c9" hidden="false" type="rule" targetId="9f10-8dad-4a5b-71f4" />
-        <infoLink name="Boots on the Ground" id="bd60-b7f4-9781-3d02" hidden="false" type="rule" targetId="7b4f-5341-0942-c2f6" />
-      </infoLinks>
-      <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="80" />
-      </costs>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Storm Squad" hidden="false" id="3676-2868-bc19-6424">
+    <selectionEntry name="Storm Squad" id="3676-2868-bc19-6424" hidden="false" import="true" type="unit">
       <categoryLinks>
-        <categoryLink name="Shock" hidden="false" id="bd50-b031-6ff2-4be0" targetId="49f8-be80-6328-d7dc" primary="true" />
-        <categoryLink name="Infantry" hidden="false" id="bca8-a302-8db0-c445" targetId="0855-9c5c-35f4-04c1" primary="false" />
+        <categoryLink name="Shock" id="bd50-b031-6ff2-4be0" hidden="false" primary="true" targetId="49f8-be80-6328-d7dc"/>
+        <categoryLink name="Infantry" id="bca8-a302-8db0-c445" hidden="false" primary="false" targetId="0855-9c5c-35f4-04c1"/>
       </categoryLinks>
+      <costs>
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="141"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Brutal Assault" id="6834-6895-2584-9b0b" hidden="false" targetId="e53b-b8b7-2e89-6d6f" type="rule"/>
+      </infoLinks>
       <profiles>
-        <profile name="Storm Squad" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile" hidden="false" id="a889-48bd-3f5f-7878">
+        <profile name="Storm Squad" id="a889-48bd-3f5f-7878" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
           <characteristics>
-            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">6"</characteristic>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">6&quot;</characteristic>
             <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">5</characteristic>
             <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">7</characteristic>
             <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">5</characteristic>
-            <characteristic name="Toughness" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
           </characteristics>
         </profile>
-        <profile name="Submachine Gun" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="66ab-53b5-9f36-c488">
+        <profile name="Submachine Gun" id="66ab-53b5-9f36-c488" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">8"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">8&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">3</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
-            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1" />
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1"/>
           </characteristics>
         </profile>
-        <profile name="Flamethrower" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="f3a8-11b1-23f9-36bc">
+        <profile name="Flamethrower" id="f3a8-11b1-23f9-36bc" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">8"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">8&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
             <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Engulf (S), Anti-Infantry</characteristic>
           </characteristics>
         </profile>
-        <profile name="Combat Axe" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="6dc5-a4cf-f313-df40">
+        <profile name="Combat Axe" id="6dc5-a4cf-f313-df40" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
             <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">2</characteristic>
-            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1" />
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1"/>
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink name="Brutal Assault" id="6834-6895-2584-9b0b" hidden="false" type="rule" targetId="e53b-b8b7-2e89-6d6f" />
-      </infoLinks>
-      <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="141" />
-      </costs>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Scout Element" hidden="false" id="87ba-3b0a-5d86-be0d">
+    <selectionEntry name="Scout Element" id="87ba-3b0a-5d86-be0d" hidden="false" import="true" type="unit">
       <categoryLinks>
-        <categoryLink name="Recon" hidden="false" id="3c7f-0936-8001-de09" targetId="e06d-3eb6-2edc-cee7" primary="true" />
-        <categoryLink name="Infantry" hidden="false" id="9a52-c299-cd1b-1b20" targetId="0855-9c5c-35f4-04c1" primary="false" />
+        <categoryLink name="Recon" id="3c7f-0936-8001-de09" hidden="false" primary="true" targetId="e06d-3eb6-2edc-cee7"/>
+        <categoryLink name="Infantry" id="9a52-c299-cd1b-1b20" hidden="false" primary="false" targetId="0855-9c5c-35f4-04c1"/>
       </categoryLinks>
+      <costs>
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="67"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Spotter" id="b608-69e2-51ff-be8a" hidden="false" targetId="f2b2-cc37-b7b6-5eab" type="rule"/>
+        <infoLink name="Camouflaged" id="5ec0-1083-383c-cab5" hidden="false" targetId="1ebc-c239-c7ec-a794" type="rule"/>
+        <infoLink name="All-Terrain" id="f88c-27e7-b534-135d" hidden="false" targetId="28c6-c562-0bd6-a469" type="rule"/>
+      </infoLinks>
       <profiles>
-        <profile name="Scout Element" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile" hidden="false" id="1692-f563-db70-8cb4">
+        <profile name="Scout Element" id="1692-f563-db70-8cb4" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
           <characteristics>
-            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">6"</characteristic>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">6&quot;</characteristic>
             <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">4</characteristic>
             <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">7</characteristic>
             <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">4</characteristic>
-            <characteristic name="Toughness" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
           </characteristics>
         </profile>
-        <profile name="Scout Rifle" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="64f0-2750-a5a7-79d7">
+        <profile name="Scout Rifle" id="64f0-2750-a5a7-79d7" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">24"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">24&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
             <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Accurate</characteristic>
           </characteristics>
         </profile>
-        <profile name="Combat Knife" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="4593-7332-44a0-a593">
+        <profile name="Combat Knife" id="4593-7332-44a0-a593" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
             <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
-            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1" />
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1"/>
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink name="Spotter" id="b608-69e2-51ff-be8a" hidden="false" type="rule" targetId="f2b2-cc37-b7b6-5eab" />
-        <infoLink name="Camouflaged" id="5ec0-1083-383c-cab5" hidden="false" type="rule" targetId="1ebc-c239-c7ec-a794" />
-        <infoLink name="All-Terrain" id="f88c-27e7-b534-135d" hidden="false" type="rule" targetId="28c6-c562-0bd6-a469" />
-      </infoLinks>
-      <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="67" />
-      </costs>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Heavy Weapons Team" hidden="false" id="d095-b590-4eb9-6005">
+    <selectionEntry name="Heavy Weapons Team" id="d095-b590-4eb9-6005" hidden="false" import="true" type="unit">
       <categoryLinks>
-        <categoryLink name="Support" hidden="false" id="fbe7-c9f4-c6ef-53dd" targetId="aa80-441a-6103-d793" primary="true" />
-        <categoryLink name="Infantry" hidden="false" id="b85e-5590-bc06-1c47" targetId="0855-9c5c-35f4-04c1" primary="false" />
+        <categoryLink name="Support" id="fbe7-c9f4-c6ef-53dd" hidden="false" primary="true" targetId="aa80-441a-6103-d793"/>
+        <categoryLink name="Infantry" id="b85e-5590-bc06-1c47" hidden="false" primary="false" targetId="0855-9c5c-35f4-04c1"/>
       </categoryLinks>
+      <costs>
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="78"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Where We&apos;re Needed" id="4b49-7ded-9cf8-97cd" hidden="false" targetId="b703-78a5-41d4-d72e" type="rule"/>
+        <infoLink name="Emplaced Weapon" id="8da8-4d44-331b-893d" hidden="false" targetId="053e-0e77-d08d-080a" type="rule"/>
+      </infoLinks>
       <profiles>
-        <profile name="Heavy Weapons Team" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile" hidden="false" id="912a-fdba-9ce5-932d">
+        <profile name="Heavy Weapons Team" id="912a-fdba-9ce5-932d" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
           <characteristics>
-            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">5"</characteristic>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">5&quot;</characteristic>
             <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">4</characteristic>
             <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">6</characteristic>
             <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">4</characteristic>
-            <characteristic name="Toughness" typeId="4a8a-2752-aa8a-d5e3">3</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">3</characteristic>
           </characteristics>
         </profile>
-        <profile name="Heavy Machine Gun" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="7e9b-2c7d-3a24-d43a">
+        <profile name="Heavy Machine Gun" id="7e9b-2c7d-3a24-d43a" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">24"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">24&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">4</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">2</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">2</characteristic>
@@ -295,32 +320,32 @@
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink name="Where We're Needed" id="4b49-7ded-9cf8-97cd" hidden="false" type="rule" targetId="b703-78a5-41d4-d72e" />
-        <infoLink name="Emplaced Weapon" id="8da8-4d44-331b-893d" hidden="false" type="rule" targetId="053e-0e77-d08d-080a" />
-      </infoLinks>
-      <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="78" />
-      </costs>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Field Gun Battery" hidden="false" id="01c7-1452-7e63-e1f3">
+    <selectionEntry name="Field Gun Battery" id="01c7-1452-7e63-e1f3" hidden="false" import="true" type="unit">
       <categoryLinks>
-        <categoryLink name="Support" hidden="false" id="4695-0c6b-b831-a3cc" targetId="aa80-441a-6103-d793" primary="true" />
-        <categoryLink name="Towable" hidden="false" id="c88c-d935-4955-cfb0" targetId="ee57-adfd-29c9-10b9" primary="false" />
+        <categoryLink name="Support" id="4695-0c6b-b831-a3cc" hidden="false" primary="true" targetId="aa80-441a-6103-d793"/>
+        <categoryLink name="Towable" id="c88c-d935-4955-cfb0" hidden="false" primary="false" targetId="ee57-adfd-29c9-10b9"/>
       </categoryLinks>
+      <costs>
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="57"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Trailor" id="b073-1485-3bb2-f66c" hidden="false" targetId="3326-d259-05fa-c38f" type="rule"/>
+        <infoLink name="Emplaced Weapon" id="8005-943a-6968-0a1e" hidden="false" targetId="053e-0e77-d08d-080a" type="rule"/>
+      </infoLinks>
       <profiles>
-        <profile name="Field Gun Battery" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile" hidden="false" id="5b58-210d-6896-3331">
+        <profile name="Field Gun Battery" id="5b58-210d-6896-3331" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
           <characteristics>
-            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">4"</characteristic>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">4&quot;</characteristic>
             <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">4</characteristic>
             <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">5</characteristic>
             <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">4</characteristic>
-            <characteristic name="Toughness" typeId="4a8a-2752-aa8a-d5e3">4</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">4</characteristic>
           </characteristics>
         </profile>
-        <profile name="Field Howitzer" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="5823-7851-4d9f-212d">
+        <profile name="Field Howitzer" id="5823-7851-4d9f-212d" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">36"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">36&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">3</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">4</characteristic>
@@ -328,32 +353,33 @@
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink name="Trailor" id="b073-1485-3bb2-f66c" hidden="false" type="rule" targetId="3326-d259-05fa-c38f" />
-        <infoLink name="Emplaced Weapon" id="8005-943a-6968-0a1e" hidden="false" type="rule" targetId="053e-0e77-d08d-080a" />
-      </infoLinks>
-      <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="57" />
-      </costs>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Armored Personnel Carrier" hidden="false" id="a4c0-8aa1-81db-165f">
+    <selectionEntry name="Armored Personnel Carrier" id="a4c0-8aa1-81db-165f" hidden="false" import="true" type="unit">
       <categoryLinks>
-        <categoryLink name="Support" hidden="false" id="f63f-7e75-3539-5c24" targetId="aa80-441a-6103-d793" primary="true" />
-        <categoryLink name="Vehicle" hidden="false" id="1d68-843d-606a-93f4" targetId="4e41-bd1a-1e9f-f591" primary="false" />
+        <categoryLink name="Support" id="f63f-7e75-3539-5c24" hidden="false" primary="true" targetId="aa80-441a-6103-d793"/>
+        <categoryLink name="Vehicle" id="1d68-843d-606a-93f4" hidden="false" primary="false" targetId="4e41-bd1a-1e9f-f591"/>
       </categoryLinks>
+      <costs>
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="117"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Armored Front" id="517f-8d3d-c56a-563e" hidden="false" targetId="670f-bca7-b3e7-f8b2" type="rule"/>
+        <infoLink name="Hardpoints" id="3e1d-f3b7-392a-0f0d" hidden="false" targetId="b4f5-fc33-99b2-10f1" type="rule"/>
+        <infoLink name="Open-Topped" id="aaee-b83d-3386-3f70" hidden="false" targetId="0a1c-77b5-4e23-9d80" type="rule"/>
+      </infoLinks>
       <profiles>
-        <profile name="Armored Personnel Carrier" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile" hidden="false" id="e26a-ebbe-05d9-c9e9">
+        <profile name="Armored Personnel Carrier" id="e26a-ebbe-05d9-c9e9" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
           <characteristics>
-            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">8"</characteristic>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">8&quot;</characteristic>
             <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">4</characteristic>
             <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">5</characteristic>
             <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">6</characteristic>
-            <characteristic name="Toughness" typeId="4a8a-2752-aa8a-d5e3">8</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">8</characteristic>
           </characteristics>
         </profile>
-        <profile name="Light Machine Gun" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="03f4-fa07-bca5-1d87">
+        <profile name="Light Machine Gun" id="03f4-fa07-bca5-1d87" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">4</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
@@ -361,42 +387,42 @@
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink name="Armored Front" id="517f-8d3d-c56a-563e" hidden="false" type="rule" targetId="670f-bca7-b3e7-f8b2" />
-        <infoLink name="Hardpoints" id="3e1d-f3b7-392a-0f0d" hidden="false" type="rule" targetId="b4f5-fc33-99b2-10f1" />
-        <infoLink name="Open-Topped" id="aaee-b83d-3386-3f70" hidden="false" type="rule" targetId="0a1c-77b5-4e23-9d80" />
-      </infoLinks>
-      <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="117" />
-      </costs>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Armored Fighting Vehicle" hidden="false" id="c4bd-8310-6fc6-9c4e">
+    <selectionEntry name="Armored Fighting Vehicle" id="c4bd-8310-6fc6-9c4e" hidden="false" import="true" type="unit">
       <categoryLinks>
-        <categoryLink name="Armor" hidden="false" id="0902-22cc-f76b-3fe9" targetId="7681-e699-f10a-e57b" primary="true" />
-        <categoryLink name="Vehicle" hidden="false" id="e62e-7c1a-9c73-26df" targetId="4e41-bd1a-1e9f-f591" primary="false" />
+        <categoryLink name="Armor" id="0902-22cc-f76b-3fe9" hidden="false" primary="true" targetId="7681-e699-f10a-e57b"/>
+        <categoryLink name="Vehicle" id="e62e-7c1a-9c73-26df" hidden="false" primary="false" targetId="4e41-bd1a-1e9f-f591"/>
       </categoryLinks>
+      <costs>
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="241"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Bulwark" id="49e8-b76e-dda4-56cb" hidden="false" targetId="e7f9-3ad7-5bf1-b1b0" type="rule"/>
+        <infoLink name="Hardpoints" id="2e73-a4d0-83fd-5823" hidden="false" targetId="b4f5-fc33-99b2-10f1" type="rule"/>
+        <infoLink name="Armored Front" id="6704-1963-3b2c-866a" hidden="false" targetId="670f-bca7-b3e7-f8b2" type="rule"/>
+      </infoLinks>
       <profiles>
-        <profile name="Armored Fighting Vehicle" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile" hidden="false" id="bc04-55ee-22ac-85d8">
+        <profile name="Armored Fighting Vehicle" id="bc04-55ee-22ac-85d8" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
           <characteristics>
-            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">8"</characteristic>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">8&quot;</characteristic>
             <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">5</characteristic>
             <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">4</characteristic>
             <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">7</characteristic>
-            <characteristic name="Toughness" typeId="4a8a-2752-aa8a-d5e3">10</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">10</characteristic>
           </characteristics>
         </profile>
-        <profile name="Main Cannon" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="0fef-b68e-f9b4-adf2">
+        <profile name="Main Cannon" id="0fef-b68e-f9b4-adf2" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">30"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">30&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">2</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">5</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">7</characteristic>
             <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Turret</characteristic>
           </characteristics>
         </profile>
-        <profile name="Medium Machine Gun" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="98cd-574d-53af-910d">
+        <profile name="Medium Machine Gun" id="98cd-574d-53af-910d" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">20"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">20&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">4</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">1</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
@@ -404,33 +430,33 @@
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink name="Bulwark" id="49e8-b76e-dda4-56cb" hidden="false" type="rule" targetId="e7f9-3ad7-5bf1-b1b0" />
-        <infoLink name="Hardpoints" id="2e73-a4d0-83fd-5823" hidden="false" type="rule" targetId="b4f5-fc33-99b2-10f1" />
-        <infoLink name="Armored Front" id="6704-1963-3b2c-866a" hidden="false" type="rule" targetId="670f-bca7-b3e7-f8b2" />
-      </infoLinks>
-      <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="241" />
-      </costs>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Tank Destroyer" hidden="false" id="8cfa-5b7d-140d-c6bc">
+    <selectionEntry name="Tank Destroyer" id="8cfa-5b7d-140d-c6bc" hidden="false" import="true" type="unit">
       <categoryLinks>
-        <categoryLink name="Armor" hidden="false" id="5cc2-538c-1737-1554" targetId="7681-e699-f10a-e57b" primary="true" />
-        <categoryLink name="Vehicle" hidden="false" id="a5b7-9aad-7a28-7039" targetId="4e41-bd1a-1e9f-f591" primary="false" />
+        <categoryLink name="Armor" id="5cc2-538c-1737-1554" hidden="false" primary="true" targetId="7681-e699-f10a-e57b"/>
+        <categoryLink name="Vehicle" id="a5b7-9aad-7a28-7039" hidden="false" primary="false" targetId="4e41-bd1a-1e9f-f591"/>
       </categoryLinks>
+      <costs>
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="176"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Bulwark" id="5d79-993d-b9ec-e13a" hidden="false" targetId="e7f9-3ad7-5bf1-b1b0" type="rule"/>
+        <infoLink name="Hardpoints" id="02cc-0c80-8b5c-9525" hidden="false" targetId="b4f5-fc33-99b2-10f1" type="rule"/>
+        <infoLink name="Armored Front" id="9f5f-48d2-31a6-a40c" hidden="false" targetId="670f-bca7-b3e7-f8b2" type="rule"/>
+      </infoLinks>
       <profiles>
-        <profile name="Tank Destroyer" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile" hidden="false" id="3917-8bb9-e5af-0d9f">
+        <profile name="Tank Destroyer" id="3917-8bb9-e5af-0d9f" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
           <characteristics>
-            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">7"</characteristic>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">7&quot;</characteristic>
             <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">5</characteristic>
             <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">4</characteristic>
             <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">8</characteristic>
-            <characteristic name="Toughness" typeId="4a8a-2752-aa8a-d5e3">9</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">9</characteristic>
           </characteristics>
         </profile>
-        <profile name="Laser Cannon" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile" hidden="false" id="7a0e-808a-6e61-a15e">
+        <profile name="Laser Cannon" id="7a0e-808a-6e61-a15e" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
           <characteristics>
-            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">30"</characteristic>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">30&quot;</characteristic>
             <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
             <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">6</characteristic>
             <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">6</characteristic>
@@ -438,32 +464,6 @@
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink name="Bulwark" id="5d79-993d-b9ec-e13a" hidden="false" type="rule" targetId="e7f9-3ad7-5bf1-b1b0" />
-        <infoLink name="Hardpoints" id="02cc-0c80-8b5c-9525" hidden="false" type="rule" targetId="b4f5-fc33-99b2-10f1" />
-        <infoLink name="Armored Front" id="9f5f-48d2-31a6-a40c" hidden="false" type="rule" targetId="670f-bca7-b3e7-f8b2" />
-      </infoLinks>
-      <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="176" />
-      </costs>
     </selectionEntry>
   </selectionEntries>
-  <forceEntries>
-    <forceEntry name="Vanguard Formation" id="1183-7edb-4b50-5bdf" hidden="false">
-      <categoryLinks>
-        <categoryLink name="Aerial" hidden="false" id="7063-3b75-abaf-05ba" targetId="c4e5-9b9b-cb06-7d59" />
-        <categoryLink name="Armor" hidden="false" id="14ca-a30e-a70a-a7c4" targetId="7681-e699-f10a-e57b" />
-        <categoryLink name="Cavalry" hidden="false" id="b189-e58c-ae9f-c661" targetId="2ab8-78f7-b507-dd19" />
-        <categoryLink name="Command" hidden="false" id="e3b2-8c76-37b1-5462" targetId="c892-1e80-87b3-2ee2" />
-        <categoryLink name="Infantry" hidden="false" id="446f-7687-53bd-36db" targetId="0855-9c5c-35f4-04c1" />
-        <categoryLink name="Line" hidden="false" id="55a9-4e74-0c33-932a" targetId="9bdf-0174-74ef-f0af" />
-        <categoryLink name="Monster" hidden="false" id="e77d-c806-f21b-2639" targetId="18b8-e55b-7c93-8700" />
-        <categoryLink name="Recon" hidden="false" id="015e-418b-271a-56dc" targetId="e06d-3eb6-2edc-cee7" />
-        <categoryLink name="Shock" hidden="false" id="a8bb-4dbc-ea4c-3716" targetId="49f8-be80-6328-d7dc" />
-        <categoryLink name="Support" hidden="false" id="299a-699f-406a-dc8f" targetId="aa80-441a-6103-d793" />
-        <categoryLink name="Towable" hidden="false" id="12b6-2a8f-57a6-ffd4" targetId="ee57-adfd-29c9-10b9" />
-        <categoryLink name="Vehicle" hidden="false" id="ced5-e026-1dad-6479" targetId="4e41-bd1a-1e9f-f591" />
-      </categoryLinks>
-    </forceEntry>
-  </forceEntries>
 </catalogue>

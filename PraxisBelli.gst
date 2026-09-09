@@ -1,77 +1,77 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-cd5a-2de6-f8aa-24ee" name="PraxisBelli" battleScribeVersion="2.03" revision="1" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem name="PraxisBelli" id="sys-cd5a-2de6-f8aa-24ee" battleScribeVersion="2.03" revision="1" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <categoryEntries>
     <categoryEntry name="Armor" id="7681-e699-f10a-e57b" hidden="false">
       <description>Force Organization Keyword</description>
       <infoLinks>
-        <infoLink name="Bulwark" id="fd49-38eb-bfa6-c130" hidden="false" type="rule" targetId="e7f9-3ad7-5bf1-b1b0"/>
-        <infoLink name="Hardpoints" id="18f6-3c9f-8550-997a" hidden="false" type="rule" targetId="b4f5-fc33-99b2-10f1"/>
+        <infoLink name="Bulwark" id="fd49-38eb-bfa6-c130" hidden="false" targetId="e7f9-3ad7-5bf1-b1b0" type="rule"/>
+        <infoLink name="Hardpoints" id="18f6-3c9f-8550-997a" hidden="false" targetId="b4f5-fc33-99b2-10f1" type="rule"/>
       </infoLinks>
     </categoryEntry>
     <categoryEntry name="Command" id="c892-1e80-87b3-2ee2" hidden="false">
       <description>Force Organization Keyword</description>
       <infoLinks>
-        <infoLink name="Leadership Aura" id="1fc6-d164-423d-dce8" hidden="false" type="rule" targetId="92ca-3761-4367-8623"/>
+        <infoLink name="Leadership Aura" id="1fc6-d164-423d-dce8" hidden="false" targetId="92ca-3761-4367-8623" type="rule"/>
       </infoLinks>
     </categoryEntry>
     <categoryEntry name="Line" id="9bdf-0174-74ef-f0af" hidden="false">
       <description>Force Organization Keyword</description>
       <infoLinks>
-        <infoLink name="Boots on the Ground" id="3606-8f95-6cd7-3f5d" hidden="false" type="rule" targetId="7b4f-5341-0942-c2f6"/>
+        <infoLink name="Boots on the Ground" id="3606-8f95-6cd7-3f5d" hidden="false" targetId="7b4f-5341-0942-c2f6" type="rule"/>
       </infoLinks>
     </categoryEntry>
     <categoryEntry name="Recon" id="e06d-3eb6-2edc-cee7" hidden="false">
       <description>Force Organization Keyword</description>
       <infoLinks>
-        <infoLink name="Spotter" id="213a-567f-5fe3-e10b" hidden="false" type="rule" targetId="f2b2-cc37-b7b6-5eab"/>
-        <infoLink name="Camouflaged" id="4431-baf8-fc68-af57" hidden="false" type="rule" targetId="1ebc-c239-c7ec-a794"/>
-        <infoLink name="All-Terrain" id="8fa1-2326-750b-993a" hidden="false" type="rule" targetId="28c6-c562-0bd6-a469"/>
+        <infoLink name="Spotter" id="213a-567f-5fe3-e10b" hidden="false" targetId="f2b2-cc37-b7b6-5eab" type="rule"/>
+        <infoLink name="Camouflaged" id="4431-baf8-fc68-af57" hidden="false" targetId="1ebc-c239-c7ec-a794" type="rule"/>
+        <infoLink name="All-Terrain" id="8fa1-2326-750b-993a" hidden="false" targetId="28c6-c562-0bd6-a469" type="rule"/>
       </infoLinks>
     </categoryEntry>
     <categoryEntry name="Shock" id="49f8-be80-6328-d7dc" hidden="false">
       <description>Force Organization Keyword</description>
       <infoLinks>
-        <infoLink name="Brutal Assault" id="8031-254d-6d11-18b5" hidden="false" type="rule" targetId="e53b-b8b7-2e89-6d6f"/>
+        <infoLink name="Brutal Assault" id="8031-254d-6d11-18b5" hidden="false" targetId="e53b-b8b7-2e89-6d6f" type="rule"/>
       </infoLinks>
     </categoryEntry>
     <categoryEntry name="Support" id="aa80-441a-6103-d793" hidden="false">
       <description>Force Organization Keyword</description>
       <infoLinks>
-        <infoLink name="Where We&apos;re Needed" id="a174-c758-2ad6-f0e9" hidden="false" type="rule" targetId="b703-78a5-41d4-d72e"/>
+        <infoLink name="Where We&apos;re Needed" id="a174-c758-2ad6-f0e9" hidden="false" targetId="b703-78a5-41d4-d72e" type="rule"/>
       </infoLinks>
     </categoryEntry>
     <categoryEntry name="Infantry" id="0855-9c5c-35f4-04c1" hidden="false">
       <infoLinks>
-        <infoLink name="Entrenched" id="9232-acda-c2e4-cdff" hidden="false" type="rule" targetId="9f10-8dad-4a5b-71f4"/>
+        <infoLink name="Entrenched" id="9232-acda-c2e4-cdff" hidden="false" targetId="9f10-8dad-4a5b-71f4" type="rule"/>
       </infoLinks>
     </categoryEntry>
     <categoryEntry name="Cavalry" id="2ab8-78f7-b507-dd19" hidden="false">
       <infoLinks>
-        <infoLink name="Run Them Through" id="d931-8a64-bc32-608f" hidden="false" type="rule" targetId="cd1d-eeb0-c67d-3b2e"/>
-        <infoLink name="All-Terrain" id="f2e9-f2b6-e1ff-2a2d" hidden="false" type="rule" targetId="28c6-c562-0bd6-a469"/>
+        <infoLink name="Run Them Through" id="d931-8a64-bc32-608f" hidden="false" targetId="cd1d-eeb0-c67d-3b2e" type="rule"/>
+        <infoLink name="All-Terrain" id="f2e9-f2b6-e1ff-2a2d" hidden="false" targetId="28c6-c562-0bd6-a469" type="rule"/>
       </infoLinks>
     </categoryEntry>
     <categoryEntry name="Vehicle" id="4e41-bd1a-1e9f-f591" hidden="false">
       <infoLinks>
-        <infoLink name="Armored Front" id="f094-adf6-971f-49ec" hidden="false" type="rule" targetId="670f-bca7-b3e7-f8b2"/>
-        <infoLink name="Hardpoints" id="1485-b8b1-479f-ebab" hidden="false" type="rule" targetId="b4f5-fc33-99b2-10f1"/>
+        <infoLink name="Armored Front" id="f094-adf6-971f-49ec" hidden="false" targetId="670f-bca7-b3e7-f8b2" type="rule"/>
+        <infoLink name="Hardpoints" id="1485-b8b1-479f-ebab" hidden="false" targetId="b4f5-fc33-99b2-10f1" type="rule"/>
       </infoLinks>
     </categoryEntry>
     <categoryEntry name="Monster" id="18b8-e55b-7c93-8700" hidden="false">
       <infoLinks>
-        <infoLink name="Terrifying" id="c72b-4985-14d5-242f" hidden="false" type="rule" targetId="4e70-077c-1136-4bb8"/>
+        <infoLink name="Terrifying" id="c72b-4985-14d5-242f" hidden="false" targetId="4e70-077c-1136-4bb8" type="rule"/>
       </infoLinks>
     </categoryEntry>
     <categoryEntry name="Aerial" id="c4e5-9b9b-cb06-7d59" hidden="false">
       <infoLinks>
-        <infoLink name="Flying" id="c9d9-3e6b-9c0f-6d3e" hidden="false" type="rule" targetId="cba3-21e4-5394-9575"/>
-        <infoLink name="Soaring Above" id="ca5a-1d83-2ff1-737f" hidden="false" type="rule" targetId="ce02-664a-e8b6-8939"/>
+        <infoLink name="Flying" id="c9d9-3e6b-9c0f-6d3e" hidden="false" targetId="cba3-21e4-5394-9575" type="rule"/>
+        <infoLink name="Soaring Above" id="ca5a-1d83-2ff1-737f" hidden="false" targetId="ce02-664a-e8b6-8939" type="rule"/>
       </infoLinks>
     </categoryEntry>
     <categoryEntry name="Towable" id="ee57-adfd-29c9-10b9" hidden="false">
       <infoLinks>
-        <infoLink name="Trailor" id="0705-ed06-572e-a1e4" hidden="false" type="rule" targetId="3326-d259-05fa-c38f"/>
-        <infoLink name="Emplaced Weapon" id="d096-137d-9bbc-dc52" hidden="false" type="rule" targetId="053e-0e77-d08d-080a"/>
+        <infoLink name="Trailor" id="0705-ed06-572e-a1e4" hidden="false" targetId="3326-d259-05fa-c38f" type="rule"/>
+        <infoLink name="Emplaced Weapon" id="d096-137d-9bbc-dc52" hidden="false" targetId="053e-0e77-d08d-080a" type="rule"/>
       </infoLinks>
     </categoryEntry>
   </categoryEntries>
@@ -85,7 +85,7 @@
         <characteristicType name="Mettle" id="e1e4-ceec-a5b1-60d3"/>
         <characteristicType name="Evasion" id="c0fb-48d3-2f02-fa09"/>
         <characteristicType name="Armor" id="8e9e-b2d4-8d48-d4d0"/>
-        <characteristicType name="Toughness" id="4a8a-2752-aa8a-d5e3"/>
+        <characteristicType name="Wounds" id="4a8a-2752-aa8a-d5e3"/>
       </characteristicTypes>
     </profileType>
     <profileType name="Weapon Profile" id="2555-341b-f64e-0ff7" hidden="false" kind="weapon">
@@ -106,13 +106,13 @@
       <description>This weapon can target a point instead of a model, and centers a circular blast template on that point if the to-hit roll succeeds. If the to-hit roll is missed, roll a 1d10 and scatter the point of impact in the direction it&apos;s pointing a number of inches equal to the result. Targets affected by the blast cannot benefit from cover.</description>
     </rule>
     <rule name="Accurate" id="a3c9-2224-49f9-297a" hidden="false">
-      <description>When shooting with this weapon, ignore all range penalties.</description>
+      <description>When shooting with this weapon, reroll attack rolls of 1.</description>
     </rule>
     <rule name="Optics" id="6f1d-8a3e-2c5b-9d4f" hidden="false">
-      <description>Rules stub -- effect not yet defined. This weapon's bearer is meant to gain a bonus to landing hits from its optics, but the mechanism has not been written. Do not treat any weapon carrying this trait as finalized.</description>
+      <description>This weapon does not suffer penalties when shooting at long range</description>
     </rule>
     <rule name="Overcharge" id="7e2c-9b4a-3f6d-8c1a" hidden="false">
-      <description>This weapon may fire in Overcharged mode: its AP and Damage are each increased by 2 for that attack. For each unmodified roll of 1 made for this weapon's attack, the bearer suffers a Damage 1 hit that cannot be saved against, in addition to any other effect of that roll.</description>
+      <description>This weapon may fire in Overcharged mode: its AP and Damage are each increased by 2 for that attack. For each unmodified roll of 1 made for this weapon&apos;s attack, the bearer suffers 1d5 damage.</description>
     </rule>
     <rule name="Pistol" id="2ec2-2bea-ba0c-98d2" hidden="false">
       <description>This weapon can be used to make a ranged attack while the bearer is engaged, but it must target an enemy unit it&apos;s engaged with.</description>
@@ -121,7 +121,7 @@
       <description>At the end of every round, this unit regains 1d5 lost wounds.</description>
     </rule>
     <rule name="Entrenched" id="9f10-8dad-4a5b-71f4" hidden="false">
-      <description>While in cover, this unit gains an additional +1 ARM and rerolls failed Mettle checks.</description>
+      <description>While in cover, this unit gains an additional +1 ARM and rerolls failed Morale tests.</description>
     </rule>
     <rule name="Run Them Through" id="cd1d-eeb0-c67d-3b2e" hidden="false">
       <description>This units&apos; weapons gain +1AP and Suppressing whenever it is charging.</description>
@@ -133,7 +133,7 @@
       <description>Units within 12&quot; of this model may use its MET instead of their own when making Mettle checks.</description>
     </rule>
     <rule name="Terrifying" id="4e70-077c-1136-4bb8" hidden="false">
-      <description>Units that end their activation engaged with this one are forced to make a Mettle check.</description>
+      <description>Enemy units engaged with this one at the end of its activation must immediately make morale tests.</description>
     </rule>
     <rule name="Flying" id="cba3-21e4-5394-9575" hidden="false">
       <description>This model may ignore other models and terrain while it is moving.</description>
@@ -150,43 +150,10 @@
     <rule name="Boots on the Ground" id="7b4f-5341-0942-c2f6" hidden="false">
       <description>This unit does not need to spend an action to claim an objective.</description>
     </rule>
-    <rule name="Anti-Aerial" id="dd9a-3f66-5b9e-86fa" hidden="false">
+    <rule name="Anti-" id="dd9a-3f66-5b9e-86fa" hidden="false">
       <description>When this weapon makes damage rolls against a target with the listed keyword, each successful damage roll counts as two hits instead of one. Because hits are allocated individually, the additional hits may spill onto other models in the target unit.</description>
     </rule>
-    <rule name="Anti-Armor" id="4057-f400-8ea9-db3e" hidden="false">
-      <description>When this weapon makes damage rolls against a target with the listed keyword, each successful damage roll counts as two hits instead of one. Because hits are allocated individually, the additional hits may spill onto other models in the target unit.</description>
-    </rule>
-    <rule name="Anti-Cavalry" id="cc10-40eb-2758-1d2e" hidden="false">
-      <description>When this weapon makes damage rolls against a target with the listed keyword, each successful damage roll counts as two hits instead of one. Because hits are allocated individually, the additional hits may spill onto other models in the target unit.</description>
-    </rule>
-    <rule name="Anti-Command" id="aa48-92c6-6cd2-469c" hidden="false">
-      <description>When this weapon makes damage rolls against a target with the listed keyword, each successful damage roll counts as two hits instead of one. Because hits are allocated individually, the additional hits may spill onto other models in the target unit.</description>
-    </rule>
-    <rule name="Anti-Infantry" id="7801-ef6a-9919-421b" hidden="false">
-      <description>When this weapon makes damage rolls against a target with the listed keyword, each successful damage roll counts as two hits instead of one. Because hits are allocated individually, the additional hits may spill onto other models in the target unit.</description>
-    </rule>
-    <rule name="Anti-Line" id="8da6-739b-911d-27ca" hidden="false">
-      <description>When this weapon makes damage rolls against a target with the listed keyword, each successful damage roll counts as two hits instead of one. Because hits are allocated individually, the additional hits may spill onto other models in the target unit.</description>
-    </rule>
-    <rule name="Anti-Monster" id="b916-1651-9632-c933" hidden="false">
-      <description>When this weapon makes damage rolls against a target with the listed keyword, each successful damage roll counts as two hits instead of one. Because hits are allocated individually, the additional hits may spill onto other models in the target unit.</description>
-    </rule>
-    <rule name="Anti-Recon" id="e9cd-e108-6c16-5b2c" hidden="false">
-      <description>When this weapon makes damage rolls against a target with the listed keyword, each successful damage roll counts as two hits instead of one. Because hits are allocated individually, the additional hits may spill onto other models in the target unit.</description>
-    </rule>
-    <rule name="Anti-Shock" id="61ce-0077-43ab-e867" hidden="false">
-      <description>When this weapon makes damage rolls against a target with the listed keyword, each successful damage roll counts as two hits instead of one. Because hits are allocated individually, the additional hits may spill onto other models in the target unit.</description>
-    </rule>
-    <rule name="Anti-Support" id="1219-4f34-83e5-155a" hidden="false">
-      <description>When this weapon makes damage rolls against a target with the listed keyword, each successful damage roll counts as two hits instead of one. Because hits are allocated individually, the additional hits may spill onto other models in the target unit.</description>
-    </rule>
-    <rule name="Anti-Towable" id="c94b-2be8-fd3e-7b32" hidden="false">
-      <description>When this weapon makes damage rolls against a target with the listed keyword, each successful damage roll counts as two hits instead of one. Because hits are allocated individually, the additional hits may spill onto other models in the target unit.</description>
-    </rule>
-    <rule name="Anti-Vehicle" id="6802-8c4b-3ea8-d1f3" hidden="false">
-      <description>When this weapon makes damage rolls against a target with the listed keyword, each successful damage roll counts as two hits instead of one. Because hits are allocated individually, the additional hits may spill onto other models in the target unit.</description>
-    </rule>
-    <rule name="Trailor" id="3326-d259-05fa-c38f" hidden="false">
+    <rule name="Trailer" id="3326-d259-05fa-c38f" hidden="false">
       <description>This unit can spend an action to hitch to a friendly VEHICLE within 3&quot; of it. It will have to spend an action to unhitch at a later point.</description>
     </rule>
     <rule name="Emplaced Weapon" id="053e-0e77-d08d-080a" hidden="false">
@@ -198,20 +165,11 @@
     <rule name="Brutal Assault" id="e53b-b8b7-2e89-6d6f" hidden="false">
       <description>This unit rerolls hit results of 1 when fighting or shooting within half range.</description>
     </rule>
-    <rule name="Transport (11)" id="5664-3c9f-debe-8bc6" hidden="false">
-      <description>This unit can carry up to 11 models with the INFANTRY or CAVALRY keyword. Embarking and disembarking are both part of a Move action and cost half the embarking unit&apos;s Speed, rounding up; a unit must begin its embark within 1&quot; of this one, and disembarks into base contact with it before resolving any remaining movement. While embarked, a unit does not contest or claim objectives, and all measurement to or from it is taken from this model. If this model is removed from play, every embarked model must pass a Mettle check or suffer 1 wound; survivors are placed within 3&quot; of the wreck.</description>
-    </rule>
-    <rule name="Transport (14)" id="e63e-876f-efc0-efb5" hidden="false">
-      <description>This unit can carry up to 14 models with the INFANTRY or CAVALRY keyword. Embarking and disembarking are both part of a Move action and cost half the embarking unit&apos;s Speed, rounding up; a unit must begin its embark within 1&quot; of this one, and disembarks into base contact with it before resolving any remaining movement. While embarked, a unit does not contest or claim objectives, and all measurement to or from it is taken from this model. If this model is removed from play, every embarked model must pass a Mettle check or suffer 1 wound; survivors are placed within 3&quot; of the wreck.</description>
-    </rule>
-    <rule name="Transport (6)" id="b9ec-fe2d-ea71-a758" hidden="false">
-      <description>This unit can carry up to 6 models with the INFANTRY or CAVALRY keyword. Embarking and disembarking are both part of a Move action and cost half the embarking unit&apos;s Speed, rounding up; a unit must begin its embark within 1&quot; of this one, and disembarks into base contact with it before resolving any remaining movement. While embarked, a unit does not contest or claim objectives, and all measurement to or from it is taken from this model. If this model is removed from play, every embarked model must pass a Mettle check or suffer 1 wound; survivors are placed within 3&quot; of the wreck.</description>
-    </rule>
-    <rule name="Transport (28)" id="136d-3202-3258-ebd9" hidden="false">
-      <description>This unit can carry up to 28 models with the INFANTRY or CAVALRY keyword. Embarking and disembarking are both part of a Move action and cost half the embarking unit&apos;s Speed, rounding up; a unit must begin its embark within 1&quot; of this one, and disembarks into base contact with it before resolving any remaining movement. While embarked, a unit does not contest or claim objectives, and all measurement to or from it is taken from this model. If this model is removed from play, every embarked model must pass a Mettle check or suffer 1 wound; survivors are placed within 3&quot; of the wreck.</description>
+    <rule name="Transport:" id="b9ec-fe2d-ea71-a758" hidden="false">
+      <description>This unit can carry up to X models with the INFANTRY or CAVALRY type keyword. This unit gains all the category keywords of units embarked within it. Embarking and disembarking cam be done as part of any Move action and cost half the embarking unit&apos;s Speed; a unit must begin its embark within 1&quot; of this one, and disembarks within 1&quot; with it before resolving any remaining movement. While embarked, a unit does not contest or claim objectives, and all measurement to or from it is taken from this model. If this model is removed from play, every embarked model must pass a Mettle check or suffer 1 wound; survivors are placed within 3&quot; of the wreck.</description>
     </rule>
     <rule name="Open-Topped" id="0a1c-77b5-4e23-9d80" hidden="false">
-      <description>Units embarked in this Transport may still take actions, measuring range and line of sight from this model. In exchange, an embarked unit is independently targetable whenever line of sight can be drawn to this model, using its own EVA and ARM rather than this model&apos;s, and counts as being in Cover while it does so.</description>
+      <description>Units embarked in this Transport may still take actions, measuring range and line of sight from this model. In exchange, an embarked unit is independently targetable whenever line of sight can be drawn to this model, using this model&apos;s EVA and ARM.</description>
     </rule>
     <rule name="Closed-Topped" id="4f27-9e11-b6a8-31cd" hidden="false">
       <description>Units embarked in this Transport may take no actions except the Move action used to disembark, and cannot be targeted while embarked. Attacks may only be directed at this model.</description>
@@ -232,7 +190,7 @@
       <description>This model and its unit ignore suppression markers when making Mettle checks. In addition, it ignores the negative effects of deteriorating morale unless it is Routing.</description>
     </rule>
     <rule name="Guided" id="c7f2-8464-aafc-b17e" hidden="false">
-      <description>If this weapon&apos;s target is visible to an allied RECON unit, decrease the target&apos;s EVA by 3. Disregard any additional modifiers.</description>
+      <description>If this weapon&apos;s target is visible to an allied RECON unit, treat the target&apos;s EVA as 3 lower for this attack. Ignore all other modifiers to the target&apos;s EVA.</description>
     </rule>
     <rule name="Heavy" id="5553-344a-75e2-a122" hidden="false">
       <description>This weapon can&apos;t make attacks in the same activation its unit moved in; if the unit attacks first, it is then unable to move.</description>
@@ -266,6 +224,45 @@
     </rule>
     <rule name="Linked-Weapon" id="cd4f-1017-04d8-c017" hidden="false">
       <description>Reroll all misses when attacking with this weapon.</description>
+    </rule>
+    <rule name="Lance" id="9dfc-412d-44cb-6651" hidden="false">
+      <description>Increase this weapon&apos;s AP by 2 when it is used immediately following a charge action.</description>
+    </rule>
+    <rule name="Bombardment" id="7b65-70ff-8687-ec56" hidden="false">
+      <description>This weapon loses its Indirect property if it moves during its activation.</description>
+    </rule>
+    <rule name="Traversing" id="4583-c344-a7b9-b080" hidden="false">
+      <description>This weapon starts aligned with its hull; it may rotate up to 90° at the start of its activation and may only target enemies within 45° to either side of its current facing.</description>
+    </rule>
+    <rule name="Ablative Plating" id="4ccc-192f-6896-bd5d" hidden="false">
+      <description>This unit ignores the effects of Anti-Armor and Anti-Vehicle</description>
+    </rule>
+    <rule name="Indomitable" id="303c-fd1b-f182-6f0d" hidden="false">
+      <description>Incoming AP is reduced by 1, to a minimum of 0.</description>
+    </rule>
+    <rule name="Crushing" id="8222-3601-e43f-fbf5" hidden="false">
+      <description>This weapon deals +1 damage against Armor 6+, +2 damage against Armor 8+, and +3 damage against Armor 10+.</description>
+    </rule>
+    <rule name="Shotgun" id="bc66-5930-c455-2d6e" hidden="false">
+      <description>Reroll failed hits within Short range; reroll successful damage rolls at long range.</description>
+    </rule>
+    <rule name="Meltdown" id="8315-1b68-0f0b-f63c" hidden="false">
+      <description>Reroll failed hit rolls. If the target is in short range, reroll damage rolls as well.</description>
+    </rule>
+    <rule name="Impact:" id="e1cb-98d4-3be5-2a07" hidden="false">
+      <description>Immediately following a successful charge, roll 1 damage roll per model in the charging unit against the target of the charge. These are made with AP0 and Damage 1.</description>
+    </rule>
+    <rule name="Crushing Impact:" id="eee4-bc17-5bcb-4c66" hidden="false">
+      <description>Immediately following a successful charge, roll 3 damage rolls against the target of the charge. These are made with AP3 and Damage 2.</description>
+    </rule>
+    <rule name="Consumable" id="76ec-4363-0f08-eccc" hidden="false">
+      <description>This equipment may only be used once per game.</description>
+    </rule>
+    <rule name="Courage" id="4dc1-57a6-e7a4-9ff2" hidden="false">
+      <description>This unit rerolls failed Morale tests.</description>
+    </rule>
+    <rule name="Sharpshooter" id="ccb6-4b1a-8958-9015" hidden="false">
+      <description>This weapon treats all targets as outside of cover.</description>
     </rule>
   </sharedRules>
 </gameSystem>
