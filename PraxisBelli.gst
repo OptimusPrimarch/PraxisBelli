@@ -70,9 +70,12 @@
     </categoryEntry>
     <categoryEntry name="Towable" id="ee57-adfd-29c9-10b9" hidden="false">
       <infoLinks>
-        <infoLink name="Trailor" id="0705-ed06-572e-a1e4" hidden="false" targetId="3326-d259-05fa-c38f" type="rule"/>
+        <infoLink name="Trailer" id="0705-ed06-572e-a1e4" hidden="false" targetId="3326-d259-05fa-c38f" type="rule"/>
         <infoLink name="Emplaced Weapon" id="d096-137d-9bbc-dc52" hidden="false" targetId="053e-0e77-d08d-080a" type="rule"/>
       </infoLinks>
+    </categoryEntry>
+    <categoryEntry name="Aura" id="fbef-1072-f5fe-35c2" hidden="false">
+      <description>This ability apply to all allied units that are within 12&quot;</description>
     </categoryEntry>
   </categoryEntries>
   <costTypes>
@@ -129,8 +132,8 @@
     <rule name="Armored Front" id="670f-bca7-b3e7-f8b2" hidden="false">
       <description>This unit uses 90-degree facings to signify the front, back, left, and right sides. Attacks targeting the vehicles front are made with -1AP. Attacks targeting the vehicles rear are made with +1AP.</description>
     </rule>
-    <rule name="Leadership Aura" id="92ca-3761-4367-8623" hidden="false">
-      <description>Units within 12&quot; of this model may use its MET instead of their own when making Mettle checks.</description>
+    <rule name="Inspiring Leadership" id="92ca-3761-4367-8623" hidden="false" noindex="false">
+      <description>Allied units within 12&quot; of this model may use its MET instead of their own when making Mettle checks.</description>
     </rule>
     <rule name="Terrifying" id="4e70-077c-1136-4bb8" hidden="false">
       <description>Enemy units engaged with this one at the end of its activation must immediately make morale tests.</description>
@@ -260,6 +263,15 @@
     </rule>
     <rule name="Sharpshooter" id="ccb6-4b1a-8958-9015" hidden="false">
       <description>This weapon treats all targets as outside of cover.</description>
+    </rule>
+    <rule name="Ravaging" id="78da-bde7-c087-a16b" hidden="false">
+      <description>While fighting, reroll attack rolls of 1</description>
+    </rule>
+    <rule name="Rallying Cry" id="8140-35d3-948d-2eba" hidden="false">
+      <description>When activated, make a MET test, discarding all Suppression markers on a success</description>
+    </rule>
+    <rule name="Resurrect" id="46d3-236b-f7c0-c5d2" hidden="false">
+      <description>When activated, this unit makes a MET test; on a success, immediately restore one of this unit&apos;s slain models, at full wounds.</description>
     </rule>
   </sharedRules>
 </gameSystem>
