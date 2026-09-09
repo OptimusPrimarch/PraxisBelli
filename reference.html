@@ -1025,6 +1025,11 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         job than <code>Accurate</code>, which answers range, not cover. No longer a stub, but still
         needs a pricing tier assigned (currently costs nothing, which is now wrong). First
         application: Oathwarden Squad's Carbine/Optics configuration.</dd>
+        <dt>Precision</dt><dd>When resolving this weapon's attacks, its controller may choose which
+        model within the target unit receives each hit, instead of following the unit's normal
+        allocation order. Bypasses the protection a unit's arrangement would otherwise give a key
+        model — an NCO, a special-weapon carrier, a Caster. First application: the Battle Sister
+        Commander's Relic Sword.</dd>
       </dl>
 
       <h4>Firing restrictions</h4>
@@ -1050,7 +1055,11 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       <dl>
         <dt>Suppressing</dt><dd>Targets gain a suppression marker regardless of the attack's outcome.</dd>
         <dt>Overcharge</dt><dd>This weapon may fire in Overcharged mode: its AP and Damage are each increased by 2 for that attack. For each unmodified roll of 1 made for this weapon's attack, the bearer suffers a Damage 1 hit that cannot be saved against, in addition to any other effect of that roll.</dd>
-        <dt>Anti-[Keyword]</dt><dd>Against a target with the matching keyword, each successful damage roll counts as <strong>two hits</strong> instead of one. Because hits are allocated individually, the extra hits may spill onto other models in the unit. Defined for every TYPE and CATEGORY.</dd>
+        <dt>Caster</dt><dd>A standalone keyword, independent of TYPE and CATEGORY, granted to specific
+        models (priests, psykers, sorcerers) rather than defining a new TYPE or CATEGORY of its own —
+        the same "anything can be granted it" pattern as <code>Flying</code>. Exists primarily so
+        <code>Anti-Caster</code> has something to target; actual casting mechanics are undesigned.</dd>
+        <dt>Anti-[Keyword]</dt><dd>Against a target with the matching keyword, each successful damage roll counts as <strong>two hits</strong> instead of one. Because hits are allocated individually, the extra hits may spill onto other models in the unit. Defined for every TYPE and CATEGORY, plus Caster.</dd>
         <dt>Bulwark</dt><dd>Reduce incoming damage by 1, to a minimum of 1.</dd>
         <dt>Ablative Plating</dt><dd>While this model would take doubled damage from a hit with
         Anti-Vehicle or Anti-Armor, it instead takes that damage normally. Narrower than a flat Armor
@@ -1097,6 +1106,14 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         once exhausted, it cannot fire again. Parallel notation to Anti-[Keyword], Deployment (X),
         and Impact (X) — a general-purpose way to describe limited-ammunition or one-shot weapons.
         First application: Bastion's Hunter-Killer Missile, Consumable (1).</dd>
+        <dt>Lance <span class="pill">+0.5</span></dt><dd>+1 AP on charge. The first trait priced
+        under the new flat points formula — a flat +0.5 regardless of the weapon it's on. First
+        application: the Heavy Ripsaw Sword, Repentia Squad, paired with Onslaught below.</dd>
+        <dt>Onslaught</dt><dd>While charging, reroll failed hit rolls made with this weapon. A
+        one-time reroll, not chainable against a second failure. Framed as the physics of impact
+        rather than personal fury, keeping it distinct from the "zealotry rerolls damage, not hits"
+        convention (Martyrs, all / Wrathbound). First application: the Heavy Ripsaw Sword, Repentia
+        Squad.</dd>
       </dl>
 
       <h4>Movement</h4>
@@ -1125,6 +1142,12 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         than a roll made on every hit across the whole army. First intended use: a Storm
         Shield-equivalent Oathkeeper wargear option, possibly an Iron Halo-equivalent for Oathmaster
         — neither built yet.</dd>
+        <dt>Undaunted (X)</dt><dd>When this unit fails a Mettle check that would step it down its
+        morale track, it may attempt one additional, unmodified roll against a fixed target number of
+        X; on success, it does not step down. Shrug's own shape — a flat second roll against a static
+        threshold — retargeted at morale instead of damage; kept as its own name since two different
+        effects can't share one trait name. First application: Repentia Squad, Undaunted (7+), gated
+        on a Repentia Superior being present in the unit.</dd>
       </dl>
 
       <h4>Deployment (X)</h4>
@@ -2017,6 +2040,56 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       menus of their own yet; whether Vehicles get a universal melee profile is undecided;
       Oathreapers' grenade, Deployment (Infiltrate)'s exact distance, Optics's pricing tier, and
       Warded Plate's final name are all still open.</p>
+
+      <h3>Imperial Saints — unit roster, naming, and the Sisters-of-Battle lens</h3>
+      <p>Unlike Regiments (Wehrmacht structure, invented vocabulary) and Oathkeepers (modern-Marine
+      structure, invented Oath-prefixed vocabulary), <strong>Saints' naming stays close to the real
+      source material rather than translating it</strong> — Battle Sisters, Battle Sister Commander,
+      Repentia Squad are all kept plainly. The rule that actually has to stay consistent is trait
+      names, not unit names (the Bulwark/Indomitable collision) — this extends the same reasoning to
+      this faction's units specifically.</p>
+
+      <h4>Battle Sisters Squad — LINE, the anchor</h4>
+      <p>Speed6 / Mettle5 / Evasion6 / Armor5 / Toughness1, carrying <code>Martyrs, all</code>. Fixed
+      at 10 models: a baseline HAMR Rifle + Combat Knife trooper (25pts), up to 2 of which may become
+      a <strong>Sister with Special Weapon</strong> (19pts chassis+knife) carrying one of four
+      mutually-exclusive swaps — Flamethrower, Fusion Blaster, Plasma Rifle, or HAMR AR — enforced via
+      cross-referenced decrement modifiers rather than a shared pool group. A <strong>Sister
+      Sergeant</strong> may also be taken: +1 Mettle (to 6), a ranged choice of HAMR Rifle or Plasma
+      Pistol, a melee choice of Combat Knife or Plasma Sword. Squad headcount stays fixed at 10
+      regardless of how the Special Weapon/Sergeant slots are filled.</p>
+
+      <h4>Battle Sister Commander — COMMAND</h4>
+      <p>Consolidates what real Sisters of Battle spread across Canoness, Palatine, Missionary/
+      Preacher, Hospitaller, and Imagifier into one configurable profile — the same "merge overlapping
+      units, tailor by selection" economy already used for Oathguard and Oathcrusher. Speed6 / Mettle7
+      / Evasion6 / Armor5 / <strong>Toughness5</strong> (96pts chassis alone).</p>
+      <div class="tw"><table>
+        <tr><td class="k">Melee <span class="pill">pick one</span></td><td>Ripsaw Sword (7), Plasma Sword (11), or <strong>Relic Sword</strong> (16) — the first weapon in the game to carry both <code>Anti-Caster</code> and <code>Precision</code>, the exact combination the real Condemnor Boltgun was used to define both traits from.</td></tr>
+        <tr><td class="k">Ranged <span class="pill">pick one</span></td><td>Master HAMR Rifle (12), Auto HAMR Rifle (24), or Master Plasma Pistol (17)</td></tr>
+        <tr><td class="k">Shielding Halo <span class="pill">optional, 5</span></td><td>A renamed <code>Indomitable</code> — reduce incoming AP by 1</td></tr>
+        <tr><td class="k">Command Presence <span class="pill">pick exactly one</span></td><td>Aura of Courage (10, grants Courage), Aura of Warding (10, grants Bulwark renamed Warding), Zealous Piety (5, grants Ravaging to model+unit), Rallying Cry (5, Mettle test to discard suppression), Anti-Caster Exhortation (15, extends Anti-Caster to model or unit), or Divine Favor (50, Mettle test to restore a slain model). Backed by a new formal <strong>Aura</strong> category (12" range) — reusable infrastructure, not bespoke to the Commander.</td></tr>
+      </table></div>
+
+      <h4>Repentia Squad — SHOCK</h4>
+      <p>Real Repentia Squad (Wahapedia, 10th edition) pulled directly for grounding: 4-9 Sister
+      Repentia (M7"/T3/Sv7+/W1/Ld8+) plus 1 mandatory Repentia Superior (Sv3+), Feel No Pain 5+, and a
+      signature ability (<strong>Overseer of Redemption</strong>) that only functions while the
+      Superior is alive. Structure mirrored as <strong>9 Sister Repentia + 1 mandatory Repentia
+      Superior</strong>.</p>
+      <div class="tw"><table>
+        <tr><td class="k">Stat line</td><td>Speed6 / Mettle4 / Evasion7 / Armor3 / Toughness1 — the lowest Armor of any Infantry unit in the roster, below even Regiments' Arm4 baseline, and the first Saints unit below the faction's own Mettle5 floor. Melee-only across the whole unit, the only unit in the roster with no ranged option at all.</td></tr>
+        <tr><td class="k">Heavy Ripsaw Sword <span class="pill">troopers</span></td><td>A2/AP1/D2, carrying both <code>Lance</code> and <code>Onslaught</code> — AP1 off the charge, effective AP2 with rerolled hits while charging.</td></tr>
+        <tr><td class="k">Cerebral Flagellator <span class="pill">Superior</span></td><td>A3/AP0/D1, <code>Anti-Infantry</code> — more attacks, no penetration; she herds, she doesn't personally out-butcher them.</td></tr>
+        <tr><td class="k">Terrifying</td><td>Unit-wide. Second infantry carrier after Oathreapers.</td></tr>
+        <tr><td class="k">Undaunted (7+)</td><td>Gated on a Repentia Superior being present in the unit — mirrors the real Overseer of Redemption's all-or-nothing shape (rerolls only exist while she's alive), built from entirely new infrastructure this session.</td></tr>
+      </table></div>
+      <p class="note"><span class="pill open">Still open</span> Onslaught and Anti-Infantry haven't
+      been assigned a flat trait value yet (same unpriced bucket as everything but Lance); the
+      Sergeant's melee/ranged menus haven't been checked against the points formula; Repentia Squad's
+      full points cost hasn't been run; the rest of the Saints roster (Sisters Novitiate, Celestian
+      Insidiants, Seraphim/Zephyrim/Arco-flagellants, Retributor/Dominion Squad, Sororitas Rhino/
+      Immolator, Paragon Warsuits/Mortifiers/Penitent Engines) is still scaffolding only.</p>
 
       <h3>Xenos — outside the network</h3>
       <p>The Oath is a <em>human</em> technology. Each xenos faction is defined by how it fails to fit
