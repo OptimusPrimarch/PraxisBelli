@@ -169,20 +169,28 @@ This is a live risk on this project, not a hypothetical: designing around Oathke
 
 ### Imperial Saints — *the choir*
 
-> **The decision:** *do I hold the choir together?* Hymnal wants 6" coherence; objectives want you spread across the board. That tension is the faction.
+**First real unit-level work this session, built ahead of a generic timeline because it's one of the two factions actually available for playtesting** (alongside Wrathful Oathbreakers). `Hymnal` is retired in favor of **`Martyrs, all`** as the signature trait — a genuinely stronger, more identity-defining rule than a flat proximity-based Mettle bonus.
 
-- **Signature trait — Hymnal:** while within 6" of another friendly unit with Hymnal, this unit gains +1 Mettle. The choir builds itself up and comes apart as it is picked off.
-- **Stat shape:** Armor 5–6, **highest Mettle in the game** (7–8), units of 8–10. Middling durability, near-unbreakable resolve.
+> **The decision, updated:** *how hard do I have to be hit before I become the real threat?* `Martyrs, all` only activates once a unit has taken real losses — the choir is unassuming until it's bleeding, then it becomes the thing you should have killed faster.
+
+- **Signature trait — `Martyrs, all`** (see glossary): once a unit drops below 50% of its starting strength (by model count or Toughness remaining, whichever applies), it discards all suppression markers it holds and gains re-rolls on failed morale tests and failed damage rolls — no defensive benefit at all, it doesn't survive any longer or die any slower, it just hits harder and holds together better while it's still standing. **Structurally the inverse of `Oathbound`**: Oathbound is strong while unwounded and loses its edge the instant damage lands; Martyrs, all is weak while healthy and only turns on once a unit has been battered past half strength. Same "threshold state" shape, opposite trigger direction, deliberately.
+- **Stat shape, positioned between Regiments and Oathkeepers, but not on the same axis Oathkeepers uses**: **Armor 5 / Evasion 6 / Mettle 6** — +1 Armor over Regiments' 4 with *no* Evasion cost ("not nearly as bulky" as Oathkeepers, who trade Evasion for Armor at every tier), and +2 Mettle over Regiments' 4, since Saints' "between" positioning is expressed through zealotry/conviction rather than heavier plate. The Armor/Evasion pair happens to numerically match a couple of Oathkeeper units (Oathwarden Squad, Oathreapers both also sit at Arm5/Eva6) — the Mettle lever, not Armor/Evasion, is what actually keeps Saints texturally distinct rather than reading as a reskinned Oathkeeper tier.
 - **Reinforcing tools:** **Sacred Flame** weapons (hits inflict a suppression marker in addition to damage, and ignore the Cover tag), censers, banners. Short-ranged and punishing — the choir has to close.
 - **Doctrine — *Act of Faith*:** for the rest of the round, units in this Platoon automatically pass every Mettle check, but each unit that does so takes 1 wound at end of round.
+- **Real-world roster shell pulled and sorted into TYPE/CATEGORY** (Wahapedia, 10th edition, as a proportion baseline not a target to match exactly): anchor is **Battle Sisters Squad** (Infantry/LINE), with **Sisters Novitiate Squad** as the cheap Levy-equivalent, **Celestian Insidiants** as the sole current RECON entry, **Seraphim/Zephyrim/Repentia/Arco-flagellants** covering SHOCK, **Retributor Squad/Dominion Squad** covering SUPPORT, **Sororitas Rhino/Immolator** as ARMOR/SUPPORT vehicles (Rhino specifically inherits its embarked unit's CATEGORY per the existing Dedicated Transport rule, defaulting to SUPPORT otherwise), and **Paragon Warsuits/Mortifiers/Penitent Engines** as Monster-TYPE units (Paragons can't benefit from cover in the source material, which is what pushed them out of Infantry TYPE entirely) at LINE/SHOCK/SHOCK respectively. None of these have had an actual Praxis Belli identity/package pass yet — this is scaffolding, not finished design.
 
 ### Oathbreaker Legions — *the debt comes due*
 
-> **The decision:** *how much do I pay?* Blood Debt makes damage taken into damage dealt, so every casualty is also an argument for pushing further in.
+**First playable expression: Wrathful Oathbreakers** (World Eaters-equivalent), built out ahead of a generic Chaos Space Marine baseline because it's one of the two factions actually available for real playtesting right now (alongside Imperial Saints). `Blood Debt` (below) is retired **for now** in favor of `Wrathbound` as this faction's signature — the generic CSM-equivalent ruleset is deferred, and may reintroduce Blood Debt or something else entirely once that gets built.
 
-- **Signature trait — Blood Debt:** this unit gains +1 AP for each wound it has suffered this round, to a maximum of +3. It becomes more dangerous as it dies.
-- **Stat shape:** the Oathkeeper chassis — Armor 7, Toughness 2, units of 5 — but **erratic Mettle** (3–5) and higher Damage weapons. Violence bought with reliability.
-- **Reinforcing tools:** **Corrupt** weapons (suppression markers that do *not* clear at end of round — the only lingering suppression in the game), unstable high-Damage guns, MONSTER-type units at LINE.
+> **The decision, for Wrathful Oathbreakers specifically:** *how do I close the distance?* A melee-only faction's real problem is surviving the approach, not winning the fight once they arrive.
+
+- **Signature trait — `Wrathbound`** (×1.12, matching Blood Debt's old slot — a guess, first thing playtesting should attack): re-roll all failed damage rolls in melee, and re-roll all failed morale (Mettle) tests. Always-on, no condition to meet — the "fury sinks the blow deeper, doesn't help you land it more often" logic already established for `Martyrs, all` (Imperial Saints), arrived at independently for a different faction but worth recognizing as a real cross-setting principle now that it's shown up twice: rage/fervor traits reroll damage, not attacks, throughout this whole cosmology.
+- **`Fearless`** (ignores suppression markers on Mettle checks) is granted to the faction's **Marine-based units specifically** — the corrupted-Oathkeeper-chassis troops that still wear the same silhouette as their loyalist origin — and explicitly **not** to Cultists or Chaos Spawn, which read as genuinely different kinds of unit rather than corrupted versions of the same chassis.
+- **Doctrinal framing**: their rejection of ranged weapons is a literal broken/corrupted vow — a oath that once bound them to close combat only, and even fallen, the compulsion holds. Fits the setting's own logic (oaths are magic, corruption inverts rather than erases) better than "they just prefer melee."
+- **Stat shape**: the Oathkeeper chassis (Oathkeeper Squad's current baseline: Armor 6, Evasion 4, Toughness 2) with a minor stat buff (not yet quantified) and serious weapon overhauls reflecting the melee-only doctrine — "technically more elite, but they sacrifice other choices to make up for it," per the elite-constraint principle already on the books (elites compensate via stats/weapons/signature trait, never bespoke compensation mechanics). *(Old "Armor 7, Toughness 2, erratic Mettle 3–5" reference below predates this session's Oathkeeper buildout and needs reconciling — flagged, not yet resolved.)*
+- **Cheap filler access, answering the elite-army model-count problem directly**: **Chaos Spawn** (Monster TYPE, likely SHOCK — mutated monstrosities, not on the Oathkeeper chassis at all) and **Cultists** (Infantry TYPE, likely LINE — the direct Conscript Mob analog). Neither is designed yet beyond this identity note.
+- **Reinforcing tools (pre-existing, not yet reconciled with the above):** **Corrupt** weapons (suppression markers that do *not* clear at end of round — the only lingering suppression in the game), unstable high-Damage guns, MONSTER-type units at LINE.
 - **Doctrine — *Break the Chains*:** for the rest of the round, units in this Platoon gain +2 Speed and may charge after Running, but automatically fail their next Mettle check.
 
 ---
@@ -574,13 +582,13 @@ Their infantry is durable enough to serve as armor, and armed well enough to ser
 
 **Staple: the flame squad.** Short-ranged, punishing, and useless at distance.
 
-Close-support-led. Hymnal's 6" coherence means they fight as a **converging mass** rather than a dispersed line — the faction that physically clusters. They can field recon and armor but rarely want to, because anything that leaves the choir stops benefiting from it. Their combined arms is *mutual support between infantry*, and their question is: *can I close before the shooting phase kills me?*
+Close-support-led. With `Hymnal` retired in favor of `Martyrs, all`, the "converging mass" identity now comes from Sacred Flame's short range and the faction's own close-support doctrine rather than a proximity aura — they still want to fight clustered, it's just no longer mechanically rewarded by staying near each other specifically. They can field recon and armor but rarely want to, since the whole kit is built for closing distance, not holding it. Their combined arms is *mutual support between infantry*, and their question is: *can I close before the shooting phase kills me, and can I survive long enough afterward to turn Martyrs, all on?*
 
 ### Oathbreaker Legions — *tempo*
 
 **Staple: the shock squad, or the monster.** Whatever arrives first and hurts most.
 
-Assault-led, SHOCK to four. They don't combine arms so much as **collapse the game before the opponent's arms can cooperate** — kill the RECON and the artillery goes blind, kill the COMMAND and the Mettle collapses. Blood Debt means their casualties fund the push. Their question is the harshest: *if this doesn't break them this round, can I survive next round?*
+Assault-led, SHOCK to four. They don't combine arms so much as **collapse the game before the opponent's arms can cooperate** — kill the RECON and the artillery goes blind, kill the COMMAND and the Mettle collapses. For Wrathful Oathbreakers specifically, `Wrathbound` means every hit that lands counts for more and morale rarely breaks outright — the danger isn't that they crumble, it's that they arrive and don't stop. Their question is the harshest: *if this doesn't break them this round, can I survive next round?*
 
 ### Trait pricing (first-draft multipliers)
 
@@ -591,8 +599,10 @@ Faction traits are hand-priced like every other trait, applied to the unit total
 | Massed Ranks | ×1.06 | Conditional on 8+ models, and decays as they die |
 | Bound Spirit | ×1.10 | Immunity to a whole subsystem, offset by losing Leadership Aura |
 | Oathbound | ×1.15 | −1 AP is large; the Rout clause is a real drawback in a losing game |
-| Hymnal | ×1.08 | Strong but positionally expensive |
-| Blood Debt | ×1.12 | Up to +3 AP, but only by taking damage |
+| ~~Hymnal~~ | ~~×1.08~~ | Retired — replaced by `Martyrs, all` |
+| `Martyrs, all` | ×1.10 | Late/conditional trigger (must drop below 50% strength) tempers an always-strong-once-live reroll-morale-and-damage effect |
+| ~~Blood Debt~~ | ~~×1.12~~ | Retired for now — replaced by `Wrathbound` for Wrathful Oathbreakers; may return for a generic CSM baseline later |
+| `Wrathbound` | ×1.12 | Always-on double reroll (damage + morale), no condition to offset it — priced at Blood Debt's old slot as a starting guess |
 
 > These are **guesses**, flagged as such. They're the least-defensible numbers in the whole system and the first thing playtesting should attack.
 
