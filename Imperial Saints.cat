@@ -13,9 +13,183 @@
       </categoryLinks>
     </forceEntry>
   </forceEntries>
+  <selectionEntries>
+    <selectionEntry name="Battle Sisters" id="457b-db5b-7911-2f92" hidden="false" import="true" type="unit">
+      <comment>
+</comment>
+      <categoryLinks>
+        <categoryLink name="Line" id="9c2b-0342-cca2-d181" hidden="false" primary="true" targetId="9bdf-0174-74ef-f0af"/>
+        <categoryLink name="Infantry" id="4480-a3df-f091-dac8" hidden="false" primary="false" targetId="0855-9c5c-35f4-04c1"/>
+      </categoryLinks>
+      <infoLinks>
+        <infoLink name="Martyrs, All" id="bb25-daf4-8854-bc51" hidden="false" targetId="33e3-3e30-8208-b5c4" type="rule"/>
+      </infoLinks>
+      <profiles>
+        <profile name="Battle Sisters" id="2812-94ef-7ce2-ca81" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
+          <characteristics>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">6</characteristic>
+            <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">5</characteristic>
+            <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">6</characteristic>
+            <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">5</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry name="Sisters with HAMR Rifles" id="8932-f514-8d4e-e6fe" hidden="false" import="true" sortIndex="1" type="model">
+          <constraints>
+            <constraint id="447d-eaca-3f5f-c3fa" field="selections" scope="parent" shared="true" type="min" value="10"/>
+            <constraint id="56f5-fd6d-14e1-2788" field="selections" scope="parent" shared="true" type="max" value="10"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="HAMR Rifle" id="15e9-ce3c-3996-8ff7" hidden="false" targetId="e75d-6115-0b7b-27fa" type="profile"/>
+          </infoLinks>
+          <modifiers>
+            <modifier field="447d-eaca-3f5f-c3fa" type="decrement" value="1">
+              <conditions>
+                <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="56f5-fd6d-14e1-2788" type="decrement" value="1">
+              <conditions>
+                <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="447d-eaca-3f5f-c3fa" type="decrement" value="2">
+              <conditions>
+                <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="2"/>
+              </conditions>
+            </modifier>
+            <modifier field="56f5-fd6d-14e1-2788" type="decrement" value="2">
+              <conditions>
+                <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="2"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+        <selectionEntry name="Sister with Special Weapon" id="c9ff-d2e1-2ed8-c7df" hidden="false" import="true" type="model">
+          <constraints>
+            <constraint id="558b-7282-4d12-5ae1" field="selections" scope="parent" shared="true" type="max" value="2"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry name="Special Weapon" id="8111-e9ac-ecbd-d7e1" hidden="false" import="true" type="upgrade">
+              <constraints>
+                <constraint id="9e4b-6788-f81c-0bae" field="selections" scope="parent" shared="true" type="min" value="1"/>
+                <constraint id="1707-b46b-cfa6-a487" field="selections" scope="parent" shared="true" type="max" value="1"/>
+              </constraints>
+              <entryLinks>
+                <entryLink name="Flamethrower" id="20c2-fb10-8d9a-1426" hidden="false" import="true" targetId="e4aa-91a1-03fa-5b82" type="selectionEntry">
+                  <constraints>
+                    <constraint id="8fa0-0ec6-994a-1101" field="selections" scope="parent" shared="true" type="max" value="1"/>
+                  </constraints>
+                </entryLink>
+                <entryLink name="Fusion Blaster" id="5141-c4a1-d829-7808" hidden="false" import="true" targetId="752e-8c65-a49f-5f21" type="selectionEntry">
+                  <constraints>
+                    <constraint id="bccd-1dbb-68fe-4b39" field="selections" scope="parent" shared="true" type="max" value="1"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
+  </selectionEntries>
   <sharedRules>
     <rule name="Martyrs, All" id="33e3-3e30-8208-b5c4" hidden="false">
       <description>When this unit falls below half its starting total wounds, it enters martyrdom. When a unit enters martyrdom, it immediately discards all suppression markers it has. While in martyrdom, reroll failed morale tests and damage rolls.</description>
     </rule>
   </sharedRules>
+  <sharedSelectionEntries>
+    <selectionEntry name="Standard INF Weapons" id="43e9-2bee-352a-7065" hidden="false" import="true" type="upgrade">
+      <profiles>
+        <profile name="HAMR Rifle" id="e75d-6115-0b7b-27fa" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+          <characteristics>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18</characteristic>
+            <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
+            <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">1</characteristic>
+            <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">2</characteristic>
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1"/>
+          </characteristics>
+        </profile>
+        <profile name="Rifle" id="f6a7-0a0d-f59a-3f1f" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+          <characteristics>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18</characteristic>
+            <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
+            <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
+            <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1"/>
+          </characteristics>
+        </profile>
+        <profile name="Pistol" id="0eb1-5a24-5abd-26a8" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+          <characteristics>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">9</characteristic>
+            <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
+            <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
+            <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Pistol</characteristic>
+          </characteristics>
+        </profile>
+        <profile name="HAMR Pistol" id="db51-f903-2cfc-a03d" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+          <characteristics>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">9</characteristic>
+            <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
+            <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">1</characteristic>
+            <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">2</characteristic>
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Pistol</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+    <selectionEntry name="Special INF Weapons" id="9179-5b81-0452-ec09" hidden="false" import="true" type="upgrade">
+      <profiles>
+        <profile name="Plasma Rifle" id="7ebf-2c3d-30da-7e11" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+          <characteristics>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">18</characteristic>
+            <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
+            <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">4</characteristic>
+            <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">3</characteristic>
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Overcharge</characteristic>
+          </characteristics>
+        </profile>
+        <profile name="Fusion Blaster" id="9996-02da-38c3-eae2" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+          <characteristics>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">Small Teardrop</characteristic>
+            <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
+            <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">8</characteristic>
+            <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">5</characteristic>
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Anti-Vehicle, Anti-Armor, Engulf, Meltdown</characteristic>
+          </characteristics>
+        </profile>
+        <profile name="Flamethrower" id="f956-1a22-7ca4-9d86" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+          <characteristics>
+            <characteristic name="Range" typeId="74c2-5191-931e-1f4a">Small Teardrop</characteristic>
+            <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
+            <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">1</characteristic>
+            <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
+            <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Anti-Infantry, Engulf</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+  </sharedSelectionEntries>
+  <sharedSelectionEntryGroups>
+    <selectionEntryGroup name="Special Infantry Weapons" id="ca43-0654-9a1f-090a" hidden="false">
+      <selectionEntries>
+        <selectionEntry name="Flamethrower" id="e4aa-91a1-03fa-5b82" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="10"/>
+          </costs>
+          <infoLinks>
+            <infoLink name="Flamethrower" id="888f-643c-30d8-5441" hidden="false" targetId="f956-1a22-7ca4-9d86" type="profile"/>
+          </infoLinks>
+        </selectionEntry>
+        <selectionEntry name="Fusion Blaster" id="752e-8c65-a49f-5f21" hidden="false" import="true" type="upgrade">
+          <infoLinks>
+            <infoLink name="Fusion Blaster" id="9b45-1b02-5c59-35b8" hidden="false" targetId="9996-02da-38c3-eae2" type="profile"/>
+          </infoLinks>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+  </sharedSelectionEntryGroups>
 </catalogue>

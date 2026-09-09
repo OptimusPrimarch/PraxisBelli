@@ -432,7 +432,7 @@ Rather than individually arguing ~15 trait values — exactly the kind of subjec
 
 | Tier | × | Traits |
 |---|---|---|
-| Major bonus | **1.30** | Linked-Weapon, Blast (L), Engulf (L), Guided, Indirect, Overcharge |
+| Major bonus | **1.30** | Linked-Weapon, Blast (L), Engulf (L), Guided, Indirect, Overcharge, Precision |
 | Minor bonus | **1.10** | Accurate, Blast (S), Engulf (S), Suppressing, Turret, Pistol |
 | Minor restriction | **0.90** | Coaxial, Traversing |
 | Major restriction | **0.75** | Heavy, Frontal / Rear / Side Arc |
@@ -535,6 +535,7 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 - **Guided** — if the target is visible to an allied RECON unit, decrease the target's Evasion by 3, disregarding all other modifiers.
 - **Accurate** — ignore all range penalties.
 - **Optics** — the target cannot gain Evasion bonuses from being Obscured or in Obscuring terrain. Cuts through concealment rather than boosting raw accuracy — deliberately a different job than `Accurate` (which answers range, not cover). No longer a stub; needs a pricing tier assigned (currently costs nothing in the points formula, which is now wrong). *(First application: Oathwarden Squad's Carbine/Optics configuration.)*
+- **Precision** — when resolving this weapon's attacks, its controller may choose which model within the target unit receives each hit, instead of following the unit's normal allocation order. Bypasses the protection a unit's own arrangement would otherwise give a key model — an NCO, a special-weapon carrier, a `Caster`. Priced as a Major bonus: like `Guided`, it changes the shape of what the attack can affect rather than just improving the odds on a normal shot — arguably more so, since it defeats allocation entirely rather than just Evasion. *(First intended application: a Saints sniper/support weapon, not yet named or built.)*
 
 **Firing restrictions**
 - **Heavy** — cannot attack in the same activation its unit moved; if it attacks first, it cannot then move.
@@ -550,7 +551,8 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 **Damage & suppression**
 - **Suppressing** — targets gain a suppression marker regardless of the attack's outcome.
 - **Overcharge** — this weapon may fire in Overcharged mode: its AP and Damage are each increased by 2 for that attack. For each unmodified roll of 1 made for this weapon's attack, the bearer suffers a Damage 1 hit that cannot be saved against, in addition to any other effect of that roll.
-- **Anti-[Keyword]** — against a target with the matching keyword, each successful damage roll counts as two hits instead of one; because hits are allocated individually, the excess may spill onto other models in the unit. Defined for: Aerial, Armor, Cavalry, Command, Infantry, Line, Monster, Recon, Shock, Support, Towable, Vehicle.
+- **Caster** — a standalone keyword, independent of TYPE and CATEGORY, granted to specific models (priests, psykers, sorcerers, and other channel-a-power archetypes) rather than defining a new TYPE or CATEGORY of its own — the same "anything can be granted it" pattern already established for `Flying`. Exists primarily so `Anti-Caster` has something to target; the actual casting/power mechanics a Caster-tagged model might use are undesigned and out of scope for now.
+- **Anti-[Keyword]** — against a target with the matching keyword, each successful damage roll counts as two hits instead of one; because hits are allocated individually, the excess may spill onto other models in the unit. Defined for: Aerial, Armor, Caster, Cavalry, Command, Infantry, Line, Monster, Recon, Shock, Support, Towable, Vehicle.
 - **Bulwark** — reduce incoming damage by 1, to a minimum of 1.
 - **Ablative Plating** — while this model would take doubled damage from a hit with the `Anti-Vehicle` or `Anti-Armor` trait, it instead takes that damage normally. Narrower than a flat Armor increase on purpose: it specifically answers weapons built to kill vehicles, rather than making the model tougher against everything. Industrial materials science, not warded plate — the sci-fi register stays technological rather than borrowing anything from the Oath, since the faction using it first (Regiments) has no oath-access at all. *(First application: the Sable's standalone Ablative Plating option.)*
 - **Indomitable** — reduce the AP of incoming attacks by 1, minimum 0. Doesn't stop a dedicated anti-armor weapon from doing its job, but meaningfully blunts anything that wasn't built to punch through this specific armor. Deliberately not named `Bulwark` (already in use, and means Damage reduction, not AP reduction — a real naming collision caught before it shipped). *(First application: Oathkeepers' Heavies/Terminator-equivalent tier.)*

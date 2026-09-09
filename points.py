@@ -62,7 +62,7 @@ RESTRICTION_MINOR = 0.90
 RESTRICTION_MAJOR = 0.75
 
 MINOR_TRAITS = {"accurate", "blast (s)", "engulf (s)", "suppressing", "turret", "pistol"}
-MAJOR_TRAITS = {"linked-weapon", "blast (l)", "engulf (l)", "guided", "indirect", "overcharge"}
+MAJOR_TRAITS = {"linked-weapon", "blast (l)", "engulf (l)", "guided", "indirect", "overcharge", "precision"}
 # "optics" now has a real mechanism (design-bible.md's glossary: ignores Evasion
 # bonuses from Obscured/Obscuring terrain) but is still deliberately absent here --
 # it costs nothing until a tier is actually assigned, which hasn't happened yet.

@@ -180,11 +180,8 @@
     <rule name="Smoke" id="8b3e-c604-d179-2f5a" hidden="false">
       <description>A smoke marker blocks line of sight drawn through it, exactly as Blocking terrain does, until the end of the round in which it was placed. Units with the Spotter rule ignore its effects.</description>
     </rule>
-    <rule name="Engulf (S)" id="e00d-1348-3f1f-bd09" hidden="false">
-      <description>This weapon uses a small teardrop template; its targets can&apos;t benefit from cover.</description>
-    </rule>
-    <rule name="Engulf (L)" id="813b-6058-8182-a5c6" hidden="false">
-      <description>This weapon uses a large teardrop template; its targets can&apos;t benefit from cover.</description>
+    <rule name="Engulf" id="e00d-1348-3f1f-bd09" hidden="false">
+      <description>This weapon uses a template originating from its base; all models in contact with the template besides the bearer are considered targets and can&apos;t benefit from cover.</description>
     </rule>
     <rule name="Fearless" id="7f7a-eca2-04a2-f10f" hidden="false">
       <description>This model and its unit ignore suppression markers when making Mettle checks. In addition, it ignores the negative effects of deteriorating morale unless it is Routing.</description>
