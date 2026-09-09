@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue name="Imperial Saints" id="436e-9e82-635c-8b72" battleScribeVersion="2.03" gameSystemId="sys-cd5a-2de6-f8aa-24ee" gameSystemRevision="1" library="false" revision="1" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue name="Imperial Saints" id="436e-9e82-635c-8b72" battleScribeVersion="2.03" gameSystemId="sys-cd5a-2de6-f8aa-24ee" gameSystemRevision="1" library="false" revision="2" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <forceEntries>
     <forceEntry name="Standard Force" id="d3fa-0ed7-929e-0632" hidden="false">
       <categoryLinks>
@@ -40,31 +40,112 @@
             <constraint id="56f5-fd6d-14e1-2788" field="selections" scope="parent" shared="true" type="max" value="10"/>
           </constraints>
           <costs>
-            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="24"/>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="25"/>
           </costs>
           <infoLinks>
             <infoLink name="HAMR Rifle" id="15e9-ce3c-3996-8ff7" hidden="false" targetId="e75d-6115-0b7b-27fa" type="profile"/>
+            <infoLink name="Combat Knife" id="f093-fcc0-5bfb-05e3" hidden="false" targetId="7eba-f87d-7786-4c6a" type="profile"/>
           </infoLinks>
           <modifiers>
             <modifier field="447d-eaca-3f5f-c3fa" type="decrement" value="1">
-              <conditions>
-                <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="0"/>
+                        <condition childId="e340-f8b9-3eaf-46bb" childName="Squad Leader" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+                        <condition childId="e340-f8b9-3eaf-46bb" childName="Squad Leader" field="selections" scope="parent" shared="true" type="equalTo" value="0"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
             <modifier field="56f5-fd6d-14e1-2788" type="decrement" value="1">
-              <conditions>
-                <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="0"/>
+                        <condition childId="e340-f8b9-3eaf-46bb" childName="Squad Leader" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+                        <condition childId="e340-f8b9-3eaf-46bb" childName="Squad Leader" field="selections" scope="parent" shared="true" type="equalTo" value="0"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
             <modifier field="447d-eaca-3f5f-c3fa" type="decrement" value="2">
-              <conditions>
-                <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="2"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition childId="e340-f8b9-3eaf-46bb" childName="Squad Leader" field="selections" scope="parent" shared="true" type="equalTo" value="0"/>
+                        <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="2"/>
+                      </conditions>
+                    </conditionGroup>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition childId="e340-f8b9-3eaf-46bb" childName="Squad Leader" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+                        <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
             <modifier field="56f5-fd6d-14e1-2788" type="decrement" value="2">
-              <conditions>
-                <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="2"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition childId="e340-f8b9-3eaf-46bb" childName="Squad Leader" field="selections" scope="parent" shared="true" type="equalTo" value="0"/>
+                        <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="2"/>
+                      </conditions>
+                    </conditionGroup>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition childId="e340-f8b9-3eaf-46bb" childName="Squad Leader" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+                        <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="447d-eaca-3f5f-c3fa" type="decrement" value="3">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition childId="e340-f8b9-3eaf-46bb" childName="Squad Leader" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+                    <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="2"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="56f5-fd6d-14e1-2788" type="decrement" value="3">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition childId="fd2f-1255-293c-40e9" childName="Sister Sergeant" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+                    <condition childId="c9ff-d2e1-2ed8-c7df" childName="Sister with Special Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="2"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
         </selectionEntry>
@@ -73,7 +154,7 @@
             <constraint id="558b-7282-4d12-5ae1" field="selections" scope="parent" shared="true" type="max" value="2"/>
           </constraints>
           <costs>
-            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="18"/>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="19"/>
           </costs>
           <entryLinks>
             <entryLink name="Flamethrower" id="0c3d-6e92-1048-1d8e" hidden="false" import="true" targetId="e4aa-91a1-03fa-5b82" type="selectionEntry">
@@ -137,23 +218,100 @@
               <constraints>
                 <constraint id="fc9e-03e7-82ec-df80" field="selections" scope="parent" shared="true" type="max" value="1"/>
               </constraints>
-              <modifiers>
-                <modifier field="fc9e-03e7-82ec-df80" type="decrement" value="1">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition childId="0c3d-6e92-1048-1d8e" childName="Flamethrower" field="selections" scope="parent" shared="true" type="atLeast" value="1"/>
-                        <condition childId="ae27-ced8-8cc9-a9ac" childName="Plasma Rifle" field="selections" scope="parent" shared="true" type="atLeast" value="1"/>
-                        <condition childId="a963-7ff2-5068-19bc" childName="Fusion Blaster" field="selections" scope="parent" shared="true" type="atLeast" value="1"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
+              <infoLinks>
+                <infoLink name="Combat Knife" id="a131-6f61-242b-c191" hidden="false" targetId="7eba-f87d-7786-4c6a" type="profile"/>
+              </infoLinks>
             </entryLink>
           </entryLinks>
+          <infoLinks>
+            <infoLink name="Combat Knife" id="666a-b88d-0f9d-b197" hidden="false" targetId="7eba-f87d-7786-4c6a" type="profile"/>
+          </infoLinks>
         </selectionEntry>
       </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Squad Leader" id="e340-f8b9-3eaf-46bb" hidden="false">
+          <selectionEntries>
+            <selectionEntry name="Sister Sergeant" id="fd2f-1255-293c-40e9" hidden="false" import="true" type="model">
+              <constraints>
+                <constraint id="d478-4ecc-9cf0-c0d8" field="selections" scope="parent" shared="true" type="max" value="1"/>
+              </constraints>
+              <costs>
+                <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="22"/>
+              </costs>
+              <modifiers>
+                <modifier affects="profiles.Unit Profile" field="e1e4-ceec-a5b1-60d3" scope="parent" type="increment" value="1"/>
+              </modifiers>
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Ranged Weapons" id="23c6-f3b3-4720-5b71" hidden="false">
+                  <constraints>
+                    <constraint id="3e2d-d46c-496f-174c" field="selections" scope="parent" shared="true" type="min" value="0"/>
+                    <constraint id="ea1e-b013-6d6b-e2a5" field="selections" scope="parent" shared="true" type="max" value="1"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink name="Plasma Pistol" id="a68f-d863-b0af-61f1" hidden="false" import="true" targetId="3cca-22e5-5585-12e0" type="selectionEntry">
+                      <constraints>
+                        <constraint id="0812-1374-1842-11c9" field="selections" scope="parent" shared="true" type="max" value="1"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                  <selectionEntries>
+                    <selectionEntry name="HAMR Rifle" id="3e6e-d14d-6ec6-059c" hidden="false" import="true" type="upgrade">
+                      <constraints>
+                        <constraint id="b48d-0c1a-49b7-f41c" field="selections" scope="parent" shared="true" type="max" value="1"/>
+                      </constraints>
+                      <costs>
+                        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="6"/>
+                      </costs>
+                      <infoLinks>
+                        <infoLink name="HAMR Rifle" id="d989-3ca0-2b1a-42d4" hidden="false" targetId="e75d-6115-0b7b-27fa" type="profile"/>
+                      </infoLinks>
+                      <modifiers>
+                        <modifier field="b48d-0c1a-49b7-f41c" scope="728b-68a5-3896-bbb8" type="decrement" value="1">
+                          <conditionGroups>
+                            <conditionGroup type="or">
+                              <conditions>
+                                <condition childId="a68f-d863-b0af-61f1" childName="Plasma Pistol" field="selections" scope="parent" shared="true" type="atLeast" value="1"/>
+                              </conditions>
+                            </conditionGroup>
+                          </conditionGroups>
+                        </modifier>
+                        <modifier field="559a-3a9b-e8ce-8bd3" type="decrement" value="1">
+                          <conditionGroups>
+                            <conditionGroup type="or">
+                              <conditions>
+                                <condition childId="a68f-d863-b0af-61f1" childName="Plasma Pistol" field="selections" scope="parent" shared="true" type="atLeast" value="1"/>
+                              </conditions>
+                            </conditionGroup>
+                          </conditionGroups>
+                        </modifier>
+                      </modifiers>
+                    </selectionEntry>
+                  </selectionEntries>
+                </selectionEntryGroup>
+                <selectionEntryGroup name="Melee Weapons" id="0fee-31ea-7587-363a" hidden="false">
+                  <constraints>
+                    <constraint id="a43a-79ae-b9ab-1a31" field="selections" scope="parent" shared="true" type="min" value="0"/>
+                    <constraint id="c946-f7a3-3906-0b29" field="selections" scope="parent" shared="true" type="max" value="1"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink name="Plasma Sword" id="256f-377e-27e2-4ce9" hidden="false" import="true" targetId="fea3-fc0d-de2b-77c7" type="selectionEntry"/>
+                  </entryLinks>
+                  <selectionEntries>
+                    <selectionEntry name="Combat Knife" id="19d9-09da-6d74-ac87" defaultAmount="1" hidden="false" import="true" type="upgrade">
+                      <costs>
+                        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="1"/>
+                      </costs>
+                      <infoLinks>
+                        <infoLink name="Combat Knife" id="aa6e-d9c3-c99c-5579" hidden="false" targetId="7eba-f87d-7786-4c6a" type="profile"/>
+                      </infoLinks>
+                    </selectionEntry>
+                  </selectionEntries>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
     </selectionEntry>
     <selectionEntry name="Battle Sister Commander" id="f964-5886-24e6-765b" hidden="false" import="true" sortIndex="1" type="unit">
       <categoryLinks>
@@ -161,7 +319,7 @@
         <categoryLink name="Infantry" id="0eb6-afc5-d9d3-4ed3" hidden="false" primary="false" targetId="0855-9c5c-35f4-04c1"/>
       </categoryLinks>
       <costs>
-        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="25"/>
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="96"/>
       </costs>
       <entryLinks>
         <entryLink name="Infantry Melee Weapons" id="33db-9f3b-1d84-be24" hidden="false" import="true" sortIndex="1" targetId="5ca4-59ef-62fb-f9a2" type="selectionEntryGroup">
@@ -351,14 +509,15 @@
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
-    <selectionEntryGroup name="Special Infantry Weapons" id="ca43-0654-9a1f-090a" hidden="false">
+    <selectionEntryGroup name="Special Weapons" id="ca43-0654-9a1f-090a" hidden="false">
+      <comment>Infantry Squads</comment>
       <entryLinks>
         <entryLink name="HAMR AR" id="37e3-0855-0fbe-b643" hidden="false" import="true" targetId="747b-8312-5204-0a0f" type="selectionEntry"/>
       </entryLinks>
       <selectionEntries>
         <selectionEntry name="Flamethrower" id="e4aa-91a1-03fa-5b82" hidden="false" import="true" type="upgrade">
           <costs>
-            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="10"/>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="4"/>
           </costs>
           <profiles>
             <profile name="Flamethrower" id="f956-1a22-7ca4-9d86" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
@@ -374,7 +533,7 @@
         </selectionEntry>
         <selectionEntry name="Fusion Blaster" id="752e-8c65-a49f-5f21" hidden="false" import="true" type="upgrade">
           <costs>
-            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="15"/>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="16"/>
           </costs>
           <profiles>
             <profile name="Fusion Blaster" id="9996-02da-38c3-eae2" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
@@ -407,10 +566,11 @@
       </selectionEntries>
     </selectionEntryGroup>
     <selectionEntryGroup name="Melee Weapon" id="5ca4-59ef-62fb-f9a2" hidden="false">
+      <comment>Commanders</comment>
       <selectionEntries>
         <selectionEntry name="Ripsaw Sword" id="8dab-0c2b-ffea-97e8" defaultAmount="1" hidden="false" import="true" type="upgrade">
           <costs>
-            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="5"/>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="7"/>
           </costs>
           <profiles>
             <profile name="Ripsaw Sword" id="9a1b-2297-e65e-177e" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
@@ -426,7 +586,7 @@
         </selectionEntry>
         <selectionEntry name="Plasma Sword" id="fea3-fc0d-de2b-77c7" hidden="false" import="true" type="upgrade">
           <costs>
-            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="7"/>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="11"/>
           </costs>
           <profiles>
             <profile name="Plasma Sword" id="b305-3303-589c-4647" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
@@ -442,7 +602,7 @@
         </selectionEntry>
         <selectionEntry name="Relic Sword" id="fe07-b08e-1d4d-9fd9" hidden="false" import="true" type="upgrade">
           <costs>
-            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="15"/>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="16"/>
           </costs>
           <profiles>
             <profile name="Relic Sword" id="c0a0-d8b2-99ad-b79a" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
@@ -459,6 +619,7 @@
       </selectionEntries>
     </selectionEntryGroup>
     <selectionEntryGroup name="Ranged Weapon" id="8345-adf0-0051-cefa" hidden="false">
+      <comment>Commanders</comment>
       <selectionEntries>
         <selectionEntry name="Master HAMR Rifle" id="9400-7bf9-2ff7-42f9" defaultAmount="1" hidden="false" import="true" type="upgrade">
           <costs>
@@ -478,7 +639,7 @@
         </selectionEntry>
         <selectionEntry name="Auto HAMR Rifle" id="747b-8312-5204-0a0f" defaultAmount="0" hidden="false" import="true" type="upgrade">
           <costs>
-            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="26"/>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="24"/>
           </costs>
           <profiles>
             <profile name="Auto HAMR Rifle" id="4778-b79f-4309-c6db" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
@@ -494,7 +655,7 @@
         </selectionEntry>
         <selectionEntry name="Master Plasma Pistol" id="b123-288d-a88c-2766" hidden="false" import="true" type="upgrade">
           <costs>
-            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="16"/>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="17"/>
           </costs>
           <profiles>
             <profile name="Master Plasma Pistol" id="3cc0-4cf7-b0a8-144d" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
@@ -507,6 +668,21 @@
               </characteristics>
             </profile>
           </profiles>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup name="Ranged Weapon" id="3a6f-f40f-43ff-a1af" hidden="false">
+      <comment>Sergeants</comment>
+      <selectionEntries>
+        <selectionEntry name="HAMR Pistol" id="6b7f-128c-a7c1-cc04" hidden="false" import="true" type="upgrade">
+          <infoLinks>
+            <infoLink name="HAMR Pistol" id="faf7-906f-15dd-1596" hidden="false" targetId="db51-f903-2cfc-a03d" type="profile"/>
+          </infoLinks>
+        </selectionEntry>
+        <selectionEntry name="Plasma Pistol" id="3cca-22e5-5585-12e0" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="9"/>
+          </costs>
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
