@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue name="Imperial Saints" id="436e-9e82-635c-8b72" battleScribeVersion="2.03" gameSystemId="sys-cd5a-2de6-f8aa-24ee" gameSystemRevision="2" library="false" revision="4" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue name="Imperial Saints" id="436e-9e82-635c-8b72" battleScribeVersion="2.03" gameSystemId="sys-cd5a-2de6-f8aa-24ee" gameSystemRevision="1" library="false" revision="5" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <forceEntries>
     <forceEntry name="Standard Force" id="d3fa-0ed7-929e-0632" hidden="false">
       <categoryLinks>
@@ -363,6 +363,30 @@
             </infoLink>
           </infoLinks>
         </selectionEntry>
+        <selectionEntry name="Sanctified Shield" id="2a52-2e00-9194-fbbb" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="9f73-fc93-6009-b9cf" field="selections" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Shrugs" id="57bd-3215-5eeb-78cf" hidden="false" targetId="d53b-a921-fbd3-aa6f" type="rule">
+              <modifiers>
+                <modifier field="name" type="append" value="7+"/>
+              </modifiers>
+            </infoLink>
+          </infoLinks>
+          <modifiers>
+            <modifier field="9f73-fc93-6009-b9cf" type="set" value="0">
+              <conditions>
+                <condition childId="564c-298d-a757-405c" childName="Ranged Weapon" field="selections" scope="parent" shared="true" type="greaterThan" value="0"/>
+              </conditions>
+            </modifier>
+            <modifier field="error" type="add" value="{this} cannot be taken with a Ranged Weapon selected">
+              <conditions>
+                <condition childId="564c-298d-a757-405c" childName="Ranged Weapon" field="selections" scope="ancestor" shared="true" type="instanceOf" value="0"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup name="Command Presence" id="932b-b3d4-c384-cdbf" hidden="false">
@@ -614,6 +638,9 @@
         <categoryLink name="Armor" id="e386-104b-c37b-3e7c" hidden="false" primary="true" targetId="7681-e699-f10a-e57b"/>
         <categoryLink name="Vehicle" id="d810-35ba-9c69-5a51" hidden="false" primary="false" targetId="4e41-bd1a-1e9f-f591"/>
       </categoryLinks>
+      <costs>
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="240"/>
+      </costs>
       <infoLinks>
         <infoLink name="Martyrs, All" id="1d47-edfd-521d-7806" hidden="false" targetId="33e3-3e30-8208-b5c4" type="rule"/>
       </infoLinks>
@@ -628,6 +655,269 @@
           </characteristics>
         </profile>
       </profiles>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Main Gun" id="d232-1666-254d-7075" hidden="false">
+          <constraints>
+            <constraint id="37a0-e851-7ad6-4aa5-min" field="selections" scope="parent" shared="true" type="min" value="1"/>
+            <constraint id="37a0-e851-7ad6-4aa5-max" field="selections" scope="parent" shared="true" type="max" value="1"/>
+            <constraint id="7df5-7380-fef3-37e6-min" field="selections" scope="parent" shared="true" type="min" value="1"/>
+            <constraint id="7df5-7380-fef3-37e6-max" field="selections" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <entryLinks>
+            <entryLink name="Battle Cannon" id="f131-8417-6432-1bf0" hidden="false" import="true" targetId="48cf-116f-cb9a-bfe2" type="selectionEntry">
+              <modifiers>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " skipIfPresent="Turret" type="append" value="Turret"/>
+              </modifiers>
+            </entryLink>
+            <entryLink name="Hallowed Infernogun" id="521f-893f-7dd4-da54" hidden="false" import="true" targetId="6ed1-ca74-5831-4aaa" type="selectionEntry">
+              <modifiers>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " skipIfPresent="Turret" type="append" value="Turret"/>
+              </modifiers>
+            </entryLink>
+            <entryLink name="Prosecution Cannon" id="3875-e238-5423-fc2b" hidden="false" import="true" targetId="da25-fa95-2a62-6c90" type="selectionEntry">
+              <modifiers>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " skipIfPresent="Turret" type="append" value="Turret"/>
+              </modifiers>
+            </entryLink>
+            <entryLink name="Purification Launcher" id="5ad3-3462-a0ac-54c3" hidden="false" import="true" targetId="4767-ada8-dc67-ac8c" type="selectionEntry">
+              <modifiers>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " skipIfPresent="Turret" type="append" value="Turret"/>
+              </modifiers>
+            </entryLink>
+            <entryLink name="Twin Autocannons" id="69cf-f3ea-ab05-4fed" hidden="false" import="true" targetId="148e-2b26-5f1e-5ea1" type="selectionEntry">
+              <modifiers>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " skipIfPresent="Turret" type="append" value="Turret"/>
+              </modifiers>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Hull Weapon" id="8297-bec2-531e-f418" hidden="false">
+          <constraints>
+            <constraint id="867b-8fe6-9da8-4151-min" field="selections" scope="parent" shared="true" type="min" value="1"/>
+            <constraint id="867b-8fe6-9da8-4151-max" field="selections" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <entryLinks>
+            <entryLink name="HAMR MG" id="7df8-01be-0382-6681" hidden="false" import="true" targetId="4836-7c31-7d0c-d50f" type="selectionEntry">
+              <modifiers>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " skipIfPresent="Side Arc" type="append" value="Frontal Arc"/>
+                <modifier affects="profiles.Weapon Profile" field="name" join=" " skipIfPresent="Hull" type="prepend" value="Hull"/>
+              </modifiers>
+            </entryLink>
+            <entryLink name="Heavy Flamethrower" id="58c9-2e31-4803-c503" hidden="false" import="true" targetId="dfac-5bd6-a5b1-4616" type="selectionEntry">
+              <modifiers>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " skipIfPresent="Side Arc" type="append" value="Frontal Arc"/>
+                <modifier affects="profiles.Weapon Profile" field="name" join=" " skipIfPresent="Hull" type="prepend" value="Hull"/>
+              </modifiers>
+            </entryLink>
+            <entryLink name="Heavy Fusion Blaster" id="0cb7-cf7f-3f7d-f2b0" hidden="false" import="true" targetId="2234-18fa-f4d4-71f5" type="selectionEntry">
+              <modifiers>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " skipIfPresent="Side Arc" type="append" value="Frontal Arc"/>
+                <modifier affects="profiles.Weapon Profile" field="name" join=" " skipIfPresent="Hull" type="prepend" value="Hull"/>
+              </modifiers>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Sponsons" id="d334-08ee-6ddf-126f" hidden="false">
+          <constraints>
+            <constraint id="ff0a-ce8d-0837-6ba1" field="selections" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <entryLinks>
+            <entryLink name="Heavy Flamethrower" id="8dab-7cbf-8700-4cef" hidden="false" import="true" targetId="dfac-5bd6-a5b1-4616" type="selectionEntry">
+              <modifiers>
+                <modifier field="3ef7-040e-27e8-40c1" type="multiply" value="1.5"/>
+                <modifier affects="profiles.Weapon Profile" field="name" join=" " skipIfPresent="Sponson" type="prepend" value="Sponson"/>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " skipIfPresent="Side Arc" type="append" value="Side Arc"/>
+                <modifier affects="profiles.Weapon Profile" field="name" join="" type="append" value="s"/>
+              </modifiers>
+            </entryLink>
+            <entryLink name="Heavy Fusion Blaster" id="a463-63fc-5b10-edec" hidden="false" import="true" targetId="2234-18fa-f4d4-71f5" type="selectionEntry">
+              <modifiers>
+                <modifier field="3ef7-040e-27e8-40c1" type="multiply" value="1.5"/>
+                <modifier affects="profiles.Weapon Profile" field="name" join=" " skipIfPresent="Sponson" type="prepend" value="Sponson"/>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " skipIfPresent="Side Arc" type="append" value="Side Arc"/>
+                <modifier affects="profiles.Weapon Profile" field="name" join="" type="append" value="s"/>
+              </modifiers>
+            </entryLink>
+            <entryLink name="Heavy Plasma Array" id="5e68-ada2-19c1-b8d4" hidden="false" import="true" targetId="4899-1be7-5592-a2d4" type="selectionEntry">
+              <modifiers>
+                <modifier field="3ef7-040e-27e8-40c1" type="multiply" value="1.5"/>
+                <modifier affects="profiles.Weapon Profile" field="name" join=" " skipIfPresent="Sponson" type="prepend" value="Sponson"/>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " skipIfPresent="Side Arc" type="append" value="Side Arc"/>
+                <modifier affects="profiles.Weapon Profile" field="name" join="" type="append" value="s"/>
+              </modifiers>
+            </entryLink>
+            <entryLink name="HAMR MG" id="6dd0-6126-e7c1-7fc2" hidden="false" import="true" targetId="4836-7c31-7d0c-d50f" type="selectionEntry">
+              <modifiers>
+                <modifier field="3ef7-040e-27e8-40c1" type="multiply" value="0.75"/>
+                <modifier affects="profiles.Weapon Profile" field="name" join=" " skipIfPresent="Sponson" type="prepend" value="Sponson"/>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " skipIfPresent="Side Arc" type="append" value="Side Arc"/>
+                <modifier affects="profiles.Weapon Profile" field="name" join="" type="append" value="s"/>
+              </modifiers>
+            </entryLink>
+          </entryLinks>
+          <infoLinks>
+            <infoLink name="Side Arc" id="8c2b-1f5b-e476-0725" hidden="false" targetId="0cd7-6a66-f65b-4e7b" type="rule"/>
+          </infoLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Pintle Mounted Weapon" id="880b-7337-0b92-164e" hidden="false">
+          <constraints>
+            <constraint id="fc21-c7d3-f5e9-c4a1" field="selections" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <entryLinks>
+            <entryLink name="Auto HAMR Rifle" id="477f-11a5-160a-acc2" hidden="false" import="true" targetId="747b-8312-5204-0a0f" type="selectionEntry">
+              <modifiers>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " skipIfPresent="Turret" type="append" value="Turret"/>
+                <modifier affects="profiles.Weapon Profile" field="name" join=" " skipIfPresent="Turret" type="prepend" value="Pintle"/>
+              </modifiers>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Coaxial Gun" id="4ef0-72df-fd09-f372" hidden="false">
+          <constraints>
+            <constraint id="9528-0f1f-c44a-1d88-min" field="selections" scope="parent" shared="true" type="min" value="1"/>
+            <constraint id="9528-0f1f-c44a-1d88-max" field="selections" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <entryLinks>
+            <entryLink name="HAMR MG" id="8766-7776-c274-e63d" hidden="false" import="true" targetId="4836-7c31-7d0c-d50f" type="selectionEntry">
+              <modifiers>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " type="prepend" value="Coaxial (Main Gun)"/>
+              </modifiers>
+            </entryLink>
+            <entryLink name="Auto HAMR Rifle" id="77b5-6681-ab3c-4def" hidden="false" import="true" targetId="747b-8312-5204-0a0f" type="selectionEntry">
+              <modifiers>
+                <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " type="prepend" value="Coaxial (Main Gun)"/>
+              </modifiers>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+    </selectionEntry>
+    <selectionEntry name="Pilgrim APC" id="7860-6dd6-3688-ac9c" hidden="false" import="true" type="upgrade">
+      <categoryLinks>
+        <categoryLink name="Support" id="67ff-9418-0045-5f00" hidden="false" primary="true" targetId="aa80-441a-6103-d793"/>
+        <categoryLink name="Vehicle" id="1c2f-d1cc-fbae-c82b" hidden="false" primary="false" targetId="4e41-bd1a-1e9f-f591"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="240"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Martyrs, All" id="ad12-0fa0-0455-81e2" hidden="false" targetId="33e3-3e30-8208-b5c4" type="rule"/>
+        <infoLink name="Transport:" id="2a5b-c1c7-7147-9320" hidden="false" targetId="b9ec-fe2d-ea71-a758" type="rule">
+          <modifiers>
+            <modifier field="name" type="append" value="12"/>
+          </modifiers>
+        </infoLink>
+      </infoLinks>
+      <profiles>
+        <profile name="Pilgrim APC" id="5a20-1e2a-7a01-8aa4" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
+          <characteristics>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">8&quot;</characteristic>
+            <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">6</characteristic>
+            <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">4</characteristic>
+            <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">12</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">10</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry name="Pintle Auto HAMR Rifle" id="2b19-f9ce-169b-d8b5" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="25d2-fe3c-cfc4-ccef" field="selections" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Auto HAMR Rifle" id="c76a-59bd-8e91-79f1" hidden="false" targetId="4778-b79f-4309-c6db" type="profile"/>
+          </infoLinks>
+          <modifiers>
+            <modifier affects="profiles.Weapon Profile" field="name" join=" " type="prepend" value="Pintle"/>
+            <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " type="append" value="Turret"/>
+          </modifiers>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
+    <selectionEntry name="Ascendant Warsuits" id="900b-5f23-2822-0958" hidden="false" import="true" type="unit">
+      <categoryLinks>
+        <categoryLink name="Armor" id="39d5-58b0-cba5-cf54" hidden="false" primary="true" targetId="7681-e699-f10a-e57b"/>
+        <categoryLink name="Monster" id="470a-0605-2a25-414f" hidden="false" primary="false" targetId="18b8-e55b-7c93-8700"/>
+      </categoryLinks>
+      <profiles>
+        <profile name="Ascendant Warsuits" id="9630-05b1-1055-c69a" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
+          <characteristics>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">8</characteristic>
+            <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">6</characteristic>
+            <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">5</characteristic>
+            <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">7</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">4</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry name="Sister Ascendant" id="7577-3395-a5cf-d59d" hidden="false" import="true" type="model">
+          <constraints>
+            <constraint id="828d-416a-c6f8-bcfe" field="selections" scope="parent" shared="true" type="min" value="3"/>
+            <constraint id="3ef6-9ca6-5a08-5507" field="selections" scope="parent" shared="true" type="max" value="6"/>
+          </constraints>
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="83"/>
+          </costs>
+          <selectionEntries>
+            <selectionEntry name="Pilot Sidearm" id="4ae3-4f58-983d-cad7" hidden="false" import="true" type="upgrade">
+              <constraints>
+                <constraint id="1f32-0246-f939-1c16-min" field="selections" scope="parent" shared="true" type="min" value="1"/>
+                <constraint id="1f32-0246-f939-1c16-max" field="selections" scope="parent" shared="true" type="max" value="1"/>
+              </constraints>
+              <costs>
+                <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="5"/>
+              </costs>
+              <infoLinks>
+                <infoLink name="HAMR Pistol" id="4a9a-1172-e7c7-c98f" hidden="false" targetId="db51-f903-2cfc-a03d" type="profile"/>
+              </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Frame Weapon" id="17a2-aec2-e63d-9ae2" defaultSelectionEntryId="none" hidden="false">
+              <constraints>
+                <constraint id="9bbc-1905-d9bb-f29c" field="selections" scope="parent" shared="true" type="max" value="1"/>
+              </constraints>
+              <entryLinks>
+                <entryLink name="Auto HAMR Rifle" id="5079-f618-9b1c-0d57" defaultAmount="1" hidden="false" import="true" targetId="747b-8312-5204-0a0f" type="selectionEntry">
+                  <modifiers>
+                    <modifier affects="profiles.Weapon Profile" field="name" join=" " type="prepend" value="Frame"/>
+                  </modifiers>
+                </entryLink>
+                <entryLink name="Grenade Launcher" id="a576-d49f-9f3e-068b" hidden="false" import="true" targetId="8b99-c39d-a9b3-6012" type="selectionEntry">
+                  <modifiers>
+                    <modifier affects="profiles.Weapon Profile" field="name" join=" " type="prepend" value="Frame"/>
+                    <modifier affects="profiles.Weapon Profile" field="ed87-b9c1-459b-efb1" join=", " type="append" value="Linked"/>
+                    <modifier field="3ef7-040e-27e8-40c1" type="increment" value="3"/>
+                    <modifier affects="profiles.Weapon Profile" field="name" join="" type="append" value="s"/>
+                  </modifiers>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Warsuit Melee Weapon" id="b3b9-1d68-9604-c640" defaultSelectionEntryId="d3eb-657e-0d6a-e4b7" hidden="false">
+              <constraints>
+                <constraint id="ac15-e004-d670-a5a5-min" field="selections" includeChildSelections="true" scope="self" shared="true" type="min" value="1"/>
+                <constraint id="ac15-e004-d670-a5a5-max" field="selections" includeChildSelections="true" scope="self" shared="true" type="max" value="1"/>
+              </constraints>
+              <entryLinks>
+                <entryLink name="Ascendant Ripsaw Sword" id="d3eb-657e-0d6a-e4b7" defaultAmount="1" hidden="false" import="true" targetId="67b0-7b3e-cabe-fb36" type="selectionEntry"/>
+                <entryLink name="Ascendant Warmace" id="ecf2-778a-13d6-5bc5" hidden="false" import="true" targetId="dbd6-0e84-216d-4a0a" type="selectionEntry"/>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Warsuit Ranged Weapon" id="9654-b697-1fda-c103" defaultSelectionEntryId="9b1c-9633-a31b-7023" hidden="false">
+              <constraints>
+                <constraint id="4c95-be49-e3fa-092d-min" field="selections" includeChildSelections="true" scope="self" shared="true" type="min" value="1"/>
+                <constraint id="4c95-be49-e3fa-092d-max" field="selections" includeChildSelections="true" scope="self" shared="true" type="max" value="1"/>
+              </constraints>
+              <entryLinks>
+                <entryLink name="HAMR MG" id="e6c6-2ea3-6127-417d" hidden="false" import="true" targetId="4836-7c31-7d0c-d50f" type="selectionEntry"/>
+                <entryLink name="Heavy Flamethrower" id="9b1c-9633-a31b-7023" defaultAmount="1" hidden="false" import="true" targetId="dfac-5bd6-a5b1-4616" type="selectionEntry"/>
+                <entryLink name="Heavy Fusion Blaster" id="54aa-8312-a6dc-c061" hidden="false" import="true" targetId="2234-18fa-f4d4-71f5" type="selectionEntry"/>
+              </entryLinks>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+        </selectionEntry>
+      </selectionEntries>
     </selectionEntry>
   </selectionEntries>
   <sharedRules>
@@ -755,15 +1045,198 @@
     </selectionEntry>
     <selectionEntry name="Vehicular Weapons" id="05a5-f430-a3e4-f791" hidden="false" import="true" type="upgrade">
       <selectionEntries>
-        <selectionEntry name="Main Cannon" id="48cf-116f-cb9a-bfe2" hidden="false" import="true" type="upgrade">
+        <selectionEntry name="Battle Cannon" id="48cf-116f-cb9a-bfe2" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="27"/>
+          </costs>
           <profiles>
-            <profile name="Main Cannon" id="f97a-1c1e-8010-03a0" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+            <profile name="Battle Cannon" id="f97a-1c1e-8010-03a0" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">24&quot;</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">2</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">5</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">4</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Accurate</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Twin Autocannons" id="148e-2b26-5f1e-5ea1" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="32"/>
+          </costs>
+          <profiles>
+            <profile name="Twin Autocannons" id="dc11-fb75-8012-1304" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">24</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">4</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">3</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">2</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Critical 10+, Linked</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Hallowed Infernogun" id="6ed1-ca74-5831-4aaa" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="27"/>
+          </costs>
+          <profiles>
+            <profile name="Hallowed Infernogun" id="0c5f-9ec3-5ace-bd21" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">LT</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">3</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">2</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">3</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Anti-Infantry, Engulf, Suppressing</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Prosecution Cannon" id="da25-fa95-2a62-6c90" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="36"/>
+          </costs>
+          <profiles>
+            <profile name="Prosecution Cannon" id="090a-7a24-f9b1-540f" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
               <characteristics>
                 <characteristic name="Range" typeId="74c2-5191-931e-1f4a">30&quot;</characteristic>
                 <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">2</characteristic>
-                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">6</characteristic>
-                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">5</characteristic>
-                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Turret</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">7</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">6</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Accurate, Anti-Monster, Anti-Vehicle</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Purification Launcher" id="4767-ada8-dc67-ac8c" hidden="false" import="true" type="upgrade">
+          <profiles>
+            <profile name="Purification Launcher" id="07cd-267c-12ab-bd13" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">36</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">4</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">4</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">3</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Barrage, Indirect</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="HAMR MG" id="4836-7c31-7d0c-d50f" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="32"/>
+          </costs>
+          <profiles>
+            <profile name="HAMR MG" id="97ec-b20d-d77d-5cb5" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">24</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">4</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">2</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">2</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Anti-Infantry, Suppressing</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Heavy Flamethrower" id="dfac-5bd6-a5b1-4616" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="12"/>
+          </costs>
+          <profiles>
+            <profile name="Heavy Flamethrower" id="30c6-6332-2223-db9f" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">LT</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">4</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">1</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Anti-Infantry, Engulf, Suppressing</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Heavy Fusion Blaster" id="2234-18fa-f4d4-71f5" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="32"/>
+          </costs>
+          <profiles>
+            <profile name="Heavy Fusion Blaster" id="b1a3-61ca-7df8-f44f" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">ST</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">2</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">8</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">6</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Anti-Monster, Anti-Vehicle, Engulf, Meltdown</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Heavy Plasma Array" id="4899-1be7-5592-a2d4" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="40"/>
+          </costs>
+          <profiles>
+            <profile name="Heavy Plasma Array" id="109c-9899-0ebb-9ddc" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">24</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">2</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">4</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">3</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Overcharge</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Grenade Launcher" id="8b99-c39d-a9b3-6012" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="22"/>
+          </costs>
+          <profiles>
+            <profile name="Grenade Launcher" id="7834-6377-8690-fbb7" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">24</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">2</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">3</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">3</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Anti-Infantry, Indirect</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
+    <selectionEntry name="Ascendant Weapons" id="cf5b-2017-a76e-3ca1" hidden="false" import="true" type="upgrade">
+      <entryLinks>
+        <entryLink name="Grenade Launcher" id="3226-011e-ce10-c0f2" hidden="false" import="true" targetId="8b99-c39d-a9b3-6012" type="selectionEntry"/>
+      </entryLinks>
+      <selectionEntries>
+        <selectionEntry name="Ascendant Ripsaw Sword" id="67b0-7b3e-cabe-fb36" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="7"/>
+          </costs>
+          <profiles>
+            <profile name="Ascendant Ripsaw Sword" id="e441-05f3-8fe7-b80f" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">3</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">2</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">2</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Extra Hits 9+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Ascendant Warmace" id="dbd6-0e84-216d-4a0a" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="9"/>
+          </costs>
+          <profiles>
+            <profile name="Ascendant Warmace" id="5fe7-abc0-26f4-630d" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">2</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">3</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">4</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Anti-Monster, Anti-Vehicle</characteristic>
               </characteristics>
             </profile>
           </profiles>

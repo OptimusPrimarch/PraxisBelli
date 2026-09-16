@@ -220,7 +220,7 @@
       <description>Targets of this weapon&apos;s attacks gain a suppression marker, regardless of the outcome of the attack.</description>
     </rule>
     <rule name="Coaxial" id="93e8-2589-f3df-0ce0" hidden="false">
-      <description>This weapon must target the same target as the weapon listed in the annotation.</description>
+      <description>This weapon must select a target in the same arc as the weapon it is attached to.</description>
     </rule>
     <rule name="Linked-Weapon" id="cd4f-1017-04d8-c017" hidden="false">
       <description>Reroll all misses when attacking with this weapon.</description>
