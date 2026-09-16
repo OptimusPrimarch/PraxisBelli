@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue name="Imperial Saints" id="436e-9e82-635c-8b72" battleScribeVersion="2.03" gameSystemId="sys-cd5a-2de6-f8aa-24ee" gameSystemRevision="1" library="false" revision="2" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue name="Imperial Saints" id="436e-9e82-635c-8b72" battleScribeVersion="2.03" gameSystemId="sys-cd5a-2de6-f8aa-24ee" gameSystemRevision="1" library="false" revision="3" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <forceEntries>
     <forceEntry name="Standard Force" id="d3fa-0ed7-929e-0632" hidden="false">
       <categoryLinks>

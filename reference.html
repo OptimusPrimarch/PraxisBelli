@@ -504,6 +504,14 @@
       <p>Higher Evasion is harder to hit; higher Armor is harder to damage. There is no attacker-side
       accuracy stat — to-hit difficulty is entirely defender-side, and attacker differentiation comes
       from traits, re-rolls, and Anti-[Keyword] weapons.</p>
+      <p class="note"><strong>Critical Hit</strong> — a hit roll of an unmodified 10 is a Critical
+      Hit. On its own this changes nothing beyond the success it already represents under the
+      floor/ceiling rule — it's a named hook, not a bonus, existing purely so traits can key off it
+      (<code>Extra Hits (X)</code>, <code>Critical (X)</code>, <code>Negates (Critical Hits)</code>;
+      §12). Deliberately no baseline effect for anyone: a universal "natural 10s also auto-wound"
+      rule would let every weapon ignore the AP scale on a flat 10% chance regardless of how
+      mismatched it is against the target's Armor — keeping the bonus trait-gated means only weapons
+      built for that identity get it.</p>
 
       <h3>Armor above 10</h3>
       <div class="rule-box">
@@ -1061,11 +1069,16 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <code>Anti-Caster</code> has something to target; actual casting mechanics are undesigned.</dd>
         <dt>Anti-[Keyword]</dt><dd>Against a target with the matching keyword, each successful damage roll counts as <strong>two hits</strong> instead of one. Because hits are allocated individually, the extra hits may spill onto other models in the unit. Defined for every TYPE and CATEGORY, plus Caster.</dd>
         <dt>Bulwark</dt><dd>Reduce incoming damage by 1, to a minimum of 1.</dd>
-        <dt>Ablative Plating</dt><dd>While this model would take doubled damage from a hit with
-        Anti-Vehicle or Anti-Armor, it instead takes that damage normally. Narrower than a flat Armor
-        increase on purpose — it specifically answers weapons built to kill vehicles, not everything.
-        Industrial materials science, not warded plate: the sci-fi register stays technological since
-        Regiments (the faction using it first) have no oath-access at all.</dd>
+        <dt>Ablative Plating</dt><dd>Grants Negates (Anti-Vehicle) and Negates (Anti-Armor). Narrower
+        than a flat Armor increase on purpose — it specifically answers weapons built to kill
+        vehicles, not everything. Industrial materials science, not warded plate: the sci-fi register
+        stays technological since Regiments (the faction using it first) have no oath-access at
+        all.</dd>
+        <dt>Warded Plate <span class="pill open">name provisional</span></dt><dd>Grants
+        Negates (Anti-Infantry). The infantry-scale cousin of Ablative Plating — Oathkeepers (Deep
+        Oath) are the first faction with the actual oath-access to earn the "warded" version rather
+        than the merely industrial one. First application: Oathkeepers' Terminator-tier Heavies,
+        alongside Shrug.</dd>
         <dt>Indomitable</dt><dd>Reduce the AP of incoming attacks by 1, minimum 0. Doesn't stop a
         dedicated anti-armor weapon from doing its job, but blunts anything that wasn't built to
         punch through this armor specifically. Not named <code>Bulwark</code> — that name is already
@@ -1114,6 +1127,23 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         rather than personal fury, keeping it distinct from the "zealotry rerolls damage, not hits"
         convention (Martyrs, all / Wrathbound). First application: the Heavy Ripsaw Sword, Repentia
         Squad.</dd>
+        <dt>Extra Hits (X)</dt><dd>When this weapon's hit roll is X or higher, it generates one
+        additional hit, resolved normally (including its own damage check). Defaults to X=10 (a true
+        Critical Hit) unless the weapon states a lower threshold — that threshold is the real design
+        lever. First application: the Heavy Ripsaw Sword, Repentia Squad, at Extra Hits (10) —
+        deliberately the stingy default, so it reads as a spike on a hot streak, not a new
+        baseline.</dd>
+        <dt>Critical (X)</dt><dd>When this weapon's hit roll is X or higher, that hit automatically
+        succeeds its damage check without rolling. Same threshold convention as Extra Hits (X).
+        Deliberately scoped to specific weapons rather than being the universal Critical Hit rule
+        itself — see §03's note on why a blanket version of this undermines the AP scale.</dd>
+        <dt>Negates (X)</dt><dd>This model treats attacks or effects carrying [X] as though they did
+        not carry it; everything else about the attack or effect still resolves normally. The
+        defensive mirror of Anti-[Keyword]'s "specifically punishes one named thing." Retroactively
+        absorbs Ablative Plating and Warded Plate (below), which keep their flavor names but are now
+        defined as grants of this shared primitive. First new application: Repentia Squad's
+        Negates (Suppressing) — they don't gain suppression markers from Suppressing weapons at all,
+        a unit that's already stopped caring whether it dies.</dd>
       </dl>
 
       <h4>Movement</h4>
@@ -2079,17 +2109,19 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       Superior</strong>.</p>
       <div class="tw"><table>
         <tr><td class="k">Stat line</td><td>Speed6 / Mettle4 / Evasion7 / Armor3 / Toughness1 — the lowest Armor of any Infantry unit in the roster, below even Regiments' Arm4 baseline, and the first Saints unit below the faction's own Mettle5 floor. Melee-only across the whole unit, the only unit in the roster with no ranged option at all.</td></tr>
-        <tr><td class="k">Heavy Ripsaw Sword <span class="pill">troopers</span></td><td>A2/AP1/D2, carrying both <code>Lance</code> and <code>Onslaught</code> — AP1 off the charge, effective AP2 with rerolled hits while charging.</td></tr>
+        <tr><td class="k">Heavy Ripsaw Sword <span class="pill">troopers</span></td><td>A2/AP1/D2, carrying <code>Lance</code>, <code>Onslaught</code>, and <code>Extra Hits (10)</code> — AP1 off the charge, effective AP2 with rerolled hits while charging, plus a rare bonus-hit spike on a true Critical Hit. Above-average on a normal spread, a genuine nightmare on a hot streak.</td></tr>
         <tr><td class="k">Cerebral Flagellator <span class="pill">Superior</span></td><td>A3/AP0/D1, <code>Anti-Infantry</code> — more attacks, no penetration; she herds, she doesn't personally out-butcher them.</td></tr>
         <tr><td class="k">Terrifying</td><td>Unit-wide. Second infantry carrier after Oathreapers.</td></tr>
+        <tr><td class="k">Negates (Suppressing)</td><td>Unit-wide. They don't gain suppression markers from Suppressing weapons at all — a unit that's already stopped caring whether it dies doesn't flinch at incoming fire in the first place.</td></tr>
         <tr><td class="k">Undaunted (7+)</td><td>Gated on a Repentia Superior being present in the unit — mirrors the real Overseer of Redemption's all-or-nothing shape (rerolls only exist while she's alive), built from entirely new infrastructure this session.</td></tr>
       </table></div>
-      <p class="note"><span class="pill open">Still open</span> Onslaught and Anti-Infantry haven't
-      been assigned a flat trait value yet (same unpriced bucket as everything but Lance); the
-      Sergeant's melee/ranged menus haven't been checked against the points formula; Repentia Squad's
-      full points cost hasn't been run; the rest of the Saints roster (Sisters Novitiate, Celestian
-      Insidiants, Seraphim/Zephyrim/Arco-flagellants, Retributor/Dominion Squad, Sororitas Rhino/
-      Immolator, Paragon Warsuits/Mortifiers/Penitent Engines) is still scaffolding only.</p>
+      <p class="note"><span class="pill open">Still open</span> Onslaught, Extra Hits (X), and
+      Anti-Infantry haven't been assigned a flat trait value yet (same unpriced bucket as everything
+      but Lance); the Sergeant's melee/ranged menus haven't been checked against the points formula;
+      Repentia Squad's full points cost hasn't been run; the rest of the Saints roster (Sisters
+      Novitiate, Celestian Insidiants, Seraphim/Zephyrim/Arco-flagellants, Retributor/Dominion Squad,
+      Sororitas Rhino/Immolator, Paragon Warsuits/Mortifiers/Penitent Engines) is still scaffolding
+      only.</p>
 
       <h3>Xenos — outside the network</h3>
       <p>The Oath is a <em>human</em> technology. Each xenos faction is defined by how it fails to fit
