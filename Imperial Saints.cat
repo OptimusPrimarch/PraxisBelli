@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue name="Imperial Saints" id="436e-9e82-635c-8b72" battleScribeVersion="2.03" gameSystemId="sys-cd5a-2de6-f8aa-24ee" gameSystemRevision="1" library="false" revision="3" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue name="Imperial Saints" id="436e-9e82-635c-8b72" battleScribeVersion="2.03" gameSystemId="sys-cd5a-2de6-f8aa-24ee" gameSystemRevision="2" library="false" revision="4" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <forceEntries>
     <forceEntry name="Standard Force" id="d3fa-0ed7-929e-0632" hidden="false">
       <categoryLinks>
@@ -25,7 +25,7 @@
       <profiles>
         <profile name="Battle Sisters" id="2812-94ef-7ce2-ca81" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
           <characteristics>
-            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">6</characteristic>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">6&quot;</characteristic>
             <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">5</characteristic>
             <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">6</characteristic>
             <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">5</characteristic>
@@ -214,7 +214,7 @@
                 </modifier>
               </modifiers>
             </entryLink>
-            <entryLink name="HAMR AR" id="498c-b4a6-7e2f-8b18" hidden="false" import="true" targetId="747b-8312-5204-0a0f" type="selectionEntry">
+            <entryLink name="Auto HAMR Rifle" id="498c-b4a6-7e2f-8b18" hidden="false" import="true" targetId="747b-8312-5204-0a0f" type="selectionEntry">
               <constraints>
                 <constraint id="fc9e-03e7-82ec-df80" field="selections" scope="parent" shared="true" type="max" value="1"/>
               </constraints>
@@ -322,7 +322,7 @@
         <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="96"/>
       </costs>
       <entryLinks>
-        <entryLink name="Infantry Melee Weapons" id="33db-9f3b-1d84-be24" hidden="false" import="true" sortIndex="1" targetId="5ca4-59ef-62fb-f9a2" type="selectionEntryGroup">
+        <entryLink name="Melee Weapon" id="33db-9f3b-1d84-be24" hidden="false" import="true" sortIndex="1" targetId="5ca4-59ef-62fb-f9a2" type="selectionEntryGroup">
           <constraints>
             <constraint id="2836-b848-fc50-3bcf" field="selections" scope="parent" shared="true" type="max" value="1"/>
           </constraints>
@@ -339,7 +339,7 @@
       <profiles>
         <profile name="Battle Sister Commander" id="c29f-0117-db2e-43ca" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
           <characteristics>
-            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">6</characteristic>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">6&quot;</characteristic>
             <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">7</characteristic>
             <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">6</characteristic>
             <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">5</characteristic>
@@ -451,6 +451,184 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntry>
+    <selectionEntry name="Fanatical Sisters" id="b33a-a4eb-0691-0160" hidden="false" import="true" type="unit">
+      <categoryLinks>
+        <categoryLink name="Shock" id="7546-3c67-1731-500a" hidden="false" primary="true" targetId="49f8-be80-6328-d7dc"/>
+        <categoryLink name="Infantry" id="81b6-737c-2af3-75e5" hidden="false" primary="false" targetId="0855-9c5c-35f4-04c1"/>
+      </categoryLinks>
+      <infoLinks>
+        <infoLink name="Terrifying" id="a45a-d8bc-85ef-03a6" hidden="false" targetId="4e70-077c-1136-4bb8" type="rule"/>
+        <infoLink name="Negates" id="f062-c2d6-19d4-3905" hidden="false" targetId="a961-b66e-f484-6d2d" type="rule">
+          <modifiers>
+            <modifier field="name" type="append" value="(Suppressing)"/>
+          </modifiers>
+        </infoLink>
+        <infoLink name="Martyrs, All" id="7002-4bcb-be75-6bf3" hidden="false" targetId="33e3-3e30-8208-b5c4" type="rule"/>
+      </infoLinks>
+      <profiles>
+        <profile name="Fanatical Sisters" id="46a6-e256-e81d-6669" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
+          <characteristics>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">6&quot;</characteristic>
+            <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">4</characteristic>
+            <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">7</characteristic>
+            <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">3</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry name="Fanatic with Heavy Ripsaw Sword" id="6bdc-527b-b32a-6476" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="b210-e53e-7130-a827" field="selections" scope="parent" shared="true" type="min" value="9"/>
+            <constraint id="4add-6058-9211-e4df" field="selections" scope="parent" shared="true" type="max" value="9"/>
+          </constraints>
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="16"/>
+          </costs>
+          <infoLinks>
+            <infoLink name="Heavy Ripsaw Sword" id="be88-2440-6bd2-8e76" hidden="false" targetId="dc11-7045-670c-9cf2" type="profile"/>
+          </infoLinks>
+        </selectionEntry>
+        <selectionEntry name="Superior with Cerebral Flagellator" id="46a2-8f4a-4c9e-c450" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="272d-5e61-284f-25ae" field="selections" scope="parent" shared="true" type="min" value="1"/>
+            <constraint id="f45f-ab40-a640-1157" field="selections" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="16"/>
+          </costs>
+          <infoLinks>
+            <infoLink name="Cerebral Flagellator" id="5196-91d2-d46b-630a" hidden="false" targetId="72a4-9e21-dd5a-359d" type="profile"/>
+          </infoLinks>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
+    <selectionEntry name="Sister Defensors" id="f1a9-07e5-effa-e1f5" hidden="false" import="true" type="upgrade">
+      <categoryLinks>
+        <categoryLink name="Line" id="eaf9-7fd0-e205-f20d" hidden="false" primary="true" targetId="9bdf-0174-74ef-f0af"/>
+        <categoryLink name="Infantry" id="05d8-08d9-d60a-ba70" hidden="false" primary="false" targetId="0855-9c5c-35f4-04c1"/>
+      </categoryLinks>
+      <infoLinks>
+        <infoLink name="Martyrs, All" id="871c-0967-dfbe-25d8" hidden="false" targetId="33e3-3e30-8208-b5c4" type="rule"/>
+        <infoLink name="Bodyguard" id="be6c-8b1e-5226-fd89" hidden="false" targetId="bcac-803d-5de6-3532" type="rule"/>
+        <infoLink name="Shrugs" id="5841-c6f0-d456-300d" hidden="false" targetId="d53b-a921-fbd3-aa6f" type="rule">
+          <modifiers>
+            <modifier field="name" type="append" value="7+"/>
+          </modifiers>
+        </infoLink>
+      </infoLinks>
+      <profiles>
+        <profile name="Battle Sisters" id="da07-a500-b257-9c68" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
+          <characteristics>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">6&quot;</characteristic>
+            <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">5</characteristic>
+            <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">6</characteristic>
+            <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">5</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">1</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry name="Defensor with Halberd" id="4b06-d676-fce0-a998" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="621d-10c5-856c-ada1" field="selections" scope="parent" shared="true" type="max" value="10"/>
+            <constraint id="984e-a4cd-05b5-17ef" field="selections" scope="parent" shared="true" type="min" value="10"/>
+          </constraints>
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="23"/>
+          </costs>
+          <infoLinks>
+            <infoLink name="Anointed Halberd" id="d347-9b9d-2e06-650e" hidden="false" targetId="9e01-92f2-a2e1-2a33" type="profile"/>
+          </infoLinks>
+          <modifiers>
+            <modifier field="621d-10c5-856c-ada1" type="decrement" value="1">
+              <conditions>
+                <condition childId="8882-919a-85a9-1ce2" childName="Defensor Superior" field="selections" scope="parent" shared="true" type="atLeast" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="984e-a4cd-05b5-17ef" type="decrement" value="1">
+              <conditions>
+                <condition childId="8882-919a-85a9-1ce2" childName="Defensor Superior" field="selections" scope="parent" shared="true" type="atLeast" value="1"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Defensor Superior" id="8882-919a-85a9-1ce2" hidden="false">
+          <constraints>
+            <constraint id="44d5-1c6e-d57a-4910" field="selections" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry name="Defensor Superior" id="5091-afa3-a830-f459" hidden="false" import="true" type="upgrade">
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Superior Weapon" id="adef-2129-d1c0-9b26" hidden="false">
+                  <constraints>
+                    <constraint id="d77e-a99f-e6a9-8b33-min" field="selections" scope="parent" shared="true" type="min" value="1"/>
+                    <constraint id="d77e-a99f-e6a9-8b33-max" field="selections" scope="parent" shared="true" type="max" value="1"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink name="Hallowed Spear" id="b7ac-9b47-1bbc-e6e5" hidden="false" import="true" targetId="7161-3649-6095-6d43" type="selectionEntry"/>
+                    <entryLink name="Hallowed Mace" id="dad4-65ae-5c12-d70f" hidden="false" import="true" targetId="7f97-6535-13df-45df" type="selectionEntry"/>
+                  </entryLinks>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+    </selectionEntry>
+    <selectionEntry name="Fanatic Mindless" id="71bc-ed77-39d1-db48" hidden="false" import="true" type="upgrade">
+      <categoryLinks>
+        <categoryLink name="Shock" id="2b60-945e-db8e-41b5" hidden="false" primary="true" targetId="49f8-be80-6328-d7dc"/>
+        <categoryLink name="Monster" id="4741-dee5-a1f5-450e" hidden="false" primary="false" targetId="18b8-e55b-7c93-8700"/>
+      </categoryLinks>
+      <entryLinks>
+        <entryLink name="Electro-Flails" id="12e7-ddd4-452b-0f0b" hidden="false" import="true" targetId="875c-92d5-380d-1e1c" type="selectionEntry">
+          <constraints>
+            <constraint id="7587-0e86-d0ae-43f5" field="selections" scope="parent" shared="true" type="max" value="20"/>
+            <constraint id="c1c3-adc8-643a-0a5b" field="selections" scope="parent" shared="true" type="min" value="5"/>
+          </constraints>
+          <modifiers>
+            <modifier field="3ef7-040e-27e8-40c1" type="increment" value="20"/>
+          </modifiers>
+        </entryLink>
+      </entryLinks>
+      <infoLinks>
+        <infoLink name="Mindless" id="aa80-aab5-c910-adc9" hidden="false" targetId="06fa-4b0c-f09f-39b3" type="rule"/>
+      </infoLinks>
+      <profiles>
+        <profile name="Fanatic Mindless" id="b3e8-d847-bc3d-61d8" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
+          <characteristics>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">6</characteristic>
+            <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">1</characteristic>
+            <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">5</characteristic>
+            <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">2</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">2</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+    <selectionEntry name="Prophesier MBT" id="4f28-58ec-fc66-3863" hidden="false" import="true" type="upgrade">
+      <categoryLinks>
+        <categoryLink name="Armor" id="e386-104b-c37b-3e7c" hidden="false" primary="true" targetId="7681-e699-f10a-e57b"/>
+        <categoryLink name="Vehicle" id="d810-35ba-9c69-5a51" hidden="false" primary="false" targetId="4e41-bd1a-1e9f-f591"/>
+      </categoryLinks>
+      <infoLinks>
+        <infoLink name="Martyrs, All" id="1d47-edfd-521d-7806" hidden="false" targetId="33e3-3e30-8208-b5c4" type="rule"/>
+      </infoLinks>
+      <profiles>
+        <profile name="Prophesier MBT" id="2747-ef67-f97a-820e" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
+          <characteristics>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">8&quot;</characteristic>
+            <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">6</characteristic>
+            <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">4</characteristic>
+            <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">12</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">10</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
   </selectionEntries>
   <sharedRules>
     <rule name="Martyrs, All" id="33e3-3e30-8208-b5c4" hidden="false">
@@ -507,12 +685,97 @@
         </profile>
       </profiles>
     </selectionEntry>
+    <selectionEntry name="Expanded INF Melee" id="0550-f355-bc68-6b93" hidden="false" import="true" type="upgrade">
+      <selectionEntries>
+        <selectionEntry name="Anointed Halberd" id="65d9-572c-51b8-a960" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="5"/>
+          </costs>
+          <profiles>
+            <profile name="Anointed Halberd" id="9e01-92f2-a2e1-2a33" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">2</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">2</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Extra Hits 10+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Hallowed Mace" id="7f97-6535-13df-45df" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="8"/>
+          </costs>
+          <profiles>
+            <profile name="Hallowed Mace" id="4b22-0ef0-a7a8-8f7e" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">3</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">1</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">2</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Critical 10+, Extra Hits 10+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Hallowed Spear" id="7161-3649-6095-6d43" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="9"/>
+          </costs>
+          <profiles>
+            <profile name="Hallowed Spear" id="2abb-e8c0-07c7-c12b" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">2</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">3</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">2</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Lance</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Electro-Flails" id="875c-92d5-380d-1e1c" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="3"/>
+          </costs>
+          <profiles>
+            <profile name="Electro-Flails" id="7b61-59fb-a3dd-76cb" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">3</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Extra Hits 10+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
+    <selectionEntry name="Vehicular Weapons" id="05a5-f430-a3e4-f791" hidden="false" import="true" type="upgrade">
+      <selectionEntries>
+        <selectionEntry name="Main Cannon" id="48cf-116f-cb9a-bfe2" hidden="false" import="true" type="upgrade">
+          <profiles>
+            <profile name="Main Cannon" id="f97a-1c1e-8010-03a0" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">30&quot;</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">2</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">6</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">5</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Turret</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup name="Special Weapons" id="ca43-0654-9a1f-090a" hidden="false">
       <comment>Infantry Squads</comment>
       <entryLinks>
-        <entryLink name="HAMR AR" id="37e3-0855-0fbe-b643" hidden="false" import="true" targetId="747b-8312-5204-0a0f" type="selectionEntry"/>
+        <entryLink name="Auto HAMR Rifle" id="37e3-0855-0fbe-b643" hidden="false" import="true" targetId="747b-8312-5204-0a0f" type="selectionEntry"/>
       </entryLinks>
       <selectionEntries>
         <selectionEntry name="Flamethrower" id="e4aa-91a1-03fa-5b82" hidden="false" import="true" type="upgrade">
@@ -612,6 +875,38 @@
                 <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">4</characteristic>
                 <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">3</characteristic>
                 <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Anti-Caster, Precision</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Heavy Ripsaw Sword" id="37ed-8174-2f8e-02b9" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="7"/>
+          </costs>
+          <profiles>
+            <profile name="Heavy Ripsaw Sword" id="dc11-7045-670c-9cf2" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">2</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">1</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">2</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Lance, Onslaught, Extra Hits 10+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Cerebral Flagellator" id="4477-280d-7da4-fd50" hidden="false" import="true" type="upgrade">
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="5"/>
+          </costs>
+          <profiles>
+            <profile name="Cerebral Flagellator" id="72a4-9e21-dd5a-359d" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+              <characteristics>
+                <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
+                <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">3</characteristic>
+                <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
+                <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">1</characteristic>
+                <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Anti-Infantry</characteristic>
               </characteristics>
             </profile>
           </profiles>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem name="PraxisBelli" id="sys-cd5a-2de6-f8aa-24ee" battleScribeVersion="2.03" revision="1" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem name="PraxisBelli" id="sys-cd5a-2de6-f8aa-24ee" battleScribeVersion="2.03" revision="2" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <categoryEntries>
     <categoryEntry name="Armor" id="7681-e699-f10a-e57b" hidden="false">
       <description>Force Organization Keyword</description>
@@ -11,7 +11,7 @@
     <categoryEntry name="Command" id="c892-1e80-87b3-2ee2" hidden="false">
       <description>Force Organization Keyword</description>
       <infoLinks>
-        <infoLink name="Leadership Aura" id="1fc6-d164-423d-dce8" hidden="false" targetId="92ca-3761-4367-8623" type="rule"/>
+        <infoLink name="Inspiring Leadership" id="1fc6-d164-423d-dce8" hidden="false" targetId="92ca-3761-4367-8623" type="rule"/>
       </infoLinks>
     </categoryEntry>
     <categoryEntry name="Line" id="9bdf-0174-74ef-f0af" hidden="false">
@@ -272,6 +272,30 @@
     </rule>
     <rule name="Resurrect" id="46d3-236b-f7c0-c5d2" hidden="false">
       <description>When activated, this unit makes a MET test; on a success, immediately restore one of this unit&apos;s slain models, at full wounds.</description>
+    </rule>
+    <rule name="Onslaught" id="077c-3671-8db3-5472" hidden="false">
+      <description>When charging, reroll failed hit rolls</description>
+    </rule>
+    <rule name="Extra Hits" id="092f-5399-28d0-3ae7" hidden="false">
+      <description>When this weapon&apos;s hit roll is X+, it generates one additional regular hit (doesn&apos;t duplicate critical hits)</description>
+    </rule>
+    <rule name="Critical" id="bcf1-0fa5-a3c0-4f9f" hidden="false">
+      <description>When this weapon&apos;s hit roll is X+, that hit automatically deals its damage as wounds without rolling for ARM.</description>
+    </rule>
+    <rule name="Negates" id="a961-b66e-f484-6d2d" hidden="false">
+      <description>This model ignores the effects of [X] as though it weren&apos;t part of an attack or effect&apos;s resolution.</description>
+    </rule>
+    <rule name="Undaunted" id="3ead-2432-7d96-3c92" hidden="false">
+      <description>When this unit fails a Morale tests, it may immediately attempt one additional, unmodified roll against a TN of X+; a successful role is treated as passing the original Morale test.</description>
+    </rule>
+    <rule name="Bodyguard" id="bcac-803d-5de6-3532" hidden="false">
+      <description>Allied models within 6&quot; of this unit may choose to allocate attacks to this unit; all attacks against that allied unit are then resolved as if this unit had been the original target. This unit is not required to be an eligible target for the attacker when resolving this effect.</description>
+    </rule>
+    <rule name="Shrugs" id="d53b-a921-fbd3-aa6f" hidden="false">
+      <description>For each point of damage this unit would suffer, roll a d10. Results of X+ reduce that damage by 1.</description>
+    </rule>
+    <rule name="Mindless" id="06fa-4b0c-f09f-39b3" hidden="false">
+      <description>This unit automatically passes any Morale tests it takes. If an enemy unit is within charge distance when this unit activates, it must charge the nearest eligible enemy unit. In addition, this unit is never considered to be in cover and cannot benefit from it.</description>
     </rule>
   </sharedRules>
 </gameSystem>

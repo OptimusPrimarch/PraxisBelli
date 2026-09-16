@@ -135,6 +135,8 @@ Higher Mettle is better, like every other stat on the card. A unit with Mettle 4
 
 **Check timing:** at the start of a unit's activation if it holds any markers, or immediately when an effect forces one.
 
+**Naming note:** this specific check — the one that can step a unit up the morale track — is a **Morale test**. The same underlying roll (d10 + Mettle vs. a target number) is reused for other, unrelated triggered effects (`Rallying Cry`, `Combat Medic`, `Divine Favor`, etc.); those are **Mettle checks**, not Morale tests. The distinction matters because some traits (`Mindless`, `Undaunted (X)`) specifically reference Morale tests only — they don't touch a unit's other Mettle-gated abilities.
+
 ### Suppression markers
 
 Dealt by weapons and effects (see **Suppressing**). **Markers persist until removed.** They do not clear at end of round.
@@ -573,6 +575,7 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 
 **Cost-modifying traits**
 - **Conscript** — this unit costs **25% less**. It may never re-roll a die for any reason, and may not take the Rally action. *Conscripts get raw numbers and none of the benefits of training: `Entrenched`'s Mettle re-roll and `Massed Ranks`' to-hit re-roll both go dead, and once suppressed they can only clear markers one at a time by passing checks they are bad at.*
+- **Mindless** — this unit costs **10% less** *(proposed, flagged for playtesting — the bundle below is genuinely mixed, not purely a downside like `Conscript`, so it's priced far lighter)*. This unit automatically passes Morale tests and cannot benefit from cover. If an enemy unit is within charge distance at the start of this unit's activation, it must declare a charge against the nearest such enemy unit. Built for units with no will of their own to break — a real reusable primitive, not bespoke to whichever unit debuts it: immune to the game's entire morale-track failure mode, at the cost of a defensive tool (cover) and all positioning agency once an enemy is close enough to reach. *(First application: Arco-Flagellants.)*
 - **Critical Weakspot** — a discount, not a weapon surcharge, since it modifies what the *model* costs rather than what a weapon does. When a Damage check against this model is rolled as an unmodified 10, the attacking weapon's Damage is doubled instead of applied normally. A rare, high-drama vulnerability rather than a steady tax — priced like `Conscript`, as a modifier on the unit total, not folded into the weapon-trait tiers. *(First application: the Marten's extended-fuel-tank package — exposed fuel is a real historical liability, not just flavor text.)*
 - **Fixed** — this weapon cannot be removed, swapped, or exchanged for an upgrade. Used for equipment that comes as part of another weapon, such as a Bayonet on a Rifle.
 

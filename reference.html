@@ -628,6 +628,12 @@
       </ul>
       <p><strong>Check timing:</strong> at the start of a unit's activation if it holds any markers,
       or immediately when an effect forces one.</p>
+      <p class="note"><strong>Naming note:</strong> this specific check — the one that can step a unit
+      up the morale track — is a <strong>Morale test</strong>. The same underlying roll (d10 + Mettle
+      vs. a target number) is reused for other, unrelated triggered effects (<code>Rallying Cry</code>,
+      <code>Combat Medic</code>, <code>Divine Favor</code>, etc.); those are <strong>Mettle
+      checks</strong>, not Morale tests. Some traits (<code>Mindless</code>, <code>Undaunted (X)</code>)
+      specifically reference Morale tests only.</p>
 
       <h3>Suppression markers</h3>
       <p><strong>Markers persist until removed.</strong> They do not clear at end of round.</p>
@@ -1136,7 +1142,7 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <dt>Critical (X)</dt><dd>When this weapon's hit roll is X or higher, that hit automatically
         succeeds its damage check without rolling. Same threshold convention as Extra Hits (X).
         Deliberately scoped to specific weapons rather than being the universal Critical Hit rule
-        itself — see §03's note on why a blanket version of this undermines the AP scale.</dd>
+        itself — see §01's note on why a blanket version of this undermines the AP scale.</dd>
         <dt>Negates (X)</dt><dd>This model treats attacks or effects carrying [X] as though they did
         not carry it; everything else about the attack or effect still resolves normally. The
         defensive mirror of Anti-[Keyword]'s "specifically punishes one named thing." Retroactively
@@ -1221,6 +1227,14 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         weapon's Damage is doubled instead of applied normally. A model-level discount, priced like
         Conscript — a rare, high-drama vulnerability rather than a steady tax. First use: the
         Marten's extended-fuel-tank package.</dd>
+        <dt>Mindless <span class="pill">×0.90, proposed</span></dt>
+        <dd>This unit automatically passes Morale tests and cannot benefit from cover. If an enemy
+        unit is within charge distance at the start of this unit's activation, it must declare a
+        charge against the nearest such enemy unit. Built for units with no will of their own to
+        break — a reusable primitive, not bespoke to whichever unit debuts it. Priced far lighter than
+        Conscript's -25% since the bundle is genuinely mixed (immune to the whole morale-track failure
+        mode, but loses a defensive tool and all positioning agency near an enemy), not purely a tax.
+        First application: Arco-Flagellants.</dd>
       </dl>
 
       <h4>Medical support</h4>
@@ -2072,12 +2086,13 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
       Warded Plate's final name are all still open.</p>
 
       <h3>Imperial Saints — unit roster, naming, and the Sisters-of-Battle lens</h3>
-      <p>Unlike Regiments (Wehrmacht structure, invented vocabulary) and Oathkeepers (modern-Marine
-      structure, invented Oath-prefixed vocabulary), <strong>Saints' naming stays close to the real
-      source material rather than translating it</strong> — Battle Sisters, Battle Sister Commander,
-      Repentia Squad are all kept plainly. The rule that actually has to stay consistent is trait
-      names, not unit names (the Bulwark/Indomitable collision) — this extends the same reasoning to
-      this faction's units specifically.</p>
+      <p>Naming turned out more flexible than "always keep the real term": the user renamed Repentia
+      Squad to <strong>Fanatical Sisters</strong> (models: Fanatic, Superior) by hand while building
+      the <code>.cat</code> file. Actual working rule: <strong>translate to whatever reads best in
+      plain English, real term or invented, case by case</strong> — not a blanket policy. Battle
+      Sisters and Battle Sister Commander kept their real names because those already read well.
+      Weapon names stay scoped-per-faction and freely reusable regardless (the rule that actually has
+      to stay consistent is trait names, per the Bulwark/Indomitable collision).</p>
 
       <h4>Battle Sisters Squad — LINE, the anchor</h4>
       <p>Speed6 / Mettle5 / Evasion6 / Armor5 / Toughness1, carrying <code>Martyrs, all</code>. Fixed
@@ -2101,27 +2116,72 @@ Weapon Cost = 7.09 × Value × R × (1 + Attacks × AP × 0.03)</div>
         <tr><td class="k">Command Presence <span class="pill">pick exactly one</span></td><td>Aura of Courage (10, grants Courage), Aura of Warding (10, grants Bulwark renamed Warding), Zealous Piety (5, grants Ravaging to model+unit), Rallying Cry (5, Mettle test to discard suppression), Anti-Caster Exhortation (15, extends Anti-Caster to model or unit), or Divine Favor (50, Mettle test to restore a slain model). Backed by a new formal <strong>Aura</strong> category (12" range) — reusable infrastructure, not bespoke to the Commander.</td></tr>
       </table></div>
 
-      <h4>Repentia Squad — SHOCK</h4>
+      <h4>Fanatical Sisters — SHOCK <span class="pill">built from Repentia Squad</span></h4>
       <p>Real Repentia Squad (Wahapedia, 10th edition) pulled directly for grounding: 4-9 Sister
       Repentia (M7"/T3/Sv7+/W1/Ld8+) plus 1 mandatory Repentia Superior (Sv3+), Feel No Pain 5+, and a
       signature ability (<strong>Overseer of Redemption</strong>) that only functions while the
-      Superior is alive. Structure mirrored as <strong>9 Sister Repentia + 1 mandatory Repentia
-      Superior</strong>.</p>
+      Superior is alive. Structure mirrored as <strong>9 Fanatics + 1 mandatory Superior</strong>.</p>
       <div class="tw"><table>
-        <tr><td class="k">Stat line</td><td>Speed6 / Mettle4 / Evasion7 / Armor3 / Toughness1 — the lowest Armor of any Infantry unit in the roster, below even Regiments' Arm4 baseline, and the first Saints unit below the faction's own Mettle5 floor. Melee-only across the whole unit, the only unit in the roster with no ranged option at all.</td></tr>
-        <tr><td class="k">Heavy Ripsaw Sword <span class="pill">troopers</span></td><td>A2/AP1/D2, carrying <code>Lance</code>, <code>Onslaught</code>, and <code>Extra Hits (10)</code> — AP1 off the charge, effective AP2 with rerolled hits while charging, plus a rare bonus-hit spike on a true Critical Hit. Above-average on a normal spread, a genuine nightmare on a hot streak.</td></tr>
-        <tr><td class="k">Cerebral Flagellator <span class="pill">Superior</span></td><td>A3/AP0/D1, <code>Anti-Infantry</code> — more attacks, no penetration; she herds, she doesn't personally out-butcher them.</td></tr>
+        <tr><td class="k">Stat line</td><td>Speed6 / Mettle4 / Evasion7 / Armor3 / Toughness1 — the lowest Armor of any Infantry unit in the roster at the time it was built (later exceeded by Arco-Flagellants), and the first Saints unit below the faction's own Mettle5 floor. Melee-only across the whole unit, the only unit in the roster with no ranged option at all. Chassis <strong>16 pts</strong>.</td></tr>
+        <tr><td class="k">Heavy Ripsaw Sword <span class="pill">Fanatics</span></td><td>A2/AP1/D2, carrying <code>Lance</code>, <code>Onslaught</code>, and <code>Extra Hits (10)</code> — AP1 off the charge, effective AP2 with rerolled hits while charging, plus a rare bonus-hit spike on a true Critical Hit. Above-average on a normal spread, a genuine nightmare on a hot streak. <strong>7 pts</strong> — Fanatic w/ Heavy Ripsaw Sword totals <strong>23 pts</strong>.</td></tr>
+        <tr><td class="k">Cerebral Flagellator <span class="pill">Superior</span></td><td>A3/AP0/D1, <code>Anti-Infantry</code> — more attacks, no penetration; she herds, she doesn't personally out-butcher them. <strong>5 pts</strong> — Superior w/ Cerebral Flagellator totals <strong>21 pts</strong> (chassis+weapon only).</td></tr>
         <tr><td class="k">Terrifying</td><td>Unit-wide. Second infantry carrier after Oathreapers.</td></tr>
         <tr><td class="k">Negates (Suppressing)</td><td>Unit-wide. They don't gain suppression markers from Suppressing weapons at all — a unit that's already stopped caring whether it dies doesn't flinch at incoming fire in the first place.</td></tr>
-        <tr><td class="k">Undaunted (7+)</td><td>Gated on a Repentia Superior being present in the unit — mirrors the real Overseer of Redemption's all-or-nothing shape (rerolls only exist while she's alive), built from entirely new infrastructure this session.</td></tr>
+        <tr><td class="k">Undaunted (7+)</td><td>Gated on the Superior being present in the unit — mirrors the real Overseer of Redemption's all-or-nothing shape (rerolls only exist while she's alive), built from entirely new infrastructure this session.</td></tr>
       </table></div>
-      <p class="note"><span class="pill open">Still open</span> Onslaught, Extra Hits (X), and
-      Anti-Infantry haven't been assigned a flat trait value yet (same unpriced bucket as everything
-      but Lance); the Sergeant's melee/ranged menus haven't been checked against the points formula;
-      Repentia Squad's full points cost hasn't been run; the rest of the Saints roster (Sisters
-      Novitiate, Celestian Insidiants, Seraphim/Zephyrim/Arco-flagellants, Retributor/Dominion Squad,
-      Sororitas Rhino/Immolator, Paragon Warsuits/Mortifiers/Penitent Engines) is still scaffolding
-      only.</p>
+      <p class="note">Weapon trait values (Onslaught, Extra Hits (X), Anti-Infantry) are proposed
+      placeholders pending the special-rules costing pass noted below. Terrifying/Negates
+      (Suppressing)/Undaunted (7+) aren't captured by the chassis/weapon formula at all — no
+      infrastructure exists yet for a flat once-per-unit ability tax.</p>
+
+      <h4>Sworn Protectors — LINE <span class="pill">built from Celestian Sacresants</span></h4>
+      <p>Real data: M6"/T3/Sv3+/W1/Ld7+ — the same stat class as a plain Battle Sister, not tougher on
+      paper — 4-9 Sacresants + 1 mandatory Sacresant Superior, a 4+ invulnerable save, and
+      <strong>Sworn Protectors</strong>: "while an Adepta Sororitas Character is leading this unit,
+      each attack targeting it takes -1 to the Wound roll." Same baseline chassis as Battle Sisters on
+      purpose — the identity here is mechanical/ability-driven, not a stat deviation.</p>
+      <div class="tw"><table>
+        <tr><td class="k">Stat line</td><td>Speed6 / Mettle5 / Evasion6 / Armor5 / Toughness1 (Battle Sisters baseline). Chassis <strong>18 pts</strong>.</td></tr>
+        <tr><td class="k">Sworn Protectors <span class="pill">simplified</span></td><td>+1 Armor while a friendly Character leads this unit, rather than a bespoke attacker-side Wound-roll penalty — reuses the Armor stat directly and ties straight into the detached-leader system.</td></tr>
+        <tr><td class="k">Shrug (7+)</td><td>The invuln-save translation. Second-ever use in the game (first: Oathkeeper Terminators) — priced conservative (30% ignore) rather than matching the real save's 50%.</td></tr>
+        <tr><td class="k">Bodyguard <span class="pill">new, reusable</span></td><td>While a friendly unit is within 6" of this unit, it may use this unit's own Shrug (X) instead of its own when it would suffer a wound; if that roll fails, the wound is instead inflicted on this unit. A redirected wound lands directly — no second free Shrug roll.</td></tr>
+        <tr><td class="k">Weapon menu</td><td>Anointed Halberd (A2/AP2/D1, Extra Hits (10), 5 pts), Hallowed Mace (A3/AP1/D2, Critical (10), 8 pts), both models; Spear of the Faithful (Superior-exclusive, A3/AP2/D2, no trait, 9 pts). AP converted from the real weapons' negative 40k save-modifiers onto Praxis Belli's positive scale (Ripsaw Sword AP1 / Plasma Sword AP4 as bracketing reference) — an error caught and fixed mid-build.</td></tr>
+        <tr><td class="k">Reliquary <span class="pill">optional, Superior</span></td><td>Grants an Aura (12") of Indomitable to allies in range. Named distinctly from the Commander's own "Aura of Warding" (Bulwark) so the two don't read as the same grant.</td></tr>
+      </table></div>
+      <p class="note">Critical (X) = 0.5 proposed, same flat tier as the other charge/crit-conditional
+      traits. Shrug (7+)/Bodyguard/Reliquary aren't captured by the formula, same open gap as
+      elsewhere.</p>
+
+      <h4>Arco-Flagellants — SHOCK <span class="pill">built from real Arco-Flagellants</span></h4>
+      <p>Real data: no leader model at all — 3-10 uniform bodies, nothing left to lead — M7"/T3/Sv7+/
+      W2/Ld8+, a weaker 6+ invuln than Sacresants, Feel No Pain 5+, and <strong>Extremis Trigger
+      Word</strong>: once per fight, their Arco-flails jump from A4 to A6 and gain HAZARDOUS (a
+      post-fight per-model destruction risk).</p>
+      <div class="tw"><table>
+        <tr><td class="k">Stat line <span class="pill">corrected twice</span></td><td>Speed6 / Mettle1 / Evasion5 / Armor2 / Toughness2. First pass matched real Toughness3/Armor2 fairly literally and priced at 46/chassis — flagged as steep for a 3-10 body unit. Corrected: Evasion 7→5 (this unit doesn't dodge, it soaks — different texture from Fanatical Sisters' high-Evasion "hard to pin down" profile), Toughness 3→2, Mettle to 1 specifically because <code>Mindless</code> already handles morale (Mettle still matters for other non-morale checks, so this is a real cost). Chassis <strong>22 pts</strong> raw, <strong>20 pts</strong> after the Mindless discount.</td></tr>
+        <tr><td class="k">Arco-Flail</td><td>A3 (down from the real weapon's A4 and this build's own first-draft A4, trimmed for a unit running up to 10 bodies)/AP0/D1, Extra Hits (10). <strong>3 pts</strong>.</td></tr>
+        <tr><td class="k">Mindless <span class="pill">new, reusable, see §12</span></td><td>Auto-passes Morale tests, cannot benefit from cover, must charge the nearest enemy in range at the start of its activation. New named cost-modifying trait (-10%, proposed) rather than a bespoke discount — meant to be reused for future brainless/robotic units. Priced far lighter than Conscript's -25%: the bundle is genuinely mixed, not a pure tax.</td></tr>
+      </table></div>
+      <p class="note"><strong>Genuinely open:</strong> the real unit's Extremis Trigger Word (A4→A6 +
+      a post-fight destruction-risk trait, Hazardous, itself new and not yet built) was discussed at
+      length but deliberately not included — a real, distinct lever from Overcharge (quantity vs.
+      quality, post-fight per-model destruction risk vs. per-die chip damage), just not yet named or
+      locked. Candidates floated and unresolved: Kill Switch, Redline, Overdrive — deliberately
+      mechanical/externally-triggered, since Arco-Flagellants have no oath to draw on. Unshackled was
+      considered and set aside for a different future unit (implies a creature freeing its own
+      suppressed will, which doesn't fit something with no will to free) — same reserved status as
+      Ward.</p>
+      <p class="note"><span class="pill open">Still open across all four</span> every weapon-trait
+      value in this whole pass (Onslaught, Extra Hits (X), Critical (X), Anti-Infantry, Mindless's
+      -10%) is a placeholder pending the dedicated special-rules costing pass the user has flagged for
+      once the roster is further along — likely a minor/major/extreme × buff/penalty grid rather than
+      continued one-off guessing. No whole-unit ability (Terrifying, Negates (Suppressing), Undaunted,
+      Shrug, Bodyguard, Reliquary, Mindless's non-cost effects) is captured by the chassis/weapon
+      formula. Arco-Flagellants' Kill Switch/Redline/Overdrive ability remains undesigned. Saints'
+      remaining roster (Sisters Novitiate, Celestian Insidiants, Seraphim/Zephyrim, Retributor/Dominion
+      Squad, Sororitas Rhino/Immolator, Paragon Warsuits/Mortifiers/Penitent Engines, and one final
+      leadership-options pass) is still scaffolding only — per the roadmap, a few vehicles come after
+      Arco-Flagellants, then leadership, then Saints is ready for playtesting.</p>
 
       <h3>Xenos — outside the network</h3>
       <p>The Oath is a <em>human</em> technology. Each xenos faction is defined by how it fails to fit
