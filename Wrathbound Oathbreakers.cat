@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalogue name="Wrathbound Oathbreakers" id="b334-06ec-6c4f-e601" battleScribeVersion="2.03" gameSystemId="sys-cd5a-2de6-f8aa-24ee" gameSystemRevision="2" library="false" revision="1" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <forceEntries>
+    <forceEntry name="Standard Force" id="02fd-f03f-7452-5c65" hidden="false">
+      <categoryLinks>
+        <categoryLink name="Aerial" id="3bf2-6eb4-681a-f17b" hidden="false" targetId="c4e5-9b9b-cb06-7d59"/>
+        <categoryLink name="Armor" id="c70d-ef73-0282-acfc" hidden="false" targetId="7681-e699-f10a-e57b"/>
+        <categoryLink name="Command" id="e9be-9c86-2cb3-115a" hidden="false" targetId="c892-1e80-87b3-2ee2"/>
+        <categoryLink name="Line" id="3cd3-60f9-fd41-fce4" hidden="false" targetId="9bdf-0174-74ef-f0af"/>
+        <categoryLink name="Recon" id="8072-229e-b9ed-6e63" hidden="false" targetId="e06d-3eb6-2edc-cee7"/>
+        <categoryLink name="Shock" id="a4b6-2ae2-1aa7-e3ad" hidden="false" targetId="49f8-be80-6328-d7dc"/>
+        <categoryLink name="Support" id="3d90-f391-6e80-db0e" hidden="false" targetId="aa80-441a-6103-d793"/>
+      </categoryLinks>
+    </forceEntry>
+  </forceEntries>
+  <selectionEntries>
+    <selectionEntry name="Berserker Legionaries" id="1b76-241f-834a-b126" hidden="false" import="true" type="unit">
+      <categoryLinks>
+        <categoryLink name="Line" id="4a19-5169-627a-0b2d" hidden="false" primary="true" targetId="9bdf-0174-74ef-f0af"/>
+        <categoryLink name="Infantry" id="3f0c-65a3-7d70-b641" hidden="false" primary="false" targetId="0855-9c5c-35f4-04c1"/>
+      </categoryLinks>
+      <infoLinks>
+        <infoLink name="Wrathbound" id="46ea-a4fe-ea7c-80b2" hidden="false" targetId="7ac3-01a0-cc05-a14f" type="rule"/>
+        <infoLink name="Tithe of Skulls" id="6fcc-4aee-aea5-ce30" hidden="false" targetId="1d23-a098-0b93-3eb7" type="rule"/>
+      </infoLinks>
+      <profiles>
+        <profile name="Berserker Legionaries" id="de6c-cd50-c91e-4f23" hidden="false" typeId="c6e9-1c16-74f0-2b58" typeName="Unit Profile">
+          <characteristics>
+            <characteristic name="Speed" typeId="56e8-b0fe-53d2-3faf">7&quot;</characteristic>
+            <characteristic name="Mettle" typeId="e1e4-ceec-a5b1-60d3">5</characteristic>
+            <characteristic name="Evasion" typeId="c0fb-48d3-2f02-fa09">3</characteristic>
+            <characteristic name="Armor" typeId="8e9e-b2d4-8d48-d4d0">6</characteristic>
+            <characteristic name="Wounds" typeId="4a8a-2752-aa8a-d5e3">2</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry name="Berserkers" id="24a8-dfa7-beae-adc0" defaultAmount="5" hidden="false" import="true" type="model">
+          <constraints>
+            <constraint id="85ba-38a8-929f-108d" field="selections" scope="parent" shared="true" type="min" value="5"/>
+            <constraint id="643a-4182-1b14-8c5a" field="selections" scope="parent" shared="true" type="max" value="10"/>
+          </constraints>
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="34"/>
+          </costs>
+          <infoLinks>
+            <infoLink name="HAMR Pistol" id="f511-e897-5a69-a1ca" hidden="false" targetId="049c-3711-4961-1eb4" type="profile"/>
+            <infoLink name="Ripsaw Blade" id="9f15-f4e2-d34a-4b52" hidden="false" targetId="0098-1cb8-2df8-5a45" type="profile"/>
+          </infoLinks>
+          <modifiers>
+            <modifier field="85ba-38a8-929f-108d" type="decrement" value="1">
+              <conditions>
+                <condition childId="6b05-d99a-3214-4091" childName="Berserker with Special Weapon" field="selections" scope="parent" shared="true" type="atLeast" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="643a-4182-1b14-8c5a" type="decrement" value="1">
+              <conditions>
+                <condition childId="6b05-d99a-3214-4091" childName="Berserker with Special Weapon" field="selections" scope="parent" shared="true" type="atLeast" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="85ba-38a8-929f-108d" type="decrement" value="1">
+              <conditions>
+                <condition childId="6b05-d99a-3214-4091" childName="Berserker with Special Weapon" field="selections" scope="parent" shared="true" type="atLeast" value="2"/>
+              </conditions>
+            </modifier>
+            <modifier field="643a-4182-1b14-8c5a" type="decrement" value="1">
+              <conditions>
+                <condition childId="6b05-d99a-3214-4091" childName="Berserker with Special Weapon" field="selections" scope="parent" shared="true" type="atLeast" value="2"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+        <selectionEntry name="Elite Berserker" id="6b05-d99a-3214-4091" hidden="false" import="true" type="model">
+          <constraints>
+            <constraint id="01c3-afb0-c0cc-fe3b" field="selections" scope="parent" shared="true" type="max" value="2"/>
+          </constraints>
+          <costs>
+            <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="34"/>
+          </costs>
+          <infoLinks>
+            <infoLink name="Greater Ripsaw Blade" id="d4b3-9bff-21db-2a9b" hidden="false" targetId="355d-bf6a-edd7-afd1" type="profile"/>
+            <infoLink name="Plasma Pistol" id="1a25-523f-c1f2-a222" hidden="false" targetId="717f-7978-b979-edb3" type="profile"/>
+          </infoLinks>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
+  </selectionEntries>
+  <sharedRules>
+    <rule name="Wrathbound" id="7ac3-01a0-cc05-a14f" hidden="false">
+      <description>This unit rerolls failed damage rolls in melee</description>
+    </rule>
+    <rule name="Tithe of Skulls" id="1d23-a098-0b93-3eb7" hidden="false">
+      <description>This unit ignores suppression markers when making Morale tests. If there is an eligible charge available to this unit, it must make it. When this unit destroys an enemy unit in melee, it has paid its tithe and gains `Extra Hits 8+` in melee for the remainder of the game.</description>
+    </rule>
+  </sharedRules>
+  <sharedSelectionEntries>
+    <selectionEntry name="Melee Weapons" id="4f10-ccaf-44b8-245c" hidden="false" import="true" type="upgrade">
+      <selectionEntries>
+        <selectionEntry name="Ripsaw Weapons" id="7515-1022-9ff5-1cbc" hidden="false" import="true" type="upgrade">
+          <selectionEntries>
+            <selectionEntry name="Ripsaw Blade" id="0c5b-4db3-2f7a-95f8" hidden="false" import="true" type="upgrade">
+              <costs>
+                <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="7"/>
+              </costs>
+              <profiles>
+                <profile name="Ripsaw Blade" id="0098-1cb8-2df8-5a45" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+                  <characteristics>
+                    <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
+                    <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">3</characteristic>
+                    <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">0</characteristic>
+                    <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">3</characteristic>
+                    <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1"/>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry name="Greater Ripsaw Blade" id="72b5-cd2d-5353-e109" hidden="false" import="true" type="upgrade">
+              <costs>
+                <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="12"/>
+              </costs>
+              <profiles>
+                <profile name="Greater Ripsaw Blade" id="355d-bf6a-edd7-afd1" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+                  <characteristics>
+                    <characteristic name="Range" typeId="74c2-5191-931e-1f4a">M</characteristic>
+                    <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">4</characteristic>
+                    <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">1</characteristic>
+                    <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">3</characteristic>
+                    <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1"/>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntry>
+        <selectionEntry name="Plasma Weapons" id="d80b-d0ab-82d8-9b87" hidden="false" import="true" type="upgrade"/>
+        <selectionEntry name="Blades" id="355a-9482-9b82-0e99" hidden="false" import="true" type="upgrade"/>
+      </selectionEntries>
+    </selectionEntry>
+    <selectionEntry name="Ranged Weapons" id="1b01-5a68-0c0f-50d0" hidden="false" import="true" type="upgrade">
+      <selectionEntries>
+        <selectionEntry name="Pistols" id="1f38-5218-2e53-bbd9" hidden="false" import="true" type="upgrade">
+          <selectionEntries>
+            <selectionEntry name="HAMR Pistol" id="c729-75ea-e237-8396" hidden="false" import="true" type="upgrade">
+              <costs>
+                <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="5"/>
+              </costs>
+              <profiles>
+                <profile name="HAMR Pistol" id="049c-3711-4961-1eb4" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+                  <characteristics>
+                    <characteristic name="Range" typeId="74c2-5191-931e-1f4a">9&quot;</characteristic>
+                    <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
+                    <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">1</characteristic>
+                    <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">2</characteristic>
+                    <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Pistol</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry name="Plasma Pistol" id="fab9-86fa-6e83-455f" hidden="false" import="true" type="upgrade">
+              <costs>
+                <cost name="Roster Points" typeId="3ef7-040e-27e8-40c1" value="9"/>
+              </costs>
+              <profiles>
+                <profile name="Plasma Pistol" id="717f-7978-b979-edb3" hidden="false" typeId="2555-341b-f64e-0ff7" typeName="Weapon Profile">
+                  <characteristics>
+                    <characteristic name="Range" typeId="74c2-5191-931e-1f4a">9&quot;</characteristic>
+                    <characteristic name="Attacks" typeId="b7ab-77b3-5293-37ad">1</characteristic>
+                    <characteristic name="Armor Piercing" typeId="b2af-eca3-b6be-cd79">4</characteristic>
+                    <characteristic name="Damage" typeId="7d08-d823-3c78-0fc3">3</characteristic>
+                    <characteristic name="Weapon Traits" typeId="ed87-b9c1-459b-efb1">Overcharge, Pistol</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntry>
+        <selectionEntry name="Rifles" id="a164-8bf7-9711-6899" hidden="false" import="true" type="upgrade"/>
+      </selectionEntries>
+    </selectionEntry>
+  </sharedSelectionEntries>
+  <sharedSelectionEntryGroups>
+    <selectionEntryGroup name="Commander Weapons" id="35e3-0465-b18d-f615" hidden="false"/>
+  </sharedSelectionEntryGroups>
+</catalogue>
