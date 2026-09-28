@@ -1,10 +1,88 @@
 # Praxis Belli — Design Bible
 
-**Status:** v0.4 — mechanics and formula are authored here (and in `reference.html`, its formatted twin).
+**Status:** v0.5-in-progress — converting the core dice engine from d10 to d6 for component accessibility (most players own dozens of d6, far fewer own enough d10 to roll a whole squad's attacks at once). This is a breaking change to the probability foundation everything else is built on, being carried out one section at a time; sections not yet touched still describe the d10-era numbers and are marked as such. `reference.html` (the formatted twin) has **not** been updated yet and will drift out of sync until a dedicated pass syncs it — treat this document as authoritative during the conversion.
 
 **Source of truth — two modes, not one:** while actively building or revising stats and profiles together, this document and `points.py`/`factions/*.json` lead — that's what a design session *is*. Outside of that, **NewRecruit is the default source of truth**: `PraxisBelli.gst` and the `.cat` files in `C:\Users\darry\Documents\NewRecruit\data\PraxisBelli\` reflect whatever was last hand-edited there directly, which may not match what's written here. When the two disagree, that's a conflict to surface and resolve, not something to silently overwrite in either direction. The older `Documents\NewRecruit\data\Praxis Belli\` folder (with a space) is superseded regardless of either mode; it holds an earlier `Praxis Belli.gst` plus Oathbreaker Legions / Oathkeeper Cohorts catalogues on a different game system ID.
 
 **Design lineage:** *Marcher: EAW* (Platoon frame, Transports, attacker-rolled Evasion/Armor), *Ravaged Star* (d10 roll-over engine, 1-fails/10-succeeds, the Damage stat, "Shaken"), and *Warmachine MkIV* (facings and arcs, model-count transports).
+
+### v0.5 Decision Queue — decided, not yet written into the sections below
+
+Snapshot of the latest design decisions as of 2026-09-28. **Already applied in this document:** the d6 conversion (§3, the §5 Mettle-check formula, `Guided`). **Decided but not yet applied** — where this list and an older section below disagree, this list wins. Suggested order: Role/Keyword → points formula (which needs both the die and the Role/Keyword change); Morale and Formations are independent and can run in parallel. Legacy snapshots of every doc as they stood before this work are saved alongside as `*_legacy.*`.
+
+1. **Role + Keywords replace TYPE/CATEGORY** (rewrites §7; knock-ons in §8 Platoons, §10 Transports' "takes the payload's CATEGORY" rule, and the trait glossary).
+   - A unit has one **Role** — the force-org slot it fills. Role is a list-building label only and grants no rules.
+   - A unit has any number of **Keywords**. Keywords do nothing on their own; they exist to sharpen targeting (`Anti-[Keyword]`, "choose a friendly [X] unit to…") and to come bundled with traits. *Unconfirmed reading of "bundled with traits": a design-time convenience when building a unit, not an automatic runtime grant — confirm before writing §7.*
+   - Everything TYPE/CATEGORY used to grant automatically (Bulwark, Hardpoints, Leadership Aura, Boots on the Ground, Spotter/Camouflaged/All-Terrain, Brutal Assault, Where We're Needed, Entrenched, Run Them Through, Armored Front, Terrifying, Flying/Soaring Above, Trailor/Emplaced Weapon) becomes an individually assigned **Trait** and must now be *priced* (Major/Minor flat tiers, §11 Step 5) because it is no longer free. This also closes the old gap where COMMAND's Leadership Aura had positional value but was priced as free.
+   - `Anti-[Keyword]` generalizes to "any keyword" instead of the fixed 12-label list.
+2. **Morale redesign** (§5). Goal: morale is a real lever players can pull, without a doom spiral.
+   - Cut "a worsened Mettle" from **Shaken** — it stacked with the marker-count penalty on the same check. Shaken becomes −1 Evasion / −1 Armor only; suppression markers alone carry the rising difficulty.
+   - Add a **Leader trait** that strips suppression markers from its own unit or from allies in an aura (protect your officers, hunt theirs).
+   - Suppression-immunity traits (`Fearless`, `Undaunted (X)`, `Mindless`'s immunity clause) become rare, expensive, and faction-signature rather than a common menu option; reprice them accordingly.
+   - The track and math stay universal across every faction (no per-faction morale subsystems). Factions differ in *access* to the rare immunity traits, not in rules. Faction flavor may rename the steps without changing them.
+3. **Formations / CORE** (rewrites §8's Named Platoons). Choosing a Formation designates a **CORE** Role/Keyword. *Only* CORE units get the Formation's passive bonus, and that Role's slot cap is raised. One uniform template replaces the bespoke Platoon Abilities, which also settles the undesigned ARMOR and SUPPORT ones. **Not yet decided:** the actual bonus each Role receives.
+4. **Points formula rebuild** (rewrites §11 in full).
+   - Recompute every probability table for d6 (a rebuild, not a reskin).
+   - Calibration anchor: a 10-model "G.I."-equivalent rifle squad = **exactly 100 points**, carrying rifles and `CCW` only — **no bayonets by default**.
+   - **`CCW`** (Close Combat Weapon) replaces `Fists` as the free universal melee profile (§4). It is named to avoid implying biology. Real melee weapons are priced at their margin over CCW, as Fists worked before; the derived "69% of a Bayonet" figure in §4 must be recomputed.
+   - Target cost split for that squad: about **80% model / 20% weapons** — weapons cheaper, units carry most of the cost.
+   - Add an **AP overkill cap** (see §3, "Armor's floor") mirroring the existing Damage overkill cap.
+   - Price the traits that used to be free bundles (item 1) and recalibrate the Mettle value range for d6.
+5. **Modifier policy.** Ordinary ±1 modifiers are fine on d6. Any modifier of ±2 or more should be written as a floor or static target number rather than a subtraction (as done for `Guided` and range bands).
+6. **Remaining d10-era dice and thresholds outside the attack/Mettle engine** — found by search, not yet converted, and some need a design decision rather than a notation swap: `Dangerous` terrain (rolls d10, 4+ passes); `Blast` scatter (1d5" / 1d10"); `Regeneration` and `Combat Medic` (1d5 wounds restored); `Shrug (X)` ("roll a d10… unmodified 10 always succeeds"); `Extra Hits (X)` and `Critical (X)` (default X = 10 — no longer reachable); `Critical Weakspot` (keyed to an unmodified 10); `Undaunted (X)` (Repentia at 7+ — **impossible on a d6**); the "Armor 10/11+" rows of the §11 cost table; and the "Critical Hit" wording anywhere else it says 10.
+
+**Raised but not decided:** vehicle squadrons (fielding 2–3 same-chassis vehicles as one multi-model unit to escape the single-model Size Factor surcharge, Flames-of-War style); a larger standard game (roughly a 3000-point 10th-edition-40k equivalent on a 6'×4' table) and possibly a smaller model scale — neither changes the ruleset now, but a 6'×4' table needs §9's terrain-density numbers recalculated, and a smaller scale strains §6's true-line-of-sight rule.
+
+#### Resolved 2026-09-28 (design conversation) — decided, not yet written into the sections below
+
+**Decided:**
+
+- **Role vs Keywords.** Every unit's Role (one, the force-org slot) must be re-tuned to reflect what the unit is *expected to do on the battlefield*. Everything else about the unit is expressed as **Keywords**. Keywords come in two kinds: those that are simply *referenced* by other rules' text (RECON — by `Guided`, `Spotter`, `Indirect`; and any `Anti-[Keyword]`), and those the **core rules** attach effects to automatically (VEHICLE, INFANTRY…). Whether a given keyword is also wired into the `.cat`/`.gst` is a per-keyword call.
+- **Objectives.** The INFANTRY keyword is written in the core rules as "does not spend an action to claim an objective"; **any other unit may claim, but must spend an action to do so.** *(Consequence to check: this retires §9.1's "vehicles, monsters and aerials can only contest, never score" — see Open Questions below.)*
+- **Evasion.** Anchored by what the unit *is* (Keywords), as TYPE was, but with finer distinctions available (e.g. a MECH keyword). **Standard infantry Evasion 5+** — leaves room for cover to matter on default squads; units with baked-in Evasion 6+ stand out and must be answered with the right tools when dug in or stacked with modifiers. The Rifle Squad anchor therefore moves from Evasion 6 to Evasion 5 (recalibrate §0 and §11).
+- **AP / Armor scale.** AP is 0–X with **no cap at 4**. Armor may reach ~10. AP lowers the Wound Roll target; **AP can only reduce a target to 2+** (this floor *is* the AP overkill cap the queue asked for). AP0 weapons are nearly useless against heavy armor by design; heavy armor demands heavy guns. Dedicated anti-tank weapons carry high Damage so their limited shots count.
+- **Terminology.** Rules text now says **Attack Roll** (the roll against Evasion) and **Wound Roll** (the roll against Armor). A natural 1 never wounds. How a Wound/Attack Roll target of **7+** is handled must be deliberate — see Proposed below.
+- **Range bands.** Close / Effective / Long, applied in §3 (Long extends to 1.5× the Range; 2× was the alternative).
+- **CORE is defined per Formation, per faction.** Not every faction gets every Formation (e.g. Saints barely field RECON, so need no RECON Formation). Bonuses are deliberately asymmetric and should reinforce a faction's strength or slightly lessen one of its weaknesses (illustrations, not decisions: Regiments' infantry Formation gets a massed-fire benefit; Oathkeepers' infantry Formation gets a pre-game redeploy).
+- **Charges** roll d6 + Speed.
+- **`Iron Horizon`** is a dead name; that project was abandoned in favour of Praxis Belli. `ProjectSummary.md` rewritten this pass to drop it.
+- **`Tithe of Skulls`** (Wrathbound Oathbreakers `.cat`) is kept but needs simplification — see Round 2 below.
+
+**Proposed, awaiting confirmation:**
+
+- **Morale on 2d6**, additive and higher-is-better: `2d6 + Mettle − suppression markers ≥ 10`, with natural 2 always failing and natural 12 always passing. Rationale: on d6 every Mettle from 4 to 7 passed at 83% with 0 markers, so Mettle stopped meaning anything until markers accumulated. **Recommended and provisionally locked at TN 10** (Round 2) — see below.
+
+#### Round 2 — 2026-09-28 (later the same day)
+
+**Decided:**
+
+- **Targets of 7+ — keep the legacy cascade** (natural 6, then re-roll against *target − 6*), i.e. §3 "Armor above 6" is unchanged. The *target − 5* ladder proposed above is **shelved, not adopted** — kept below only as a documented alternative in case the legacy cascade proves to need it. It's suspected to matter only for low-AP weapons vs. high-Armor targets, which may be rare enough not to need solving at all. Two other directions to weigh before touching the cascade again:
+  - Design stat lines so they land on a "step" deliberately, and accept it: e.g. an up-armored-Humvee-equivalent sitting at **Armor 8** where **AP1 simply does nothing** is a fact about the vehicle, not a curve to smooth.
+  - *(Shelved alternative, for reference only)* natural 6, then re-roll against *target − 5*: 6+ = 16.7%, 7+ = 13.9%, 8+ = 11.1%, 9+ = 8.3%, 10+ = 5.6%, 11+ = 2.8% — a smooth ladder, vs. the legacy cascade's 7+ and 8+ landing on the same 13.9%.
+- **`Anti-[Keyword]`, intent confirmed.** The point is a **cheaper way to build a specific-target tool** than raising AP, Attacks, or Damage generally — trading weapon cost for narrowed generalization (useless against anything but the matching keyword) rather than trading it for raw power. Keep the ×2-hits mechanic; price it **target-bucket-aware** (double only the matching soft/hard reference term in the formula, not a flat multiplier) once §11 is rebuilt, so it functions as the discount it's meant to be rather than a flat tax. May turn out to fall out of the formula for free — revisit once the rebuild lands.
+- **Morale TN 10 — confirmed.** It ties directly to the Rifle Squad's own Mettle 4: 0 markers = 72%, then 58/42/28/17% as markers stack — a real, crackable lever with no saturation. Mettle 1–2 (Conscript-tier) genuinely struggles (28%/42% unsuppressed); Mettle 7 (the Commander) is strong but not automatic even clean (97%) and still degrades under pressure (58% at 4 markers). TN 9 or 11 push the anchor to 83%/58% respectively — 10 is the better fit. Locking it; 2d6 also opens room to widen the Mettle spread itself during the roster recalibration pass, if a finer gradient is wanted later.
+- **Claiming objectives, non-INFANTRY.** Closes the loophole where a unit already parked on an objective could spend one action to Claim and its other to Shoot, paying nothing real: **Claim, for any unit without the INFANTRY keyword, is taken as that unit's Combat action** (it cannot also Shoot or Fight in the same activation) — it may still Move. A vehicle *can* sit on an objective and claim it, but only by giving up its firepower that activation, which is the intended "horribly inefficient" cost. Preserves the spirit of the old "armor denies, doesn't easily hold" lever even though vehicles can now technically score.
+- **Keywords carry no cost by default.** A keyword itself is never priced; only the rule(s) it brings (if any) are priced, at whatever tier that rule already costs.
+- **No more rule-bundling as house style.** Prefer smaller, individually named, recycled rules that read the same everywhere over faction-exclusive combo traits. Applied immediately to two rules:
+  - **`Tithe of Skulls` unbundled.** Drops its "ignores suppression on Morale tests" clause (redundant — `Fearless` already covers Marine-chassis Wrathful Oathbreaker units, and the faction identity is explicit that Cultists/Spawn don't get it either way). Keeps the forced-charge clause. The post-kill reward becomes flat `Extra Hits` (see next bullet), not a configurable threshold.
+  - **`Extra Hits` loses its configurable `(X)`.** Always keyed to a natural 6 — the same trigger as the universal Critical Hit rule, no longer stackable down to a lower threshold like 7+ or 9+. Every current citation of a specific X (Fanatical Sisters' Heavy Ripsaw Sword at 10, Sister Defensors' Anointed Halberd at 10, Ascendant Ripsaw Sword at 9+, `Tithe of Skulls`' own proposed 8+) needs to drop the number.
+- **Standard game scale is open again.** 1000 points is no longer assumed — 2000 or 3000 is the likely target, to be decided once the points formula lands. Every "1000-point" / "2 Platoons" reference (Principle 0, §8, §11) is stale pending that call; don't edit them yet.
+
+**Open, unresolved:**
+
+1. **Resolved (Round 3):** `Massed Ranks` *becomes* Regiments' Infantry-anchored Formation's CORE bonus, rather than sitting alongside a separately invented one. It stops being granted faction-wide to any 8+-model unit and instead applies only to CORE-tagged, Infantry-keyword units within that specific Formation (same internal "8+ models" condition on the unit itself, unchanged) — closing the overlap concern outright, since there's no longer a second, distinct bonus to overlap with.
+2. **New, opened by the above:** `Massed Ranks` was also Imperial Regiments' faction-wide *signature trait* (one per faction, per `faction-identity.md`'s design rule). Moving it into a Formation-gated CORE bonus vacates that role — **Regiments needs a new faction signature trait.** Deliberately deferred, not designed now.
+
+#### Round 3 — 2026-09-28 (same day, following the Critical/Anti-X discussion)
+
+**Decided:**
+
+- **`Critical (X)` is retired entirely** — not merged into anything, just gone. It was briefly floated as a universal rule, which was a misreading on my part (it was always meant as an optional, per-weapon trait, same as `Overcharge` or `Shrug`, so the "it would break AP0-vs-heavy-armor for everyone" objection didn't actually apply). Retired anyway, on its own merits: `Anti-[Keyword]`'s new shape (below) already delivers the "hits hard on a hot roll against the right target" feeling it was meant to provide, so it's redundant rather than needed. A precision/sniper-flavored weapon that wants a crit identity takes an `Anti-[Keyword]` (Anti-Infantry, etc.) instead of a bespoke trait — confirmed as a real, working alternative: an Anti-Materiel Rifle can be built either by baking a higher AP straight into its profile, or by taking one or more `Anti-[Keyword]` tags at a lower base AP/Damage. Two legitimate paths to the same "beats one specific thing" niche, which is exactly the intent `Anti-[Keyword]` was designed to serve.
+- **`Anti-[Keyword]`, final shape, replacing the ×2-hits rule entirely:** *"Whenever this weapon's Attack Roll against a target with [Keyword] is an unmodified 6, it immediately deals its Damage value to that target's wounds — no Wound Roll made for this portion, so it bypasses Armor and AP entirely (still reduced by flat damage-mitigation like `Bulwark`, and nullified the same as any other Anti-[Keyword] effect by `Negates ([Keyword])`). The attack then resolves normally on top of that — the Attack Roll was already a hit (natural 6 always hits), so it still gets its own ordinary Wound Roll exactly as any other successful hit would."* One behavior, additive, no configurable `X` — the free hit is always worth the weapon's own Damage stat, so heavier weapons naturally get a bigger bonus without a second number to balance. This is chosen over three other candidate shapes (doubling the number of wound rolls on the crit; doubling Damage only if the accompanying roll also succeeds; auto-succeeding the roll with no second hit on top) specifically because it's the only one of the four that guarantees a crit against the right target is never a dud — the other three can still whiff to zero on the very roll that was supposed to feel explosive.
+- **Spillover — correction to the note above: it isn't retired, it was never Anti-X-specific to begin with.** A natural 6 against a matching keyword now produces *two distinct hits* — the guaranteed free one (dealt instantly) and the "real" one (still resolved normally, its own Attack Roll already a success). Each hit affects one model by default, the same rule that already governs any weapon with Attacks > 1 or `Extra Hits`. Since these are two separate hits, they're already free to land on different models in the target unit via that existing allocation order — no bespoke clause needed on `Anti-[Keyword]`'s own text, because the behavior was never a special exception, just an ordinary case of the standing one-hit-per-model rule.
+- **`Extra Hits` doesn't stack with other traits that also trigger off an unmodified 6, on the same Attack Roll.** Written as a general non-stacking clause on `Extra Hits` itself, not an enumerated list — there's no fixed count of "on a 6" traits yet, and a list would need updating every time a new one is built. "Doesn't stack" means they don't *compound* — they aren't mutually exclusive. If a weapon somehow carries both `Extra Hits` and a triggered-on-6 effect like `Anti-[Keyword]`'s free hit, a natural 6 triggers **both in full** (the extra hit *and* the guaranteed free hit), each resolving as its own separate, un-multiplied instance — neither amplifies the other.
+
+**Housekeeping:** `ProjectSummary.md` predates all of this — it still says "Iron Horizon" and a 2000-point target game, against this document's Praxis Belli name and 1000-point target. `reference.html`, `faction-identity.md`, `points.py`, `build_cat.py`, and `factions/imperial_regiments.json` still reflect the d10-era design.
 
 ---
 
@@ -26,7 +104,7 @@ The failure mode this guards against is real and it compounds: each fix for an e
 
 ### Resolved conventions
 
-- **Mettle is additive and higher-is-better** — `d10 + Mettle ≥ 10 + suppression markers`. Every stat on the card now reads "bigger is better."
+- **Mettle is additive and higher-is-better** — `d6 + Mettle ≥ 6 + suppression markers` (re-anchored from d10; see §3). Every stat on the card now reads "bigger is better."
 - **The attacker rolls both** the to-hit check and the damage check. The `.gst`'s older "defensive saves" phrasing on Anti-[Keyword] rules is legacy wording; the mechanics are unchanged either way, but higher Armor can only mean *tougher* if the attacker is the one rolling against it.
 
 ---
@@ -59,48 +137,73 @@ Engagement range: 1" baseline, extendable by weapon or trait.
 
 ## 3. The Dice Engine
 
-**Every check is roll-over on a d10: meet or exceed the target number to succeed.**
+**Every check is roll-over on a d6: meet or exceed the target number to succeed.** *(Converted from d10 — see the version note at the top of this document for why.)*
 
-**Dice floor/ceiling, universal:** an unmodified **1 always fails**; an unmodified **10 always succeeds**.
+**Dice floor/ceiling, universal:** an unmodified **1 always fails**; an unmodified **6 always succeeds**. "Unmodified" means the raw face physically shown on the die — this check happens before any modifier is applied, whether that modifier lands on the target number (most traits) or directly on the roll itself (range bands, below). A natural 6 always succeeds even after a −1 range penalty; a natural 1 always fails even after a +1.
 
 ### The attack sequence
 
-1. **To-hit** — roll d10 per attack die against the target's **Evasion**. Total dice = weapon's Attacks × models firing.
+1. **To-hit** — roll d6 per attack die against the target's **Evasion**. Total dice = weapon's Attacks × models firing.
 2. **Damage check** — each hit rolls again against the target's **Armor**, after **AP** is subtracted. Each success inflicts the weapon's **Damage** value in wounds against the target's **Toughness**.
 
-**Critical Hit** — a hit roll of an unmodified 10 is a Critical Hit. On its own this changes nothing beyond the success it already represents under the floor/ceiling rule above — it's a named hook, not a bonus, and exists purely so traits can key off it (`Extra Hits (X)`, `Critical (X)`, `Negates (Critical Hits)`; see glossary). Deliberately no baseline effect for anyone: a universal "natural 10s also auto-wound" rule would let every weapon in the game ignore the AP scale on a flat 10% chance regardless of how mismatched it is against the target's Armor, which undermines AP's whole job as "the only real answer to heavy armor" (below) — keeping the bonus trait-gated means only weapons built for that identity get it.
+**Critical Hit** — a hit roll of an unmodified 6 is a Critical Hit. On its own this changes nothing beyond the success it already represents under the floor/ceiling rule above — it's a named hook, not a bonus, and exists purely so traits can key off it (`Extra Hits (X)`, `Critical (X)`, `Negates (Critical Hits)`; see glossary). Deliberately no baseline effect for anyone: a universal "natural 6s also auto-wound" rule would let every weapon in the game ignore the AP scale on a flat ~17% chance regardless of how mismatched it is against the target's Armor, which undermines AP's whole job as "the only real answer to heavy armor" (below) — keeping the bonus trait-gated means only weapons built for that identity get it.
 
 Higher Evasion = harder to hit. Higher Armor = harder to damage.
 
 There is no attacker-side accuracy stat. To-hit difficulty is entirely defender-side; attacker differentiation comes from traits, rerolls, and Anti-[Keyword] weapons.
 
-### Armor above 10
+### Evasion — templated by TYPE, not freely tuned
 
-Armor is **not capped at 10**. When a target's Armor after AP exceeds 10, an unmodified 10 no longer succeeds automatically — instead it buys a **second roll** against `Armor − 10`, cascading again if that also exceeds 10.
+d6 only offers five meaningfully distinct values (2 through 6), which isn't enough room for the fine per-unit tuning the old d10 curve allowed. Evasion is now assigned by broad TYPE template rather than hand-picked per unit:
 
-A hull at Armor 17 struck by an AP 0 weapon needs a 10, then a 7+: a **4% chance**. Vanishingly unlikely, never impossible, and the curve continues smoothly instead of hitting a wall.
+| TYPE | Evasion | Hit chance |
+|---|---|---|
+| Heavy Vehicle | 2–3 | 83% / 67% |
+| Light Vehicle | 3–4 | 67% / 50% |
+| Infantry (baseline) | 5 | 33% |
+| Elite / dedicated dodge specialists | 6 | 17% |
 
-This makes **AP the only real answer to heavy armor**, which is exactly right. That same Armor 17 hull struck at AP 6 is rolling against an effective 11 — more than twice as likely to take a wound.
+Evasion above 6 is reachable only through modifier stacking, never as a base value, and cascades exactly like Armor above 6 (below) once it happens. This is rare enough in practice that a known quirk of the cascade — Evasion 7 and 8 land on the *identical* ~14% chance (both reduce to "a natural 6, then anything but a natural 1") — isn't worth solving for. The same quirk is a real problem for Armor, immediately below, because AP makes it come up constantly rather than rarely.
 
-*(Borrowed from Marcher, which likewise permits Armor beyond the die.)*
+**Veterancy no longer differentiates through Evasion.** A veteran and a rookie of the same TYPE share the same defensive template; the gap between them has to come from Mettle, Armor, Speed, Toughness, equipment, and traits instead. *(The exact Mettle values a roster should span under the new die haven't been recalibrated yet — flagged in Open Threads.)*
 
-### The AP scale
+### Armor above 6
 
-AP is calibrated against real anti-armor performance, so weapon design has an intuitive reference:
+Armor is **not capped at 6**. When a target's Armor after AP exceeds 6, an unmodified 6 no longer succeeds automatically — instead it buys a **second roll** against `Armor − 6`, cascading again if that also exceeds 6.
 
-| AP | Reference | | AP | Reference |
-|---|---|---|---|---|
-| **0** | Modern assault rifle | | **4** | 57mm |
-| **1** | Magnum rifle cartridge | | **5** | 76mm |
-| **2** | 20mm autocannon | | **6** | 88mm |
-| **3** | WWII 37mm | | **7** | Modern 120mm sabot |
-| | | | **8** | Railgun |
+A hull at Armor 9 struck by an AP 0 weapon needs a 6, then a 3+: `1/6 × 4/6 ≈ 11%`. The same hull struck by an AP 3 weapon is rolling against a flat effective Armor of 6 — a straight `1/6 ≈ 17%`. Higher AP still means a meaningfully better chance to damage, exactly as intended; the curve continues smoothly instead of hitting a wall.
+
+*(Mechanic unchanged from the d10 version — Marcher's original inspiration — just re-anchored to the smaller die.)*
+
+### Armor's floor, and AP overkill — flagged, not yet solved
+
+The same "two different numbers land on the identical probability" quirk that's harmless at Evasion's rare ceiling is a real problem at Armor's **floor**, and it isn't rare: once AP has dropped a target's effective Armor to 1 or below, **any further AP is wasted against that target** — Armor 1, 0, and −1 all resolve identically. Because AP subtracts from Armor on every single attack, this happens in ordinary play constantly, not as an edge case. The weapon-cost formula already solves the mirror-image problem for Damage (`min(Damage, 2)` against soft targets, §11) — AP likely needs the same kind of overkill cap. **Not designed yet; carried into Open Threads below so it isn't lost when §11 gets rebuilt.**
+
+### The AP scale (draft — needs playtesting-anchored calibration)
+
+AP's range compresses along with the die: each point now does proportionally more work against a 5-step Armor range than it did against d10's wider one, so the old 0–8 scale is oversized. Draft compression to 0–4 below — the real-world reference pairings are a first-pass placeholder, not a calibrated result:
+
+| AP | Reference |
+|---|---|
+| **0** | Modern assault rifle |
+| **1** | Magnum cartridge / 20mm autocannon |
+| **2** | WWII 37mm / 57mm |
+| **3** | 76mm / 88mm |
+| **4** | Modern 120mm sabot / railgun |
 
 **Most infantry weapons sit at AP 0.** Penetration is bought through heavy weapon teams and vehicles, not carried by line infantry — a large part of why combined arms is mandatory rather than merely encouraged.
 
 ### Range bands
 
-Range is a single Short value on the profile. Medium = 2× at +1 to the target's Evasion; Long = 3× at +3. **Accurate** ignores all range penalties.
+A weapon's printed **Range** is the middle of three bands, each measured from the firing model. Range modifies the **Attack Roll itself**, not the target number (a deliberate change from the d10 version — see the floor/ceiling note above for how the two interact):
+
+| Band | Distance | Attack Roll |
+|---|---|---|
+| **Close Range** | within half the weapon's Range | **+1** |
+| **Effective Range** | more than half, up to the weapon's Range | +0 |
+| **Long Range** | beyond the weapon's Range, up to **1.5×** the Range | **−1** |
+
+Beyond 1.5× the Range, the weapon cannot target. *(1.5× rather than 2×: it makes the three bands equal thirds of the weapon's reach, and it stops a 24" weapon from covering an entire 4'×4' board. Flagged for playtesting.)* `Accurate` removes the Long Range penalty only — it does not remove the Close Range bonus.
 
 ## 4. Melee
 
@@ -125,17 +228,17 @@ Nothing in the game is ever helpless in melee — it is simply bad at it. Agains
 ### The Mettle check
 
 ```
-Roll d10 + Mettle.  Pass if the total ≥ 10 + suppression markers held.
+Roll d6 + Mettle.  Pass if the total ≥ 6 + suppression markers held.
 ```
 
-Higher Mettle is better, like every other stat on the card. A unit with Mettle 4 holding two markers needs an 8+.
+Higher Mettle is better, like every other stat on the card. A unit with Mettle 4 holding two markers needs a 4+ *(re-anchored from d10; the actual Mettle values a roster should span under the new die still need a recalibration pass — see Open Threads)*.
 
 - **Pass** — remove **one** suppression marker.
 - **Fail** — step **up** one level on the track.
 
 **Check timing:** at the start of a unit's activation if it holds any markers, or immediately when an effect forces one.
 
-**Naming note:** this specific check — the one that can step a unit up the morale track — is a **Morale test**. The same underlying roll (d10 + Mettle vs. a target number) is reused for other, unrelated triggered effects (`Rallying Cry`, `Combat Medic`, `Divine Favor`, etc.); those are **Mettle checks**, not Morale tests. The distinction matters because some traits (`Mindless`, `Undaunted (X)`) specifically reference Morale tests only — they don't touch a unit's other Mettle-gated abilities.
+**Naming note:** this specific check — the one that can step a unit up the morale track — is a **Morale test**. The same underlying roll (d6 + Mettle vs. a target number) is reused for other, unrelated triggered effects (`Rallying Cry`, `Combat Medic`, `Divine Favor`, etc.); those are **Mettle checks**, not Morale tests. The distinction matters because some traits (`Mindless`, `Undaunted (X)`) specifically reference Morale tests only — they don't touch a unit's other Mettle-gated abilities.
 
 ### Suppression markers
 
@@ -536,8 +639,8 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 - **Blast (S/L)** — may target a point instead of a model, centring a circular template. On a miss, scatter the point of impact 1d5" (S) or 1d10" (L) in the direction rolled. Targets cannot benefit from cover.
 - **Engulf (S/L)** — uses a small or large teardrop template; targets cannot benefit from cover.
 - **Indirect** — may target an enemy without line of sight, provided an allied unit with Spotter has line of sight to that target.
-- **Guided** — if the target is visible to an allied RECON unit, decrease the target's Evasion by 3, disregarding all other modifiers.
-- **Accurate** — ignore all range penalties.
+- **Guided** — if the target is visible to an allied RECON unit, this weapon's attacks against it need a flat **3+** to hit, replacing the target's actual Evasion entirely and disregarding every other modifier, including range bands. *(Changed from a flat "−3 Evasion" under the d10 engine — a straight replacement avoids the target's real Evasion ever mattering at all, and avoids a subtractive modifier ever making an already-easy shot harder.)*
+- **Accurate** — this weapon has no Long Range penalty: Attack Rolls at Long Range are made as though at Effective Range. Keeps the Close Range bonus. *(Earlier wording said "ignore all range modifiers," which would also have stripped the +1 at Close Range.)*
 - **Optics** — the target cannot gain Evasion bonuses from being Obscured or in Obscuring terrain. Cuts through concealment rather than boosting raw accuracy — deliberately a different job than `Accurate` (which answers range, not cover). No longer a stub; needs a pricing tier assigned (currently costs nothing in the points formula, which is now wrong). *(First application: Oathwarden Squad's Carbine/Optics configuration.)*
 - **Precision** — when resolving this weapon's attacks, its controller may choose which model within the target unit receives each hit, instead of following the unit's normal allocation order. Bypasses the protection a unit's own arrangement would otherwise give a key model — an NCO, a special-weapon carrier, a `Caster`. Priced as a Major bonus: like `Guided`, it changes the shape of what the attack can affect rather than just improving the odds on a normal shot — arguably more so, since it defeats allocation entirely rather than just Evasion. *(First intended application: a Saints sniper/support weapon, not yet named or built.)*
 
@@ -563,8 +666,8 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 - **Warded Plate** *(name provisional)* — grants `Negates (Anti-Infantry)`. The infantry-scale cousin of `Ablative Plating`, and a direct payoff of the line above — Oathkeepers (Deep Oath) are the first faction with the actual oath-access to earn the "warded" version rather than the merely industrial one. *(First application: Oathkeepers' Terminator-tier Heavies, alongside `Shrug`.)*
 - **Indomitable** — reduce the AP of incoming attacks by 1, minimum 0. Doesn't stop a dedicated anti-armor weapon from doing its job, but meaningfully blunts anything that wasn't built to punch through this specific armor. Deliberately not named `Bulwark` (already in use, and means Damage reduction, not AP reduction — a real naming collision caught before it shipped). *(First application: Oathkeepers' Heavies/Terminator-equivalent tier.)*
 - **Crushing** — this weapon's Damage is increased by 1 against a target with Toughness 5+, and by 2 against a target with Toughness 10+. Deliberately named for what it does, not for any one weapon's fictional flavor, so it can be reused on future weapons that hit harder against heavy targets without being reskins of the same gravity-tech idea. The Toughness 10+ threshold isn't arbitrary — it lines up with the Armor-above-10 cascade threshold, so this trait reads as a direct answer to exactly the kind of target that rule exists for. *(First application: an Oathkeeper NCO sidearm option.)*
-- **Shotgun** — the first two entries below are **range-band-conditional**: their effect changes depending on which band the attack was fired from, rather than being a flat always-on modifier like every other trait above. Within this weapon's Short range, re-roll all failed hits. If fired at its outer band instead, the target's Evasion is increased by 2. Represents a close-range weapon that's devastatingly reliable up close and rapidly falls off past that — not a gentle Medium/Long taper like a normal weapon, a hard cliff. *(First application: the generic Scattergun weapon, D2; the Oathkeeper-exclusive `Oathkeeper Scattergun` variant runs D3.)*
-- **Meltdown** — within this weapon's Short range, re-roll all failed hits. If fired at Medium or Long range instead, re-roll all **successful** hits — a harsher penalty than Shotgun's, appropriate since Fusion-pattern weapons already sit in anti-armor territory and need a stronger reason not to just be fired from a safe distance. Applies to **every Fusion-pattern weapon in the roster retroactively** (Fusion Blaster, Heavy Fusion Blaster, and any future Fusion Pistol), not just new ones — the name is a deliberate near-homophone for Melta, the real-world-adjacent tech Fusion weapons are meant to evoke in this setting's fiction, the same naming trick as `HAMR`/hammer.
+- **Shotgun** — this and `Meltdown` are **range-band-conditional**: their effect changes depending on which band the attack was fired from, rather than being a flat always-on modifier like every other trait above. At Close Range, re-roll all failed Attack Rolls. At Long Range, this weapon cannot be fired. Represents a close-range weapon that's devastatingly reliable up close and rapidly falls off past that — a hard cliff rather than a gentle taper. *(Rewritten for the Close/Effective/Long bands. The earlier "+2 Evasion at the outer band" penalty was a ±2 modifier, which the modifier policy now forbids; "cannot fire at Long Range" is the floor-style replacement and is a proposal — if the cliff should be softer, the alternative is a flat 5+ Attack Roll at Long Range.)* *(First application: the generic Scattergun weapon, D2; the Oathkeeper-exclusive `Oathkeeper Scattergun` variant runs D3.)*
+- **Meltdown** — at Close Range, re-roll all failed Attack Rolls. If fired at Effective or Long Range instead, re-roll all **successful** Attack Rolls — a harsher penalty than Shotgun's, appropriate since Fusion-pattern weapons already sit in anti-armor territory and need a stronger reason not to just be fired from a safe distance. Applies to **every Fusion-pattern weapon in the roster retroactively** (Fusion Blaster, Heavy Fusion Blaster, and any future Fusion Pistol), not just new ones — the name is a deliberate near-homophone for Melta, the real-world-adjacent tech Fusion weapons are meant to evoke in this setting's fiction, the same naming trick as `HAMR`/hammer.
 - **Impact (X)** — on a successful charge, roll X dice **per charging model** against the target unit's Armor, AP0, Damage 1 each. **Not an attack and doesn't use any weapon** — it resolves in total isolation, unaffected by weapon traits, Anti-[Keyword], or anything else that modifies an attack, because it represents the sheer physical weight of the charge and nothing else about the unit. Most effective against light/unarmored targets by design (AP0 means it never threatens real armor, only bulk-and-numbers). A genuine revival of the cut v0.3 `Impact(X)`, but a new shape, not a restoration — the old version is not what this is. Guideline rather than a hard TYPE lock: Infantry and Cavalry are the register this belongs to. X is driven by the individual model's own weight/violence of impact, not the unit's size — a jump-pack trooper might carry Impact (1), while something dropping from orbital height carries Impact (3), regardless of squad size either way.
 - **Crushing Impact (X)** — the Vehicle/Monster register of `Impact (X)`, same structure and same isolation from weapons/traits. Currently stubbed at AP3/Damage 2 pending a real application — enough to threaten light armor or anything under Toughness 3, not enough to meaningfully touch another vehicle. *(First real application: Bastion — whether Vehicles get a standard melee profile at all, the way Infantry has universal Fists, or whether some vehicles rely on Crushing Impact alone with no ongoing melee option, is a genuinely open question, not yet decided either way.)*
 - **Consumable (X)** — this weapon may only be used X times over the course of the game; once its uses are exhausted, it cannot fire again. Parallel notation to `Anti-[Keyword]`, `Deployment (X)`, and `Impact (X)` — a general-purpose way to describe limited-ammunition or one-shot weapons rather than inventing a bespoke rule per weapon. *(First application: Bastion's Hunter-Killer Missile, `Consumable (1)`.)*
@@ -648,3 +751,4 @@ Genuinely open as of the last working session — most of the original v0.3 list
     - **Platoon Doctrines** (faction-identity.md, per-faction "Doctrine —" entries): `Fix Bayonets`, `Sealed Orders`, `Hold the Oath`, `Act of Faith`, `Break the Chains`.
     - **One not-yet-in-glossary trait**: `Warded Plate` (faction-identity.md, Oathkeepers' Heavies/Terminator family section) — name still provisional.
     - **Present in the `.gst` but with stale text needing a rewrite, not an addition**: `Fearless` (likely still the old bundled version), `Entrenched` (likely still says "reroll failed Mettle checks" instead of granting `Courage`), `Optics` (likely still the old priced-at-0 stub text).
+11. **The v0.5 redesign is in progress.** §3 and the §5 Mettle-check formula are converted to d6; everything else — the Role/Keyword collapse, morale redesign, Formation/CORE, the full points-formula rebuild, the `Fists`→`CCW` rename — is specified in the **v0.5 Decision Queue** near the top of this document and not yet applied to the sections below. Every faction/unit stat line in `factions/imperial_regiments.json` was built against the d10 curve and is stale until the formula is rebuilt. Two gaps surfaced during the dice conversion need real design work, not just arithmetic: an **AP overkill cap** (§3, "Armor's floor") and a **Mettle value recalibration** for d6.
