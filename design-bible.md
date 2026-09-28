@@ -312,6 +312,23 @@ Blast, Engulf, and template weapons ignore cover entirely — their targets cann
 
 **True line of sight** throughout — base size implies a volume.
 
+### Facing & Arcs
+
+Only matters for models that need it — anything carrying `Armored Front` or an Arc-restricted weapon (`Frontal/Rear/Side Arc`, `Traversing`). Infantry never tracks facing; True Line of Sight already governs what it can see and be seen by.
+
+**Setting facing:** a model faces a single direction, set at deployment. It may re-orient to face any direction at the end of a Move action, whether or not it actually moved — there's no requirement to end a move facing the direction of travel.
+
+**The four arcs**, measured from the center of the model's base, relative to its facing: **Front** is the 90° wedge centered on that facing (45° either side of straight ahead); **Rear** is the mirrored 90° wedge directly behind; the remaining 180° splits evenly into a **Side** arc on each flank.
+
+**Two separate checks, easy to conflate:**
+
+- **`Armored Front`'s AP modifier** is about the *target's* arc — measure from the target's own facing to the attacker's position. Front reduces incoming AP by 1, Rear increases it by 1, Side is unmodified. This is checking how exposed the target's hull is, nothing to do with the shooter.
+- **An Arc-restricted weapon** (`Frontal/Rear/Side Arc`, `Traversing`) is about the *bearer's* own facing — the weapon can only target something that falls within its stated arc as measured from where its own hull (or turret, for `Traversing`) is currently pointed. This is checking whether the gun can physically point at the target at all, nothing to do with the target's own facing.
+
+A vehicle can easily be in a situation where both checks apply at once and give different answers — its own gun might not be able to traverse onto a target that's well within its `Armored Front` rear arc, for instance. That's intentional: the two rules are answering genuinely different questions.
+
+*(First pass, written to unblock playtesting — closes Open Thread #8. Deliberately doesn't handle every corner case; the shape above should cover ordinary play.)*
+
 ## 7. Role and Keywords
 
 Every unit carries one **Role** and any number of **Keywords**. This replaces the old TYPE/CATEGORY split — the two concepts survive, but only one of them still grants anything by itself.
@@ -439,6 +456,19 @@ Each arm needs a job the others cannot do:
 - **Aerial** strikes anywhere; it can claim like Armor can, at the same cost, but its whole point is reaching what infantry can't yet, not camping on what it already has.
 
 Dependencies, not merely roles. Artillery genuinely does not function without a Spotter, and that coupling is the model for everything else.
+
+### A first mission — Claim the Ground
+
+Written to unblock playtesting, not to be the final word — one working scenario out of the 5–10 eventually planned. Leans entirely on mechanics that already exist; invents nothing new.
+
+- **Board:** 4'×4', meeting the terrain-density minimum above.
+- **Objectives:** 5 markers — one at the exact center, the other four each 18" out from center along the board's diagonals. Symmetric for both players.
+- **Deployment:** opposing long edges, each player within 12" of their own.
+- **Length:** 5 rounds.
+- **Scoring:** at the end of each round, an objective is **controlled** by a player if they have a unit that took the Claim action on it that round, and no enemy unit is within 3" of it. Each controlled objective scores its controller 1 point.
+- **Win condition:** most points after 5 rounds. Tied on points: whoever has more surviving Wounds across their whole army wins. Still tied: a draw.
+
+*(The 3" contest range is a first guess, not derived from anything — flag it the same way as every other hand-tuned constant in this document if it plays oddly.)*
 
 ## 10. Transports
 
@@ -777,8 +807,8 @@ Genuinely open as of the last working session — most of the original v0.3 list
 4. **Resolved by the Platoon/CORE rewrite (§8):** there's no longer a generic ARMOR/SUPPORT ability to leave undesigned — every Platoon bonus is faction-specific from the start. What's actually open now: every faction's Platoon bonuses are undesigned except Regiments' Infantry Platoon (`Massed Ranks`). This also **retires the five old per-faction "Doctrines"** (`Fix Bayonets`, `Sealed Orders`, `Hold the Oath`, `Act of Faith`, `Break the Chains`) — they were the same once-per-game, rest-of-round shape the generic Platoon Abilities used, and that shape is gone. They need redesigning as CORE bonuses, not transcribing as-is (see item 10 below).
 5. **Platoon slot constraints aren't encoded in the `.gst`** — the proposed spread in §8 is documented but not enforced by the force entry itself.
 6. **The AFV's cost is 2.4 rifle squads.** If centrepieces feel over-taxed, soften `SIZE_EXPONENT` from 0.85 toward 0.90 in `points.py`.
-7. **No mission or scenario** has been written against the current rules.
-8. **No general facing/LOS section** — `Armored Front` and the arc traits imply one exists, but it isn't written.
+7. ~~No mission or scenario has been written against the current rules.~~ **Resolved (2026-09-28):** "Claim the Ground," §9 — one working mission, not the full planned 5–10, but enough to actually play.
+8. ~~No general facing/LOS section.~~ **Resolved (2026-09-28):** §6's new Facing & Arcs subsection — covers ordinary play, deliberately doesn't chase every corner case.
 9. ~~The toolchain is duplicated across the `Praxis Belli` project workspace and the `PraxisBelli` git repo.~~ **Resolved (2026-09-28):** the repo now lives at `C:\Toolbox\ToolboxVault\PraxisBelli`, and `Documents\NewRecruit\data\PraxisBelli` is a Windows junction pointing at it — one real copy, no drift risk left.
 10. **`PraxisBelli.gst` is missing roughly 30 rules that already exist in this glossary and in faction-identity.md.** The user is keeping the `.gst` as-is and rebuilding the three `.cat` rosters from scratch by hand rather than resetting everything — this list is what still needs transcribing into the `.gst` at some point during that rebuild (definitions live at their linked source, not repeated here, to avoid a third copy going stale):
     - **Weapon/unit traits** (full text in this document's glossary, §"Weapon & unit trait glossary" above): `Bombardment`, `Traversing`, `Ablative Plating`, `Indomitable`, `Crushing`, `Shotgun`, `Meltdown`, `Impact (X)`, `Crushing Impact (X)`, `Consumable (X)`, `Conscript`, `Critical Weakspot`, `Fixed`, `Combat Medic`, `Courage`, `Shrug (X)`, `Jump Jets`, `Deployment (Scout)`, `Deployment (Infiltrate)`, `Picket`, `Barrage`. **Transcribe the current text** for `Anti-[Keyword]` and `Extra Hits` specifically — both changed shape this pass (Round 3) and no longer match what an earlier draft of this list might have assumed.

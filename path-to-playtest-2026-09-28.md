@@ -8,12 +8,12 @@ A working checklist, not a design document. Everything here is either "must happ
 
 Four phases, roughly sequential — each one is the shortest route to an actual game, not the most thorough version of the work.
 
-### Phase 1 — Close the two rules gaps that block *any* game
+### Phase 1 — Close the two rules gaps that block *any* game ✅ Done (2026-09-28)
 
-Both are Open Threads that have been sitting unaddressed since before the v0.5 redesign even started. Neither is optional once a vehicle or an objective marker is on the table.
+Both were Open Threads sitting unaddressed since before the v0.5 redesign even started.
 
-1. **Write a minimal Facings/Arcs section.** `Armored Front` and the three Arc traits already assume front/rear/side determination exists — it's never been written. Doesn't need to be exhaustive (corner cases can wait), just needs: how a model's facing is set, how a 90° front/rear/side split is measured from it, and how that interacts with True Line of Sight (§6).
-2. **Design one mission.** Not the planned 5–10 — just one: deployment style, objective count and placement, round count, win condition. `python design-bible.md §9` already states the *principles* combined-arms missions need to honor (terrain density, objectives-need-boots); this is about turning those principles into one playable scenario.
+1. ~~Write a minimal Facings/Arcs section.~~ **Done** — §6's new Facing & Arcs subsection. Covers ordinary play, not every corner case.
+2. ~~Design one mission.~~ **Done** — "Claim the Ground," §9. One working scenario, not the full planned 5–10.
 
 ### Phase 2 — Make the points formula load-bearing, not just correct
 
