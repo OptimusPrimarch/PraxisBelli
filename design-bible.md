@@ -8,7 +8,7 @@
 
 ### v0.5 Decision Queue — decided, not yet written into the sections below
 
-Snapshot of the latest design decisions as of 2026-09-28. **Already applied in this document:** the d6 conversion (§3, the §5 Mettle-check formula, `Guided`). **Decided but not yet applied** — where this list and an older section below disagree, this list wins. Suggested order: Role/Keyword → points formula (which needs both the die and the Role/Keyword change); Morale and Formations are independent and can run in parallel. Legacy snapshots of every doc as they stood before this work are saved alongside as `*_legacy.*`.
+Snapshot of the latest design decisions as of 2026-09-28. **Already applied in this document:** the d6 conversion (§3, §5's Mettle-check formula, `Guided`, range bands), **item 1 (Role/Keywords — §7, with knock-on fixes through §1/§8/§9/§10/the glossary)**, **item 2 (Morale redesign — §5, now 2d6, plus a new Damage Track mechanic for single-model units)**, **item 3 (Platoons/CORE — §8)**, and, as of a from-scratch rebuild later the same day, **item 4's core formula (§11 — Model Cost, Weapon Cost, `Anti-[Keyword]` pricing, weapon-trait and named-ability tiers, `Transport(X)`, and the new Size stat)**. **Still genuinely not applied:** §4's own `Fists`→`CCW` section rewrite (the decision — CCW is 0 points — is made, just not yet written into that section's prose), exhaustive classification of every remaining trait against the new tiers, the four faction signature-trait multipliers, actually re-costing the roster against the new formula, and item 6 (the smaller d10-notation cleanup listed below). Where this list and an older section below disagree on any of those, this list still wins. Legacy snapshots of every doc as they stood before this work are saved alongside as `*_legacy.*`.
 
 1. **Role + Keywords replace TYPE/CATEGORY** (rewrites §7; knock-ons in §8 Platoons, §10 Transports' "takes the payload's CATEGORY" rule, and the trait glossary).
    - A unit has one **Role** — the force-org slot it fills. Role is a list-building label only and grants no rules.
@@ -20,7 +20,7 @@ Snapshot of the latest design decisions as of 2026-09-28. **Already applied in t
    - Add a **Leader trait** that strips suppression markers from its own unit or from allies in an aura (protect your officers, hunt theirs).
    - Suppression-immunity traits (`Fearless`, `Undaunted (X)`, `Mindless`'s immunity clause) become rare, expensive, and faction-signature rather than a common menu option; reprice them accordingly.
    - The track and math stay universal across every faction (no per-faction morale subsystems). Factions differ in *access* to the rare immunity traits, not in rules. Faction flavor may rename the steps without changing them.
-3. **Formations / CORE** (rewrites §8's Named Platoons). Choosing a Formation designates a **CORE** Role/Keyword. *Only* CORE units get the Formation's passive bonus, and that Role's slot cap is raised. One uniform template replaces the bespoke Platoon Abilities, which also settles the undesigned ARMOR and SUPPORT ones. **Not yet decided:** the actual bonus each Role receives.
+3. **Platoons / CORE** (rewrites §8's Named Platoons). Choosing a Platoon designates a **CORE** Role/Keyword. *Only* CORE units get the Platoon's passive bonus, and that Role's slot cap is raised. One uniform template replaces the bespoke Platoon Abilities, which also settles the undesigned ARMOR and SUPPORT ones. **Not yet decided:** the actual bonus each Role receives.
 4. **Points formula rebuild** (rewrites §11 in full).
    - Recompute every probability table for d6 (a rebuild, not a reskin).
    - Calibration anchor: a 10-model "G.I."-equivalent rifle squad = **exactly 100 points**, carrying rifles and `CCW` only — **no bayonets by default**.
@@ -43,7 +43,7 @@ Snapshot of the latest design decisions as of 2026-09-28. **Already applied in t
 - **AP / Armor scale.** AP is 0–X with **no cap at 4**. Armor may reach ~10. AP lowers the Wound Roll target; **AP can only reduce a target to 2+** (this floor *is* the AP overkill cap the queue asked for). AP0 weapons are nearly useless against heavy armor by design; heavy armor demands heavy guns. Dedicated anti-tank weapons carry high Damage so their limited shots count.
 - **Terminology.** Rules text now says **Attack Roll** (the roll against Evasion) and **Wound Roll** (the roll against Armor). A natural 1 never wounds. How a Wound/Attack Roll target of **7+** is handled must be deliberate — see Proposed below.
 - **Range bands.** Close / Effective / Long, applied in §3 (Long extends to 1.5× the Range; 2× was the alternative).
-- **CORE is defined per Formation, per faction.** Not every faction gets every Formation (e.g. Saints barely field RECON, so need no RECON Formation). Bonuses are deliberately asymmetric and should reinforce a faction's strength or slightly lessen one of its weaknesses (illustrations, not decisions: Regiments' infantry Formation gets a massed-fire benefit; Oathkeepers' infantry Formation gets a pre-game redeploy).
+- **CORE is defined per Platoon, per faction.** Not every faction gets every Platoon (e.g. Saints barely field RECON, so need no RECON Platoon). Bonuses are deliberately asymmetric and should reinforce a faction's strength or slightly lessen one of its weaknesses (illustrations, not decisions: Regiments' infantry Platoon gets a massed-fire benefit; Oathkeepers' infantry Platoon gets a pre-game redeploy).
 - **Charges** roll d6 + Speed.
 - **`Iron Horizon`** is a dead name; that project was abandoned in favour of Praxis Belli. `ProjectSummary.md` rewritten this pass to drop it.
 - **`Tithe of Skulls`** (Wrathbound Oathbreakers `.cat`) is kept but needs simplification — see Round 2 below.
@@ -70,8 +70,8 @@ Snapshot of the latest design decisions as of 2026-09-28. **Already applied in t
 
 **Open, unresolved:**
 
-1. **Resolved (Round 3):** `Massed Ranks` *becomes* Regiments' Infantry-anchored Formation's CORE bonus, rather than sitting alongside a separately invented one. It stops being granted faction-wide to any 8+-model unit and instead applies only to CORE-tagged, Infantry-keyword units within that specific Formation (same internal "8+ models" condition on the unit itself, unchanged) — closing the overlap concern outright, since there's no longer a second, distinct bonus to overlap with.
-2. **New, opened by the above:** `Massed Ranks` was also Imperial Regiments' faction-wide *signature trait* (one per faction, per `faction-identity.md`'s design rule). Moving it into a Formation-gated CORE bonus vacates that role — **Regiments needs a new faction signature trait.** Deliberately deferred, not designed now.
+1. **Resolved (Round 3):** `Massed Ranks` *becomes* Regiments' Infantry-anchored Platoon's CORE bonus, rather than sitting alongside a separately invented one. It stops being granted faction-wide to any 8+-model unit and instead applies only to CORE-tagged, Infantry-keyword units within that specific Platoon (same internal "8+ models" condition on the unit itself, unchanged) — closing the overlap concern outright, since there's no longer a second, distinct bonus to overlap with.
+2. **New, opened by the above:** `Massed Ranks` was also Imperial Regiments' faction-wide *signature trait* (one per faction, per `faction-identity.md`'s design rule). Moving it into a Platoon-gated CORE bonus vacates that role — **Regiments needs a new faction signature trait.** Deliberately deferred, not designed now.
 
 #### Round 3 — 2026-09-28 (same day, following the Critical/Anti-X discussion)
 
@@ -92,7 +92,7 @@ Snapshot of the latest design decisions as of 2026-09-28. **Already applied in t
 
 **This game is balanced around a regular rifleman squad. Not around elites.**
 
-Ten bodies, Toughness 1, Armor 4, Evasion 6, Speed 5, Mettle 4, ~100 points. That is the reference unit, the formula's calibration anchor, and the mental model for army size — a 1000-point list is *about ten rifle squads' worth of stuff*.
+Ten bodies, Wounds 1, Armor 4, Evasion 5, Speed 5, Mettle 4, **exactly** 100 points. That is the reference unit, the formula's calibration anchor, and the mental model for army size. *(Confirmed, not just asserted, by the rebuilt §11 formula — this unit is the anchor the constants were solved against, not a number that happened to come out right. The "1000-point list" framing itself is still open — see §11 — since the standard game's own point target hasn't been decided yet; that's independent of whether the anchor squad itself prices correctly.)*
 
 Three rules follow, and they are anti-spiral rules:
 
@@ -104,7 +104,7 @@ The failure mode this guards against is real and it compounds: each fix for an e
 
 ### Resolved conventions
 
-- **Mettle is additive and higher-is-better** — `d6 + Mettle ≥ 6 + suppression markers` (re-anchored from d10; see §3). Every stat on the card now reads "bigger is better."
+- **Mettle is additive and higher-is-better** — `2d6 + Mettle ≥ 10 + suppression markers` (re-anchored twice: d10 → d6 → 2d6; see §5). Every stat on the card now reads "bigger is better."
 - **The attacker rolls both** the to-hit check and the damage check. The `.gst`'s older "defensive saves" phrasing on Anti-[Keyword] rules is legacy wording; the mechanics are unchanged either way, but higher Armor can only mean *tougher* if the attacker is the one rolling against it.
 
 ---
@@ -125,13 +125,13 @@ This deliberately avoids becoming a resource economy or a reaction system. A Pas
 
 **2 actions per activation**, baseline. Taken in any order, each used once per activation (special rules can break this).
 
-Common actions: **Move**, **Shoot**, **Fight**, **Rally** (remove all suppression markers from this unit), **Claim** (take an objective; LINE units do this for free). Some units get a free bonus action as a named exception — not a universal system.
+Common actions: **Move**, **Shoot**, **Fight**, **Rally** (remove all suppression markers from this unit), **Claim** (take an objective). **INFANTRY**-keyword units claim for free, spending no action to do so. Any other unit may still Claim, but only in place of Shoot or Fight — it cannot also make an attack that activation, though it may still Move (see §9). Some units get a free bonus action as a named exception — not a universal system.
 
 No general reaction economy. Triggered abilities are written per-unit as exceptions.
 
 ## 2. Movement & Formation
 
-No coherency stat. Move the leader model by its **Speed** stat, then place the rest of the unit within 2" of the leader, or within 2" of two models that are each within 2" of the leader (Warmachine-style reset — formation "resets" every time the unit moves).
+No coherency stat. Move the leader model by its **Speed** stat, then place the rest of the unit within 2" of the leader, or within 2" of two models that are each within 2" of the leader (Warmachine-style reset — platoon "resets" every time the unit moves).
 
 Engagement range: 1" baseline, extendable by weapon or trait.
 
@@ -144,19 +144,19 @@ Engagement range: 1" baseline, extendable by weapon or trait.
 ### The attack sequence
 
 1. **To-hit** — roll d6 per attack die against the target's **Evasion**. Total dice = weapon's Attacks × models firing.
-2. **Damage check** — each hit rolls again against the target's **Armor**, after **AP** is subtracted. Each success inflicts the weapon's **Damage** value in wounds against the target's **Toughness**.
+2. **Damage check** — each hit rolls again against the target's **Armor**, after **AP** is subtracted. Each success removes the weapon's **Damage** value from the target's **Wounds** pool.
 
-**Critical Hit** — a hit roll of an unmodified 6 is a Critical Hit. On its own this changes nothing beyond the success it already represents under the floor/ceiling rule above — it's a named hook, not a bonus, and exists purely so traits can key off it (`Extra Hits (X)`, `Critical (X)`, `Negates (Critical Hits)`; see glossary). Deliberately no baseline effect for anyone: a universal "natural 6s also auto-wound" rule would let every weapon in the game ignore the AP scale on a flat ~17% chance regardless of how mismatched it is against the target's Armor, which undermines AP's whole job as "the only real answer to heavy armor" (below) — keeping the bonus trait-gated means only weapons built for that identity get it.
+**Critical Hit** — a hit roll of an unmodified 6 is a Critical Hit. On its own this changes nothing beyond the success it already represents under the floor/ceiling rule above — it's a named hook, not a bonus, and exists purely so traits can key off it (`Extra Hits`, `Negates (Critical Hits)`; see glossary). Deliberately no baseline effect for anyone: a universal "natural 6s also auto-wound" rule would let every weapon in the game ignore the AP scale on a flat ~17% chance regardless of how mismatched it is against the target's Armor, which undermines AP's whole job as "the only real answer to heavy armor" (below) — keeping the bonus trait-gated means only weapons built for that identity get it. `Anti-[Keyword]` is the deliberate, narrow exception to this principle — it grants a natural-6 auto-wound, but only against one named keyword a specific weapon was built to hunt, never universally (see glossary).
 
 Higher Evasion = harder to hit. Higher Armor = harder to damage.
 
 There is no attacker-side accuracy stat. To-hit difficulty is entirely defender-side; attacker differentiation comes from traits, rerolls, and Anti-[Keyword] weapons.
 
-### Evasion — templated by TYPE, not freely tuned
+### Evasion — templated by archetype, not freely tuned
 
-d6 only offers five meaningfully distinct values (2 through 6), which isn't enough room for the fine per-unit tuning the old d10 curve allowed. Evasion is now assigned by broad TYPE template rather than hand-picked per unit:
+d6 only offers five meaningfully distinct values (2 through 6), which isn't enough room for the fine per-unit tuning the old d10 curve allowed. Evasion is now assigned by broad archetype template rather than hand-picked per unit — "Heavy Vehicle" and "Light Vehicle" below are weight-class labels within the Vehicle keyword, not keywords of their own:
 
-| TYPE | Evasion | Hit chance |
+| Archetype | Evasion | Hit chance |
 |---|---|---|
 | Heavy Vehicle | 2–3 | 83% / 67% |
 | Light Vehicle | 3–4 | 67% / 50% |
@@ -165,7 +165,7 @@ d6 only offers five meaningfully distinct values (2 through 6), which isn't enou
 
 Evasion above 6 is reachable only through modifier stacking, never as a base value, and cascades exactly like Armor above 6 (below) once it happens. This is rare enough in practice that a known quirk of the cascade — Evasion 7 and 8 land on the *identical* ~14% chance (both reduce to "a natural 6, then anything but a natural 1") — isn't worth solving for. The same quirk is a real problem for Armor, immediately below, because AP makes it come up constantly rather than rarely.
 
-**Veterancy no longer differentiates through Evasion.** A veteran and a rookie of the same TYPE share the same defensive template; the gap between them has to come from Mettle, Armor, Speed, Toughness, equipment, and traits instead. *(The exact Mettle values a roster should span under the new die haven't been recalibrated yet — flagged in Open Threads.)*
+**Veterancy no longer differentiates through Evasion.** A veteran and a rookie of the same archetype share the same defensive template; the gap between them has to come from Mettle, Armor, Speed, Wounds, equipment, and traits instead. *(The exact Mettle values a roster should span under the new die haven't been recalibrated yet — flagged in Open Threads.)*
 
 ### Armor above 6
 
@@ -175,21 +175,23 @@ A hull at Armor 9 struck by an AP 0 weapon needs a 6, then a 3+: `1/6 × 4/6 ≈
 
 *(Mechanic unchanged from the d10 version — Marcher's original inspiration — just re-anchored to the smaller die.)*
 
-### Armor's floor, and AP overkill — flagged, not yet solved
+### Armor's floor — the AP overkill cap
 
-The same "two different numbers land on the identical probability" quirk that's harmless at Evasion's rare ceiling is a real problem at Armor's **floor**, and it isn't rare: once AP has dropped a target's effective Armor to 1 or below, **any further AP is wasted against that target** — Armor 1, 0, and −1 all resolve identically. Because AP subtracts from Armor on every single attack, this happens in ordinary play constantly, not as an edge case. The weapon-cost formula already solves the mirror-image problem for Damage (`min(Damage, 2)` against soft targets, §11) — AP likely needs the same kind of overkill cap. **Not designed yet; carried into Open Threads below so it isn't lost when §11 gets rebuilt.**
+The same "two different numbers land on the identical probability" quirk that's harmless at Evasion's rare ceiling was a real problem at Armor's **floor**, and it wasn't rare: once AP dropped a target's effective Armor to 1 or below, any further AP was wasted against that target — Armor 1, 0, and −1 all resolved identically, and because AP subtracts from Armor on every attack, this came up constantly, not as an edge case.
+
+**Resolved: AP can only reduce a target's effective Armor to a floor of 2.** `Effective Armor = max(Armor − AP, 2)`. This is the AP overkill cap the weapon-cost formula needed — the mirror image of the existing Damage overkill cap (`min(Damage, 2)` against soft targets, §11) — and it removes the quirk outright rather than smoothing it: there's no separate Armor 1 / 0 / −1 to land on identically, since the formula never lets effective Armor reach them. A Damage-1 weapon at AP8 against Armor 10 (`max(10−8, 2) = 2`) rolls a flat 2+, an 83% wound chance — heavy AP genuinely wins, all the way down. *(The pricing consequence is now resolved — §11 Step 2's soft/hard reference math applies this same floor directly.)*
 
 ### The AP scale (draft — needs playtesting-anchored calibration)
 
-AP's range compresses along with the die: each point now does proportionally more work against a 5-step Armor range than it did against d10's wider one, so the old 0–8 scale is oversized. Draft compression to 0–4 below — the real-world reference pairings are a first-pass placeholder, not a calibrated result:
+**AP is not capped at 4 — Armor can reach ~10, and with the floor-of-2 rule above, punching a heavily-armored target down to its floor genuinely needs the higher end of the scale.** An earlier pass compressed this table to 0–4 on the assumption that d6's narrower Armor range needed a narrower AP range too; that assumption no longer holds now that Armor isn't capped low either. Restored to the original 0–8 scale and its real-world reference pairings:
 
-| AP | Reference |
-|---|---|
-| **0** | Modern assault rifle |
-| **1** | Magnum cartridge / 20mm autocannon |
-| **2** | WWII 37mm / 57mm |
-| **3** | 76mm / 88mm |
-| **4** | Modern 120mm sabot / railgun |
+| AP | Reference | | AP | Reference |
+|---|---|---|---|---|
+| **0** | Modern assault rifle | | **5** | 76mm |
+| **1** | Magnum rifle cartridge | | **6** | 88mm |
+| **2** | 20mm autocannon | | **7** | Modern 120mm sabot |
+| **3** | WWII 37mm | | **8** | Railgun |
+| **4** | 57mm | | | |
 
 **Most infantry weapons sit at AP 0.** Penetration is bought through heavy weapon teams and vehicles, not carried by line infantry — a large part of why combined arms is mandatory rather than merely encouraged.
 
@@ -221,24 +223,24 @@ Beyond 1.5× the Range, the weapon cannot target. *(1.5× rather than 2×: it ma
 
 Nothing in the game is ever helpless in melee — it is simply bad at it. Against a baseline target Fists are about **69%** as effective as a Bayonet, so a real melee weapon is a genuine upgrade rather than the difference between fighting and not.
 
-> **Pricing consequence:** because every model has Fists, it is **free** — the same logic that makes TYPE and CATEGORY bundles free. Real melee weapons are priced at their **margin over Fists**, not their absolute value. Skipping this would charge every model twice for a capability it already had.
+> **Pricing consequence:** because every model has Fists, it is **free** — nobody pays for a capability every model already has by default, the same reasoning that used to justify TYPE/CATEGORY bundles being free (that specific precedent no longer holds — see §7, those bundles are individually priced now — but the reasoning for a truly universal default still does). Real melee weapons are priced at their **margin over Fists**, not their absolute value. Skipping this would charge every model twice for a capability it already had. *(Partially resolved — `CCW` (replacing `Fists`) is confirmed at a flat **0 points**, by decision rather than derivation: "it exists solely to give each unit a melee option," never run through the weapon formula at all. Still queued: this section's own prose still says `Fists`, and the "69% of a Bayonet" comparison figure hasn't been recomputed against the new formula — a real weapon now, priced normally, not "margin over CCW" since margin over zero is just its own value.)*
 
 ## 5. Morale — Determined → Shaken → Frozen → Routing
 
 ### The Mettle check
 
 ```
-Roll d6 + Mettle.  Pass if the total ≥ 6 + suppression markers held.
+Roll 2d6 + Mettle.  Pass if the total ≥ 10 + suppression markers held.
 ```
 
-Higher Mettle is better, like every other stat on the card. A unit with Mettle 4 holding two markers needs a 4+ *(re-anchored from d10; the actual Mettle values a roster should span under the new die still need a recalibration pass — see Open Threads)*.
+An unmodified roll of **2 always fails**; an unmodified **12 always passes** — the same floor/ceiling principle as the main d6 engine (§3), just on the wider die pool this check uses. Higher Mettle is better, like every other stat on the card. A unit with Mettle 4 holding two markers needs an 8+ on 2d6, a 42% chance *(re-anchored twice, d10 → d6 → 2d6 — see the Decision Queue for why a flat d6 stopped differentiating Mettle values at all. The actual Mettle values a roster should span under 2d6 still need a recalibration pass — see Open Threads)*.
 
 - **Pass** — remove **one** suppression marker.
 - **Fail** — step **up** one level on the track.
 
 **Check timing:** at the start of a unit's activation if it holds any markers, or immediately when an effect forces one.
 
-**Naming note:** this specific check — the one that can step a unit up the morale track — is a **Morale test**. The same underlying roll (d6 + Mettle vs. a target number) is reused for other, unrelated triggered effects (`Rallying Cry`, `Combat Medic`, `Divine Favor`, etc.); those are **Mettle checks**, not Morale tests. The distinction matters because some traits (`Mindless`, `Undaunted (X)`) specifically reference Morale tests only — they don't touch a unit's other Mettle-gated abilities.
+**Naming note:** this specific check — the one that can step a unit up the morale track — is a **Morale test**. The same underlying roll (2d6 + Mettle vs. a target number) is reused for other, unrelated triggered effects (`Rallying Cry`, `Combat Medic`, `Divine Favor`, etc.); those are **Mettle checks**, not Morale tests. The distinction matters because some traits (`Mindless`, `Undaunted (X)`) specifically reference Morale tests only — they don't touch a unit's other Mettle-gated abilities.
 
 ### Suppression markers
 
@@ -250,7 +252,7 @@ Three ways to be rid of them, none punishing:
 |---|---|
 | Passing a Mettle check | 1 marker |
 | The **Rally** action | *all* markers on this unit |
-| Specific effects (e.g. *Hold Fast*) | as written |
+| A trait or ability written to do so | as written on the granting rule |
 
 **Rally** is an action like Move, Shoot, or Fight — one of a unit's two.
 
@@ -274,13 +276,19 @@ That is what suppressing fire is *supposed* to mean: it costs the target tempo, 
 | Level | Effect |
 |---|---|
 | **Determined** | Baseline. |
-| **Shaken** | −1 Evasion, −1 Armor, and a worsened Mettle. The whole card degrades uniformly. |
+| **Shaken** | −1 Evasion, −1 Armor only. *(No longer worsens Mettle too — that stacked with the suppression-marker penalty on the exact same check the marker already makes harder; markers alone now carry the rising difficulty.)* |
 | **Frozen** | Shaken's penalties, **and no Move actions.** Can still Shoot and Fight. |
 | **Routing** | Must spend its entire activation moving toward the nearest board edge. Reaching it removes the unit from play. |
 
 **Vehicles** run the same four steps but end in **Destroyed** rather than Routing.
 
+**Damage Track** *(single-model units only, uncosted — a universal rule, not a purchasable trait)*: the first time this unit's Wounds drop below half its starting total, it immediately makes a Morale test — this is a genuinely separate trigger from the marker-driven one above, and can still step the unit down the track as normal if it fails. Regardless of that test's outcome, the unit also permanently suffers **−1 to all Attack Rolls and Wound Rolls it makes**, for the remainder of the game, representing damage to its systems, organs, or components. This exists *alongside* the marker-driven track above, not in place of it, and the two are deliberately built to never overlap on the same axis: Shaken/Frozen only ever touch Evasion, Armor, and Move actions, so a suppressed *and* half-dead single-model unit is worse off than either alone — genuinely compounding penalties, not double-counting the same one under two names.
+
 **Courage** re-rolls failed Mettle checks. **Fearless** ignores suppression markers on Mettle checks — the two are deliberately separate, reusable pieces rather than one bundled trait.
+
+**`Aura of Discipline`** *(Aura, 12")* — as an action, this model may make a Mettle check; on a pass, every friendly unit within 12" of it (including its own) discards all suppression markers. "Protect your officers, hunt theirs" — a real risk/reward swing, not a passive: it costs the leader's own action, it can whiff on a failed roll with nothing to show for it, and losing the leader denies the whole effect outright. Deliberately just `Rallying Cry` widened from "self only" to the aura, reusing the game's existing infrastructure twice over rather than inventing anything new — the already-formal `Aura (12")` category (Aura of Courage, Aura of Warding, Reliquary) supplies the range, `Rallying Cry`'s own shape (Mettle test, full clear on a pass) supplies the mechanism. *(Priced now that §11 Step 5's ability tiers exist — **Major (15)**, given it can affect every friendly unit in range at once, not just the leader's own, comfortably clearing `Rallying Cry`'s own likely Minor tier for the self-only version.)*
+
+**Doctrine shift, not yet priced:** `Fearless`, `Undaunted (X)`, and `Mindless`'s own immunity clause are moving from "a common menu option any unit might take" to **rare, expensive, and faction-signature** — Cultists get `Mindless`, Wrathful Oathbreakers' Marine-chassis units get `Fearless`, and so on, rather than any unit being able to buy suppression-immunity off a shared list. The actual re-pricing is deferred to the points-formula rebuild; this is a standing design instruction for that pass, not yet acted on.
 
 ## 6. Cover & Terrain — Composable Tags
 
@@ -304,48 +312,59 @@ Blast, Engulf, and template weapons ignore cover entirely — their targets cann
 
 **True line of sight** throughout — base size implies a volume.
 
-## 7. The Two Axes — TYPE and CATEGORY
+## 7. Role and Keywords
 
-Every unit carries two labels, and **both carry rules.**
+Every unit carries one **Role** and any number of **Keywords**. This replaces the old TYPE/CATEGORY split — the two concepts survive, but only one of them still grants anything by itself.
 
-- **TYPE** — what the unit *is*. Six: **Infantry, Cavalry, Vehicle, Monster, Aerial, Towable**.
-- **CATEGORY** — its battlefield role, and the Platoon slot it fills. Six: **ARMOR, COMMAND, LINE, RECON, SHOCK, SUPPORT**.
+### Role — the force-org slot
 
-In the data every unit takes one CATEGORY as primary and one TYPE as secondary — e.g. the APC is `Support` (primary) + `Vehicle`; the AFV is `Armor` + `Vehicle`; the Regimental Officer is `Command` + `Infantry`.
+One per unit, from the same six names CATEGORY used: **ARMOR, COMMAND, LINE, RECON, SHOCK, SUPPORT.** Role is a **list-building label only — it grants no rules.** It fills a Platoon slot (§8) and nothing else. A unit's Role should reflect what it's actually expected to do on the battlefield; auditing the existing roster against that standard is separate, ongoing work, not resolved here.
 
-### CATEGORY rules
+### Keywords — what a unit *is*
 
-| Category | Grants |
+Any number per unit. Keywords **do nothing on their own.** They exist for two reasons:
+
+1. **Sharpen targeting** — `Anti-[Keyword]`, "an allied RECON unit," "choose a friendly [X] unit to…" A rule can reference a unit's Role exactly the same way it references a Keyword; nothing requires the target of such a check to be a Keyword specifically.
+2. **Design-time convenience** — certain traits are conventionally *paired* with certain Keywords when a unit is built (a Vehicle-keyword unit usually takes `Armored Front`; a Monster-keyword unit usually takes `Terrifying`), but that pairing happens at the drawing board, not the table. A keyword grants nothing automatically at runtime.
+
+The foundational Keywords — the ones every unit reaches for first — are the same six TYPE used: **Infantry, Cavalry, Vehicle, Monster, Aerial, Towable.** The set is open-ended beyond that: a new Keyword can be invented whenever a rule needs one to reference (`Caster` already works this way — see glossary — and a future `Mech` keyword is a live example of the kind of thing this is for).
+
+In the data, every unit still takes one Role plus its Keywords — e.g. the APC is Role **SUPPORT**, Keyword **Vehicle**; the AFV is Role **ARMOR**, Keyword **Vehicle**; the Regimental Officer is Role **COMMAND**, Keyword **Infantry**.
+
+### The one automatic exception: INFANTRY and objectives
+
+Claiming an objective is the single place a Keyword still triggers a rule by itself, because it's core infrastructure for the whole combined-arms design (§9), not a bundled convenience a unit builder opts into: **a unit with the INFANTRY keyword claims an objective for free. Every other unit may still claim, but only by spending its Combat action to do so** (see §1). This deliberately follows the Keyword itself, not the Role — a Transport inheriting a LINE Role from its cargo (§10) does not thereby claim for free; the cargo does, because the cargo is what's actually Infantry.
+
+### Traits that used to be automatic, now individually priced
+
+Everything below used to be bundled for free onto a TYPE or CATEGORY. None of it is automatic anymore — a unit has one of these only if it was built with it, paying whatever the trait's Minuscule/Minor/Major tier costs (§11 Step 5, which now has a first-pass classification for this exact list). This table is kept as design-time guidance for which trait conventionally answers which Keyword or Role — not a grant table.
+
+| Commonly paired with | Trait(s) |
 |---|---|
-| **ARMOR** | **Bulwark** — reduce all incoming damage by 1, to a minimum of 1. <br> **Hardpoints** — ignore the Heavy weapon trait. |
-| **COMMAND** | **Leadership Aura** — units within 12" may use this model's Mettle instead of their own. |
-| **LINE** | **Boots on the Ground** — does not need to spend an action to claim an objective. |
-| **RECON** | **Spotter** — satisfies the requirement for Indirect and Guided weapons; ignores smoke. <br> **Camouflaged** — +1 Evasion while in cover. <br> **All-Terrain** — ignores difficult terrain penalties. |
-| **SHOCK** | **Brutal Assault** — reroll hit results of 1 when fighting, or shooting within half range. |
-| **SUPPORT** | **Where We're Needed** — every 2" travelled costs only 1" of Speed while within its own deployment zone. |
+| Infantry (keyword) | `Entrenched` |
+| Cavalry (keyword) | `Run Them Through`, `All-Terrain` |
+| Vehicle (keyword) | `Armored Front`, `Hardpoints` |
+| Monster (keyword) | `Terrifying` |
+| Aerial (keyword) | `Flying`, `Soaring Above` |
+| Towable (keyword) | `Trailor`, `Emplaced Weapon` |
+| ARMOR (Role) | `Bulwark`, `Hardpoints` |
+| COMMAND (Role) | `Leadership Aura` |
+| LINE (Role) | — *(its old grant, `Boots on the Ground`, is gone outright — that benefit now follows the INFANTRY keyword directly, per the exception above, not any Role. A LINE-Role unit that isn't Infantry gets nothing from LINE itself.)* |
+| RECON (Role) | `Spotter`, `Camouflaged`, `All-Terrain` |
+| SHOCK (Role) | `Brutal Assault` |
+| SUPPORT (Role) | `Where We're Needed` |
 
-### TYPE rules
+`Flying` is written as its own standalone entry (see glossary) rather than an Aerial-exclusive bundle item — anything can be granted `Flying` on its own (see `Jump Jets`); Aerial is just the keyword it's conventionally paired with. `Soaring Above` is what actually distinguishes a true aircraft from anything else that merely has `Flying`.
 
-| Type | Grants |
-|---|---|
-| **Infantry** | **Entrenched** — while in cover, +1 Armor *and* gains `Courage`. |
-| **Cavalry** | **Run Them Through** — this unit's weapons gain +1 AP and Suppressing while charging. <br> **All-Terrain** |
-| **Vehicle** | **Armored Front** — uses 90° facings. Attacks against the front are made at −1 AP; against the rear, +1 AP. <br> **Hardpoints** |
-| **Monster** | **Terrifying** — units that end their activation engaged with this one are forced to make a Mettle check. |
-| **Aerial** | **Flying** — ignores models and terrain while moving. <br> **Soaring Above** — on activation, immediately move half Speed, then continue normally. May move off the table edge; if it does, remove it and redeploy it in the same state in the owner's deployment zone. Can only be charged by units with Flying. |
-| **Towable** | **Trailor** — may spend an action to hitch to a friendly Vehicle within 3", and an action to unhitch. <br> **Emplaced Weapon** — must spend an action to deploy before making ranged attacks; immobile while emplaced. |
-
-`Flying` is written as its own standalone entry (see glossary) rather than an Aerial-exclusive bundle item — Aerial TYPE grants it alongside `Soaring Above`, but anything can be granted `Flying` on its own (see `Jump Jets`). `Soaring Above` is what actually distinguishes a true aircraft from anything else that merely ignores terrain.
-
-> **Note, superseding the old one below:** `Impact(X)` is **back**, in a genuinely new shape — not a restoration of whatever the original v0.3 draft meant by it. See the trait glossary's `Impact (X)` and `Crushing Impact (X)` entries. `Fear` is still gone; the Monster signature stays `Terrifying`. Cavalry's baseline charge bonus stays `Run Them Through` — `Impact (X)` is a separate, optional trait some Cavalry (and Infantry, and vehicles/monsters via `Crushing Impact`) carry on top of it, not a TYPE-wide replacement.
+> **Note, superseding the old one below:** `Impact(X)` is **back**, in a genuinely new shape — not a restoration of whatever the original v0.3 draft meant by it. See the trait glossary's `Impact (X)` and `Crushing Impact (X)` entries. `Fear` is still gone; the Monster signature stays `Terrifying`. Cavalry's baseline charge bonus stays `Run Them Through` — `Impact (X)` is a separate, optional trait some Cavalry (and Infantry, and vehicles/monsters via `Crushing Impact`) carry on top of it, not a Keyword-wide replacement.
 
 ## 8. List Building — Platoons
 
-Platoon slots are defined directly by CATEGORY. The data currently defines a **Vanguard Formation** force entry that accepts all categories with **no min/max constraints set** — slot limits are not yet encoded.
+Platoon slots are defined directly by Role. The data currently defines a **Vanguard Platoon** force entry that accepts all Roles with **no min/max constraints set** — slot limits are not yet encoded.
 
 **Proposed base spread** (not yet in the data):
 
-| Category | Min/Max |
+| Role | Min/Max |
 |---|---|
 | COMMAND | 1 |
 | LINE | 2–4 |
@@ -354,22 +373,29 @@ Platoon slots are defined directly by CATEGORY. The data currently defines a **V
 | ARMOR | 0–2 |
 | SUPPORT | 0–2 |
 
-Named Platoons shift the spread toward an anchor category in exchange for a once-per-game **Platoon Ability** lasting the rest of that round. Proposed: anchor expands to 2–4, LINE drops to 1–3, everything else caps at 1.
+### CORE and the Platoon bonus
 
-- **Line Formation** (LINE) — *Hold Fast:* for the rest of the round, suppression markers do not worsen Mettle checks for units in this Platoon.
-- **Spearhead** (SHOCK) — *Break the Line:* for the rest of the round, units in this Platoon resolve Run Them Through at +2 AP instead of +1.
-- **Outrider** (RECON) — *Fast as the Wind:* for the rest of the round, units in this Platoon each gain one free Move action.
-- **ARMOR Platoon** — *ability undesigned.*
-- **SUPPORT Platoon** — *ability undesigned.*
+Choosing a named Platoon designates a **CORE** Role *or* Keyword for that list — both are on the table, and the one worked example below actually resolves as a Keyword, not a Role. Two things follow from being CORE:
+
+- **The Platoon's anchor Role's slot cap is raised**, mirroring the old spread shift (anchor expands toward 2–4, everything else tightens). Slot caps are always a Role concept — the base spread above is keyed by Role — so even a Keyword-designated CORE still has an associated anchor Role whose cap loosens.
+- **Only units that satisfy the CORE designation gain the Platoon's passive bonus**, checked against whichever axis — Role or Keyword — that specific Platoon names. One uniform *template* replaces the old bespoke per-Platoon abilities (`Hold Fast`, `Break the Line`, `Fast as the Wind`), which also retires the old "ARMOR/SUPPORT abilities are undesigned" gap outright — there's no longer a shared generic ability left undesigned for any Role; every bonus is faction-specific from the start.
+
+**The bonus itself is defined per Platoon, per faction — deliberately asymmetric, and not every faction offers every Platoon.** Saints barely field RECON, so they don't need a RECON-anchored Platoon at all. A bonus should reinforce the faction's own strength or slightly blunt one of its weaknesses, never read as a generic, faction-neutral effect.
+
+**Platoon names are faction-specific, drawn from that faction's own fluff — there's no shared archetype vocabulary any faction reaches for by default.** Regiments' Infantry Platoon doesn't have to be called anything a Saints or Oathkeepers infantry-anchored Platoon would also call itself; the old generic names (`Line Formation`, `Spearhead`, `Outrider`) don't carry forward as reusable labels.
+
+**The first worked example, and so far the only one: Regiments' Infantry Platoon designates CORE as the INFANTRY *keyword*, not the LINE Role.** Its bonus is `Massed Ranks` (see faction-identity.md): while a CORE, Infantry-keyword unit in that Platoon holds 8 or more models, it re-rolls Attack Rolls of 1 and gains +1 Mettle.
+
+**Confirmed, 2026-09-28: every faction identity has two separate layers, not one.** (1) One **faction-wide signature trait** — always on, no Platoon required (`Oathbound`, `Bound Spirit`, `Martyrs, all`, `Wrathbound` — see faction-identity.md). (2) One or more **Platoon-specific CORE bonuses** — only live when that Platoon is chosen, only benefiting CORE-tagged units within it. These are parallel, not substitutes: a faction can have one without the other being done yet, which is exactly Regiments' situation right now — CORE bonus done (`Massed Ranks`), faction-wide signature trait now empty (moving `Massed Ranks` out of that role vacated it) and needs a replacement. The other four factions are the mirror image: faction-wide signature trait intact, CORE bonus undesigned (their old Doctrines are retired — see faction-identity.md's per-faction Doctrine lines, struck through).
 
 ### Embedded units
 
 The data implements embedding directly. A **Rifle Squad** may take:
 
-- **Embedded Leader** — one Regimental Officer (or any COMMAND-category leader unit), which then counts as LINE rather than COMMAND.
+- **Embedded Leader** — one Regimental Officer (or any COMMAND-Role leader unit), which then counts as LINE rather than COMMAND.
 - **Embedded Heavy Weapon Team** — one Heavy Weapons Team, which is stripped of SUPPORT and re-categorized as LINE.
 
-Embedding therefore **changes the host's CATEGORY** to match the squad, so an embedded model doesn't consume its own slot.
+Embedding therefore **changes the host's Role** to match the squad, so an embedded model doesn't consume its own slot.
 
 ### Army scaling
 
@@ -381,16 +407,13 @@ Embedding therefore **changes the host's CATEGORY** to match the squad, so an em
 
 Objective-based scenarios, varied deployment styles. Alternating activation; the round ends when every unit has activated.
 
-**Combined arms is a primary design goal, not a theme.** CATEGORY caps shape what a list *contains*; the three rules below make a mono-arm list *lose*, which is the part that actually matters.
+**Combined arms is a primary design goal, not a theme.** Role caps shape what a list *contains*; the three rules below make a mono-arm list *lose*, which is the part that actually matters.
 
 ### 1. Objectives need boots
 
-| TYPE | Objectives |
-|---|---|
-| **Infantry, Cavalry, Towable** | May **claim**. Costs an action — except LINE units, which claim for free (*Boots on the Ground*). |
-| **Vehicle, Monster, Aerial** | May **contest** only. They deny an objective to the enemy but can never score it. |
+**Any unit may claim an objective — the old hard "Vehicle/Monster/Aerial can only contest, never score" restriction is gone** (§7): a unit with the INFANTRY keyword claims for free; any other unit may still claim, but only by spending its Combat action to do so, giving up its attack that activation.
 
-A tank can park on a marker and stop you scoring it forever; it can never score it itself. **Every army therefore needs infantry regardless of doctrine** — the cleanest lever the game has for mandating combined arms, and it costs no new subsystem.
+**That's no longer a wall, but it's still a real, felt tax — and it lands hardest on exactly the lists least able to afford it.** A tank holding a marker is a tank not shooting that activation, full stop; nothing else on the table converts firepower into board control that directly. And because armor is expensive, an armor-heavy list fields *few* units to begin with (§11 Step 4) — pulling one off the firing line to babysit an objective is a proportionally bigger bite out of that list's total output than the same trade is for an infantry-heavy list, which has bodies to spare precisely because they're cheap. **Every army therefore still benefits enormously from fielding infantry** — not because other arms are structurally locked out of scoring anymore, but because infantry is the only arm that ever does it for free. A mono-arm armor list can grind out objectives if it's willing to stop shooting to do it; that's a real, meaningful cost, just no longer an impossible one.
 
 ### 2. Terrain density is a rule, not a suggestion
 
@@ -403,40 +426,40 @@ A board failing this is not a legal board. Sparse terrain silently converts the 
 
 ### 3. Anti-armor must actually kill armor
 
-Dedicated anti-armor weapons need `Damage ≥ 6` against Toughness 10 chassis. Massed armor should be a **trap**, punished by a comparatively cheap specialist. `Anti-[Keyword]` doubling hits supplies the machinery; the stat lines have to honour it.
+Dedicated anti-armor weapons need to threaten the heaviest chassis fielded (currently Wounds 14–18 on Wolverine/Badger/Bastion, not the Wounds 10 this section originally assumed). Massed armor should be a **trap**, punished by a comparatively cheap specialist. `Anti-[Keyword]`'s guaranteed bonus damage on a natural 6 (see glossary — no longer a hit-doubling rule) supplies the machinery; the stat lines have to honour it.
 
 ### The intended shape
 
 Each arm needs a job the others cannot do:
 
-- **Infantry** takes and holds ground. Only it scores.
-- **Armor** breaks through and denies, but cannot hold.
+- **Infantry** takes and holds ground — the only arm that ever does it for free.
+- **Armor** breaks through and denies; it can hold too, but only by giving up its firepower to do it.
 - **Artillery** kills at range, is blind without RECON, and is helpless up close.
 - **Recon** sees for the artillery and cannot fight.
-- **Aerial** strikes anywhere and holds nothing.
+- **Aerial** strikes anywhere; it can claim like Armor can, at the same cost, but its whole point is reaching what infantry can't yet, not camping on what it already has.
 
 Dependencies, not merely roles. Artillery genuinely does not function without a Spotter, and that coupling is the model for everything else.
 
 ## 10. Transports
 
-**Transport(X)** where X is a **model** capacity, not a unit count. Defined values in the data: `Transport (6)`, `(11)`, `(14)`, `(28)`. The APC is `Transport (14)`.
+**Transport(X)** where X is a **seat** capacity, not a model count. *(Changed 2026-09-28 with the introduction of the Size stat — see the Reference section below. Before Size existed, one model always consumed exactly one unit of capacity; now a model consumes as many seats as its own Size value.)* A unit's total seat cost when embarking = its own Size × however many models are boarding — `Transport (14)` carries 14 Size-1 troopers, or 7 Size-2 Marines, or a mix (8 Size-1 + 2 Size-3 is exactly 14 seats). Defined values in the data: `Transport (6)`, `(11)`, `(14)`, `(28)`. The APC is `Transport (14)`.
 
-**Eligible cargo:** Infantry and Cavalry.
+**Eligible cargo:** Infantry and Cavalry, by keyword — but this is necessary, not sufficient. **Cavalry is Size X by blanket convention** (see Reference — Unit Profile), so no Cavalry unit can actually ever embark regardless of this keyword rule; only Infantry does in practice.
 
 ### Dedicated Transports
 
 A Transport may be taken as a **Dedicated Transport** attached to one specific eligible unit during list building. A Dedicated Transport:
 
-- **Takes the CATEGORY of the unit it carries.** A transport carrying a LINE squad *is* a LINE unit, for every rules purpose — `Anti-[Keyword]`, Platoon abilities, doctrine effects, all of it.
+- **Takes the Role of the unit it carries.** A transport carrying a LINE squad *is* a LINE unit, for every rules purpose that checks Role — `Anti-[Keyword]`, Platoon/CORE eligibility (where a Platoon's bonus isn't Keyword-restricted — see §8), doctrine effects, all of it. It does **not** inherit the cargo's Keywords — a transport carrying Infantry doesn't itself become Infantry (see §7's INFANTRY/objectives exception).
 - **Does not consume an additional slot** beyond its payload's.
 - Must **deploy carrying that unit**, and may never carry a different one.
 - Still counts as its own unit for activation and Pass Token purposes.
 
 *(Slot treatment carried over from Marcher, which allots transports "1 per Transport-Eligible Unit" rather than making them compete with combat choices.)*
 
-Transports competing for CATEGORY slots quietly kills combined arms. Under tight caps — Oathkeepers hold SUPPORT 0–1 — buying a transport spends the slot that would have held fire support, so the rational choice is always to walk. This makes mobility a **points** decision rather than a slot decision, which is the one that should govern it.
+Transports competing for Role slots quietly kills combined arms. Under tight caps — Oathkeepers hold SUPPORT 0–1 — buying a transport spends the slot that would have held fire support, so the rational choice is always to walk. This makes mobility a **points** decision rather than a slot decision, which is the one that should govern it.
 
-**Inheriting the payload's category is what keeps that honest.** A slot-free transport with no category would be a free unit with no downside; instead it is a fully exposed member of the formation it serves. Choosing what a vehicle carries chooses what it is vulnerable to — an Oathkeeper gunboat full of LINE infantry is hunted by `Anti-Line`, while a pure tank in the ARMOR slot is hunted by `Anti-Armor`. Two genuinely different threat profiles, chosen at list building.
+**Inheriting the payload's Role is what keeps that honest.** A slot-free transport with no Role would be a free unit with no downside; instead it is a fully exposed member of the platoon it serves. Choosing what a vehicle carries chooses what it is vulnerable to — an Oathkeeper gunboat full of LINE infantry is hunted by `Anti-Line`, while a pure tank in the ARMOR slot is hunted by `Anti-Armor`. Two genuinely different threat profiles, chosen at list building.
 
 ### Hull classes — capacity versus armament
 
@@ -462,64 +485,72 @@ The tension stays honest because a gunboat is priced as a tank *plus* capacity, 
 
 ## 11. Points
 
-> The values in the NewRecruit data are **placeholders** from learning the platform and are not authoritative. The formula below is the reference; a calculator implementing it lives at `points.py`.
+**Rebuilt from a bare slate 2026-09-28** — every constant and table below is new, re-derived for d6 rather than patched from the d10-era formula. `points.py` has not been updated to match yet; this section is currently ahead of the code. **Not yet done: re-costing the actual roster against this formula** — every unit's price in `factions/imperial_regiments.json` and every `.cat` file is still a stale d10-era number until that separate pass happens.
 
-**Target scale:** a standard game is **1000 points / 2 Platoons**, roughly 8–14 units a side, so the average unit lands near **90 points**.
+**Target scale:** a standard game's point total is open again (1000 vs. 2000 vs. 3000 — see the Decision Queue); nothing below depends on that number, since the formula prices one model or weapon at a time.
 
-Model cost and weapon cost are computed **separately** and summed, because Evasion is a property of the target rather than of the attacker or its weapon — the two halves genuinely don't interact.
-
-CATEGORY and TYPE rule bundles are **not priced**. Every unit carries exactly one of each, so their value is absorbed into the baseline.
+Model cost and weapon cost are computed **separately** and summed, because Evasion is a property of the target rather than of the attacker or its weapon — the two halves genuinely don't interact. Every Role/Keyword bundle trait (§7's reference table) that used to be a free grant is now individually priced through Step 5, not absorbed into the baseline.
 
 ### Step 1 — Model cost
 
 ```
-Model Cost = 5.83 × Toughness × E × A × S × M
+Model Cost = BASE_MODEL × Wounds × E(Evasion) × A(Armor) × S(Speed) × M(Mettle)
+BASE_MODEL = 6.45
 ```
 
-| Evasion | **E** | | Armor | **A** |
-|---|---|---|---|---|
-| 3 | 0.63 | | 3 | 0.89 |
-| 4 | 0.71 | | 4 | **1.00** |
-| 5 | 0.83 | | 5 | 1.14 |
-| 6 | **1.00** | | 6 | 1.33 |
-| 7 | 1.25 | | 7 | 1.60 |
-| 8 | 1.67 | | 8 | 2.00 |
-| 9 | 2.50 | | 9 | 2.67 |
-| | | | 10 | 4.00 |
-| | | | 11+ | 8.00+ |
+**E and A** are `sqrt(1/P)` against the *true* combat probability (the Armor cascade mechanic, §3, is unchanged and still governs actual play — it's just not mirrored 1:1 into cost, since doing so made a Bastion-grade chassis price over 2000 points on the chassis alone). The square root is what tames that: it keeps the "durability costs superlinearly" principle intact while stopping it from exploding at vehicle-scale Armor.
 
-- **E** is `1 ÷ P(hit)`, normalised so Evasion 6 = 1.00.
-- **A** is `1 ÷ P(damage)` against a reference **AP 1** attack, normalised so Armor 4 = 1.00.
-- **S** (Speed) = `1 + (Speed − 5) × 0.06`
-- **M** (Mettle) = `1 + (Mettle − 4) × 0.06`
+| Evasion | 2 | 3 | 4 | **5** | 6 |
+|---|---|---|---|---|---|
+| **E** | 0.63 | 0.71 | 0.82 | **1.00** | 1.41 |
 
-Baselines are Evasion 6, Armor 4, Speed 5, Mettle 4 — a plain grunt, who costs **7 points**.
+| Armor | 2 | 3 | **4** | 5 | 6 | 8 | 10 | 12 | 14 | 18 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **A** | 0.78 | 0.87 | **1.00** | 1.23 | 1.73 | 1.90 | 2.45 | 4.24 | 4.65 | 10.39 |
 
-> **Why the terms multiply rather than add.** Being good at *everything* has to cost superlinearly, or elite units are undercosted by construction. Because Toughness, E, A, S, and M all multiply, an Oathkeeper (T2, ARM 7, SPD 7, MET 6) pays not for durability *plus* mobility but for durability *×* mobility — **3.8× a Guardsman per model**, before weapons. Most units simply cannot afford to be fast *and* armored *and* tough, and that is the intended pressure: **for an elite unit, the cost is the downside.** This is also why the formula can afford to be generous with stat divergence between factions.
+Both normalised to the anchor's own stats (Evasion 5, Armor 4) rather than an arbitrary reference — Evasion 5 is now literally the Infantry archetype baseline (§3), not a separate hand-picked pairing.
 
-> Armor 3 and 4 cost the same. That is a real consequence of "an unmodified 1 always fails": against AP 2, both cap out at a 90% damage chance, so the first points of armor genuinely buy nothing. Armor only starts earning its cost at 5+.
+**M (Mettle)** gets the same `sqrt(1/P)` treatment, but priced off **P(fail)** on the 2d6 Morale check (§5), not P(pass) — a natural mistake to make and worth flagging: Mettle's *good* outcome is passing, the opposite direction from Evasion/Armor where the attacker's *bad* outcome (missing, failing to wound) is what the target wants. Pricing off `1/P(pass)` makes higher Mettle cheaper, which is backwards.
 
-> Evasion 10 would score 5.00 — a 10× multiplier off one stat. **Cap Evasion at 9.**
+| Mettle | 1 | 2 | 3 | **4** | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|---|
+| **M** | 0.62 | 0.69 | 0.82 | **1.00** | 1.29 | 1.83 | 3.16 |
+
+**S (Speed)** has no probability basis — movement doesn't map onto a hit or wound chance — so it stays a hand-tuned ladder, same status as Mettle's marker-check rate used to be. Zero-anchored, not baseline-anchored, since true immobility is a real, separate liability from merely being slow:
+
+```
+Speed 0:  S = 0.70   (a discrete "Immobile" tax, not a continuation of the curve below)
+Speed 1:  S = 1.00   (the free/neutral reference point)
+Speed N≥1: S = 1 + 0.06 × (N − 1)
+```
+
+| Speed | 0 | 1 | 2 | 3 | 4 | **5** | 6 | 7 | 8 | 9 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **S** | 0.70 | 1.00 | 1.06 | 1.12 | 1.18 | **1.24** | 1.30 | 1.36 | 1.42 | 1.48 |
+
+Anchor stats are Evasion 5, Armor 4, Speed 5, Mettle 4 — a plain grunt, who costs **exactly 8.00** (the 80/20 split's chassis target; see The currency scale, below).
+
+> **Why the terms multiply rather than add.** Unchanged reasoning from the old formula: being good at *everything* has to cost superlinearly, or elite units are undercosted by construction. An elite unit's cost genuinely is its downside — most units cannot afford to be fast *and* armored *and* tough at once, and that's the intended pressure.
+
+> **Armor's floor is a real combat rule, not just a pricing trick.** §3 already establishes `Effective Armor = max(Armor − AP, 2)` — AP can never push a Wound Roll easier than a flat 2+. That floor is what keeps the Armor factor table above from needing its own separate overkill handling.
 
 ### Step 2 — Weapon cost
 
-Weapons are priced against **two reference targets**, because a single reference badly misprices anti-tank guns:
-
-- **Soft target** — Evasion 6, Armor 4 → `P(hit) 0.5`, `P(dmg) = min(0.9, (7 + AP)/10)`
-- **Hard target** — Evasion 5, Armor 8 → `P(hit) 0.6`, `P(dmg) = clamp((3 + AP)/10, 0.1, 0.9)`
-
 ```
-Soft  = Attacks × 0.5 × P_soft × min(Damage, 2)
-Hard  = Attacks × 0.6 × P_hard × Damage
+Soft = Attacks × P_hit(Evasion 5) × P_damage(Armor 4, AP) × min(Damage, 1)
+Hard = Attacks × P_hit(Evasion 3) × P_damage(Armor 8, AP) × Damage
 Value = (Soft + Hard) ÷ 2
-Weapon Cost = 6.67 × Value × R × (1 + Attacks × AP × 0.03)
+Weapon Cost = BASE_WEAPON × Value × R
+BASE_WEAPON = 12.857
 ```
 
-The final term is the **penetration × volume premium.** A weapon that is both piercing *and* high-volume is the strongest thing on the table, and pricing each term linearly badly undercharges the combination. It is why a Heavy Machine Gun (A4/AP2/D2) is the most expensive infantry weapon in the game.
+Reference targets are now tied to real archetypes instead of an arbitrary pairing: **soft = the anchor's own Infantry stat line** (Evasion 5 / Armor 4 — no longer a separate invented reference, it's literally what Infantry means under §3's template), **hard = Heavy Vehicle** (Evasion 3 / Armor 8, already deep enough to engage the real cascade mechanic).
 
-`min(Damage, 2)` on the soft score is an **overkill cap** — a Damage 10 shell is no better than a Damage 2 one against a Toughness 1 rifleman, and without the cap every anti-tank weapon prices as though it were also the best anti-infantry weapon in the game.
+**The overkill cap is `min(Damage, 1)`, not 2** — the anchor's real Wounds is 1, so anything above 1 is exactly as wasted against it as Damage 8 would be. The old cap of 2 was quietly overvaluing every Damage-2+ weapon's soft-target performance.
 
-**Range multiplier R** = `0.6 + Range ÷ 30`, with melee at **0.85**.
+**The old "penetration × volume premium" term is dropped entirely.** It was compensating for a flaw the d10 formula had that doesn't exist here: `Value` already multiplies `Attacks × P_damage(AP)` *inside itself*, against both reference targets — that's already the real multiplicative relationship the premium term was trying to bolt on separately. Keeping both was double-counting the same effect. (Verified this wasn't just a hunch: a Heavy Machine Gun's "most expensive infantry weapon" status survives the term's removal — it now lands at a real, defensible ~9× the Rifle from its actual combat output alone, not ~17× inflated by a redundant multiplier.)
+
+**Range multiplier R** = `0.6 + Range ÷ 30`, with melee at **0.85** — carried forward unexamined. This one doesn't connect to the Close/Effective/Long band mechanic (§3) at all; it's a separate "longer reach is worth more" assumption that hasn't been re-derived. Flagged, not fixed.
 
 | Range | R | | Range | R |
 |---|---|---|---|---|
@@ -528,92 +559,95 @@ The final term is the **penetration × volume premium.** A weapon that is both p
 | 12" | 1.00 | | 36" | 1.80 |
 | 18" | 1.20 | | | |
 
-### Step 3 — Weapon traits
+**Worked example — a plain Rifle (A1/AP0/D1/18"):**
 
-Every trait is multiplicative — a trait's value scales with how much the weapon already does, so its cost should too. A flat add taxes a cheap weapon heavily and an expensive one barely at all, which is backwards.
+| Step | Value |
+|---|---|
+| Soft (vs. Evasion 5/Armor 4) | 1 × 0.333 × 0.500 × 1 = 0.1667 |
+| Hard (vs. Evasion 3/Armor 8 — cascades: 1/6 × 5/6) | 1 × 0.667 × 0.139 × 1 = 0.0926 |
+| Value | (0.1667 + 0.0926) / 2 = 0.1296 |
+| R (18") | 0.6 + 18/30 = 1.20 |
+| **Cost** | 12.857 × 0.1296 × 1.20 = **2.00** |
 
-Rather than individually arguing ~15 trait values — exactly the kind of subjective, hard-to-defend pricing this system otherwise avoids — traits are grouped into **two bonus tiers and two restriction tiers**, each one fixed multiplier. Retuning the whole system is changing four numbers, not fifteen.
+The Rifle is the calibration anchor itself — `BASE_WEAPON` was solved so this lands on exactly 2.00 (80/20 split), not discovered to land there.
 
-**Bonus tier** — does the trait change the *shape* of the attack (major), or just improve the odds on an otherwise-normal shot (minor)?
-**Restriction tier** — does it narrow *what* can be targeted (minor), or *when* the unit can act at all, or *how completely*, (major)? `Frontal/Rear/Side Arc` moved to major once `Traversing` existed as a real comparison: a **permanently** fixed arc never reaches the rest of the board, while `Traversing` eventually reaches all of it, just slowly — pricing them the same was only ever an artifact of Arc being the sole data point.
+#### `Anti-[Keyword]` pricing
 
-| Tier | × | Traits |
+```
+Anti-X surcharge = BASE_WEAPON × R × 0.5 × Attacks × (1/6) × [min(Damage,1) if the keyword is soft-type, else Damage if hard-type]
+```
+
+Added on top of the weapon's normal cost, not multiplied into it. Three things make this correct rather than just plausible-looking:
+
+- **Matched to the actual keyword.** `Anti-Infantry` prices only against the soft reference, `Anti-Vehicle`/`Anti-Armor` only against hard — never blended, since the bonus (see glossary — a guaranteed hit on a natural 6, bypassing Armor and AP entirely) only ever triggers against one or the other. It needs no `P_hit`/`P_damage` lookup at all, since a natural 6 always hits regardless of the target's real Evasion, and the bonus skips the Wound Roll.
+- **Same overkill cap as the base formula** — the guaranteed bonus is exactly as wasted against a 1-Wound target as a normal hit would be.
+- **The `× 0.5` weight is borrowed from the base formula's own soft/hard split**, not a new invented discount — `Anti-Infantry` only pays off on the half of encounters the base formula already assumes are soft-target ones.
+
+Verified against a fair benchmark (the cost of doubling the weapon's own Attacks — a true dice-for-dice comparison, since the bonus can trigger off every one of a weapon's existing attack dice): every case checked lands at 0.28×–0.67× of that benchmark, confirming `Anti-[Keyword]` really is the cheaper route to a specific-target tool it was always meant to be.
+
+### Step 3 — Weapon traits: Minuscule / Minor / Major
+
+Replaces the old two-tier (bonus/restriction) system with one three-grade scale, graded by **how much a trait shifts the math of the attack, or whether it changes a unit's state as part of resolving it** — a state change (a marker, a forced check) counts the same as a probability shift even when it doesn't touch the attack's own numbers at all.
+
+| Tier | Bonus | Restriction |
 |---|---|---|
-| Major bonus | **1.30** | Linked-Weapon, Blast (L), Engulf (L), Guided, Indirect, Overcharge, Precision |
-| Minor bonus | **1.10** | Accurate, Blast (S), Engulf (S), Suppressing, Turret, Pistol |
-| Minor restriction | **0.90** | Coaxial, Traversing |
-| Major restriction | **0.75** | Heavy, Frontal / Rear / Side Arc |
-| Anti-[Keyword] *(each, stacks)* | **1.20** | — |
+| Minuscule | ×1.05 | ×0.95 |
+| Minor | ×1.15 | ×0.85 |
+| Major | ×1.35 | ×0.65 |
 
-**Multiple traits compound, they do not add.** A weapon with traits `A` and `B` costs `base × A × B`, not `base × (1 + (A−1) + (B−1))`. This is a deliberate choice, made explicit here because it isn't the only reasonable one and the two diverge fast: two Major bonuses stacked is a 5.6% gap between compounding and adding; three is 15.6%; a hypothetical five-trait weapon is 48.5%. At the trait counts currently on the roster (2–3), the two are nearly identical — the gap only bites on a weapon someone loads up with everything.
+First-pass classification (not exhaustive — refine as more traits get built):
 
-Compounding is *derived*, not merely chosen, for the model-stat formula above — `Toughness ÷ (P_hit × P_dmg)` is a real multiplicative relationship, so an elite model being tough *and* evasive *and* fast is genuinely superlinear survivability. Weapon traits have no such derivation; the tier multipliers are hand-picked, same as ever. So this is a free design decision, not a mathematical necessity, and it was made **for consistency with that same instinct**: specialization is already the theme of the weapon tiers (Obliterator, Automatic, and Special are deliberately single-purpose, not swiss-army guns), and compounding actively discourages stacking many bonus traits onto one weapon, which reinforces rather than fights that theme.
+- **Minuscule bonus**: `Accurate`, `Pistol`, `Armored Front` (cuts both ways — usually facing the enemy, but the rear weakness is real)
+- **Minor bonus**: `Suppressing` (a real state change to the target, no math shift on this attack), `Optics`, `Onslaught`
+- **Major bonus**: `Guided` (replaces Evasion outright), `Linked-Weapon` (rerolls every miss), `Indirect` (removes the LOS requirement entirely), `Overcharge`
+- **Minor restriction**: `Traversing`, `Coaxial`
+- **Major restriction**: `Heavy`, `Frontal/Rear/Side Arc`, `Consumable (1)`
+
+`Anti-[Keyword]` sits outside this system entirely — see its own pricing above, not a tier multiplier.
+
+**Multiple traits still compound, not add** — unchanged principle from the old formula, and the same reasoning holds: specialization is the theme of the weapon tiers, and compounding discourages loading one weapon with everything.
 
 ### Step 4 — Unit size scaling
 
-Chassis, weapons, and Transport are summed, then multiplied by:
-
 ```
-Size Factor = (N ÷ 10) ^ −0.15          [unit cost scales as N^0.85]
+Unit Cost = Model Cost × N
 ```
 
-| Models | Factor | | Models | Factor |
-|---|---|---|---|---|
-| 1 | 1.41 | | 8 | 1.03 |
-| 2 | 1.27 | | 10 | **1.00** |
-| 3 | 1.20 | | 16 | 0.93 |
-| 5 | 1.11 | | 20 | 0.90 |
+**No discount for larger squads.** The old sublinear `(N/10)^−0.15` Size Factor is retired outright — confirmed 2026-09-28, "no discounts, we'll address it with single-model damage scaling separately." Single-model toughness (vehicles, monsters) is no longer bought through an ever-larger Wounds stat multiplying into an ever-larger cost — it's handled by the **Damage Track** (§5) instead, a mechanic rather than a pricing curve.
 
-**Why:** in alternating activation the scarce resource is the **activation, not the model**. Sixteen bodies delivering one activation are worth less per model than five delivering one. Overkill waste and coherency drag push the same direction.
+### Step 5 — Named abilities: flat, not multiplicative
 
-Note that *degradation* is **not** the justification, despite being the intuitive one. Average output over a unit's lifetime is `(N+1)/2N`, which collapses immediately and then flattens — 55% at 10 models, 53% at 16. It cannot explain a discount between those two sizes.
+Same logic as before: an ability is a capability, not a modifier on an existing base, so it gets a flat cost rather than a multiplier. Now **three** tiers instead of two, matching Step 3's naming, anchored off `BASE_MODEL` rather than derived from probability (there's no clean probability basis for "how much is an aura worth," same status as Speed's coefficient):
 
-Hand-priced extras sit **outside** this curve.
-
-### Step 5 — Special/named unit abilities: flat, not multiplicative
-
-Priority Orders, Leadership Abilities, Triggered effects (Blood Surge and anything shaped like it). These get **flat point costs**, on principle — a weapon trait multiplies because it modifies a base the weapon already has (its own Attacks/AP/Damage output), and a stat multiplies because durability is a genuinely multiplicative relationship. A standalone ability like *"ignore Shaken entirely"* or *"reroll any die once per game"* doesn't modify either kind of base — it's a capability, not a modifier — and its value has essentially nothing to do with how many guns the unit happens to be carrying. Charging a percentage of the unit's grand total would make the same ability cost more on a unit that spent its points on weapons and less on one that spent them on chassis, which has nothing to do with what the ability actually does.
-
-Same two-tier logic as the weapon traits, just flat instead of a multiplier:
-
-| Tier | Cost | Use for |
+| Tier | Cost | Roughly |
 |---|---|---|
-| **Major** | **15** | Meaningfully changes how the unit survives or plays — ignoring a whole state (Shaken, Suppressing), a strong once-per-game reroll, a wide-reaching aura |
-| **Minor** | **5** | A narrow or conditional edge — situational, small in scope, or rarely relevant |
+| Minuscule | **2** | ~30% of a grunt's chassis |
+| Minor | **6** | ~1 grunt's chassis |
+| Major | **15** | ~2.3 grunts' chassis |
 
-The 3× ratio matches the bonus-trait tier gap (1.10 vs 1.30). These sit **outside the size-scaling curve** — they usually attach to one model (a leader's Priority Order), not the whole squad, so they shouldn't get cheaper because the squad is large.
+First-pass classification of §7's "commonly paired, now individually priced" trait table:
+
+| Trait | Tier |
+|---|---|
+| `Leadership Aura`, `Bulwark`, `Flying`, `Soaring Above` | Major |
+| `Spotter`, `Entrenched`, `Run Them Through`, `Brutal Assault`, `Terrifying`, `Hardpoints` | Minor |
+| `Camouflaged`, `All-Terrain`, `Where We're Needed`, `Trailor` | Minuscule |
+
+`Armored Front` and `Emplaced Weapon` don't belong on this ladder at all: `Armored Front` is priced under Step 3 (it's a weapon-facing effect, graded Minuscule bonus above), and `Emplaced Weapon` is a genuine restriction — it belongs with `Conscript`/`Mindless` in the cost-*reducing* trait family, not this bonus-ability table.
+
+These sit **outside** Step 4's unit-count multiplication — they usually attach to one model (a leader's aura), not the whole squad.
 
 ### Other surcharges
 
-- **Transport(X)** — `X × 0.417` points.
+- **`Transport(X)`** — `X × 0.5` points, where X is now measured in **seats** (§10, Reference — Unit Profile's Size stat), not models. Deliberately *not* forced through the 80/20 model/weapon split — capacity is neither chassis durability nor a weapon, it's a third kind of value (pure delivery convenience), so it gets its own rate. No clean probability derivation exists for this one either; `×0.5` is a reasoned starting guess (roughly, 14 seats costs a bit more than one grunt's own chassis — a fair trade for potentially saving an entire squad a full activation of exposure), not a discovered number.
 
 ### The currency scale
 
-`BASE_MODEL` and `BASE_WEAPON` move **together**. Multiplying both by the same factor rescales every cost in the game proportionally and changes no relative balance whatsoever — it is a pure unit conversion. They are calibrated so the anchor unit, a 10-model Rifle Squad with rifles and bayonets, lands on exactly **100 points**.
+`BASE_MODEL` (6.45) and `BASE_WEAPON` (12.857) move **together** and are calibrated at the **80/20 split**: the anchor unit — a 10-model Rifle Squad, `CCW` only, no bayonet by default — lands on exactly **100 points** (80 chassis + 20 weapons, 10 models × 8.00 chassis + 10 × 2.00 Rifle). `CCW` itself is **0 points**, fixed by decision rather than derived — "it exists solely to give each unit a melee option," not something the weapon formula prices. 70/30 remains a fully viable alternative (`BASE_MODEL` would become 5.65, `BASE_WEAPON` 19.29, Rifle 3.00) — nothing in either formula gives a technical reason to prefer one split over the other; 80/20 was kept because it's what was already decided, not because 70/30 broke anything.
 
-A 1000-point list is therefore *ten rifle squads' worth of stuff*, which is the intended mental model.
+### Validation
 
-### Validation — Imperial Regiments
-
-| Unit | Models | Total | Per model |
-|---|---|---|---|
-| Conscript Mob | 16 | 80 | 5.0 |
-| **Rifle Squad** | 10 | **100** | 10.0 |
-| Veteran Squad | 8 | 112 | 14.0 |
-| Storm Squad | 8 | 141 | 17.6 |
-| Scout Element | 5 | 67 | 13.4 |
-| Regimental Officer | 1 | 58 | — |
-| Heavy Weapons Team | 1 | 78 | — |
-| Field Gun Battery | 1 | 57 | — |
-| Armored Personnel Carrier | 1 | 117 | — |
-| Tank Destroyer | 1 | 176 | — |
-| Armored Fighting Vehicle | 1 | 241 | — |
-
-Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscript Mob fields 16 bodies for less than the anchor's cost, which is exactly what chaff should do.
-
-> **Open:** the AFV at 241 is 2.4 rifle squads — 24% of a 1000-point list. That follows from the single-model premium stacking on an already-expensive chassis. The ratio is in line with comparable games, but if centrepieces feel over-taxed, soften `SIZE_EXPONENT` from 0.85 toward 0.90.
->
-> These numbers move whenever the weapon library or a unit's loadout changes — re-run `python build_cat.py factions/imperial_regiments.json` rather than trusting this table blind.
+**Not yet re-run against this formula.** The old validation table (Imperial Regiments' 11-unit placeholder roster) was entirely d10-era output and has been removed rather than left to mislead — every number in it predates this rebuild. Re-costing the actual roster against the formula above is separate, not-yet-started work; `python build_cat.py factions/imperial_regiments.json` will need re-running once `points.py` itself is updated to match this section.
 
 ---
 
@@ -621,13 +655,14 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 
 ### Unit Profile
 
-`Speed | Mettle | Evasion | Armor | Toughness`
+`Speed | Mettle | Evasion | Armor | Wounds | Size`
 
 - **Speed** — inches of movement.
 - **Mettle** — morale. Additive, higher-is-better (see §5).
 - **Evasion** — attackers roll ≥ this to hit. Higher is better for you.
 - **Armor** — attackers roll ≥ this (after AP) to damage. Higher is better for you.
-- **Toughness** — the wound pool. Replaces the old "Wounds" stat.
+- **Wounds** — the wound pool: how much damage a model can absorb before it's removed. *(Briefly renamed "Toughness" during the v0.5 pass to avoid reading like a duplicate of "a wound," the individual unit of damage — reverted back to "Wounds," since that reads more like a hit-point pool at a glance and the `.gst`'s own characteristic field was still called `Wounds` the whole time regardless.)*
+- **Size** — how many Transport seats one model occupies (§10). **1** = baseline infantry, **2** = Power-Armor-tier elites, **3** = Terminator-tier heavies, **X** = cannot embark in any Transport, full stop. Only ever stated on Infantry-keyword units — every Vehicle, Monster, and Aerial-keyword unit is implicitly Size X without needing it written down, and **Cavalry is Size X by blanket convention** (confirmed 2026-09-28: no Cavalry-coded unit across comparable wargames meaningfully benefits from Transport eligibility, so it's kept out going forward rather than judged case by case). This means §10's "Eligible cargo: Infantry and Cavalry" line is now necessary-but-not-sufficient — Cavalry remains keyword-eligible in principle, but Size is the real gate, and no Cavalry unit will ever actually pass it.
 
 ### Weapon Profile
 
@@ -659,22 +694,21 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 - **Suppressing** — targets gain a suppression marker regardless of the attack's outcome.
 - **Barrage** — when this weapon hits a unit, that unit must immediately make a Morale test. Not yet transcribed into `PraxisBelli.gst` — referenced on Prophesier MBT's Purification Launcher (`Barrage, Indirect`) but currently undefined there. *(First application: Purification Launcher, Prophesier MBT.)*
 - **Overcharge** — this weapon may fire in Overcharged mode: its AP and Damage are each increased by 2 for that attack. For each unmodified roll of 1 made for this weapon's attack, the bearer suffers a Damage 1 hit that cannot be saved against, in addition to any other effect of that roll.
-- **Caster** — a standalone keyword, independent of TYPE and CATEGORY, granted to specific models (priests, psykers, sorcerers, and other channel-a-power archetypes) rather than defining a new TYPE or CATEGORY of its own — the same "anything can be granted it" pattern already established for `Flying`. Exists primarily so `Anti-Caster` has something to target; the actual casting/power mechanics a Caster-tagged model might use are undesigned and out of scope for now.
-- **Anti-[Keyword]** — against a target with the matching keyword, each successful damage roll counts as two hits instead of one; because hits are allocated individually, the excess may spill onto other models in the unit. Defined for: Aerial, Armor, Caster, Cavalry, Command, Infantry, Line, Monster, Recon, Shock, Support, Towable, Vehicle.
+- **Caster** — a standalone Keyword, independent of Role and the foundational Keywords, granted to specific models (priests, psykers, sorcerers, and other channel-a-power archetypes) rather than defining a new TYPE or CATEGORY of its own — the same "anything can be granted it" pattern already established for `Flying`. Exists primarily so `Anti-Caster` has something to target; the actual casting/power mechanics a Caster-tagged model might use are undesigned and out of scope for now.
+- **Anti-[Keyword]** — generalizes to any Keyword, not a fixed list. Whenever this weapon's Attack Roll against a target with [Keyword] is an unmodified 6, it immediately deals its Damage value to that target's wounds — no Wound Roll made for this portion, so it bypasses Armor and AP entirely (still reduced by flat damage-mitigation like `Bulwark`, and nullified the same as any other Anti-[Keyword] effect by `Negates ([Keyword])`). The attack then resolves normally on top of that — the Attack Roll was already a hit (natural 6 always hits), so it still gets its own ordinary Wound Roll exactly as any other successful hit would. *(Replaces the old ×2-hits-on-success rule entirely — chosen because it's the only shape of "explosive on a hot roll" that guarantees a crit against the right target is never a dud; see the Decision Queue, Round 3, for the three alternatives it beat out. Two separate hits now land on a natural 6 against a matching keyword — the guaranteed one and the normally-resolved one — and each is free to land on a different model in the unit via the standing one-hit-per-model allocation rule; no bespoke spillover clause needed. **Pricing:** §11 Step 2 — a flat additive surcharge on top of the weapon's normal cost, not a multiplier.)*
 - **Bulwark** — reduce incoming damage by 1, to a minimum of 1.
 - **Ablative Plating** — grants `Negates (Anti-Vehicle)` and `Negates (Anti-Armor)`. Narrower than a flat Armor increase on purpose: it specifically answers weapons built to kill vehicles, rather than making the model tougher against everything. Industrial materials science, not warded plate — the sci-fi register stays technological rather than borrowing anything from the Oath, since the faction using it first (Regiments) has no oath-access at all. *(First application: the Sable's standalone Ablative Plating option.)*
 - **Warded Plate** *(name provisional)* — grants `Negates (Anti-Infantry)`. The infantry-scale cousin of `Ablative Plating`, and a direct payoff of the line above — Oathkeepers (Deep Oath) are the first faction with the actual oath-access to earn the "warded" version rather than the merely industrial one. *(First application: Oathkeepers' Terminator-tier Heavies, alongside `Shrug`.)*
 - **Indomitable** — reduce the AP of incoming attacks by 1, minimum 0. Doesn't stop a dedicated anti-armor weapon from doing its job, but meaningfully blunts anything that wasn't built to punch through this specific armor. Deliberately not named `Bulwark` (already in use, and means Damage reduction, not AP reduction — a real naming collision caught before it shipped). *(First application: Oathkeepers' Heavies/Terminator-equivalent tier.)*
-- **Crushing** — this weapon's Damage is increased by 1 against a target with Toughness 5+, and by 2 against a target with Toughness 10+. Deliberately named for what it does, not for any one weapon's fictional flavor, so it can be reused on future weapons that hit harder against heavy targets without being reskins of the same gravity-tech idea. The Toughness 10+ threshold isn't arbitrary — it lines up with the Armor-above-10 cascade threshold, so this trait reads as a direct answer to exactly the kind of target that rule exists for. *(First application: an Oathkeeper NCO sidearm option.)*
+- **Crushing** — this weapon's Damage is increased by 1 against a target with Wounds 5+, and by 2 against a target with Wounds 10+. Deliberately named for what it does, not for any one weapon's fictional flavor, so it can be reused on future weapons that hit harder against heavy targets without being reskins of the same gravity-tech idea. The Wounds 10+ threshold isn't arbitrary — it lines up with the Armor-above-10 cascade threshold, so this trait reads as a direct answer to exactly the kind of target that rule exists for. *(First application: an Oathkeeper NCO sidearm option.)*
 - **Shotgun** — this and `Meltdown` are **range-band-conditional**: their effect changes depending on which band the attack was fired from, rather than being a flat always-on modifier like every other trait above. At Close Range, re-roll all failed Attack Rolls. At Long Range, this weapon cannot be fired. Represents a close-range weapon that's devastatingly reliable up close and rapidly falls off past that — a hard cliff rather than a gentle taper. *(Rewritten for the Close/Effective/Long bands. The earlier "+2 Evasion at the outer band" penalty was a ±2 modifier, which the modifier policy now forbids; "cannot fire at Long Range" is the floor-style replacement and is a proposal — if the cliff should be softer, the alternative is a flat 5+ Attack Roll at Long Range.)* *(First application: the generic Scattergun weapon, D2; the Oathkeeper-exclusive `Oathkeeper Scattergun` variant runs D3.)*
 - **Meltdown** — at Close Range, re-roll all failed Attack Rolls. If fired at Effective or Long Range instead, re-roll all **successful** Attack Rolls — a harsher penalty than Shotgun's, appropriate since Fusion-pattern weapons already sit in anti-armor territory and need a stronger reason not to just be fired from a safe distance. Applies to **every Fusion-pattern weapon in the roster retroactively** (Fusion Blaster, Heavy Fusion Blaster, and any future Fusion Pistol), not just new ones — the name is a deliberate near-homophone for Melta, the real-world-adjacent tech Fusion weapons are meant to evoke in this setting's fiction, the same naming trick as `HAMR`/hammer.
-- **Impact (X)** — on a successful charge, roll X dice **per charging model** against the target unit's Armor, AP0, Damage 1 each. **Not an attack and doesn't use any weapon** — it resolves in total isolation, unaffected by weapon traits, Anti-[Keyword], or anything else that modifies an attack, because it represents the sheer physical weight of the charge and nothing else about the unit. Most effective against light/unarmored targets by design (AP0 means it never threatens real armor, only bulk-and-numbers). A genuine revival of the cut v0.3 `Impact(X)`, but a new shape, not a restoration — the old version is not what this is. Guideline rather than a hard TYPE lock: Infantry and Cavalry are the register this belongs to. X is driven by the individual model's own weight/violence of impact, not the unit's size — a jump-pack trooper might carry Impact (1), while something dropping from orbital height carries Impact (3), regardless of squad size either way.
-- **Crushing Impact (X)** — the Vehicle/Monster register of `Impact (X)`, same structure and same isolation from weapons/traits. Currently stubbed at AP3/Damage 2 pending a real application — enough to threaten light armor or anything under Toughness 3, not enough to meaningfully touch another vehicle. *(First real application: Bastion — whether Vehicles get a standard melee profile at all, the way Infantry has universal Fists, or whether some vehicles rely on Crushing Impact alone with no ongoing melee option, is a genuinely open question, not yet decided either way.)*
+- **Impact (X)** — on a successful charge, roll X dice **per charging model** against the target unit's Armor, AP0, Damage 1 each. **Not an attack and doesn't use any weapon** — it resolves in total isolation, unaffected by weapon traits, Anti-[Keyword], or anything else that modifies an attack, because it represents the sheer physical weight of the charge and nothing else about the unit. Most effective against light/unarmored targets by design (AP0 means it never threatens real armor, only bulk-and-numbers). A genuine revival of the cut v0.3 `Impact(X)`, but a new shape, not a restoration — the old version is not what this is. Guideline rather than a hard Keyword lock: Infantry and Cavalry are the register this belongs to. X is driven by the individual model's own weight/violence of impact, not the unit's size — a jump-pack trooper might carry Impact (1), while something dropping from orbital height carries Impact (3), regardless of squad size either way.
+- **Crushing Impact (X)** — the Vehicle/Monster register of `Impact (X)`, same structure and same isolation from weapons/traits. Currently stubbed at AP3/Damage 2 pending a real application — enough to threaten light armor or anything under Wounds 3, not enough to meaningfully touch another vehicle. *(First real application: Bastion — whether Vehicles get a standard melee profile at all, the way Infantry has universal Fists, or whether some vehicles rely on Crushing Impact alone with no ongoing melee option, is a genuinely open question, not yet decided either way.)*
 - **Consumable (X)** — this weapon may only be used X times over the course of the game; once its uses are exhausted, it cannot fire again. Parallel notation to `Anti-[Keyword]`, `Deployment (X)`, and `Impact (X)` — a general-purpose way to describe limited-ammunition or one-shot weapons rather than inventing a bespoke rule per weapon. *(First application: Bastion's Hunter-Killer Missile, `Consumable (1)`.)*
 - **Lance** — +1 AP on charge. The first trait priced under the new flat points formula: a flat +0.5, regardless of the weapon it's on. *(First application: the Heavy Ripsaw Sword, Repentia Squad — paired with `Onslaught` below, so charging turns a plain AP1 blade into effective AP2 with rerolled hits; off the charge it's just AP1.)*
 - **Onslaught** — while charging, reroll failed hit rolls made with this weapon. A one-time reroll, not chainable against a second failure. Deliberately framed as the physics of impact (a charging body knocking the target's guard down for an instant) rather than personal fury, which keeps it distinct from the established "zealotry/fervor rerolls damage, not hits" convention (`Martyrs, all`, `Wrathbound`) — that rule is about anger sinking the blow deeper, this is about the shock of the charge itself, a different axis entirely. *(First application: the Heavy Ripsaw Sword, Repentia Squad.)*
-- **Extra Hits (X)** — when this weapon's hit roll is X or higher, it generates one additional hit, resolved normally (including its own separate damage check). Defaults to X = 10 (a true Critical Hit) unless the weapon's own profile states a lower threshold — that threshold is the actual design lever, since a weapon at `Extra Hits (7)` fishes for the bonus constantly while one stuck at `Extra Hits (10)` only spikes on the rare hot streak. *(First application: the Heavy Ripsaw Sword, Repentia Squad, at `Extra Hits (10)` — deliberately kept at the stingy default so it reads as a spike, not a new baseline: normally an above-average blade, a genuine nightmare unit when the dice run hot.)*
-- **Critical (X)** — when this weapon's hit roll is X or higher, that hit automatically succeeds its damage check without rolling. Same threshold convention as `Extra Hits (X)`. Deliberately scoped to specific weapons rather than the universal Critical Hit rule itself — see the note under "Critical Hit" above for why a blanket version of this would be a real problem, not just a strong one.
+- **Extra Hits** — when this weapon's Attack Roll is an unmodified 6, it generates one additional hit, resolved normally (including its own separate Wound Roll). *(No longer configurable — dropped its `(X)` threshold entirely; always keyed to a true Critical Hit, never a lower one like 7+ or 9+.)* Doesn't stack with other traits that also trigger off an unmodified 6, on the same Attack Roll — "doesn't stack" means they don't *compound*, not that they're mutually exclusive: if a weapon somehow carries both `Extra Hits` and a triggered-on-6 effect like `Anti-[Keyword]`'s free hit, a natural 6 triggers **both in full**, each resolving as its own separate instance, neither amplifying the other. *(First application: the Heavy Ripsaw Sword, Repentia Squad.)*
 - **Negates (X)** — this model treats attacks or effects carrying [X] as though they did not carry it; everything else about the attack or effect still resolves normally. A general "hard immunity to one specific named thing" family — the defensive mirror of `Anti-[Keyword]`'s "specifically punishes one named thing." Retroactively absorbs two existing traits that were always this shape under a bespoke name: `Ablative Plating` and `Warded Plate` (see below), both of which keep their flavor names and fictional grounding but are now defined as grants of this shared primitive rather than one-off rules text. *(First new application: Repentia Squad's `Negates (Suppressing)` — they don't gain suppression markers from Suppressing weapons at all, the mechanical expression of a unit that's already stopped caring whether it dies.)*
 
 **Cost-modifying traits**
@@ -690,6 +724,7 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
   - Deliberately scoped to Infantry/Cavalry only. A Mettle check makes sense for something with a will to keep fighting to check against; a vehicle's failure modes don't work that way. Vehicle repair is a different mechanic for a different unit, not yet designed.
 
 **Durability & morale**
+- **Aura of Discipline** *(Aura, 12")* — as an action, this model may make a Mettle check; on a pass, every friendly unit within 12" of it (including its own) discards all suppression markers. `Rallying Cry` widened from self-only to the aura — see §5 for the full reasoning.
 - **Regeneration** — at the end of every round, regain 1d5 lost wounds.
 - **Courage** — re-roll failed Mettle checks. *(Split out from the old Fearless, which used to bundle this with ignoring suppression markers — the two are more useful as separate, independently reusable pieces than as one combined trait.)*
 - **Fearless** — ignores suppression markers on Mettle checks (the check is made as if the unit held none). No longer bundles Courage's re-roll — see above.
@@ -700,7 +735,7 @@ Chaff → line → veteran reads **5.0 → 10.0 → 14.0** per model. The Conscr
 - **Undaunted (X)** — when this unit fails a Mettle check that would step it down its morale track, it may immediately attempt one additional, unmodified roll against a fixed target number of X; on success, it does not step down. Mechanically `Shrug`'s own shape — a flat second roll against a static threshold, not modified by the model's own stats — retargeted at morale instead of damage. Kept as its own name rather than overloading `Shrug`, since two different effects can't share one trait name (the same rule that separated `Bulwark` from `Indomitable`). *(First application: Repentia Squad, at `Undaunted (7+)`, gated on a Repentia Superior being present in the unit — kill her, and it stops working for whoever's left.)*
 
 **Movement**
-- **Flying** — ignores models and terrain while moving. Now a standalone entry rather than an Aerial-TYPE exclusive: anything can be granted it. Aerial TYPE grants it alongside `Soaring Above`, which is what actually distinguishes a real aircraft from anything else that merely ignores terrain.
+- **Flying** — ignores models and terrain while moving. Now a standalone entry rather than an Aerial-exclusive bundle: anything can be granted it. The Aerial keyword is conventionally paired with it alongside `Soaring Above`, which is what actually distinguishes a real aircraft from anything else that merely ignores terrain.
 - **Jump Jets** — grants `Flying`, and grants `Impact (X)` on a successful charge. *(First application: Inceptors baseline; a Tacticus-pattern Assault Squad as an optional upgrade, at a lower X than Inceptors carry by default.)*
 
 **Deployment (X)**
@@ -739,16 +774,17 @@ Genuinely open as of the last working session — most of the original v0.3 list
 1. **Trait-tier and ability-tier multipliers are still guesses** — the four weapon-trait tier values, the five faction signature-trait multipliers, and the two ability tiers are all hand-picked. Everything else in the points formula derives from probability. First thing playtesting should attack.
 2. **Sapper, Hunter, and Dragoon have no stat lines.** Sapper is additionally missing its actual terrain-clearing rule (`Breach`, conceptually settled, not yet written up formally) — the one piece that answers this document's own §9 terrain-density requirement.
 3. **`Optics` now has a real mechanism** (ignores Evasion bonuses from Obscured/Obscuring terrain) but still needs a pricing tier assigned in points.py — currently costs nothing, which is now wrong rather than a placeholder.
-4. **ARMOR and SUPPORT generic Platoon Abilities** are undesigned (the five faction-specific doctrines exist; the three generic Vanguard-Platoon abilities from §8 are Line/Shock/Recon only).
+4. **Resolved by the Platoon/CORE rewrite (§8):** there's no longer a generic ARMOR/SUPPORT ability to leave undesigned — every Platoon bonus is faction-specific from the start. What's actually open now: every faction's Platoon bonuses are undesigned except Regiments' Infantry Platoon (`Massed Ranks`). This also **retires the five old per-faction "Doctrines"** (`Fix Bayonets`, `Sealed Orders`, `Hold the Oath`, `Act of Faith`, `Break the Chains`) — they were the same once-per-game, rest-of-round shape the generic Platoon Abilities used, and that shape is gone. They need redesigning as CORE bonuses, not transcribing as-is (see item 10 below).
 5. **Platoon slot constraints aren't encoded in the `.gst`** — the proposed spread in §8 is documented but not enforced by the force entry itself.
 6. **The AFV's cost is 2.4 rifle squads.** If centrepieces feel over-taxed, soften `SIZE_EXPONENT` from 0.85 toward 0.90 in `points.py`.
 7. **No mission or scenario** has been written against the current rules.
 8. **No general facing/LOS section** — `Armored Front` and the arc traits imply one exists, but it isn't written.
-9. **The toolchain is duplicated** across the `Praxis Belli` project workspace and the `PraxisBelli` git repo (copied, not moved) — a real drift risk until one is picked as canonical.
+9. ~~The toolchain is duplicated across the `Praxis Belli` project workspace and the `PraxisBelli` git repo.~~ **Resolved (2026-09-28):** the repo now lives at `C:\Toolbox\ToolboxVault\PraxisBelli`, and `Documents\NewRecruit\data\PraxisBelli` is a Windows junction pointing at it — one real copy, no drift risk left.
 10. **`PraxisBelli.gst` is missing roughly 30 rules that already exist in this glossary and in faction-identity.md.** The user is keeping the `.gst` as-is and rebuilding the three `.cat` rosters from scratch by hand rather than resetting everything — this list is what still needs transcribing into the `.gst` at some point during that rebuild (definitions live at their linked source, not repeated here, to avoid a third copy going stale):
-    - **Weapon/unit traits** (full text in this document's glossary, §"Weapon & unit trait glossary" above): `Bombardment`, `Traversing`, `Ablative Plating`, `Indomitable`, `Crushing`, `Shotgun`, `Meltdown`, `Impact (X)`, `Crushing Impact (X)`, `Consumable (X)`, `Conscript`, `Critical Weakspot`, `Fixed`, `Combat Medic`, `Courage`, `Shrug (X)`, `Jump Jets`, `Deployment (Scout)`, `Deployment (Infiltrate)`, `Picket`, `Barrage`.
-    - **Faction signature traits** (full text in faction-identity.md, per-faction "Signature trait —" entries): `Massed Ranks` (Regiments), `Bound Spirit` (Forgesworn), `Oathbound` (Oathkeepers), `Martyrs, all` (Saints), `Wrathbound` (Wrathful Oathbreakers).
-    - **Platoon Doctrines** (faction-identity.md, per-faction "Doctrine —" entries): `Fix Bayonets`, `Sealed Orders`, `Hold the Oath`, `Act of Faith`, `Break the Chains`.
+    - **Weapon/unit traits** (full text in this document's glossary, §"Weapon & unit trait glossary" above): `Bombardment`, `Traversing`, `Ablative Plating`, `Indomitable`, `Crushing`, `Shotgun`, `Meltdown`, `Impact (X)`, `Crushing Impact (X)`, `Consumable (X)`, `Conscript`, `Critical Weakspot`, `Fixed`, `Combat Medic`, `Courage`, `Shrug (X)`, `Jump Jets`, `Deployment (Scout)`, `Deployment (Infiltrate)`, `Picket`, `Barrage`. **Transcribe the current text** for `Anti-[Keyword]` and `Extra Hits` specifically — both changed shape this pass (Round 3) and no longer match what an earlier draft of this list might have assumed.
+    - **Faction signature traits** (full text in faction-identity.md, per-faction "Signature trait —" entries): `Bound Spirit` (Forgesworn), `Oathbound` (Oathkeepers), `Martyrs, all` (Saints), `Wrathbound` (Wrathful Oathbreakers). *(`Massed Ranks` no longer belongs on this list — it's now Regiments' Infantry Platoon's CORE bonus, not a faction-wide signature trait; see §8. Regiments needs a new signature trait before this list is complete again.)*
+    - **Platoon Doctrines, retired — do not transcribe as-is.** `Fix Bayonets`, `Sealed Orders`, `Hold the Oath`, `Act of Faith`, `Break the Chains` are all superseded by the Platoon/CORE rewrite (item 4 above); each faction needs a redesigned CORE bonus instead.
     - **One not-yet-in-glossary trait**: `Warded Plate` (faction-identity.md, Oathkeepers' Heavies/Terminator family section) — name still provisional.
-    - **Present in the `.gst` but with stale text needing a rewrite, not an addition**: `Fearless` (likely still the old bundled version), `Entrenched` (likely still says "reroll failed Mettle checks" instead of granting `Courage`), `Optics` (likely still the old priced-at-0 stub text).
-11. **The v0.5 redesign is in progress.** §3 and the §5 Mettle-check formula are converted to d6; everything else — the Role/Keyword collapse, morale redesign, Formation/CORE, the full points-formula rebuild, the `Fists`→`CCW` rename — is specified in the **v0.5 Decision Queue** near the top of this document and not yet applied to the sections below. Every faction/unit stat line in `factions/imperial_regiments.json` was built against the d10 curve and is stale until the formula is rebuilt. Two gaps surfaced during the dice conversion need real design work, not just arithmetic: an **AP overkill cap** (§3, "Armor's floor") and a **Mettle value recalibration** for d6.
+    - **Present in the `.gst` but with stale text needing a rewrite, not an addition**: `Fearless` (likely still the old bundled version), `Entrenched` (likely still says "reroll failed Mettle checks" instead of granting `Courage`), `Optics` (likely still the old priced-at-0 stub text), `Anti-` (still the old ×2-hits version — the whole mechanic changed, not just the wording).
+11. **The v0.5 redesign, status as of this pass:** §3, §5 (Mettle-check formula plus the new Damage Track), §7 (Role/Keyword), §8 (Platoon/CORE), and — as of a full from-scratch rebuild — §11's core points formula (Model Cost, Weapon Cost, `Anti-[Keyword]`, weapon-trait and named-ability tiers, `Transport(X)`) are all converted and written into the sections above, plus a new Size stat (Reference — Unit Profile; §10). **Still not applied:** §4's own `Fists`→`CCW` prose rewrite (the decision itself — 0 points, fixed — is made), exhaustive classification of every remaining trait/ability against the new tiers (only a first pass exists), the four faction signature-trait multipliers, the range multiplier (flagged as never re-derived, not just unconverted), and the standard game's point target (1000 vs. 2000 vs. 3000, still open — independent of the formula itself, which prices per-unit regardless of the total). **Actually re-costing the roster is separate, not-yet-started work** — every faction/unit stat line in `factions/imperial_regiments.json` and every `.cat` file remains a stale d10-era number until that pass happens; today's work rebuilt the formula, not the roster. A handful of pure d10-era notation leftovers outside the attack/Mettle engine (`Dangerous` terrain's d10 roll, `Blast`'s 1d5"/1d10" scatter, `Regeneration`/`Combat Medic`'s 1d5, `Shrug (X)`'s d10, `Critical Weakspot`'s unmodified-10, `Undaunted (X)`'s "impossible on a d6" gap) are also untouched — a separate, smaller cleanup pass.
+12. **Standing policy, confirmed 2026-09-28: individual stat-line/Evasion-template conflicts across `faction-identity.md` are expected and not worth flagging one at a time anymore.** No current stat line on any built unit can be trusted until the benchmark/points rebuild (item 11 above) actually lands — every conflict between an existing stat and a new rule (the Evasion archetype template, the Armor cascade, the AP scale) is a symptom of the same not-yet-done rebuild, not a separate decision each time. Surface a conflict only if it changes a *mechanic* (like the Oathkeeper Armor↔Evasion trade lever disappearing did); pure number mismatches wait for the rebuild.
