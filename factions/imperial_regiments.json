@@ -64,6 +64,7 @@
   "units": [
     {
       "name": "Regimental Officer",
+      "flavor_name": "Officer",
       "category": "Command", "type": "Infantry", "size": 1,
       "profile": { "speed": 5, "mettle": 6, "evasion": 6, "armor": 4, "toughness": 3 },
       "weapons": [ { "name": "Sidearm" }, { "name": "Power Maul" } ],
@@ -72,6 +73,7 @@
     },
     {
       "name": "Rifle Squad",
+      "flavor_name": "Fusilier",
       "category": "Line", "type": "Infantry", "size": 10,
       "profile": { "speed": 5, "mettle": 4, "evasion": 6, "armor": 4, "toughness": 1 },
       "weapons": [
@@ -82,6 +84,7 @@
     },
     {
       "name": "Veteran Squad",
+      "flavor_name": "Grenadier",
       "category": "Line", "type": "Infantry", "size": 8,
       "profile": { "speed": 5, "mettle": 5, "evasion": 6, "armor": 5, "toughness": 1 },
       "weapons": [
@@ -94,6 +97,7 @@
     },
     {
       "name": "Conscript Mob",
+      "flavor_name": "Levy",
       "category": "Line", "type": "Infantry", "size": 16,
       "profile": { "speed": 5, "mettle": 2, "evasion": 6, "armor": 3, "toughness": 1 },
       "weapons": [ { "name": "Surplus Rifle", "count": 16 } ],
@@ -105,6 +109,7 @@
     },
     {
       "name": "Storm Squad",
+      "flavor_name": "Vanguard",
       "category": "Shock", "type": "Infantry", "size": 8,
       "profile": { "speed": 6, "mettle": 5, "evasion": 7, "armor": 5, "toughness": 1 },
       "weapons": [
@@ -116,6 +121,7 @@
     },
     {
       "name": "Scout Element",
+      "flavor_name": "Ranger",
       "category": "Recon", "type": "Infantry", "size": 5,
       "profile": { "speed": 6, "mettle": 4, "evasion": 7, "armor": 4, "toughness": 1 },
       "weapons": [
@@ -126,6 +132,8 @@
     },
     {
       "name": "Heavy Weapons Team",
+      "flavor_name": "Ballistier",
+      "_flavor_note": "Provisional name (design-bible.md).",
       "category": "Support", "type": "Infantry", "size": 1,
       "profile": { "speed": 5, "mettle": 4, "evasion": 6, "armor": 4, "toughness": 3 },
       "weapons": [ { "name": "Heavy Machine Gun" } ],

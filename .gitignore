@@ -1,0 +1,9 @@
+# Vault-local tooling state — never tracked
+.barnyard/
+Barnyard/
+__pycache__/
+*.pyc
+
+# OS cruft
+.DS_Store
+Thumbs.db
