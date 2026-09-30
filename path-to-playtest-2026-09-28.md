@@ -25,18 +25,19 @@ The formula (§11) is solid as of the 2026-09-28 rebuild, but nothing has actual
 
 ### Phase 3 — Get one faction fully re-priced and playable
 
-**Recommend Imperial Saints.** It's furthest along in shape and identity — vehicles, warsuits, and four of its infantry units already had a full package/identity pass before the v0.5 redesign started, and its own roadmap note already said "leadership is next, then Saints is ready for playtesting." Re-doing that identity work from scratch on a less-finished faction would cost more than re-pricing Saints against the new mechanics.
+**Faction chosen: Imperial Regiments** (2026-09-28 — the user confirmed either Saints or Regiments works for the mirror match; Regiments is the one actually being built). **The fastest real game is a mirror match** — Regiments vs. Regiments needs only *one* faction fully done, not two, and still exercises every core mechanic (dice, morale, Damage Track, Platoons/CORE, Transports, objectives).
 
-**The fastest real game is a mirror match** — Saints vs. Saints needs only *one* faction fully done, not two, and still exercises every core mechanic (dice, morale, Damage Track, Platoons/CORE, Transports, objectives).
+**Phase 3a — watered-down slice, done (2026-09-29).** Per the user's own scoping ("just enough to see the system in motion... not the whole faction"): **Rifle Squad, Veteran Squad, Scout Element, Armored Personnel Carrier, Armored Fighting Vehicle** (Fusilier/Grenadier/Ranger/the APC/treated as the MBT). All five re-priced end to end in `factions/imperial_regiments.json` and regenerated into `Imperial Regiments.cat`:
+6. ~~Re-audit Role~~ — all five already carried the right Role (design-bible.md §7 literally cites the APC as SUPPORT/Vehicle and the AFV as ARMOR/Vehicle as its own worked examples); no changes needed.
+7. ~~Assign Keywords~~ — same result, all five already correct (Infantry ×3, Vehicle ×2).
+8. ~~Re-derive stat lines against the Evasion archetype template~~ — done: all three infantry locked to Evasion 5 (Scout Element deliberately uses the "Elite/dedicated dodge specialist" archetype row instead, Evasion 6, not a veterancy tweak); the two vehicles moved to the Light/Heavy Vehicle archetype band (Evasion 5 and 3 respectively) instead of freely-tuned old-data values.
+9. ~~Price every unit and weapon~~ — done (Rifle Squad 106, Veteran Squad 125, Scout Element 82, APC 151, AFV 238). Along the way, found and fixed two real bugs blocking this: `build_cat.py` was reading a `toughness` characteristic the `.gst` had already renamed to `Wounds` (crashed on any rebuild), and the faction's old top-level `Massed Ranks` `faction_trait` was auto-applying to every 8+-model unit even though §8's Round 3 decision already moved it to a Platoon-CORE bonus — both fixed, not just worked around.
 
-6. Re-audit every Saints unit's **Role** against what it's actually expected to do on the battlefield (per the Round 1 instruction — this was flagged project-wide, never done unit-by-unit).
-7. Assign **Keywords** per unit (Infantry/Vehicle/Monster as appropriate, plus any faction-specific ones already named — `Caster`, etc.).
-8. Re-derive each unit's stat line against the **Evasion archetype template** (§3) and the now-locked Armor/Wounds/Speed/Mettle factor tables — confirming which of Saints' existing "shape, not numbers" stat lines still make sense once Evasion is templated rather than freely tuned (Saints' own Armor/Evasion pairing was flagged as one of the units affected by this back in the faction-identity sweep).
-9. **Price every unit and weapon** against the finalized §11 formula (once Phases 2–4's classification work covers what Saints actually needs) and write the real numbers into `Imperial Saints.cat`.
+**Phase 3b — the rest of the faction, not started.** Regimental Officer, Conscript Mob, Storm Squad, Heavy Weapons Team, Field Gun Battery, Tank Destroyer, plus Sapper/Hunter/Dragoon (no stat lines yet at all). Needed before a *full* Regiments list is legal, not needed for the mirror-match slice above.
 
 ### Phase 4 — Play it
 
-Saints vs. Saints, the one mission from Phase 1, the placeholder point total from Phase 2. Whatever breaks, breaks *after* a real game, with real data — not before one.
+Regiments vs. Regiments, the one mission from Phase 1, the placeholder point total from Phase 2 (item 5 — still not picked). The watered-down Phase 3a slice is playable as a small mirror match right now; a full-list game still needs Phase 3b.
 
 ---
 

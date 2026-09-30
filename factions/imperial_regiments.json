@@ -1,13 +1,10 @@
 {
   "faction": "Imperial Regiments",
   "_note": "Massed conscript infantry backed by armor. Cheap bodies, poor Mettle, wins by weight of numbers and heavy weapons. Points are formula-derived; edit stats, not costs.",
+  "_v05_status": "Partial re-price 2026-09-29 (path-to-playtest-2026-09-28.md Phase 3, watered-down slice): Rifle Squad, Veteran Squad, Scout Element, Armored Personnel Carrier, Armored Fighting Vehicle are updated to the v0.5 formula (Evasion archetype-locked, Wounds key, CCW, extras/modifiers split for named traits) -- see each unit's own _v05_note. Regimental Officer, Conscript Mob, Storm Squad, Heavy Weapons Team, Field Gun Battery, and Tank Destroyer are UNTOUCHED and still d10-era stale (old Evasion tuning, 'toughness' key, ungated free rules like Leadership Aura/Entrenched/Brutal Assault/Where We're Needed that SS11 Step 5 now prices as 'extras') -- do not treat their point costs as current.",
 
-  "faction_trait": {
-    "name": "Massed Ranks",
-    "multiplier": 1.06,
-    "min_size": 8,
-    "text": "While this unit contains 8 or more models, it re-rolls to-hit results of 1 and gains +1 Mettle."
-  },
+  "faction_trait": null,
+  "_faction_trait_note": "Regiments currently has no faction-wide signature trait -- Massed Ranks moved to being the Infantry Platoon's CORE bonus instead (design-bible.md SS8, Round 3, 2026-09-28), gated on Platoon selection + CORE + Infantry keyword, not a blanket per-unit multiplier. build_cat.py auto-applies a truthy top-level faction_trait to every unit >= its min_size, so leaving the old block in place here silently over-charged Rifle Squad and Veteran Squad (both >=8 models) with a bonus that's no longer faction-wide. A real replacement signature trait for Regiments is still deliberately deferred (Outstanding Work, path-to-playtest-2026-09-28.md). Massed Ranks itself, for whenever Platoons get modeled in this JSON: 'While a CORE, Infantry-keyword unit in the Infantry Platoon holds 8+ models, it re-rolls Attack Rolls of 1 and gains +1 Mettle.'",
 
   "_weapon_tiers": "Tier 1 Infantry (man-portable) / Tier 2 Crew-served (team or vehicle secondary mount) / Tier 3 Vehicular-Towable (needs a hull or carriage). See design-bible.md and reference.html for the full breakdown and reasoning.",
 
@@ -22,8 +19,12 @@
                              "_note": "Ranger issue, replaces Scout Autogun. Not a full sniper's weapon, just longer legs than a standard Rifle." },
     "Submachine Gun":     { "range": 8,  "attacks": 3, "ap": 0, "damage": 1, "traits": [] },
     "Sidearm":            { "range": 8,  "attacks": 2, "ap": 0, "damage": 1, "traits": ["Pistol"] },
-    "Bayonet":            { "range": "M","attacks": 1, "ap": 0, "damage": 1, "traits": ["Fixed"] },
-    "Combat Knife":       { "range": "M","attacks": 1, "ap": 0, "damage": 1, "traits": [] },
+    "CCW":                { "range": "M","attacks": 1, "ap": 0, "damage": 1, "traits": ["Unarmed"],
+                             "_note": "Replaces Fists. Flat 0pts by decision (design-bible.md SS11) -- exists solely to give a unit a melee option." },
+    "Bayonet":            { "range": "M","attacks": 1, "ap": 0, "damage": 1, "traits": ["Fixed"],
+                             "_note": "Superseded by CCW on Fusilier/Grenadier -- kept in the library, unused, pending the rest of the roster's re-price." },
+    "Combat Knife":       { "range": "M","attacks": 1, "ap": 0, "damage": 1, "traits": [],
+                             "_note": "Superseded by CCW on Ranger -- kept in the library, unused, pending the rest of the roster's re-price." },
     "Combat Axe":         { "range": "M","attacks": 1, "ap": 0, "damage": 2, "traits": [] },
     "Power Maul":         { "range": "M","attacks": 2, "ap": 1, "damage": 2, "traits": [] },
     "Flamethrower":       { "range": 8,  "attacks": 1, "ap": 0, "damage": 1, "traits": ["Engulf (S)", "Anti-Infantry"] },
@@ -74,26 +75,28 @@
     {
       "name": "Rifle Squad",
       "flavor_name": "Fusilier",
+      "_v05_note": "Re-priced 2026-09-29, watered-down Regiments playtest slice (path-to-playtest-2026-09-28.md Phase 3). Evasion locked to the Infantry archetype (design-bible.md SS3 -- veterancy no longer differentiates through Evasion); Bayonet -> CCW; Boots on the Ground retired outright (SS7); Entrenched moved from free 'rules' into a priced 'extras' entry (SS11 Step 5). This is the anchor unit -- its own chassis+weapons cost is the formula's 100pt calibration point.",
       "category": "Line", "type": "Infantry", "size": 10,
-      "profile": { "speed": 5, "mettle": 4, "evasion": 6, "armor": 4, "toughness": 1 },
+      "profile": { "speed": 5, "mettle": 4, "evasion": 5, "armor": 4, "wounds": 1 },
       "weapons": [
         { "name": "Rifle", "count": 10 },
-        { "name": "Bayonet", "count": 10 }
+        { "name": "CCW", "count": 10 }
       ],
-      "rules": ["Entrenched", "Boots on the Ground"]
+      "extras": [ { "name": "Entrenched", "tier": "minor" } ]
     },
     {
       "name": "Veteran Squad",
       "flavor_name": "Grenadier",
+      "_v05_note": "Re-priced 2026-09-29, same pass as Rifle Squad. Evasion locked to the Infantry archetype -- veterancy differentiates through Mettle (4->5) and equipment (Plasma Rifle/LMG upgrades) instead, per design-bible.md SS3's explicit instruction.",
       "category": "Line", "type": "Infantry", "size": 8,
-      "profile": { "speed": 5, "mettle": 5, "evasion": 6, "armor": 5, "toughness": 1 },
+      "profile": { "speed": 5, "mettle": 5, "evasion": 5, "armor": 4, "wounds": 1 },
       "weapons": [
         { "name": "Rifle", "count": 6 },
-        { "name": "Bayonet", "count": 6 },
+        { "name": "CCW", "count": 6 },
         { "name": "Plasma Rifle", "count": 1 },
         { "name": "Light Machine Gun", "count": 1 }
       ],
-      "rules": ["Entrenched", "Boots on the Ground"]
+      "extras": [ { "name": "Entrenched", "tier": "minor" } ]
     },
     {
       "name": "Conscript Mob",
@@ -122,13 +125,18 @@
     {
       "name": "Scout Element",
       "flavor_name": "Ranger",
+      "_v05_note": "Re-priced 2026-09-29. Evasion 6 is a deliberate archetype pick -- design-bible.md SS3's 'Elite / dedicated dodge specialist' row, not a veterancy tweak (which the same section explicitly rules out) -- a scout's whole job is not getting hit. Spotter/Camouflaged/All-Terrain moved from free 'rules' (the old RECON-Role automatic grant, retired SS7) into priced 'extras' -- these are now things Ranger was individually built with, not a Role bonus.",
       "category": "Recon", "type": "Infantry", "size": 5,
-      "profile": { "speed": 6, "mettle": 4, "evasion": 7, "armor": 4, "toughness": 1 },
+      "profile": { "speed": 6, "mettle": 4, "evasion": 6, "armor": 4, "wounds": 1 },
       "weapons": [
         { "name": "Scout Rifle", "count": 5 },
-        { "name": "Combat Knife", "count": 5 }
+        { "name": "CCW", "count": 5 }
       ],
-      "rules": ["Spotter", "Camouflaged", "All-Terrain"]
+      "extras": [
+        { "name": "Spotter", "tier": "minor" },
+        { "name": "Camouflaged", "tier": "minuscule" },
+        { "name": "All-Terrain", "tier": "minuscule" }
+      ]
     },
     {
       "name": "Heavy Weapons Team",
@@ -148,21 +156,31 @@
     },
     {
       "name": "Armored Personnel Carrier",
+      "flavor_name": "Marten (Bus config)",
+      "_v05_note": "Re-priced 2026-09-29. Stats match Marten's canonical Medium Chassis line (faction-identity.md: Spd8/Met4/Eva5/Arm6/W9 -- Evasion5 sits at the Light Vehicle archetype's upper edge, design-bible.md SS3). Armored Front and Hardpoints are no longer automatic from the Vehicle keyword (SS7) -- Armored Front now prices as a Step-3 weapon-tier-style unit modifier (Minuscule bonus, x1.05), Hardpoints moved into priced 'extras' (Minor). Open-Topped is free fluff text (Marten's un-upgraded default, no Protection package taken), not a costed trait.",
       "category": "Support", "type": "Vehicle", "size": 1,
-      "profile": { "speed": 8, "mettle": 4, "evasion": 5, "armor": 6, "toughness": 8 },
+      "profile": { "speed": 8, "mettle": 4, "evasion": 5, "armor": 6, "wounds": 9 },
       "weapons": [ { "name": "Light Machine Gun" } ],
       "transport": 14,
-      "rules": ["Armored Front", "Hardpoints", "Open-Topped"]
+      "extras": [ { "name": "Hardpoints", "tier": "minor" } ],
+      "modifiers": [ { "name": "Armored Front", "multiplier": 1.05 } ],
+      "rules": ["Open-Topped"]
     },
     {
       "name": "Armored Fighting Vehicle",
+      "flavor_name": "Fisher",
+      "_v05_note": "Re-priced 2026-09-29, treated as Regiments' MBT/generalist gun-tank for this playtest slice (faction-identity.md's Fisher -- the only Medium Chassis vehicle that flips to Role ARMOR). Evasion dropped to 3, the Heavy Vehicle archetype's upper edge (design-bible.md SS3) -- Fisher is 'noticeably slower than Sable' and harder to juke than the Bus/Gunboat pair, not a light-vehicle dodge profile. Speed/Armor/Wounds nudged off the shared Medium baseline (Spd7/Arm7/W10) to reflect that same divergence, per faction-identity.md's own note that Fisher was always the vehicle most likely to break the shared-profile pattern first. Mettle held flat at the family-wide 4 -- faction-identity.md is explicit that crew training doesn't scale with hull weight. Armored Front/Hardpoints re-priced the same way as the APC; Bulwark (ARMOR-Role pairing, SS7) moved from free 'rules' into priced 'extras' (Major).",
       "category": "Armor", "type": "Vehicle", "size": 1,
-      "profile": { "speed": 8, "mettle": 5, "evasion": 4, "armor": 7, "toughness": 10 },
+      "profile": { "speed": 7, "mettle": 4, "evasion": 3, "armor": 7, "wounds": 10 },
       "weapons": [
         { "name": "Main Cannon" },
         { "name": "Medium Machine Gun" }
       ],
-      "rules": ["Bulwark", "Hardpoints", "Armored Front"]
+      "extras": [
+        { "name": "Hardpoints", "tier": "minor" },
+        { "name": "Bulwark", "tier": "major" }
+      ],
+      "modifiers": [ { "name": "Armored Front", "multiplier": 1.05 } ]
     },
     {
       "name": "Tank Destroyer",

@@ -87,13 +87,17 @@ def unit_profile(gs, unit):
     pt = gs["profileTypes"]["unit profile"]
     c = pt["chars"]
     p = unit["profile"]
+    # The .gst's characteristic is "Wounds" (renamed back from "Toughness"
+    # mid-redesign, design-bible.md's Reference -- Unit Profile). Units not
+    # yet migrated off the old JSON key still work via the fallback.
+    wounds = p.get("wounds", p.get("toughness"))
     pid = mkid(unit["name"], "unitprofile")
     rows = "".join([
         characteristic("Speed", c["speed"], f'{p["speed"]}"'),
         characteristic("Mettle", c["mettle"], p["mettle"]),
         characteristic("Evasion", c["evasion"], p["evasion"]),
         characteristic("Armor", c["armor"], p["armor"]),
-        characteristic("Toughness", c["toughness"], p["toughness"]),
+        characteristic("Wounds", c["wounds"], wounds),
     ])
     return (f'<profile name="{esc(unit["name"])}" typeId="{pt["id"]}" '
             f'typeName="Unit Profile" hidden="false" id="{pid}">'
@@ -134,8 +138,24 @@ def category_links(gs, unit):
 
 
 def rule_links(gs, unit):
+    """
+    Link every named rule this unit carries, so NewRecruit shows the actual
+    rule text -- not just "rules" (free, uncosted fluff) but also "extras"
+    (flat-cost named abilities, §11 Step 5) and "modifiers" (per-unit cost
+    multipliers, e.g. Armored Front). points.py handles the cost for the
+    latter two; this only handles the text link, keyed by name so the two
+    never disagree about which traits a unit has.
+    """
+    names = list(unit.get("rules", []))
+    names += [e["name"] for e in unit.get("extras", []) if "name" in e]
+    names += [m["name"] for m in unit.get("modifiers", []) if "name" in m]
+
     out = []
-    for rname in unit.get("rules", []):
+    seen = set()
+    for rname in names:
+        if rname.lower() in seen:
+            continue
+        seen.add(rname.lower())
         rid = gs["rules"].get(rname.lower())
         if not rid:
             print(f"  ! warning: rule {rname!r} not in game system, skipped")
