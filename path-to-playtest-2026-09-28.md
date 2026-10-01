@@ -47,13 +47,13 @@ Not blocking. Tracked so it doesn't get lost once Phase 4 happens and momentum s
 
 **Formula refinement**
 - The range multiplier (`0.6 + Range/30`) has never been re-derived — it doesn't connect to the Close/Effective/Long bands at all, just carried forward as a placeholder.
-- Exhaustive trait/ability classification beyond whatever Phase 2 needed for Saints specifically.
+- Exhaustive trait/ability classification beyond whatever Phase 2 needed for the Regiments slice specifically.
 - The four faction signature-trait multipliers (`Oathbound`, `Bound Spirit`, `Martyrs, all`, `Wrathbound`) still need real numbers against the new formula, not d10-era guesses.
 - `Regiments needs a new faction signature trait` — `Massed Ranks` moved to being a Platoon CORE bonus, vacating that slot. Deliberately deferred multiple times now; still open.
 - §4's own `Fists`→`CCW` section still says "Fists" in its prose — the decision (0 points, fixed) is made, the text isn't updated.
 
-**Roster completion (after Saints is playable)**
-- **Imperial Regiments**: still the placeholder 11-unit roster in `.cat`/JSON — the Levy/Fusilier/Grenadier naming pass was decided but never applied to the actual data; the full Mustelidae vehicle family (Marten/Sable/Fisher/Tayra/Stoat/Weasel/Mink/Wolverine/Badger) exists only as prose; Sapper/Hunter/Dragoon have locked identities and no stat lines.
+**Roster completion (after the Regiments mirror-match slice is playable)**
+- **Imperial Regiments**: 5 of 11 units re-priced (Phase 3a); the other 6 (Officer, Conscript Mob, Storm Squad, Heavy Weapons Team, Field Gun Battery, Tank Destroyer) are still stale d10-era numbers — see Phase 3b. The full Mustelidae vehicle family beyond Marten/Fisher (Sable/Tayra/Stoat/Weasel/Mink/Wolverine/Badger) exists only as prose; Sapper/Hunter/Dragoon have locked identities and no stat lines.
 - **Wrathful Oathbreakers**: one unit (`Berserker Legionaries`) — needs a real roster (at minimum a troop and a heavy/elite choice) before it can field a full list, not just re-pricing.
 - **Imperial Oathkeepers**: `.cat` is an empty stub. Full roster (13 named units/vehicles) exists only in `faction-identity.md` prose.
 - **Imperial Forgesworn**: named and hooked, nothing built.
